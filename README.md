@@ -6,11 +6,13 @@
 
 [![React](https://img.shields.io/badge/React-18.2-0D7377?style=for-the-badge&logo=react&logoColor=14BDCC)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-5.0-F4A832?style=for-the-badge&logo=vite&logoColor=1C1C1C)](https://vitejs.dev)
-[![Platform](https://img.shields.io/badge/Target_Platform-Android_Smartboards-14BDCC?style=for-the-badge&logo=android&logoColor=white)](#)
+[![Live Web App](https://img.shields.io/badge/Live_Site-lang--huey.vercel.app-14BDCC?style=for-the-badge&logo=vercel&logoColor=white)](https://lang-huey.vercel.app)
+[![Target Platform](https://img.shields.io/badge/Target_Platform-Android_Smartboards-0D7377?style=for-the-badge&logo=android&logoColor=white)](#)
 [![Curriculum](https://img.shields.io/badge/Curriculum-NERDC_Aligned-0D7377?style=for-the-badge)](#)
 [![Status](https://img.shields.io/badge/Status-Prelaunch_&_Ideation-F4A832?style=for-the-badge)](#)
 
 <p align="center">
+  <a href="https://lang-huey.vercel.app" target="_blank">🌐 Live Prelaunch Website</a> &bull;
   <a href="#-about-lang-huey">About</a> &bull;
   <a href="#-the-core-innovation">Core Innovation</a> &bull;
   <a href="#-brand-system">Brand System</a> &bull;
