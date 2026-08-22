@@ -1,29 +1,30 @@
 import React from 'react';
+import { CheckCircle2, Monitor, Sparkles } from 'lucide-react';
 
 export default function SolutionSection() {
   return (
     <>
-      <section class="section bg-deep-teal" id="solution">
-        <div class="container grid-asymmetric">
+      <section className="section bg-deep-teal" id="solution">
+        <div className="container grid-asymmetric">
           <div>
-            <span class="caption-label" style={{ color: 'var(--color-secondary)' }}>INTRODUCING LANG HUEY</span>
+            <span className="caption-label" style={{ color: 'var(--color-secondary)' }}>INTRODUCING LANG HUEY</span>
             <h2>any staff member can run a french class.</h2>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255, 255, 255, 0.9)', margin: '1rem 0 1.5rem 0' }}>
               Lang Huey is a single offline software application installed on your Smartboard. With our built-in <strong>Teacher Cue Bar</strong>, any staff member can script, guide, and facilitate a complete 30-minute French class — even if they don't speak a single word of French.
             </p>
 
-            <div class="feature-pill-group">
-              <span class="feature-pill">&check; NERDC Curriculum</span>
-              <span class="feature-pill">&check; No Internet Needed</span>
-              <span class="feature-pill">&check; One-Time Payment</span>
+            <div className="feature-pill-group">
+              <span className="feature-pill"><CheckCircle2 size={16} color="var(--color-primary)" /> NERDC Curriculum</span>
+              <span className="feature-pill"><CheckCircle2 size={16} color="var(--color-primary)" /> 100% Offline Engine</span>
+              <span className="feature-pill"><CheckCircle2 size={16} color="var(--color-primary)" /> Hardware Owned</span>
             </div>
 
-            <a href="#features" class="btn btn-ghost-white">See What's Inside &darr;</a>
+            <a href="#features" className="btn btn-ghost-white">See What's Inside &darr;</a>
           </div>
 
           <div>
             <div style={{ background: 'rgba(255,255,255,0.06)', padding: '2rem', borderRadius: '20px', border: '1px solid rgba(20, 189, 204, 0.3)' }}>
-              <span class="caption-label">CORE PRODUCT INNOVATION</span>
+              <span className="caption-label" style={{ color: 'var(--color-secondary)' }}>CORE PRODUCT INNOVATION</span>
               <h3 style={{ color: 'white', marginBottom: '0.75rem' }}>The On-Screen Teacher Cue Bar</h3>
               <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem' }}>
                 At the bottom of every slide, Lang Huey tells the supervising staff member exactly what to say or do next in Standard English:
@@ -40,7 +41,7 @@ export default function SolutionSection() {
         </div>
       </section>
 
-      <div class="accent-bar">
+      <div className="accent-bar">
         Works on Android Smartboards &bull; JSS1 French Launching First &bull; Chinese Language Coming Next
       </div>
     </>

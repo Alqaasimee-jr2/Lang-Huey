@@ -1,5 +1,6 @@
 /* ==========================================================================
    LANG HUEY OFFICIAL BRAND GUIDELINES (v1.0 - 2025)
+   CREATOR: NIT7ER
    
    Colour System:
    - Primary: Deep Teal #0D7377 (Hero, nav, footers, dark decision sections)
@@ -164,6 +165,17 @@ p {
   box-shadow: 0 6px 0 var(--color-accent-gold-dark), 0 14px 28px rgba(244, 168, 50, 0.45);
 }
 
+.btn-ghost-teal {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-ghost-teal:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface-white);
+}
+
 .btn-ghost-white {
   background-color: transparent;
   color: var(--color-surface-white);
@@ -300,7 +312,7 @@ p {
 .lang-badge {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-surface-white);

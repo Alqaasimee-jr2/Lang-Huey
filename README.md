@@ -26,11 +26,12 @@
 ## 📖 The Origin Story
 
 > *"My mother runs a private school in Lagos. She couldn't find a French teacher. So I built one."*  
-> &mdash; **Abdullah Qaasim, Founder of Lang Huey**
+> &mdash; **NIT7ER, Creator of Lang Huey**
 
-Across Nigeria, qualified foreign language teachers (French, Mandarin Chinese, Spanish) are scarce and expensive. Private secondary schools face constant teacher turnover, irregular timetable slots, and expensive live virtual classes that fail due to unstable internet.
+Across Nigeria, qualified foreign language teachers (French, Mandarin Chinese, Spanish) are scarce and expensive. Private secondary schools face constant teacher turnover, irregular timetable slots, and unreliable live virtual classes that fail due to unstable internet.
 
 **Lang Huey** turns underused Android Smartboards into fully functioning language classrooms. It enables **any staff member** — regardless of prior foreign language knowledge — to deliver structured, Ministry of Education (NERDC) aligned language lessons **100% offline**.
+
 
 ---
 
