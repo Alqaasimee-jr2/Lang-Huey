@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CheckCircle2, MessageCircle } from 'lucide-react';
 
 export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
   const [formData, setFormData] = useState({
@@ -16,10 +17,10 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
   };
 
   return (
-    <section class="section bg-warm-cream" id="waitlist">
-      <div class="container grid-asymmetric">
+    <section className="section bg-warm-cream" id="waitlist">
+      <div className="container grid-asymmetric">
         <div>
-          <span class="feature-pill" style={{ background: 'var(--color-secondary)', color: 'white', marginBottom: '1rem' }}>YOU ARE EARLY</span>
+          <span className="feature-pill" style={{ background: 'var(--color-secondary)', color: 'white', marginBottom: '1rem' }}>YOU ARE EARLY</span>
           <h2 style={{ color: 'var(--color-primary)', marginBottom: '0.75rem' }}>you are early. that matters.</h2>
           <p style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-charcoal)', marginBottom: '1rem' }}>
             Help us build Lang Huey for your school.
@@ -28,25 +29,34 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
             We are in active development. Schools that join now get to shape the product — suggest content, flag what matters to you, and get priority pilot access at launch. This is not a mailing list. This is a building team.
           </p>
 
-          <ul class="benefit-list">
-            <li><span class="benefit-check">&check;</span> Your feedback goes directly to the builder</li>
-            <li><span class="benefit-check">&check;</span> Priority access and launch-day pricing</li>
-            <li><span class="benefit-check">&check;</span> Direct access to our WhatsApp Community Channel</li>
+          <ul className="benefit-list">
+            <li>
+              <CheckCircle2 size={22} color="var(--color-secondary)" style={{ minWidth: '22px' }} /> 
+              <span>Your feedback goes directly to NIT7ER</span>
+            </li>
+            <li>
+              <CheckCircle2 size={22} color="var(--color-secondary)" style={{ minWidth: '22px' }} /> 
+              <span>Priority pilot cohort access at launch</span>
+            </li>
+            <li>
+              <CheckCircle2 size={22} color="var(--color-secondary)" style={{ minWidth: '22px' }} /> 
+              <span>Direct access to our WhatsApp Community Channel</span>
+            </li>
           </ul>
         </div>
 
         {/* Registration Form Card with Smartboard Qualification Selector */}
         <div>
-          <div class="form-card">
-            <h3 class="form-title">Reserve Your School Spot</h3>
+          <div className="form-card">
+            <h3 className="form-title">Reserve Your School Spot</h3>
             
             <form onSubmit={handleSubmit}>
-              <div class="form-group">
+              <div className="form-group">
                 <label htmlFor="school-name">School Name & Location</label>
                 <input 
                   type="text" 
                   id="school-name" 
-                  class="form-input" 
+                  className="form-input" 
                   placeholder="e.g. Excellence Academy, Lekki, Lagos" 
                   value={formData.schoolName}
                   onChange={(e) => setFormData({ ...formData, schoolName: e.target.value })}
@@ -54,12 +64,12 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
                 />
               </div>
 
-              <div class="form-group">
+              <div className="form-group">
                 <label htmlFor="email-address">Email Address (Proprietor / Principal)</label>
                 <input 
                   type="email" 
                   id="email-address" 
-                  class="form-input" 
+                  className="form-input" 
                   placeholder="principal@school.edu.ng" 
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -67,11 +77,11 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
                 />
               </div>
 
-              <div class="form-group">
+              <div className="form-group">
                 <label htmlFor="role">Your Role</label>
                 <select 
                   id="role" 
-                  class="form-select" 
+                  className="form-select" 
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                   required
@@ -84,11 +94,11 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
               </div>
 
               {/* Approved Smartboard Filter Selector */}
-              <div class="form-group">
+              <div className="form-group">
                 <label htmlFor="smartboard-status">Smartboard Availability</label>
                 <select 
                   id="smartboard-status" 
-                  class="form-select"
+                  className="form-select"
                   value={formData.smartboardStatus}
                   onChange={(e) => setFormData({ ...formData, smartboardStatus: e.target.value })}
                   required
@@ -100,13 +110,13 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
                 </select>
               </div>
 
-              {/* GOLD RULE: Amber Gold touches ONE element per screen max */}
-              <button type="submit" class="btn btn-gold" style={{ width: '100%', marginTop: '0.5rem' }}>
+              {/* STAGE GOLD RULE: Amber Gold touches EXCLUSIVELY ONE element per screen max */}
+              <button type="submit" className="btn btn-gold" style={{ width: '100%', marginTop: '0.5rem' }}>
                 Join the Community &rarr;
               </button>
 
-              <p class="form-microtext">
-                No spam. No sales calls. Just product updates and a direct line to the builder.
+              <p className="form-microtext">
+                No spam. No sales calls. Just product updates and a direct line to NIT7ER.
               </p>
             </form>
           </div>
