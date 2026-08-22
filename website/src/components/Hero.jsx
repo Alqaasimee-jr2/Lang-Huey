@@ -13,7 +13,7 @@ export default function Hero() {
             no problem.
           </h1>
           <p className="hero-subheadline">
-            Lang Huey runs complete French lessons on your school smartboard — offline, structured, and in your hands.
+            Lang Huey runs complete French lessons on your school smartboard: offline, structured, and in your hands.
           </p>
           <p className="hero-supporting">
             We're building this for Nigerian schools. Join us. Your input shapes the product.

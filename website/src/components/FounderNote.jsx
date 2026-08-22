@@ -9,7 +9,7 @@ export default function FounderNote() {
           "my mother's school needed a french teacher. i built one."
         </blockquote>
         <div className="founder-attribution">
-          &mdash; NIT7ER, Creator of Lang Huey
+          - NIT7ER, Creator of Lang Huey
         </div>
       </div>
     </section>

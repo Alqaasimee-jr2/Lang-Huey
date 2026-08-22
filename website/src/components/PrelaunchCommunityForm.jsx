@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, MessageCircle } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
   const [formData, setFormData] = useState({
@@ -26,7 +26,7 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
             Help us build Lang Huey for your school.
           </p>
           <p style={{ marginBottom: '1.5rem', color: '#444' }}>
-            We are in active development. Schools that join now get to shape the product — suggest content, flag what matters to you, and get priority pilot access at launch. This is not a mailing list. This is a building team.
+            We are in active development. Schools that join now get to shape the product: suggest content, flag what matters to you, and get priority pilot access at launch. This is not a mailing list. This is a building team.
           </p>
 
           <ul className="benefit-list">

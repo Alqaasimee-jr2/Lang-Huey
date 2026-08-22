@@ -10,7 +10,7 @@ export default function SolutionSection() {
             <span className="caption-label" style={{ color: 'var(--color-secondary)' }}>INTRODUCING LANG HUEY</span>
             <h2>any staff member can run a french class.</h2>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255, 255, 255, 0.9)', margin: '1rem 0 1.5rem 0' }}>
-              Lang Huey is a single offline software application installed on your Smartboard. With our built-in <strong>Teacher Cue Bar</strong>, any staff member can script, guide, and facilitate a complete 30-minute French class — even if they don't speak a single word of French.
+              Lang Huey is a single offline software application installed on your Smartboard. With our built-in <strong>Teacher Cue Bar</strong>, any staff member can script, guide, and facilitate a complete 30-minute French class, even if they don't speak a single word of French.
             </p>
 
             <div className="feature-pill-group">

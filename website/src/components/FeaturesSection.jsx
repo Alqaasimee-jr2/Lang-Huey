@@ -40,7 +40,7 @@ export default function FeaturesSection() {
         <div className="nerdc-card">
           <span className="caption-label">GOVERNMENT CURRICULUM ALIGNMENT</span>
           <h3 style={{ color: 'var(--color-primary)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>
-            JSS1 French — Term 1 Scheme of Work Snippets
+            JSS1 French: Term 1 Scheme of Work Snippets
           </h3>
           <p style={{ color: '#444', fontSize: '0.95rem' }}>
             Every lesson in Lang Huey maps directly to the official Nigerian Educational Research & Development Council (NERDC) syllabus for junior secondary schools:
