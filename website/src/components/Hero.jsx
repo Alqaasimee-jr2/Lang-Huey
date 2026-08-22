@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText } from 'lucide-react';
+import { FileText, Play } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -36,34 +36,29 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Hero Visual: Animated Video Showcase Container */}
+        {/* Hero Visual: Real Animated Kinetic Showcase Video */}
         <div className="hero-visual">
           <div className="smartboard-showcase">
             <div className="showcase-header">
-              <span>SMARTBOARD CLASSROOM SHOWCASE &bull; ANIMATED DEMO</span>
-              <span>1080P HIGH DEFINITION</span>
+              <span>SMARTBOARD CLASSROOM SHOWCASE &bull; ANIMATED AD</span>
+              <span>1080P KINETIC ANIMATION</span>
             </div>
 
-            <div className="animated-video-screen">
-              <div className="video-play-indicator">
+            <div className="animated-video-screen" style={{ padding: 0, overflow: 'hidden', background: '#000' }}>
+              <div className="video-play-indicator" style={{ zIndex: 10 }}>
                 <div className="pulse-dot"></div>
                 <span>PLAYING ANIMATED SHOWCASE</span>
               </div>
 
-              <div style={{ textAlign: 'center', margin: '2rem 0' }}>
-                <div className="flag-badge-fr" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255,255,255,0.15)', padding: '0.3rem 0.8rem', borderRadius: '9999px', fontSize: '0.85rem', marginBottom: '0.75rem' }}>
-                  <svg width="20" height="14" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>
-                  <span>French &bull; JSS1 Term 1</span>
-                </div>
-                <div style={{ fontSize: '2.75rem', fontWeight: 900, color: 'white', letterSpacing: '-0.02em' }}>Bonjour !</div>
-                <div style={{ fontSize: '1.15rem', color: 'var(--color-secondary)', fontWeight: 600 }}>Hello / Good morning</div>
-              </div>
-
-              {/* Core Innovation: On-Screen Teacher Cue Bar */}
-              <div className="teacher-cue-bar-container">
-                <span className="cue-badge">TEACHER CUE</span>
-                <span className="cue-text">Play audio twice. Ask class to repeat "Bonjour" after each play.</span>
-              </div>
+              <video 
+                src="/media/showcase.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                controls
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px', minHeight: '300px' }}
+              />
             </div>
           </div>
         </div>
