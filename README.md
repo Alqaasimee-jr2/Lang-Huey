@@ -170,6 +170,6 @@ Connect directly with Abdullah on WhatsApp to shape the product:
 
 [**Join Lang Huey WhatsApp Channel &rarr;**](https://chat.whatsapp.com/sample-channel-invite)
 
-*Lang Huey is not affiliated with any foreign edtech platform. &copy; 2025 Lang Huey.*
+*Lang Huey is not affiliated with any foreign edtech platform. &copy; 2026 Lang Huey.*
 
 </div>

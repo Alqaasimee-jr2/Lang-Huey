@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="section bg-deep-teal hero-section">
       <div className="container grid-asymmetric">
         <div className="hero-text-content">
-          <span className="caption-label" style={{ color: 'var(--color-secondary)' }}>CLASSROOM EDITION &bull; 2025</span>
+          <span className="caption-label" style={{ color: 'var(--color-secondary)' }}>CLASSROOM EDITION &bull; 2026</span>
           <h1 style={{ fontWeight: 900, marginBottom: '0.5rem' }}>
             french class.<br />
             no teacher.<br />
