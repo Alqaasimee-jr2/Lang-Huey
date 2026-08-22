@@ -6,7 +6,12 @@ export default function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand">
           <a href="#" className="brand-logo" style={{ color: 'white' }}>lang <span>huey</span></a>
-          <p>Offline French lessons for Nigerian smartboards. A product of NIT7ER.</p>
+          <p style={{ marginTop: '0.5rem', color: 'var(--color-secondary)', fontWeight: 600, fontSize: '0.875rem' }}>
+            A PRODUCT OF NIT7ER &bull; 2025
+          </p>
+          <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: '0.85rem' }}>
+            Offline French lessons for Nigerian smartboards.
+          </p>
         </div>
 
         <div className="footer-center">
@@ -21,7 +26,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer-legal">
-        Lang Huey is a product of NIT7ER. &copy; 2025 Lang Huey by NIT7ER.
+        A PRODUCT OF NIT7ER &bull; 2025 &bull; &copy; Lang Huey. All rights reserved.
       </div>
     </footer>
   );

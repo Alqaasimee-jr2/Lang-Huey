@@ -1,12 +1,12 @@
 import React from 'react';
-import { FileText, Play, Volume2 } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section className="section bg-deep-teal hero-section">
       <div className="container grid-asymmetric">
         <div className="hero-text-content">
-          <span className="caption-label" style={{ color: 'var(--color-secondary)' }}>A PRODUCT OF NIT7ER &bull; 2025</span>
+          <span className="caption-label" style={{ color: 'var(--color-secondary)' }}>CLASSROOM EDITION &bull; 2025</span>
           <h1 style={{ fontWeight: 900, marginBottom: '0.5rem' }}>
             french class.<br />
             no teacher.<br />
