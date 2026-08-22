@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Play } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -36,20 +36,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Hero Visual: Real Animated Kinetic Showcase Video */}
+        {/* Hero Visual: Clean Video Player Showcase */}
         <div className="hero-visual">
           <div className="smartboard-showcase">
-            <div className="showcase-header">
-              <span>SMARTBOARD CLASSROOM SHOWCASE &bull; ANIMATED AD</span>
-              <span>1080P KINETIC ANIMATION</span>
-            </div>
-
-            <div className="animated-video-screen" style={{ padding: 0, overflow: 'hidden', background: '#000' }}>
-              <div className="video-play-indicator" style={{ zIndex: 10 }}>
-                <div className="pulse-dot"></div>
-                <span>PLAYING ANIMATED SHOWCASE</span>
-              </div>
-
+            <div className="animated-video-screen" style={{ padding: 0, overflow: 'hidden', background: '#000', borderRadius: '14px' }}>
               <video 
                 src="/media/showcase.mp4" 
                 autoPlay 
@@ -57,7 +47,7 @@ export default function Hero() {
                 muted 
                 playsInline 
                 controls
-                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px', minHeight: '300px' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '14px', display: 'block' }}
               />
             </div>
           </div>
