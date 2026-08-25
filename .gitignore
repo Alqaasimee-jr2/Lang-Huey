@@ -23,3 +23,11 @@ Thumbs.db
 .idea/
 *.suo
 *.user
+
+# Flutter build artifacts
+mvp/.dart_tool/
+mvp/build/
+mvp/.packages
+mvp/.pub/
+mvp/.pub-cache/
+

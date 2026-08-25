@@ -1,0 +1,375 @@
+
+<style>
+  .screen { cursor: pointer; }
+  .screen rect { transition: opacity 0.15s; }
+  .screen:hover rect { opacity: 0.85; }
+  .detail-panel {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: none;
+  }
+  .detail-panel.active { display: block; }
+  .detail-panel h3 { font-size: 14px; font-weight: 500; margin: 0 0 8px; color: var(--text-primary); }
+  .detail-panel ul { margin: 0; padding-left: 16px; color: var(--text-secondary); }
+  .detail-panel ul li { margin-bottom: 4px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; margin-right: 6px; margin-bottom: 6px; font-weight: 500; }
+  .tag-teal { background: #E1F5EE; color: #0F6E56; }
+  .tag-amber { background: #FAEEDA; color: #854F0B; }
+  .tag-gray { background: var(--surface-2); color: var(--text-secondary); border: 1px solid var(--border); }
+  .hint { font-size: 12px; color: var(--text-secondary); text-align: center; margin-top: 8px; }
+</style>
+
+<svg width="100%" viewBox="0 0 680 820" role="img">
+  <title>Lang Huey app flow diagram</title>
+  <desc>Complete user journey from splash screen through lesson completion, showing all screens and state transitions</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- COLUMN HEADERS -->
+  <text class="ts" x="120" y="24" text-anchor="middle" style="fill:var(--text-secondary)">First launch</text>
+  <text class="ts" x="340" y="24" text-anchor="middle" style="fill:var(--text-secondary)">Core flow</text>
+  <text class="ts" x="560" y="24" text-anchor="middle" style="fill:var(--text-secondary)">Lesson states</text>
+
+  <!-- ── SPLASH ── -->
+  <g class="screen" onclick="showDetail('splash')">
+    <rect x="40" y="36" width="160" height="56" rx="10" fill="#0D7377" stroke="#0D7377" stroke-width="0.5"/>
+    <text class="th" x="120" y="58" text-anchor="middle" dominant-baseline="central" style="fill:#fff;font-size:13px">Splash screen</text>
+    <text class="ts" x="120" y="76" text-anchor="middle" dominant-baseline="central" style="fill:#9ADDE0">2.5s auto</text>
+  </g>
+
+  <!-- Splash → intro check -->
+  <line x1="120" y1="92" x2="120" y2="116" class="arr" marker-end="url(#arrow)" stroke="var(--border-strong)"/>
+
+  <!-- INTRO SEEN CHECK -->
+  <g class="screen" onclick="showDetail('check')">
+    <rect x="40" y="116" width="160" height="44" rx="22" fill="var(--surface-1)" stroke="var(--border-strong)" stroke-width="0.5" stroke-dasharray="4 3"/>
+    <text class="ts" x="120" y="138" text-anchor="middle" dominant-baseline="central" style="fill:var(--text-secondary)">Intro seen before?</text>
+  </g>
+
+  <!-- NO branch → intro -->
+  <line x1="120" y1="160" x2="120" y2="184" class="arr" marker-end="url(#arrow)" stroke="var(--border-strong)"/>
+  <text class="ts" x="108" y="176" text-anchor="middle" style="fill:var(--text-secondary)">No</text>
+
+  <!-- YES branch → menu (line goes right then down) -->
+  <path d="M200 138 L260 138 L260 330 L220 330" fill="none" stroke="var(--border-strong)" stroke-width="1" marker-end="url(#arrow)" stroke-dasharray="4 3"/>
+  <text class="ts" x="232" y="130" text-anchor="middle" style="fill:var(--text-secondary)">Yes →</text>
+
+  <!-- INTRO SLIDE 1 -->
+  <g class="screen" onclick="showDetail('intro1')">
+    <rect x="40" y="184" width="160" height="56" rx="10" fill="#F5F0E8" stroke="#D5CFC6" stroke-width="0.5"/>
+    <text class="th" x="120" y="206" text-anchor="middle" dominant-baseline="central" style="fill:#1C1C1C;font-size:13px">Intro — slide 1</text>
+    <text class="ts" x="120" y="224" text-anchor="middle" dominant-baseline="central" style="fill:#888">Any staff can run it</text>
+  </g>
+
+  <line x1="200" y1="212" x2="228" y2="212" class="arr" marker-end="url(#arrow)" stroke="var(--border-strong)"/>
+  <text class="ts" x="214" y="207" text-anchor="middle" style="fill:var(--text-secondary)">Next</text>
+
+  <!-- INTRO SLIDE 2 -->
+  <g class="screen" onclick="showDetail('intro2')">
+    <rect x="228" y="184" width="160" height="56" rx="10" fill="#F5F0E8" stroke="#D5CFC6" stroke-width="0.5"/>
+    <text class="th" x="308" y="206" text-anchor="middle" dominant-baseline="central" style="fill:#1C1C1C;font-size:13px">Intro — slide 2</text>
+    <text class="ts" x="308" y="224" text-anchor="middle" dominant-baseline="central" style="fill:#888">Offline. Always ready.</text>
+  </g>
+
+  <!-- Skip arrow (both intros can skip) -->
+  <path d="M120 184 L120 172 L80 172 L80 160" fill="none" stroke="#14BDCC" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <text class="ts" x="56" y="178" style="fill:#14BDCC">Skip</text>
+
+  <!-- Intro 2 → Menu -->
+  <path d="M308 240 L308 290 L220 290 L220 330" fill="none" stroke="var(--border-strong)" stroke-width="1" marker-end="url(#arrow)"/>
+  <text class="ts" x="340" y="286" style="fill:var(--text-secondary)">Get started</text>
+
+  <!-- ── MAIN MENU ── -->
+  <g class="screen" onclick="showDetail('menu')">
+    <rect x="40" y="308" width="180" height="64" rx="10" fill="#0D7377" stroke="#0D7377" stroke-width="0.5"/>
+    <text class="th" x="130" y="330" text-anchor="middle" dominant-baseline="central" style="fill:#fff;font-size:13px">Main menu</text>
+    <text class="ts" x="130" y="352" text-anchor="middle" dominant-baseline="central" style="fill:#9ADDE0">Lesson select</text>
+  </g>
+
+  <!-- Menu → Lesson Player -->
+  <line x1="220" y1="340" x2="258" y2="340" class="arr" marker-end="url(#arrow)" stroke="var(--border-strong)"/>
+  <text class="ts" x="238" y="333" text-anchor="middle" style="fill:var(--text-secondary)">Tap lesson</text>
+
+  <!-- ── LESSON INTRO CUE ── -->
+  <g class="screen" onclick="showDetail('intro_cue')">
+    <rect x="258" y="308" width="164" height="64" rx="10" fill="#1A1A2E" stroke="#14BDCC" stroke-width="0.8"/>
+    <text class="th" x="340" y="330" text-anchor="middle" dominant-baseline="central" style="fill:#fff;font-size:13px">Lesson intro cue</text>
+    <text class="ts" x="340" y="350" text-anchor="middle" dominant-baseline="central" style="fill:#14BDCC">Teacher briefed</text>
+  </g>
+
+  <!-- Intro cue → Vocab item -->
+  <line x1="340" y1="372" x2="340" y2="410" class="arr" marker-end="url(#arrow)" stroke="var(--border-strong)"/>
+  <text class="ts" x="356" y="396" style="fill:var(--text-secondary)">Start</text>
+
+  <!-- ── VOCAB ITEM ── -->
+  <g class="screen" onclick="showDetail('vocab')">
+    <rect x="258" y="410" width="164" height="76" rx="10" fill="#1A1A2E" stroke="#0D7377" stroke-width="1"/>
+    <text class="th" x="340" y="432" text-anchor="middle" dominant-baseline="central" style="fill:#fff;font-size:13px">Vocab item</text>
+    <text class="ts" x="340" y="452" text-anchor="middle" dominant-baseline="central" style="fill:#9ADDE0">Word + image + audio</text>
+    <text class="ts" x="340" y="470" text-anchor="middle" dominant-baseline="central" style="fill:#14BDCC">+ teacher cue bar</text>
+  </g>
+
+  <!-- Audio playing state (right branch) -->
+  <line x1="422" y1="448" x2="474" y2="448" class="arr" marker-end="url(#arrow)" stroke="#14BDCC"/>
+  <text class="ts" x="448" y="441" text-anchor="middle" style="fill:#14BDCC">▶ Play</text>
+
+  <g class="screen" onclick="showDetail('audio')">
+    <rect x="474" y="420" width="156" height="56" rx="10" fill="#1A1A2E" stroke="#14BDCC" stroke-width="0.8"/>
+    <text class="th" x="552" y="442" text-anchor="middle" dominant-baseline="central" style="fill:#fff;font-size:13px">Audio playing</text>
+    <text class="ts" x="552" y="460" text-anchor="middle" dominant-baseline="central" style="fill:#14BDCC">Waveform shown</text>
+  </g>
+
+  <!-- Audio back to vocab -->
+  <path d="M552 476 L552 500 L340 500 L340 486" fill="none" stroke="#14BDCC" stroke-width="0.8" marker-end="url(#arrow)" stroke-dasharray="3 3"/>
+  <text class="ts" x="456" y="510" text-anchor="middle" style="fill:#14BDCC">Done / repeat</text>
+
+  <!-- Next item loop -->
+  <path d="M258 448 L210 448 L210 448" fill="none" stroke="var(--border-strong)" stroke-width="0.8"/>
+  <path d="M210 448 L210 556 L258 556" fill="none" stroke="var(--border-strong)" stroke-width="0.8" marker-end="url(#arrow)" stroke-dasharray="4 3"/>
+  <text class="ts" x="174" y="503" text-anchor="middle" style="fill:var(--text-secondary)">Next</text>
+  <text class="ts" x="174" y="516" text-anchor="middle" style="fill:var(--text-secondary)">item</text>
+
+  <!-- More items label -->
+  <text class="ts" x="192" y="478" text-anchor="middle" style="fill:var(--text-secondary)">×8–12</text>
+
+  <!-- Last item → check question -->
+  <line x1="340" y1="486" x2="340" y2="530" class="arr" marker-end="url(#arrow)" stroke="#F4A832"/>
+  <text class="ts" x="360" y="513" style="fill:#F4A832">Last item</text>
+
+  <!-- ── CHECK QUESTION ── -->
+  <g class="screen" onclick="showDetail('check_q')">
+    <rect x="258" y="530" width="164" height="76" rx="10" fill="#1A1A2E" stroke="#F4A832" stroke-width="1"/>
+    <text class="th" x="340" y="552" text-anchor="middle" dominant-baseline="central" style="fill:#fff;font-size:13px">Check question</text>
+    <text class="ts" x="340" y="572" text-anchor="middle" dominant-baseline="central" style="fill:#F4A832">2×2 answer grid</text>
+    <text class="ts" x="340" y="588" text-anchor="middle" dominant-baseline="central" style="fill:#9ADDE0">+ teacher cue bar</text>
+  </g>
+
+  <!-- Answer states -->
+  <line x1="422" y1="568" x2="474" y2="540" class="arr" marker-end="url(#arrow)" stroke="#4CAF82"/>
+  <g class="screen" onclick="showDetail('correct')">
+    <rect x="474" y="516" width="156" height="44" rx="10" fill="#1A1A2E" stroke="#4CAF82" stroke-width="0.8"/>
+    <text class="th" x="552" y="538" text-anchor="middle" dominant-baseline="central" style="fill:#4CAF82;font-size:13px">Correct</text>
+  </g>
+
+  <line x1="422" y1="582" x2="474" y2="600" class="arr" marker-end="url(#arrow)" stroke="#E24B4A"/>
+  <g class="screen" onclick="showDetail('wrong')">
+    <rect x="474" y="578" width="156" height="44" rx="10" fill="#1A1A2E" stroke="#E24B4A" stroke-width="0.8"/>
+    <text class="th" x="552" y="600" text-anchor="middle" dominant-baseline="central" style="fill:#E24B4A;font-size:13px">Wrong → reveal</text>
+  </g>
+
+  <!-- Both states → 3s delay → summary -->
+  <path d="M630 538 L650 538 L650 660 L530 660" fill="none" stroke="var(--border-strong)" stroke-width="0.8" marker-end="url(#arrow)" stroke-dasharray="3 3"/>
+  <path d="M630 600 L650 600" fill="none" stroke="var(--border-strong)" stroke-width="0.8"/>
+  <text class="ts" x="658" y="580" style="fill:var(--text-secondary)">3s</text>
+  <text class="ts" x="658" y="592" style="fill:var(--text-secondary)">auto</text>
+
+  <!-- ── LESSON SUMMARY ── -->
+  <g class="screen" onclick="showDetail('summary')">
+    <rect x="258" y="636" width="272" height="64" rx="10" fill="#0D7377" stroke="#0D7377" stroke-width="0.5"/>
+    <text class="th" x="394" y="658" text-anchor="middle" dominant-baseline="central" style="fill:#fff;font-size:13px">Lesson summary</text>
+    <text class="ts" x="394" y="678" text-anchor="middle" dominant-baseline="central" style="fill:#9ADDE0">Words · Questions · % Complete</text>
+  </g>
+
+  <!-- Summary → back to menu -->
+  <path d="M258 668 L130 668 L130 372" fill="none" stroke="#F4A832" stroke-width="1" marker-end="url(#arrow)"/>
+  <text class="ts" x="60" y="530" text-anchor="middle" style="fill:#F4A832">Return to</text>
+  <text class="ts" x="60" y="543" text-anchor="middle" style="fill:#F4A832">lessons</text>
+
+  <!-- LEGEND -->
+  <rect x="40" y="734" width="600" height="72" rx="8" fill="var(--surface-1)" stroke="var(--border)" stroke-width="0.5"/>
+  <text class="ts" x="60" y="752" style="fill:var(--text-secondary)">Legend</text>
+  <rect x="60" y="762" width="14" height="14" rx="3" fill="#0D7377"/>
+  <text class="ts" x="80" y="773" style="fill:var(--text-secondary)">Navigation screen</text>
+  <rect x="200" y="762" width="14" height="14" rx="3" fill="#1A1A2E" stroke="#0D7377" stroke-width="1"/>
+  <text class="ts" x="220" y="773" style="fill:var(--text-secondary)">Lesson screen</text>
+  <rect x="340" y="762" width="14" height="14" rx="3" fill="#F5F0E8" stroke="#D5CFC6" stroke-width="0.5"/>
+  <text class="ts" x="360" y="773" style="fill:var(--text-secondary)">Onboarding</text>
+  <line x1="60" y1="792" x2="90" y2="792" stroke="#F4A832" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text class="ts" x="96" y="797" style="fill:var(--text-secondary)">Primary path</text>
+  <line x1="200" y1="792" x2="230" y2="792" stroke="#14BDCC" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+  <text class="ts" x="236" y="797" style="fill:var(--text-secondary)">Secondary / audio state</text>
+  <line x1="380" y1="792" x2="410" y2="792" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text class="ts" x="416" y="797" style="fill:var(--text-secondary)">Conditional path</text>
+
+</svg>
+
+<p class="hint">Tap any screen to see what happens inside it</p>
+
+<div id="detail" class="detail-panel">
+  <h3 id="d-title"></h3>
+  <div id="d-tags"></div>
+  <ul id="d-list"></ul>
+</div>
+
+<script>
+const details = {
+  splash: {
+    title: "Splash screen",
+    tags: [["Auto", "teal"], ["2.5 seconds", "gray"]],
+    items: [
+      "Lang Huey wordmark centred on Deep Teal #0D7377",
+      "JSS1 French Edition subtitle in turquoise",
+      "Amber gold loading bar animates across bottom",
+      "After 2.5s: checks shared_preferences for intro_seen flag",
+      "Routes to Intro (if false) or Main Menu (if true)"
+    ]
+  },
+  check: {
+    title: "Intro seen check",
+    tags: [["Logic gate", "gray"], ["shared_preferences", "teal"]],
+    items: [
+      "Reads intro_seen boolean from local storage",
+      "First launch ever: intro_seen = false → show intro slides",
+      "Any subsequent launch: intro_seen = true → skip to menu",
+      "This check happens instantly — no visible screen"
+    ]
+  },
+  intro1: {
+    title: "Intro slide 1 of 2",
+    tags: [["First launch only", "gray"], ["Skippable", "teal"]],
+    items: [
+      "Warm cream background — friendly, welcoming",
+      "Headline: 'Any staff member can run a French class.'",
+      "Body: 'The app tells you exactly what to do at every step.'",
+      "Large classroom illustration — Nigerian aesthetic",
+      "Progress dots (● ○) + Next button",
+      "Skip button top right jumps directly to menu"
+    ]
+  },
+  intro2: {
+    title: "Intro slide 2 of 2",
+    tags: [["First launch only", "gray"], ["Skippable", "teal"]],
+    items: [
+      "Deep Teal background — confident, final",
+      "Headline: 'Fully offline. Always ready.'",
+      "Body: 'No internet. No subscriptions. Just press play.'",
+      "Progress dots (○ ●) shows position",
+      "Gold 'Get Started →' button — sets intro_seen = true",
+      "Navigates to main menu on tap"
+    ]
+  },
+  menu: {
+    title: "Main menu — lesson select",
+    tags: [["Home screen", "teal"], ["Always accessible", "gray"]],
+    items: [
+      "Deep Teal background, full screen",
+      "Header: Lang Huey left, JSS1 French — Term 1 right",
+      "List of lesson cards — white surface, rounded 16px",
+      "Each card: lesson number (turquoise) + title + gold play button",
+      "Tap any card → navigates to lesson player with that lesson data",
+      "Completed lessons show a subtle tick indicator",
+      "Return button from summary always lands here"
+    ]
+  },
+  intro_cue: {
+    title: "Lesson intro cue",
+    tags: [["Teacher briefing", "teal"], ["First screen of every lesson", "gray"]],
+    items: [
+      "Dark #1A1A2E background — lesson mode begins",
+      "Full screen teacher cue: what to say before the lesson starts",
+      "Example: 'Tell the class we are starting French today. We will learn how to greet people.'",
+      "Turquoise cue bar at bottom — same position as all lesson screens",
+      "Single 'Start Lesson →' button in gold",
+      "Inspired by Duolingo's lesson intro screen — sets context before questions begin"
+    ]
+  },
+  vocab: {
+    title: "Vocab item — lesson player",
+    tags: [["Core screen", "amber"], ["Repeats 8–12x per lesson", "gray"]],
+    items: [
+      "Dark #1A1A2E background — full focus on content",
+      "Progress indicator top right: 'Item 3 of 10'",
+      "White card centre: placeholder/real image 480×480px",
+      "French word in white Nunito Black 72sp — huge, readable from 5m",
+      "English translation in turquoise Inter 36sp below",
+      "Turquoise outlined '▶ Play Audio' pill button",
+      "Teacher Cue Bar: teal strip at bottom, tells staff exactly what to say/do",
+      "Control bar: Back ◀ | ⏸ Repeat | Next ▶ (gold)"
+    ]
+  },
+  audio: {
+    title: "Audio playing state",
+    tags: [["Sub-state of vocab item", "gray"], ["just_audio package", "teal"]],
+    items: [
+      "Triggered by tapping '▶ Play Audio'",
+      "Button changes to animated waveform or 'Playing...'",
+      "Audio plays from local asset — no internet needed",
+      "Repeat button plays same audio again",
+      "Next button available during and after playback",
+      "Teacher cue tells staff: 'Play twice. Ask class to repeat.'"
+    ]
+  },
+  check_q: {
+    title: "Check question",
+    tags: [["1–2 per lesson", "amber"], ["Touch to answer", "teal"]],
+    items: [
+      "Appears after all vocab items in the lesson are complete",
+      "Question text in white Nunito Bold 52sp — big and clear",
+      "2×2 grid of answer cards — 420×140px each, huge touch targets",
+      "Default: white cards with charcoal text",
+      "Tap to select: turquoise border appears on chosen card",
+      "Teacher cue: 'Ask a student to come up and tap the correct answer'",
+      "Reveal button (gold) shows correct/wrong states",
+      "Student physically walks to smartboard — engagement moment"
+    ]
+  },
+  correct: {
+    title: "Correct answer state",
+    tags: [["Auto-advances", "teal"], ["3 second delay", "gray"]],
+    items: [
+      "Tapped card fills green #4CAF82, white text",
+      "Subtle correct chime plays from audio",
+      "Teacher cue updates: 'Well done. Ask the class to say the word together.'",
+      "Next button unlocks — or auto-advances after 3 seconds",
+      "If last question → navigates to lesson summary"
+    ]
+  },
+  wrong: {
+    title: "Wrong answer + reveal",
+    tags: [["Correction moment", "gray"], ["Learning reinforced", "teal"]],
+    items: [
+      "Tapped card fills red #E24B4A, white text",
+      "Correct card highlights green simultaneously",
+      "Teacher cue: 'Not quite. The correct answer is [X]. Ask the class to repeat it.'",
+      "Teacher never has to judge — app shows correct answer automatically",
+      "Auto-advances after 3 seconds — no shame, just correction",
+      "Inspired by Duolingo's instant feedback loop"
+    ]
+  },
+  summary: {
+    title: "Lesson summary",
+    tags: [["Lesson complete", "teal"], ["Printable record", "amber"]],
+    items: [
+      "Deep Teal background — celebratory, session end",
+      "Animated gold checkmark scales in on entry",
+      "'Lesson Complete' in white Nunito Black 72sp",
+      "Three stat cards: Words Covered | Questions Answered | % Complete",
+      "Stats in turquoise numbers — gives teacher something to report",
+      "Gold 'Return to Lessons →' button → back to main menu",
+      "Teacher can show this screen to class as achievement moment"
+    ]
+  }
+};
+
+function showDetail(key) {
+  const d = details[key];
+  if (!d) return;
+  const panel = document.getElementById('detail');
+  document.getElementById('d-title').textContent = d.title;
+  document.getElementById('d-tags').innerHTML = d.tags.map(([t, c]) =>
+    `<span class="tag tag-${c}">${t}</span>`
+  ).join('');
+  document.getElementById('d-list').innerHTML = d.items.map(i => `<li>${i}</li>`).join('');
+  panel.classList.add('active');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
