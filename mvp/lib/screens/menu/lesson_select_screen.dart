@@ -161,7 +161,7 @@ class LessonSelectScreen extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: LHColors.gold,
                   shape: BoxShape.circle,
-                  shadows: [
+                  boxShadow: [
                     BoxShadow(
                       color: Color(0x33F4A832),
                       blurRadius: 12,

@@ -39,13 +39,13 @@ class _CheckQuestionViewState extends State<CheckQuestionView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 64, vertical: 24),
+      padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Question Header Tag
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
             decoration: BoxDecoration(
               color: LHColors.gold.withOpacity(0.2),
               borderRadius: BorderRadius.circular(16),
@@ -53,7 +53,7 @@ class _CheckQuestionViewState extends State<CheckQuestionView> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(Icons.help_outline_rounded, color: LHColors.gold, size: 24),
+                const Icon(Icons.help_outline_rounded, color: LHColors.gold, size: 20),
                 const SizedBox(width: 8),
                 Text(
                   'CHECK QUESTION · TOUCH THE SMARTBOARD TO ANSWER',
@@ -65,32 +65,42 @@ class _CheckQuestionViewState extends State<CheckQuestionView> {
             ),
           ),
 
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
 
-          // Question Prompt Text (Nunito Bold 48-52sp)
-          Text(
-            widget.question.prompt,
-            style: LHText.heading(LHColors.white).copyWith(
-              fontSize: 48,
-              height: 1.2,
+          // Question Prompt Text (Nunito Bold 48-52sp with FittedBox)
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              widget.question.prompt,
+              style: LHText.heading(LHColors.white).copyWith(
+                fontSize: 44,
+                height: 1.2,
+              ),
             ),
           ),
 
-          const SizedBox(height: 36),
+          const SizedBox(height: 24),
 
-          // 2x2 Option Grid
+          // Responsive 2x2 Option Grid
           Expanded(
-            child: GridView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 3.2,
-                crossAxisSpacing: 24,
-                mainAxisSpacing: 24,
-              ),
-              itemCount: widget.question.options.length,
-              itemBuilder: (context, index) {
-                return _buildOptionCard(index);
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final double ratio = (constraints.maxWidth / (constraints.maxHeight * 1.8)).clamp(2.5, 4.2);
+
+                return GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: ratio,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
+                  ),
+                  itemCount: widget.question.options.length,
+                  itemBuilder: (context, index) {
+                    return _buildOptionCard(index);
+                  },
+                );
               },
             ),
           ),
@@ -132,13 +142,13 @@ class _CheckQuestionViewState extends State<CheckQuestionView> {
             borderRadius: BorderRadius.circular(20),
             border: Border.fromBorderSide(borderSide),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           child: Row(
             children: [
               // Option letter badge (A, B, C, D)
               Container(
-                width: 48,
-                height: 48,
+                width: 44,
+                height: 44,
                 decoration: BoxDecoration(
                   color: (widget.isRevealed && (isCorrectOption || isSelected))
                       ? LHColors.white.withOpacity(0.2)
@@ -147,30 +157,34 @@ class _CheckQuestionViewState extends State<CheckQuestionView> {
                 ),
                 child: Center(
                   child: Text(
-                    String.fromCharCode(65 + index), // A, B, C, D
+                    String.fromCharCode(65 + index),
                     style: LHText.subheading(textColor).copyWith(
-                      fontSize: 24,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
 
-              const SizedBox(width: 20),
+              const SizedBox(width: 16),
 
               Expanded(
-                child: Text(
-                  optionText,
-                  style: LHText.subheading(textColor).copyWith(
-                    fontSize: 28,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    optionText,
+                    style: LHText.subheading(textColor).copyWith(
+                      fontSize: 26,
+                    ),
                   ),
                 ),
               ),
 
               if (widget.isRevealed && isCorrectOption)
-                const Icon(Icons.check_circle_rounded, color: LHColors.white, size: 36),
+                const Icon(Icons.check_circle_rounded, color: LHColors.white, size: 32),
               if (widget.isRevealed && isSelected && !isCorrectOption)
-                const Icon(Icons.cancel_rounded, color: LHColors.white, size: 36),
+                const Icon(Icons.cancel_rounded, color: LHColors.white, size: 32),
             ],
           ),
         ),

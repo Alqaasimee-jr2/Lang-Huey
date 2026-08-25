@@ -245,7 +245,7 @@ class _LessonPlayerScreenState extends State<LessonPlayerScreen> {
   Widget _buildIntroCueView() {
     return Center(
       child: Container(
-        maxWidth: 840,
+        constraints: const BoxConstraints(maxWidth: 840),
         padding: const EdgeInsets.all(48),
         decoration: BoxDecoration(
           color: LHColors.teal.withOpacity(0.15),
