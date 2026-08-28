@@ -25,16 +25,20 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
       'icon': Icons.wb_sunny_rounded,
       'image': 'assets/images/p4_term1/matin_sun.png',
       'color': const Color(0xFFF4A832),
-      'formalGreeting': 'Bonjour, Madame / Monsieur !',
+      'formalGreeting': 'Bonjour, Madame !',
       'formalMeaning': 'Good day / Hello (Respectful greeting for teachers & elders)',
       'formalQuestion': 'Comment allez-vous ?',
-      'formalResponse': 'Je vais très bien, merci. Et vous ?',
+      'formalResponse': 'Très bien, merci.',
       'formalAudio': 'bonjour_madame',
-      'informalGreeting': 'Salut, mon ami !',
+      'formalQuestionAudio': 'comment_allez_vous',
+      'formalResponseAudio': 'tres_bien_merci',
+      'informalGreeting': 'Salut !',
       'informalMeaning': 'Hi / Hey (Casual greeting for classmates)',
-      'informalQuestion': 'Comment ça va ? / Ça va ?',
-      'informalResponse': 'Ça va bien, merci ! Et toi ?',
+      'informalQuestion': 'Comment ça va ?',
+      'informalResponse': 'Ça va bien, merci !',
       'informalAudio': 'salut',
+      'informalQuestionAudio': 'comment_ca_va',
+      'informalResponseAudio': 'ca_va_bien',
     },
     {
       'timeLabel': 'Evening (7:00 PM onwards)',
@@ -44,14 +48,18 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
       'color': const Color(0xFF0D7377),
       'formalGreeting': 'Bonsoir, Monsieur !',
       'formalMeaning': 'Good evening (From 6:00 PM until bedtime)',
-      'formalQuestion': 'Comment allez-vous ce soir ?',
+      'formalQuestion': 'Comment allez-vous ?',
       'formalResponse': 'Très bien, merci.',
-      'formalAudio': 'bonsoir',
-      'informalGreeting': 'Bonsoir / Salut !',
+      'formalAudio': 'bonsoir_monsieur',
+      'formalQuestionAudio': 'comment_allez_vous',
+      'formalResponseAudio': 'tres_bien_merci',
+      'informalGreeting': 'Bonsoir !',
       'informalMeaning': 'Good evening / Hi',
-      'informalQuestion': 'Ça va ce soir ?',
-      'informalResponse': 'Oui, ça va bien !',
+      'informalQuestion': 'Ça va ?',
+      'informalResponse': 'Ça va bien !',
       'informalAudio': 'bonsoir',
+      'informalQuestionAudio': 'ca_va',
+      'informalResponseAudio': 'ca_va_bien',
     },
     {
       'timeLabel': 'Bedtime (Going to sleep)',
@@ -59,16 +67,20 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
       'icon': Icons.bedtime_rounded,
       'image': 'assets/images/p4_term1/coucher_bed.png',
       'color': const Color(0xFF1A1A2E),
-      'formalGreeting': 'Bonne nuit, dormez bien !',
+      'formalGreeting': 'Bonne nuit !',
       'formalMeaning': 'Good night (ONLY when going to bed to sleep)',
       'formalQuestion': 'Passez une bonne nuit.',
       'formalResponse': 'Merci, vous aussi !',
       'formalAudio': 'bonne_nuit',
-      'informalGreeting': 'Bonne nuit, fais de beaux rêves !',
+      'formalQuestionAudio': 'bonne_nuit',
+      'formalResponseAudio': 'merci',
+      'informalGreeting': 'Bonne nuit !',
       'informalMeaning': 'Good night, sweet dreams !',
-      'informalQuestion': 'À demain matin !',
+      'informalQuestion': 'À demain !',
       'informalResponse': 'Bonne nuit !',
       'informalAudio': 'bonne_nuit',
+      'informalQuestionAudio': 'a_demain',
+      'informalResponseAudio': 'bonne_nuit',
     },
   ];
 
@@ -283,49 +295,69 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
                         Row(
                           children: [
                             Expanded(
-                              child: Container(
-                                padding: const EdgeInsets.all(14),
-                                decoration: BoxDecoration(
-                                  color: LHColors.teal.withOpacity(0.08),
+                              child: Material(
+                                color: LHColors.teal.withOpacity(0.08),
+                                borderRadius: BorderRadius.circular(14),
+                                child: InkWell(
                                   borderRadius: BorderRadius.circular(14),
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Question:',
-                                      style: LHText.label(LHColors.teal).copyWith(fontSize: 12),
+                                  onTap: () => _playAudio(_isFormal ? current['formalQuestionAudio'] : current['informalQuestionAudio']),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(14),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Question:',
+                                              style: LHText.label(LHColors.teal).copyWith(fontSize: 12),
+                                            ),
+                                            const Icon(Icons.volume_up_rounded, color: LHColors.teal, size: 18),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          _isFormal ? current['formalQuestion'] : current['informalQuestion'],
+                                          style: LHText.body(LHColors.charcoal).copyWith(fontSize: 16, fontWeight: FontWeight.w700),
+                                        ),
+                                      ],
                                     ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      _isFormal ? current['formalQuestion'] : current['informalQuestion'],
-                                      style: LHText.body(LHColors.charcoal).copyWith(fontSize: 16, fontWeight: FontWeight.w700),
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ),
                             ),
                             const SizedBox(width: 12),
                             Expanded(
-                              child: Container(
-                                padding: const EdgeInsets.all(14),
-                                decoration: BoxDecoration(
-                                  color: LHColors.gold.withOpacity(0.18),
+                              child: Material(
+                                color: LHColors.gold.withOpacity(0.18),
+                                borderRadius: BorderRadius.circular(14),
+                                child: InkWell(
                                   borderRadius: BorderRadius.circular(14),
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Reply:',
-                                      style: LHText.label(LHColors.charcoal).copyWith(fontSize: 12),
+                                  onTap: () => _playAudio(_isFormal ? current['formalResponseAudio'] : current['informalResponseAudio']),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(14),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Reply:',
+                                              style: LHText.label(LHColors.charcoal).copyWith(fontSize: 12),
+                                            ),
+                                            const Icon(Icons.volume_up_rounded, color: LHColors.charcoal, size: 18),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          _isFormal ? current['formalResponse'] : current['informalResponse'],
+                                          style: LHText.body(LHColors.charcoal).copyWith(fontSize: 16, fontWeight: FontWeight.w700),
+                                        ),
+                                      ],
                                     ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      _isFormal ? current['formalResponse'] : current['informalResponse'],
-                                      style: LHText.body(LHColors.charcoal).copyWith(fontSize: 16, fontWeight: FontWeight.w700),
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ),
                             ),

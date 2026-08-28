@@ -13,6 +13,16 @@ import '../../widgets/patterns/dialogue_sequencer_widget.dart';
 import '../../widgets/patterns/id_card_workshop_widget.dart';
 import '../../widgets/patterns/revision_rally_widget.dart';
 import '../../widgets/patterns/vacation_celebration_widget.dart';
+import '../../widgets/patterns/term2/family_portrait_widget.dart';
+import '../../widgets/patterns/term2/family_tree_builder_widget.dart';
+import '../../widgets/patterns/term2/family_descriptor_widget.dart';
+import '../../widgets/patterns/term2/classroom_explorer_widget.dart';
+import '../../widgets/patterns/term2/campus_and_subjects_widget.dart';
+import '../../widgets/patterns/term2/school_timetable_widget.dart';
+import '../../widgets/patterns/term2/preposition_playground_widget.dart';
+import '../../widgets/patterns/term2/color_studio_widget.dart';
+import '../../widgets/patterns/term2/term2_revision_rally_widget.dart';
+import '../../widgets/patterns/term2/term2_vacation_celebration_widget.dart';
 
 enum LessonPhase {
   objectives,
@@ -315,51 +325,54 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: LHColors.gold.withOpacity(0.5)),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.lightbulb_rounded, color: LHColors.gold, size: 30),
-                      const SizedBox(width: 10),
-                      Text(
-                        'Classroom Cultural Hook',
-                        style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 20),
-                      ),
-                    ],
-                  ),
-                  const Divider(),
-                  Text(
-                    widget.lesson.culturalInsight,
-                    style: LHText.body(LHColors.charcoal).copyWith(
-                      fontSize: 16,
-                      height: 1.5,
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: LHColors.white,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Row(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       children: [
-                        const Icon(Icons.touch_app_rounded, color: LHColors.teal, size: 24),
+                        const Icon(Icons.lightbulb_rounded, color: LHColors.gold, size: 30),
                         const SizedBox(width: 10),
-                        Expanded(
-                          child: Text(
-                            'Tap "Next: Interactive Lab" below to begin!',
-                            style: LHText.body(LHColors.teal).copyWith(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
+                        Text(
+                          'Classroom Cultural Hook',
+                          style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 20),
                         ),
                       ],
                     ),
-                  ),
-                ],
+                    const Divider(),
+                    const SizedBox(height: 8),
+                    Text(
+                      widget.lesson.culturalInsight,
+                      style: LHText.body(LHColors.charcoal).copyWith(
+                        fontSize: 16,
+                        height: 1.5,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: LHColors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.touch_app_rounded, color: LHColors.teal, size: 24),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              'Tap "Next: Interactive Lab" below to begin!',
+                              style: LHText.body(LHColors.teal).copyWith(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -369,6 +382,37 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
   }
 
   Widget _buildPatternView() {
+    if (widget.lesson.term == 2) {
+      switch (widget.lesson.week) {
+        case 1:
+          return FamilyPortraitWidget(lesson: widget.lesson);
+        case 2:
+          return FamilyTreeBuilderWidget(lesson: widget.lesson);
+        case 3:
+          return FamilyDescriptorWidget(lesson: widget.lesson);
+        case 4:
+          return ClassroomExplorerWidget(lesson: widget.lesson);
+        case 5:
+          return Term2RevisionRallyWidget(lesson: widget.lesson);
+        case 6:
+          return Term2VacationCelebrationWidget(lesson: widget.lesson);
+        case 7:
+          return CampusAndSubjectsWidget(lesson: widget.lesson);
+        case 8:
+          return SchoolTimetableWidget(lesson: widget.lesson);
+        case 9:
+          return PrepositionPlaygroundWidget(lesson: widget.lesson);
+        case 10:
+          return ColorStudioWidget(lesson: widget.lesson);
+        case 11:
+        case 12:
+          return Term2RevisionRallyWidget(lesson: widget.lesson);
+        case 13:
+        default:
+          return Term2VacationCelebrationWidget(lesson: widget.lesson);
+      }
+    }
+
     switch (widget.lesson.patternType) {
       case P4PatternType.borderMapAndAlphabet:
         return MapExplorerWidget(lesson: widget.lesson);
@@ -443,7 +487,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                 crossAxisCount: 3,
                 mainAxisSpacing: 14,
                 crossAxisSpacing: 14,
-                childAspectRatio: 1.8,
+                childAspectRatio: 2.1,
               ),
               itemCount: widget.lesson.vocabItems.length,
               itemBuilder: (context, index) {
@@ -459,7 +503,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                       }
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
                         border: Border.all(color: LHColors.teal.withOpacity(0.2)),
@@ -497,14 +541,14 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                           ),
                           Text(
                             item.french,
-                            style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 18),
+                            style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 17),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
                           Text(
                             item.english,
-                            style: LHText.body(LHColors.grey).copyWith(fontSize: 14),
-                            maxLines: 1,
+                            style: LHText.body(LHColors.grey).copyWith(fontSize: 13),
+                            maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ],
@@ -630,7 +674,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                childAspectRatio: 2.8,
+                childAspectRatio: 2.6,
               ),
               itemCount: exercise.options.length,
               itemBuilder: (context, optIdx) {
@@ -669,7 +713,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                             P4AudioService().playSfx(P4SfxType.click);
                           },
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(color: borderColor, width: 2),
@@ -693,11 +737,12 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                               ),
                             ),
                           ),
-                          const SizedBox(width: 14),
+                          const SizedBox(width: 12),
                           Expanded(
                             child: Text(
                               exercise.options[optIdx],
-                              style: LHText.subheading(textColor).copyWith(fontSize: 18),
+                              style: LHText.subheading(textColor).copyWith(fontSize: 16),
+                              maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),

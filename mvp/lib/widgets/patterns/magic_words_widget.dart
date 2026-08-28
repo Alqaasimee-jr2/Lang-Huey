@@ -27,6 +27,9 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
       'icon': Icons.volunteer_activism_rounded,
       'category': 'Request',
       'audio': 'sil_vous_plait',
+      'subPhrases': [
+        {'text': 'S\'il vous plaît (Formal)', 'audio': 'sil_vous_plait'},
+      ],
     },
     {
       'french': 'S\'il te plaît',
@@ -36,6 +39,9 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
       'icon': Icons.handshake_rounded,
       'category': 'Request',
       'audio': 'sil_te_plait',
+      'subPhrases': [
+        {'text': 'S\'il te plaît (Informal)', 'audio': 'sil_te_plait'},
+      ],
     },
     {
       'french': 'Merci / Merci beaucoup',
@@ -45,6 +51,10 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
       'icon': Icons.favorite_rounded,
       'category': 'Gratitude',
       'audio': 'merci',
+      'subPhrases': [
+        {'text': 'Merci (Thanks)', 'audio': 'merci'},
+        {'text': 'Merci beaucoup (Thank you very much)', 'audio': 'merci_beaucoup'},
+      ],
     },
     {
       'french': 'De rien',
@@ -54,6 +64,9 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
       'icon': Icons.check_circle_rounded,
       'category': 'Gratitude',
       'audio': 'de_rien',
+      'subPhrases': [
+        {'text': 'De rien (You\'re welcome)', 'audio': 'de_rien'},
+      ],
     },
     {
       'french': 'Pardon / Excusez-moi',
@@ -63,6 +76,10 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
       'icon': Icons.front_hand_rounded,
       'category': 'Courtesy',
       'audio': 'pardon',
+      'subPhrases': [
+        {'text': 'Pardon (Sorry)', 'audio': 'pardon'},
+        {'text': 'Excusez-moi (Excuse me)', 'audio': 'excusez_moi'},
+      ],
     },
     {
       'french': 'Au revoir / À demain',
@@ -72,6 +89,10 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
       'icon': Icons.waving_hand_rounded,
       'category': 'Farewell',
       'audio': 'au_revoir',
+      'subPhrases': [
+        {'text': 'Au revoir (Goodbye)', 'audio': 'au_revoir'},
+        {'text': 'À demain (See you tomorrow)', 'audio': 'a_demain'},
+      ],
     },
   ];
 
@@ -312,9 +333,32 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
                     borderRadius: BorderRadius.circular(14),
                     border: Border.all(color: LHColors.turquoise.withOpacity(0.4)),
                   ),
-                  child: Text(
-                    'Classroom Usage: ${word['usage']}',
-                    style: LHText.body(LHColors.charcoal).copyWith(fontSize: 15, height: 1.4),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Classroom Usage: ${word['usage']}',
+                        style: LHText.body(LHColors.charcoal).copyWith(fontSize: 14, height: 1.4),
+                      ),
+                      if (word['subPhrases'] != null) ...[
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 8,
+                          runSpacing: 6,
+                          children: (word['subPhrases'] as List<Map<String, String>>).map((sub) {
+                            return ActionChip(
+                              avatar: const Icon(Icons.volume_up_rounded, size: 16, color: LHColors.teal),
+                              label: Text(
+                                sub['text']!,
+                                style: LHText.label(LHColors.charcoal).copyWith(fontSize: 12),
+                              ),
+                              backgroundColor: LHColors.cream,
+                              onPressed: () => _playAudio(sub['audio']),
+                            );
+                          }).toList(),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
 

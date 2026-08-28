@@ -22,7 +22,9 @@ class _DialogueSequencerWidgetState extends State<DialogueSequencerWidget> {
       'step': 1,
       'title': '1. Polite Greeting (Saluer)',
       'speakerA': 'Kofi: "Bonjour, Amina !"',
+      'speakerAAudio': 'bonjour',
       'speakerB': 'Amina: "Bonjour, Kofi ! Comment ça va ?"',
+      'speakerBAudio': 'comment_ca_va',
       'meaning': 'Start with a friendly, respectful greeting and inquire about well-being.',
       'badge': 'Start of Conversation',
       'icon': Icons.waving_hand_rounded,
@@ -32,7 +34,9 @@ class _DialogueSequencerWidgetState extends State<DialogueSequencerWidget> {
       'step': 2,
       'title': '2. Response & Exchange (Échanger)',
       'speakerA': 'Kofi: "Ça va très bien, merci. Et toi ?"',
+      'speakerAAudio': 'tres_bien_merci',
       'speakerB': 'Amina: "Moi aussi, ça va bien !"',
+      'speakerBAudio': 'ca_va_bien',
       'meaning': 'Reply with gratitude ("merci") and ask about the other person.',
       'badge': 'Well-being Exchange',
       'icon': Icons.forum_rounded,
@@ -42,7 +46,9 @@ class _DialogueSequencerWidgetState extends State<DialogueSequencerWidget> {
       'step': 3,
       'title': '3. Gratitude on Departure (Remercier)',
       'speakerA': 'Kofi: "Je dois partir. Merci beaucoup pour ton aide !"',
+      'speakerAAudio': 'je_dois_partir',
       'speakerB': 'Amina: "De rien, mon ami !"',
+      'speakerBAudio': 'de_rien',
       'meaning': 'State reason for leaving and express sincere gratitude ("Merci beaucoup !").',
       'badge': 'Gratitude & Departure',
       'icon': Icons.volunteer_activism_rounded,
@@ -52,7 +58,9 @@ class _DialogueSequencerWidgetState extends State<DialogueSequencerWidget> {
       'step': 4,
       'title': '4. Farewell & Well-Wish (Prendre congé)',
       'speakerA': 'Kofi: "Au revoir et bonne journée !"',
+      'speakerAAudio': 'bonne_journee',
       'speakerB': 'Amina: "À demain, Kofi ! Bon après-midi !"',
+      'speakerBAudio': 'a_demain',
       'meaning': 'Conclude with a clear goodbye and a warm wish for the day.',
       'badge': 'Final Farewell',
       'icon': Icons.sentiment_satisfied_alt_rounded,
@@ -183,52 +191,74 @@ class _DialogueSequencerWidgetState extends State<DialogueSequencerWidget> {
                   ),
 
                   // Speaker A Dialogue Bubble
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: LHColors.white,
+                  Material(
+                    color: LHColors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    child: InkWell(
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: LHColors.turquoise, width: 2),
-                    ),
-                    child: Row(
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: LHColors.teal,
-                          child: Text('K', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                      onTap: () => _playAudio(active['speakerAAudio'] as String?),
+                      child: Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(color: LHColors.turquoise, width: 2),
                         ),
-                        const SizedBox(width: 14),
-                        Expanded(
-                          child: Text(
-                            active['speakerA'] as String,
-                            style: LHText.heading(LHColors.teal).copyWith(fontSize: 20),
-                          ),
+                        child: Row(
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: LHColors.teal,
+                              child: Text('K', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                            ),
+                            const SizedBox(width: 14),
+                            Expanded(
+                              child: Text(
+                                active['speakerA'] as String,
+                                style: LHText.heading(LHColors.teal).copyWith(fontSize: 20),
+                              ),
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.volume_up_rounded, color: LHColors.teal),
+                              onPressed: () => _playAudio(active['speakerAAudio'] as String?),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
 
                   // Speaker B Dialogue Bubble
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: LHColors.white,
+                  Material(
+                    color: LHColors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    child: InkWell(
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: LHColors.gold, width: 2),
-                    ),
-                    child: Row(
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: LHColors.gold,
-                          child: Text('A', style: TextStyle(color: LHColors.charcoal, fontWeight: FontWeight.bold)),
+                      onTap: () => _playAudio(active['speakerBAudio'] as String?),
+                      child: Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(color: LHColors.gold, width: 2),
                         ),
-                        const SizedBox(width: 14),
-                        Expanded(
-                          child: Text(
-                            active['speakerB'] as String,
-                            style: LHText.heading(LHColors.charcoal).copyWith(fontSize: 20),
-                          ),
+                        child: Row(
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: LHColors.gold,
+                              child: Text('A', style: TextStyle(color: LHColors.charcoal, fontWeight: FontWeight.bold)),
+                            ),
+                            const SizedBox(width: 14),
+                            Expanded(
+                              child: Text(
+                                active['speakerB'] as String,
+                                style: LHText.heading(LHColors.charcoal).copyWith(fontSize: 20),
+                              ),
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.volume_up_rounded, color: LHColors.charcoal),
+                              onPressed: () => _playAudio(active['speakerBAudio'] as String?),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
 

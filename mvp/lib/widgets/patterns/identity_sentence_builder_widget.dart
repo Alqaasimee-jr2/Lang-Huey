@@ -255,21 +255,32 @@ class _IdentitySentenceBuilderWidgetState
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(color: LHColors.turquoise.withOpacity(0.4)),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'French Name Statement:',
-                          style: LHText.label(LHColors.grey).copyWith(fontSize: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'French Name Statement:',
+                                style: LHText.label(LHColors.grey).copyWith(fontSize: 12),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                'Je m\'appelle $_selectedName.',
+                                style: LHText.heading(LHColors.teal).copyWith(fontSize: 22),
+                              ),
+                              Text(
+                                '[ zhuh mah-pell $_selectedName ] · My name is $_selectedName',
+                                style: LHText.body(LHColors.charcoal).copyWith(fontSize: 14),
+                              ),
+                            ],
+                          ),
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Je m\'appelle $_selectedName.',
-                          style: LHText.heading(LHColors.teal).copyWith(fontSize: 22),
-                        ),
-                        Text(
-                          '[ zhuh mah-pell $_selectedName ] · My name is $_selectedName',
-                          style: LHText.body(LHColors.charcoal).copyWith(fontSize: 14),
+                        IconButton(
+                          icon: const Icon(Icons.volume_up_rounded, color: LHColors.teal, size: 24),
+                          onPressed: () => _playAudio('je_mappelle'),
                         ),
                       ],
                     ),
@@ -283,23 +294,34 @@ class _IdentitySentenceBuilderWidgetState
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(color: LHColors.gold.withOpacity(0.5)),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'French Nationality Statement (${_isGirl ? "Féminin" : "Masculin"}):',
-                          style: LHText.label(LHColors.grey).copyWith(fontSize: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'French Nationality Statement (${_isGirl ? "Féminin" : "Masculin"}):',
+                                style: LHText.label(LHColors.grey).copyWith(fontSize: 12),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                _isGirl ? 'Je suis Nigériane.' : 'Je suis Nigérian.',
+                                style: LHText.heading(LHColors.teal).copyWith(fontSize: 22),
+                              ),
+                              Text(
+                                _isGirl
+                                    ? '[ zhuh swee nee-zhay-ree-ahn ] · I am Nigerian (Girl)'
+                                    : '[ zhuh swee nee-zhay-ree-ahn ] · I am Nigerian (Boy)',
+                                style: LHText.body(LHColors.charcoal).copyWith(fontSize: 14),
+                              ),
+                            ],
+                          ),
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          _isGirl ? 'Je suis Nigériane.' : 'Je suis Nigérian.',
-                          style: LHText.heading(LHColors.teal).copyWith(fontSize: 22),
-                        ),
-                        Text(
-                          _isGirl
-                              ? '[ zhuh swee nee-zhay-ree-ahn ] · I am Nigerian (Girl)'
-                              : '[ zhuh swee nee-zhay-ree-ahn ] · I am Nigerian (Boy)',
-                          style: LHText.body(LHColors.charcoal).copyWith(fontSize: 14),
+                        IconButton(
+                          icon: const Icon(Icons.volume_up_rounded, color: LHColors.gold, size: 24),
+                          onPressed: () => _playAudio(_isGirl ? 'je_suis_nigeriane' : 'je_suis_nigerian'),
                         ),
                       ],
                     ),

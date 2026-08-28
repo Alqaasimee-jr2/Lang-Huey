@@ -350,14 +350,15 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'Pupils stand at the smartboard and present themselves fluently in French',
+                    'Pupils stand at the smartboard and practice speaking line by line or listen to the model speech',
                     style: LHText.body(LHColors.grey).copyWith(fontSize: 15),
                   ),
                 ],
               ),
-              IconButton.filled(
-                style: IconButton.styleFrom(backgroundColor: LHColors.gold),
-                icon: const Icon(Icons.volume_up_rounded, color: LHColors.charcoal, size: 26),
+              FilledButton.icon(
+                style: FilledButton.styleFrom(backgroundColor: LHColors.gold, foregroundColor: LHColors.charcoal),
+                icon: const Icon(Icons.volume_up_rounded, size: 22),
+                label: const Text('🎧 Model Speech (Tunde)', style: TextStyle(fontWeight: FontWeight.w800)),
                 onPressed: () => _playAudio('presentation_speech'),
               ),
             ],
@@ -367,7 +368,7 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
 
           // Speech Teleprompter Box
           Container(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               color: LHColors.cream,
               borderRadius: BorderRadius.circular(20),
@@ -378,18 +379,65 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
               children: [
                 Row(
                   children: [
-                    const Icon(Icons.record_voice_over_rounded, color: LHColors.teal, size: 28),
+                    const Icon(Icons.record_voice_over_rounded, color: LHColors.teal, size: 26),
                     const SizedBox(width: 10),
                     Text(
                       'French Teleprompter Script:',
-                      style: LHText.subheading(LHColors.teal).copyWith(fontSize: 20),
+                      style: LHText.subheading(LHColors.teal).copyWith(fontSize: 18),
                     ),
                   ],
                 ),
-                const SizedBox(height: 14),
+                const SizedBox(height: 10),
                 Text(
                   speechText,
-                  style: LHText.heading(LHColors.charcoal).copyWith(fontSize: 26, height: 1.5),
+                  style: LHText.heading(LHColors.charcoal).copyWith(fontSize: 22, height: 1.4),
+                ),
+                const SizedBox(height: 14),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 6,
+                  children: [
+                    ActionChip(
+                      avatar: const Icon(Icons.volume_up_rounded, size: 16, color: LHColors.teal),
+                      label: const Text('1. Bonjour !'),
+                      backgroundColor: LHColors.white,
+                      onPressed: () => _playAudio('bonjour'),
+                    ),
+                    ActionChip(
+                      avatar: const Icon(Icons.volume_up_rounded, size: 16, color: LHColors.teal),
+                      label: Text('2. Je m\'appelle $_selectedFirstname'),
+                      backgroundColor: LHColors.white,
+                      onPressed: () => _playAudio('je_mappelle'),
+                    ),
+                    ActionChip(
+                      avatar: const Icon(Icons.volume_up_rounded, size: 16, color: LHColors.teal),
+                      label: Text('3. J\'ai $_selectedAge ans'),
+                      backgroundColor: LHColors.white,
+                      onPressed: () {
+                        if (_selectedAge == 8) {
+                          _playAudio('jai_huit_ans');
+                        } else if (_selectedAge == 9) {
+                          _playAudio('jai_neuf_ans');
+                        } else if (_selectedAge == 10) {
+                          _playAudio('jai_dix_ans');
+                        } else {
+                          _playAudio('num_$_selectedAge');
+                        }
+                      },
+                    ),
+                    ActionChip(
+                      avatar: const Icon(Icons.volume_up_rounded, size: 16, color: LHColors.teal),
+                      label: Text('4. Je suis ${_isGirl ? "Nigériane" : "Nigérian"}'),
+                      backgroundColor: LHColors.white,
+                      onPressed: () => _playAudio(_isGirl ? 'je_suis_nigeriane' : 'je_suis_nigerian'),
+                    ),
+                    ActionChip(
+                      avatar: const Icon(Icons.volume_up_rounded, size: 16, color: LHColors.teal),
+                      label: const Text('5. Au revoir !'),
+                      backgroundColor: LHColors.white,
+                      onPressed: () => _playAudio('au_revoir'),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -397,19 +445,19 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
 
           // Speech Presentation Tips
           Container(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
               color: LHColors.teal.withOpacity(0.08),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Row(
               children: [
-                const Icon(Icons.tips_and_updates_rounded, color: LHColors.gold, size: 28),
+                const Icon(Icons.tips_and_updates_rounded, color: LHColors.gold, size: 26),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
                     'Presentation Tips: Stand upright, speak with a loud confident voice, make eye contact with your classmates, and smile!',
-                    style: LHText.body(LHColors.teal).copyWith(fontSize: 15, fontWeight: FontWeight.w700),
+                    style: LHText.body(LHColors.teal).copyWith(fontSize: 14, fontWeight: FontWeight.w700),
                   ),
                 ),
               ],

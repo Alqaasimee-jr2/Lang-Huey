@@ -75,7 +75,7 @@ class P4TermSelectScreen extends StatelessWidget {
               Expanded(
                 child: Row(
                   children: [
-                    // Term 1 (Unlocked & Full Ready)
+                    // Term 1 (Ready)
                     Expanded(
                       child: _buildTermCard(
                         context: context,
@@ -97,7 +97,7 @@ class P4TermSelectScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 20),
 
-                    // Term 2 (Preview)
+                    // Term 2 (Unlocked & Complete)
                     Expanded(
                       child: _buildTermCard(
                         context: context,
@@ -106,9 +106,15 @@ class P4TermSelectScreen extends StatelessWidget {
                         englishTitle: 'Second Term',
                         theme: 'Family Members, School Environment, Objects, Prepositions & Colors',
                         weeksCount: 13,
-                        isUnlocked: false,
-                        badgeColor: LHColors.grey,
-                        onTap: null,
+                        isUnlocked: true,
+                        badgeColor: LHColors.gold,
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/p4_roadmap',
+                            arguments: 2,
+                          );
+                        },
                       ),
                     ),
                     const SizedBox(width: 20),

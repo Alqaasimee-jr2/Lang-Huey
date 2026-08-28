@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/p4_term1_lessons.dart';
+import '../../data/p4_term2_lessons.dart';
 import '../../models/p4_lesson_model.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
@@ -11,6 +12,11 @@ class P4WeekRoadmapScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<P4Lesson> lessons = termNumber == 2 ? P4Term2Lessons.weeks : p4Term1Lessons;
+    final termTheme = termNumber == 2
+        ? 'Term 2: Family Members, School Environment, Objects, Prepositions & Colors (Weeks 1 to 13)'
+        : 'Term 1: Identity, Greetings, Numbers 1–20 & African Francophone Geography (Weeks 1 to 13)';
+
     return Scaffold(
       backgroundColor: LHColors.teal,
       appBar: PreferredSize(
@@ -88,17 +94,17 @@ class P4WeekRoadmapScreen extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              'Term 1: Identity, Greetings, Numbers 1–20 & African Francophone Geography (Weeks 1 to 13)',
+              termTheme,
               style: LHText.body(LHColors.turquoise).copyWith(fontSize: 16),
             ),
             const SizedBox(height: 20),
 
             Expanded(
               child: ListView.separated(
-                itemCount: p4Term1Lessons.length,
+                itemCount: lessons.length,
                 separatorBuilder: (_, __) => const SizedBox(height: 14),
                 itemBuilder: (context, index) {
-                  final lesson = p4Term1Lessons[index];
+                  final lesson = lessons[index];
                   return _buildWeekCard(context, lesson);
                 },
               ),
@@ -111,10 +117,7 @@ class P4WeekRoadmapScreen extends StatelessWidget {
 
   Widget _buildWeekCard(BuildContext context, P4Lesson lesson) {
     final weekNum = lesson.week < 10 ? '0${lesson.week}' : '${lesson.week}';
-    final isSpecial = lesson.patternType == P4PatternType.midTermReview ||
-        lesson.patternType == P4PatternType.termRevisionRally ||
-        lesson.patternType == P4PatternType.midTermBreak ||
-        lesson.patternType == P4PatternType.vacationCelebration;
+    final isSpecial = lesson.week == 5 || lesson.week == 6 || lesson.week == 11 || lesson.week == 12 || lesson.week == 13;
 
     return Material(
       color: LHColors.white,
@@ -164,12 +167,12 @@ class P4WeekRoadmapScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      lesson.topic,
+                      lesson.title,
                       style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 20),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      lesson.subtitle,
+                      lesson.theme,
                       style: LHText.body(LHColors.grey).copyWith(fontSize: 15),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,

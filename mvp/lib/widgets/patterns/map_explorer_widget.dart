@@ -374,12 +374,16 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
                       const SizedBox(width: 10),
                       Expanded(
                         child: Text(
-                          'French Greeting: "${country['greeting']}"',
+                          'French Pronunciation: "${country['name']}"',
                           style: LHText.body(LHColors.teal).copyWith(
                             fontSize: 16,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.volume_up_rounded, color: LHColors.teal),
+                        onPressed: () => _playAudio(country['audio']),
                       ),
                     ],
                   ),

@@ -76,6 +76,22 @@ class P4AssignmentTask {
   });
 }
 
+/// Alias for interactive classwork exercises
+typedef P4ClassworkExercise = P4InteractiveExercise;
+
+/// A grammar explanation note for curriculum rules and conjugations
+class P4GrammarNote {
+  final String ruleTitle;
+  final String explanation;
+  final List<String> examples;
+
+  const P4GrammarNote({
+    required this.ruleTitle,
+    required this.explanation,
+    required this.examples,
+  });
+}
+
 /// Complete lesson model for a Primary 4 French curriculum week
 class P4Lesson {
   final int term;
@@ -86,6 +102,7 @@ class P4Lesson {
   final List<String> objectives;
   final String culturalInsight;
   final List<P4VocabItem> vocabItems;
+  final List<P4GrammarNote>? grammarNotes;
   final List<P4InteractiveExercise> classworkExercises;
   final List<P4EvaluationQuestion> evaluationQuestions;
   final List<P4AssignmentTask> assignmentTasks;
@@ -94,15 +111,25 @@ class P4Lesson {
   const P4Lesson({
     required this.term,
     required this.week,
-    required this.topic,
-    required this.subtitle,
-    required this.patternType,
-    required this.objectives,
-    required this.culturalInsight,
+    String? topic,
+    String? title,
+    String? subtitle,
+    String? theme,
+    String? topicBadge,
+    P4PatternType? patternType,
+    List<String>? objectives,
+    String? lessonOverview,
+    String? culturalInsight,
+    String? culturalFunFact,
     required this.vocabItems,
+    this.grammarNotes,
     required this.classworkExercises,
     required this.evaluationQuestions,
     required this.assignmentTasks,
     this.patternData,
-  });
+  })  : topic = topic ?? title ?? '',
+        subtitle = subtitle ?? (theme != null && topicBadge != null ? '$theme · $topicBadge' : theme ?? topicBadge ?? ''),
+        patternType = patternType ?? P4PatternType.borderMapAndAlphabet,
+        objectives = objectives ?? (lessonOverview != null ? [lessonOverview] : const []),
+        culturalInsight = culturalInsight ?? culturalFunFact ?? '';
 }
