@@ -11,12 +11,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 1,
       term: 2,
-      title: 'Présenter la Famille Proche (Part 1)',
-      theme: 'Theme: Immediate Environment & Family',
-      topicBadge: 'Close Family & Possessives',
-      lessonOverview:
-          'Pupils learn to identify close family members (père, mère, frère, sœur), use the correct possessive adjectives ("mon" for masculine and "ma" for feminine), and introduce their family using "Voici" and "C\'est".',
-      culturalFunFact:
+      topic: 'Présenter la Famille Proche (Part 1)',
+      subtitle: 'Theme: Immediate Environment & Family · Close Family & Possessives',
+      patternType: P4PatternType.borderMapAndAlphabet,
+      objectives: ['Pupils learn to identify close family members (père, mère, frère, sœur), use the correct possessive adjectives ("mon" for masculine and "ma" for feminine), and introduce their family using "Voici" and "C\'est".'],
+      culturalInsight:
           'In France, families love gathering around the dinner table every evening to talk about their day. Family is celebrated every year during national "Fête des Mères" (Mother\'s Day) and "Fête des Pères" (Father\'s Day)!',
       vocabItems: [
         P4VocabItem(
@@ -178,19 +177,19 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Drawing & Labelling Family Members',
+          topic: 'Drawing & Labelling Family Members',
           instructions:
               'Draw a neat picture of your father and mother in your French notebook. Under your father\'s picture write "Mon père". Under your mother\'s picture write "Ma mère".',
         ),
         P4HomeworkTask(
           taskNumber: 2,
-          title: 'Fill-in-the-Blank',
+          topic: 'Fill-in-the-Blank',
           instructions:
               'Complete the sentence with Mon or Ma: "___ sœur s\'appelle Amina."',
         ),
         P4HomeworkTask(
           taskNumber: 3,
-          title: 'Sentence Construction',
+          topic: 'Sentence Construction',
           instructions:
               'Write one full sentence in French stating whether you have a brother or a sister (e.g., "J\'ai un frère." or "J\'ai une sœur.").',
         ),
@@ -203,12 +202,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 2,
       term: 2,
-      title: 'Présenter la Famille Élargie (Part 2)',
-      theme: 'Theme: Extended Family & Family Trees',
-      topicBadge: 'Extended Family & Names',
-      lessonOverview:
-          'Pupils learn names for extended family members (grand-père, grand-mère, oncle, tante, cousin, cousine, grands-parents), state names using "Il s\'appelle" and "Elle s\'appelle", count relatives, and understand a family tree.',
-      culturalFunFact:
+      topic: 'Présenter la Famille Élargie (Part 2)',
+      subtitle: 'Theme: Extended Family & Family Trees · Extended Family & Names',
+      patternType: P4PatternType.borderMapAndAlphabet,
+      objectives: ['Pupils learn names for extended family members (grand-père, grand-mère, oncle, tante, cousin, cousine, grands-parents), state names using "Il s\'appelle" and "Elle s\'appelle", count relatives, and understand a family tree.'],
+      culturalInsight:
           'In Francophone African countries like Senegal and Côte d\'Ivoire, extended family often live together in large compounds called "concessions", sharing meals and stories together!',
       vocabItems: [
         P4VocabItem(
@@ -363,19 +361,19 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Grandparents Sentence Writing',
+          topic: 'Grandparents Sentence Writing',
           instructions:
               'Write two sentences in French giving the names of your grandfather and grandmother using "Mon grand-père s\'appelle..." and "Ma grand-mère s\'appelle...".',
         ),
         P4HomeworkTask(
           taskNumber: 2,
-          title: 'Family Tree Drawing',
+          topic: 'Family Tree Drawing',
           instructions:
               'Draw a tree in your notebook. At the top branch draw grandparents ("Les grands-parents"), below them draw parents and uncles/aunts, and at the bottom draw yourself ("Moi") and siblings.',
         ),
         P4HomeworkTask(
           taskNumber: 3,
-          title: 'Translation Drill',
+          topic: 'Translation Drill',
           instructions:
               'Translate into French: (1) Three cousins (Trois cousins), (2) Two aunts (Deux tantes).',
         ),
@@ -388,12 +386,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 3,
       term: 2,
-      title: 'Décrire la Famille & Verbe Avoir (Part 3)',
-      theme: 'Theme: Family Descriptions & Avoir',
-      topicBadge: 'Adjectives & Verb Avoir',
-      lessonOverview:
-          'Pupils learn to conjugate the verb "avoir" in singular forms (J\'ai, Tu as, Il a, Elle a), describe family members using basic adjectives (grand, petit, jeune, vieux), and explain family relationships.',
-      culturalFunFact:
+      topic: 'Décrire la Famille & Verbe Avoir (Part 3)',
+      subtitle: 'Theme: Family Descriptions & Avoir · Adjectives & Verb Avoir',
+      patternType: P4PatternType.borderMapAndAlphabet,
+      objectives: ['Pupils learn to conjugate the verb "avoir" in singular forms (J\'ai, Tu as, Il a, Elle a), describe family members using basic adjectives (grand, petit, jeune, vieux), and explain family relationships.'],
+      culturalInsight:
           'In French, adjectives change their spelling to agree with feminine nouns (grand -> grande, petit -> petite, vieux -> vieille). French children love learning these word transformations!',
       vocabItems: [
         P4VocabItem(
@@ -555,19 +552,19 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Family Description Paragraph',
+          topic: 'Family Description Paragraph',
           instructions:
               'Write three sentences describing your family members using "J\'ai...", "Mon père est...", and "Ma mère est..." with adjectives like grand, petite, or jeune.',
         ),
         P4HomeworkTask(
           taskNumber: 2,
-          title: 'Antonym Matching',
+          topic: 'Antonym Matching',
           instructions:
               'In your notebook, write and match opposites: Grand -> Petit, Jeune -> Vieux.',
         ),
         P4HomeworkTask(
           taskNumber: 3,
-          title: 'Verb Conjugation Drill',
+          topic: 'Verb Conjugation Drill',
           instructions:
               'Write out the 4 singular forms of the verb "Avoir" (J\'ai, Tu as, Il a, Elle a) with English translations.',
         ),
@@ -580,12 +577,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 4,
       term: 2,
-      title: 'Parler de l\'École & la Classe (Part 1)',
-      theme: 'Theme: School Environment & Classroom Items',
-      topicBadge: 'School & Classroom Items',
-      lessonOverview:
-          'Pupils learn vocabulary for school objects (tableau, bureau, cahier, livre, stylo, crayon), people in school (professeur, élève), state where they study ("Je vais à l\'école", "J\'étudie à..."), and introduce their school using "Voici".',
-      culturalFunFact:
+      topic: 'Parler de l\'École & la Classe (Part 1)',
+      subtitle: 'Theme: School Environment & Classroom Items · School & Classroom Items',
+      patternType: P4PatternType.borderMapAndAlphabet,
+      objectives: ['Pupils learn vocabulary for school objects (tableau, bureau, cahier, livre, stylo, crayon), people in school (professeur, élève), state where they study ("Je vais à l\'école", "J\'étudie à..."), and introduce their school using "Voici".'],
+      culturalInsight:
           'In France, school children carry a "trousse" (pencil case) and a "cartable" (school bag) to school every day. The school week runs from Monday to Friday!',
       vocabItems: [
         P4VocabItem(
@@ -740,19 +736,19 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Drawing & Labelling Stationery',
+          topic: 'Drawing & Labelling Stationery',
           instructions:
               'Draw three classroom items in your notebook: a pen, a book, and a board. Label each drawing in French: "Le stylo", "Le livre", "Le tableau".',
         ),
         P4HomeworkTask(
           taskNumber: 2,
-          title: 'Sentence Completion',
+          topic: 'Sentence Completion',
           instructions:
               'Complete the sentence in your notebook: "Je vais à ___." (l\'école).',
         ),
         P4HomeworkTask(
           taskNumber: 3,
-          title: 'School Presentation Sentence',
+          topic: 'School Presentation Sentence',
           instructions:
               'Write a full sentence stating your school name: "J\'étudie à l\'école [Your School Name]."',
         ),
@@ -765,12 +761,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 5,
       term: 2,
-      title: 'Rallye de Révision de Mi-Trimestre',
-      theme: 'Theme: Weeks 1–4 Oral Revision Rally',
-      topicBadge: 'Mid-Term Oral Revision',
-      lessonOverview:
-          'Comprehensive speed oral recap covering Weeks 1 to 4 topics: Close family, extended family, possessive adjectives (mon/ma), describing family with verb avoir, and school classroom objects.',
-      culturalFunFact:
+      topic: 'Rallye de Révision de Mi-Trimestre',
+      subtitle: 'Theme: Weeks 1–4 Oral Revision Rally · Mid-Term Oral Revision',
+      patternType: P4PatternType.midTermReview,
+      objectives: ['Comprehensive speed oral recap covering Weeks 1 to 4 topics: Close family, extended family, possessive adjectives (mon/ma), describing family with verb avoir, and school classroom objects.'],
+      culturalInsight:
           'Oral speed drills help students build fluency and rapid recall without hesitation. In France, quick Q&A warm-ups start every language class!',
       vocabItems: [
         P4VocabItem(
@@ -900,7 +895,7 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Mid-Term Review Card',
+          topic: 'Mid-Term Review Card',
           instructions:
               'Create a mid-term revision flashcard with 5 family members and 5 school objects in French.',
         ),
@@ -913,12 +908,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 6,
       term: 2,
-      title: 'Pause de Mi-Trimestre (Vacances)',
-      theme: 'Theme: Rest, Recharge & Vacation Review',
-      topicBadge: 'Mid-Term Holiday Break',
-      lessonOverview:
-          'Holiday break for pupils to rest and spend quality time with family while reviewing French family and school terms at home.',
-      culturalFunFact:
+      topic: 'Pause de Mi-Trimestre (Vacances)',
+      subtitle: 'Theme: Rest, Recharge & Vacation Review · Mid-Term Holiday Break',
+      patternType: P4PatternType.midTermBreak,
+      objectives: ['Holiday break for pupils to rest and spend quality time with family while reviewing French family and school terms at home.'],
+      culturalInsight:
           'In France, the school year has regular two-week breaks called "petites vacances" every seven weeks so pupils stay refreshed and energetic!',
       vocabItems: [
         P4VocabItem(
@@ -972,7 +966,7 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Family French Conversation',
+          topic: 'Family French Conversation',
           instructions:
               'At home, greet your parents in French and introduce one sibling using "Voici mon frère / Voici ma sœur".',
         ),
@@ -985,12 +979,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 7,
       term: 2,
-      title: 'Les Lieux de l\'École & Matières (Part 2)',
-      theme: 'Theme: School Places & Favorite Subjects',
-      topicBadge: 'School Places & Subjects',
-      lessonOverview:
-          'Pupils learn to identify more places in school (bibliothèque, cour de récréation, bureau du directeur, toilettes), school subjects (français, anglais, mathématiques, sciences), express preferences using "J\'aime", and conjugate the verb "aller" (to go).',
-      culturalFunFact:
+      topic: 'Les Lieux de l\'École & Matières (Part 2)',
+      subtitle: 'Theme: School Places & Favorite Subjects · School Places & Subjects',
+      patternType: P4PatternType.borderMapAndAlphabet,
+      objectives: ['Pupils learn to identify more places in school (bibliothèque, cour de récréation, bureau du directeur, toilettes), school subjects (français, anglais, mathématiques, sciences), express preferences using "J\'aime", and conjugate the verb "aller" (to go).'],
+      culturalInsight:
           'In French schools, the playground is called "la cour de récréation" or simply "la récré". It is the favorite place for games like "la marelle" (hopscotch) and "le loup" (tag)!',
       vocabItems: [
         P4VocabItem(
@@ -1150,19 +1143,19 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Favorite Subjects Sentences',
+          topic: 'Favorite Subjects Sentences',
           instructions:
               'Write two sentences in French stating subjects you like using "J\'aime..." (e.g., "J\'aime le français. J\'aime les sciences.").',
         ),
         P4HomeworkTask(
           taskNumber: 2,
-          title: 'Fill-in-the-Blank with Aller',
+          topic: 'Fill-in-the-Blank with Aller',
           instructions:
               'Complete the sentence: "Tu ___ à l\'école." (vas).',
         ),
         P4HomeworkTask(
           taskNumber: 3,
-          title: 'Drawing the Playground',
+          topic: 'Drawing the Playground',
           instructions:
               'Draw a picture of a school playground with children playing and label it "La cour de récréation".',
         ),
@@ -1175,12 +1168,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 8,
       term: 2,
-      title: 'Activités Scolaires & Jours de la Semaine (Part 3)',
-      theme: 'Theme: Daily Actions & 7 Days of the Week',
-      topicBadge: 'Activities & Days of the Week',
-      lessonOverview:
-          'Pupils learn verbs for school activities (étudier, lire, écrire, écouter, parler, jouer, chanter, dessiner), recite the 7 days of the week, and describe their weekly school schedule.',
-      culturalFunFact:
+      topic: 'Activités Scolaires & Jours de la Semaine (Part 3)',
+      subtitle: 'Theme: Daily Actions & 7 Days of the Week · Activities & Days of the Week',
+      patternType: P4PatternType.borderMapAndAlphabet,
+      objectives: ['Pupils learn verbs for school activities (étudier, lire, écrire, écouter, parler, jouer, chanter, dessiner), recite the 7 days of the week, and describe their weekly school schedule.'],
+      culturalInsight:
           'In French, the days of the week are named after planets and Roman gods: Lundi (Moon), Mardi (Mars), Mercredi (Mercury), Jeudi (Jupiter), Vendredi (Venus)! Also, in French, days are written with small letters (no capital letter).',
       vocabItems: [
         P4VocabItem(
@@ -1326,19 +1318,19 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Days of the Week Listing',
+          topic: 'Days of the Week Listing',
           instructions:
               'Write down the 7 days of the week in French in your notebook from Lundi to Dimanche.',
         ),
         P4HomeworkTask(
           taskNumber: 2,
-          title: 'Translation of Action Verbs',
+          topic: 'Translation of Action Verbs',
           instructions:
               'Translate into French: "I read and I write." (Je lis et j\'écris.)',
         ),
         P4HomeworkTask(
           taskNumber: 3,
-          title: 'Schedule Sentence',
+          topic: 'Schedule Sentence',
           instructions:
               'Complete the sentence: "Le ___ (Monday), j\'ai français." (Lundi).',
         ),
@@ -1351,12 +1343,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 9,
       term: 2,
-      title: 'Prépositions de Lieu & Couleurs (Part 4)',
-      theme: 'Theme: Locations, Directions & Colors',
-      topicBadge: 'Prepositions & 6 Core Colors',
-      lessonOverview:
-          'Pupils learn 6 core colors (rouge, bleu, jaune, vert, noir, blanc), describe school items by color, use prepositions of place (sur, sous, dans, devant, derrière, à côté de), and ask "Où est...?".',
-      culturalFunFact:
+      topic: 'Prépositions de Lieu & Couleurs (Part 4)',
+      subtitle: 'Theme: Locations, Directions & Colors · Prepositions & 6 Core Colors',
+      patternType: P4PatternType.borderMapAndAlphabet,
+      objectives: ['Pupils learn 6 core colors (rouge, bleu, jaune, vert, noir, blanc), describe school items by color, use prepositions of place (sur, sous, dans, devant, derrière, à côté de), and ask "Où est...?".'],
+      culturalInsight:
           'The national flag of France ("Le Drapeau Tricolore") has three vertical stripes: Bleu (Blue), Blanc (White), and Rouge (Red)! In French, color words usually come after the noun.',
       vocabItems: [
         P4VocabItem(
@@ -1511,19 +1502,19 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Coloring Circles & French Labels',
+          topic: 'Coloring Circles & French Labels',
           instructions:
               'In your notebook, draw and color three circles: Red, Blue, and Yellow. Under each circle write its French name: "Rouge", "Bleu", "Jaune".',
         ),
         P4HomeworkTask(
           taskNumber: 2,
-          title: 'Describing Your School Bag Color',
+          topic: 'Describing Your School Bag Color',
           instructions:
               'Write one sentence in French describing the color of your school bag (e.g., "Mon sac est noir." or "Mon sac est bleu.").',
         ),
         P4HomeworkTask(
           taskNumber: 3,
-          title: 'Drawing Prepositions',
+          topic: 'Drawing Prepositions',
           instructions:
               'Draw a ball behind a box. Label the ball "le ballon" and the box "la boîte". Write the French sentence: "Le ballon est derrière la boîte."',
         ),
@@ -1536,12 +1527,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 10,
       term: 2,
-      title: 'Intégration & Présentation de l\'École et Famille',
-      theme: 'Theme: Family Presentation & School Tour',
-      topicBadge: 'Integration & Role-Play',
-      lessonOverview:
-          'Pupils integrate all Term 2 concepts: Family Bingo, School Tour, Parent-Teacher Meeting Role-Play ("Voici mon père. Enchanté, Madame"), and complete oral presentation "Mon École et Moi".',
-      culturalFunFact:
+      topic: 'Intégration & Présentation de l\'École et Famille',
+      subtitle: 'Theme: Family Presentation & School Tour · Integration & Role-Play',
+      patternType: P4PatternType.borderMapAndAlphabet,
+      objectives: ['Pupils integrate all Term 2 concepts: Family Bingo, School Tour, Parent-Teacher Meeting Role-Play ("Voici mon père. Enchanté, Madame"), and complete oral presentation "Mon École et Moi".'],
+      culturalInsight:
           'In France, saying "Enchanté" (or "Enchantée" for girls) when being introduced to someone is considered a mark of supreme politeness and great manners!',
       vocabItems: [
         P4VocabItem(
@@ -1667,19 +1657,19 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Paragraph: Mon École',
+          topic: 'Paragraph: Mon École',
           instructions:
               'Write a 3-4 line paragraph titled "Mon École". Mention your school name, what you study there, and what you like (e.g., "Mon école s\'appelle... J\'étudie le français. J\'aime jouer dans la cour.").',
         ),
         P4HomeworkTask(
           taskNumber: 2,
-          title: 'Family Word Search Puzzle',
+          topic: 'Family Word Search Puzzle',
           instructions:
               'In your notebook, draw a 5x5 grid and hide 5 French family words: PERE, MERE, FRERE, SOEUR, TANTE.',
         ),
         P4HomeworkTask(
           taskNumber: 3,
-          title: 'Role-Play Practice at Home',
+          topic: 'Role-Play Practice at Home',
           instructions:
               'Practice the Parent-Teacher role-play dialogue at home with your parents.',
         ),
@@ -1692,12 +1682,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 11,
       term: 2,
-      title: 'Grande Révision du Deuxième Trimestre',
-      theme: 'Theme: Comprehensive End-of-Term Speed Revision',
-      topicBadge: 'Term 2 Speed Revision Rally',
-      lessonOverview:
-          'Comprehensive speed revision covering all Term 2 topics: Family members & possessives, school objects & places, days of the week, colors, and verbs Avoir & Aller.',
-      culturalFunFact:
+      topic: 'Grande Révision du Deuxième Trimestre',
+      subtitle: 'Theme: Comprehensive End-of-Term Speed Revision · Term 2 Speed Revision Rally',
+      patternType: P4PatternType.termRevisionRally,
+      objectives: ['Comprehensive speed revision covering all Term 2 topics: Family members & possessives, school objects & places, days of the week, colors, and verbs Avoir & Aller.'],
+      culturalInsight:
           'Mastering both family and school vocabulary allows Grade 4 pupils to hold complete everyday conversations about their home and school life in French!',
       vocabItems: [
         P4VocabItem(
@@ -1771,7 +1760,7 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Term 2 Master Revision Sheet',
+          topic: 'Term 2 Master Revision Sheet',
           instructions:
               'Write a 5-sentence French story about a day in your school with your family.',
         ),
@@ -1784,12 +1773,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 12,
       term: 2,
-      title: 'Récapitulatif de Fin de Trimestre',
-      theme: 'Theme: Term 2 Examination Review & Summary',
-      topicBadge: 'Exam Oral Review',
-      lessonOverview:
-          'Oral exam review and checklist for pupils to demonstrate spoken proficiency in family descriptions, school environments, colors, days of the week, and prepositions.',
-      culturalFunFact:
+      topic: 'Récapitulatif de Fin de Trimestre',
+      subtitle: 'Theme: Term 2 Examination Review & Summary · Exam Oral Review',
+      patternType: P4PatternType.termRevisionRally,
+      objectives: ['Oral exam review and checklist for pupils to demonstrate spoken proficiency in family descriptions, school environments, colors, days of the week, and prepositions.'],
+      culturalInsight:
           'End-of-term oral evaluations in France encourage confidence in speaking out loud in front of peers with poise, proper diction, and joy!',
       vocabItems: [
         P4VocabItem(
@@ -1836,7 +1824,7 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Vacation Reading Preparation',
+          topic: 'Vacation Reading Preparation',
           instructions:
               'Prepare your French notebook for Term 3: Numbers 0-20, Telling Time, and Meals!',
         ),
@@ -1849,12 +1837,11 @@ class P4Term2Lessons {
     P4Lesson(
       week: 13,
       term: 2,
-      title: 'Clôture du Trimestre & Aperçu du Trimestre 3',
-      theme: 'Theme: Holiday Celebration & Term 3 Roadmap',
-      topicBadge: 'Vacation & Term 3 Preview',
-      lessonOverview:
-          'Celebration of Term 2 completion with French holiday wishes and a preview of Term 3 topics (Counting 0 to 20 math, Telling Time, and Foods & Meals).',
-      culturalFunFact:
+      topic: 'Clôture du Trimestre & Aperçu du Trimestre 3',
+      subtitle: 'Theme: Holiday Celebration & Term 3 Roadmap · Vacation & Term 3 Preview',
+      patternType: P4PatternType.vacationCelebration,
+      objectives: ['Celebration of Term 2 completion with French holiday wishes and a preview of Term 3 topics (Counting 0 to 20 math, Telling Time, and Foods & Meals).'],
+      culturalInsight:
           'During French holidays, families love having picnics in parks and sharing baguettes, cheese, and fresh fruit together!',
       vocabItems: [
         P4VocabItem(
@@ -1913,7 +1900,7 @@ class P4Term2Lessons {
       homeworkTasks: [
         P4HomeworkTask(
           taskNumber: 1,
-          title: 'Term 3 Readiness',
+          topic: 'Term 3 Readiness',
           instructions:
               'Practice counting to 20 in French with your parents over the holidays!',
         ),

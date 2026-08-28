@@ -29,23 +29,43 @@ class P4AudioService {
   Stream<bool> get playingStream => _phrasePlayer.playingStream;
 
   /// Play a Primary 4 French vocabulary or phrase audio clip by its key
-  Future<void> playPhrase(String audioKey) async {
+  Future<void> playPhrase(String audioKey, {int? term}) async {
     try {
-      final assetPath = 'assets/audio/p4_term1/$audioKey.mp3';
       _currentlyPlayingKey = audioKey;
       _isPlaying = true;
-
       await _phrasePlayer.stop();
-      await _phrasePlayer.setAsset(assetPath);
-      await _phrasePlayer.play();
+
+      List<String> pathsToTry = [];
+      if (term == 2) {
+        pathsToTry = [
+          'assets/audio/p4_term2/$audioKey.mp3',
+          'assets/audio/p4_term1/$audioKey.mp3',
+          'assets/audio/$audioKey.mp3',
+        ];
+      } else {
+        pathsToTry = [
+          'assets/audio/p4_term1/$audioKey.mp3',
+          'assets/audio/p4_term2/$audioKey.mp3',
+          'assets/audio/$audioKey.mp3',
+        ];
+      }
+
+      bool loaded = false;
+      for (final path in pathsToTry) {
+        try {
+          await _phrasePlayer.setAsset(path);
+          loaded = true;
+          break;
+        } catch (_) {}
+      }
+
+      if (loaded) {
+        await _phrasePlayer.play();
+      }
     } catch (e) {
       if (kDebugMode) {
-        print('P4AudioService: Notice playing phrase $audioKey ($e). Attempting fallback.');
+        print('P4AudioService notice playing $audioKey: $e');
       }
-      try {
-        await _phrasePlayer.setAsset('assets/audio/$audioKey.mp3');
-        await _phrasePlayer.play();
-      } catch (_) {}
     } finally {
       _isPlaying = false;
       _currentlyPlayingKey = null;
