@@ -5,7 +5,7 @@ import '../../../theme/text_styles.dart';
 
 class CheckQuestionView extends StatefulWidget {
   final CheckQuestion question;
-  final Function(bool isCorrect, String feedbackCue) onAnswered;
+  final Function(bool isCorrect) onAnswered;
   final bool isRevealed;
 
   const CheckQuestionView({
@@ -29,11 +29,7 @@ class _CheckQuestionViewState extends State<CheckQuestionView> {
     });
 
     final bool isCorrect = index == widget.question.correctIndex;
-    final String feedbackCue = isCorrect
-        ? widget.question.correctTeacherCue
-        : widget.question.incorrectTeacherCue;
-
-    widget.onAnswered(isCorrect, feedbackCue);
+    widget.onAnswered(isCorrect);
   }
 
   @override

@@ -4,9 +4,34 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
-## [Unreleased] - 2026-08-22
+## [Unreleased] - 2026-08-28
 
-### Project Kickoff & Conceptualization
+### Grade 4 / Primary 4 French Standalone App Architecture (`P4_FRENCH`)
+- **First Production Target**: Selected **Grade 4 / Primary 4 French Language** as the first complete standalone classroom smartboard application.
+- **Platform Stack**: **Flutter / Dart** targeting **Android APK** (optimized for Android Interactive Flat Panels / Smartboards with landscape orientation, high touch ergonomics, and 100% offline runtime).
+- **Execution Strategy (Term-by-Term Build)**:
+  - **Sequential Delivery**: Complete **Term 1 (Weeks 1–13)** fully at a stretch before proceeding to subsequent terms.
+  - **Zero Media First / Logic-First Pipeline**: Build all UI layouts, interactive mechanics, topic-specific learning patterns, vocabulary data, and evaluation flows first with clean vector/text elements. Focus specifically on audio/media asset production in the next dedicated pass.
+- **Curriculum & Scope Clarification**:
+  - **Classroom Teaching & Interactive Revision Engine**: The smartboard app is strictly for interactive classroom teaching, pronunciation, vocabulary drills, classwork, and interactive revision.
+  - **No In-App Exam Holding**: Formal exams (Mid-Term Week 5, End-of-Term Week 12) will *not* be computerized tests on the app. Exam weeks will provide comprehensive review recaps and printable revision notes for the teacher.
+- **Topic-Specific Interactive Learning Patterns**: Bespoke pedagogical mechanics tailored to each lesson topic (Border Map Explorer, Time-of-Day Context Dial, Magic Words Chest & "La Bise" Cultural Showcase, Personal ID Card Builder, Numbers 1-20 Soundboard, Dialogue Sequencer, and Revision Drills).
+- **Teacher Cue Bar Separation**: Removed on-screen Teacher Cue Bar from smartboard display to preserve an immersive, distraction-free student experience. Teacher guidance and lesson pacing transitioned into an external Teacher's Manual companion.
+- **Term 1 Multimedia Sprint & Universal Audio Engine Complete**:
+  - **95 Standard 44.1kHz MP3 Audio Assets**: Generated and verified across all 13 weeks in `mvp/assets/audio/p4_term1/` for universal compatibility across Windows Media Player, Groove, VLC, and Android smartboard hardware.
+  - **Classroom SFX Audio Engine**: Synthesized and wired dedicated UI audio feedback:
+    - `sfx_correct.mp3`: Cheerful two-tone ascending chime for correct smartboard drill answers.
+    - `sfx_incorrect.mp3`: Gentle low tone for retry attempts.
+    - `sfx_click.mp3`: Subtle pop for tactile option selection.
+    - `sfx_celebrate.mp3`: Triumphant 4-note fanfare on drill completion and vacation screens.
+  - **Complete Interactive Widget Audio Wiring**: Wired native audio triggers and speaker badges into all 10 bespoke pattern widgets ([MapExplorer](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/map_explorer_widget.dart), [GreetingDial](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/greeting_dial_widget.dart), [MagicWords](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/magic_words_widget.dart), [IdentitySentenceBuilder](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/identity_sentence_builder_widget.dart), [NumberAndAge](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/number_and_age_widget.dart), [FarewellMatcher](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/farewell_matcher_widget.dart), [DialogueSequencer](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/dialogue_sequencer_widget.dart), [IdCardWorkshop](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/id_card_workshop_widget.dart), [RevisionRally](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/revision_rally_widget.dart), [VacationCelebration](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/vacation_celebration_widget.dart)) and the [P4LessonPlayerScreen](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/screens/lesson/p4_lesson_player_screen.dart) Vocabulary Station.
+  - **Visual Asset Suite**: Integrated high-contrast vector flags (Bénin, Niger, Tchad, Cameroun, Nigeria), time-of-day badges, cultural cards (*La Bise*), and student ID templates in `mvp/assets/images/p4_term1/`.
+- **Skill Integration (`ui_ux_pro_max`)**: Integrated and verified the `ui_ux_pro_max` intelligence skill in `.agents/skills/ui_ux_pro_max` for high-impact educational smartboard UI styling and UX design patterns.
+- **Monorepo & Multi-App Scalability**: Architected codebase under modular structure (`apps/p4_french/`, future `apps/p5_french/`, `apps/p6_chinese/`).
+
+---
+
+## [0.2.0] - 2026-08-22 (Lang Huey Master Specifications Locked)
 - **Initiation**: Project "Lang Huey" officially launched.
 - **Core Problem Addressed**:
   - Acute shortage and high cost of foreign language teachers (French, Mandarin, Spanish, etc.) in Nigerian schools.

@@ -7,24 +7,47 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:lang_huey/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:lang_huey/app.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  TestWidgetsFlutterBinding.ensureInitialized();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets('Lang Huey smoke test loads splash screen and navigates', (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(1280, 800);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() => tester.view.resetPhysicalSize());
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    SharedPreferences.setMockInitialValues({'intro_seen': true});
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Build our app
+    await tester.pumpWidget(const LangHueyApp());
+
+    // Verify splash screen renders title
+    expect(find.text('Lang Huey'), findsWidgets);
+
+    // Fast-forward animation & timer
+    await tester.pumpAndSettle(const Duration(seconds: 4));
+
+    // Verify navigation reached lesson menu
+    expect(find.text('Select a Lesson to Begin'), findsOneWidget);
+
+    // Tap the first lesson to open player
+    await tester.tap(find.text('Les expressions de salutation (Greetings)'));
+    await tester.pumpAndSettle();
+
+    // Verify player opens directly on first vocabulary item (Bonjour)
+    expect(find.text('Bonjour'), findsOneWidget);
+    expect(find.text('Good morning / Hello'), findsOneWidget);
+
+    // Verify Teacher Cue bar is NOT present
+    expect(find.text('TEACHER CUE'), findsNothing);
+
+    // Tap Next
+    await tester.tap(find.text('NEXT ▶'));
+    await tester.pumpAndSettle();
+
+    // Verify next vocab item (Bonsoir)
+    expect(find.text('Bonsoir'), findsOneWidget);
   });
 }

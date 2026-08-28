@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'models/lesson.dart';
+import 'models/p4_lesson_model.dart';
 import 'screens/splash/splash_screen.dart';
-import 'screens/intro/intro_screen.dart';
-import 'screens/menu/lesson_select_screen.dart';
-import 'screens/player/lesson_player_screen.dart';
-import 'screens/summary/lesson_summary_screen.dart';
+import 'screens/term/p4_term_select_screen.dart';
+import 'screens/roadmap/p4_week_roadmap_screen.dart';
+import 'screens/lesson/p4_lesson_player_screen.dart';
 import 'theme/colors.dart';
 
 class LangHueyApp extends StatelessWidget {
@@ -13,10 +12,11 @@ class LangHueyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lang Huey',
+      title: 'Lang Huey — Primary 4 French',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
+        scaffoldBackgroundColor: LHColors.cream,
         colorScheme: ColorScheme.fromSeed(
           seedColor: LHColors.teal,
           primary: LHColors.teal,
@@ -29,25 +29,20 @@ class LangHueyApp extends StatelessWidget {
         switch (settings.name) {
           case '/splash':
             return MaterialPageRoute(builder: (_) => const SplashScreen());
-          case '/intro':
-            return MaterialPageRoute(builder: (_) => const IntroScreen());
-          case '/menu':
-            return MaterialPageRoute(builder: (_) => const LessonSelectScreen());
-          case '/player':
-            final lesson = settings.arguments as Lesson;
+          case '/p4_terms':
+            return MaterialPageRoute(builder: (_) => const P4TermSelectScreen());
+          case '/p4_roadmap':
+            final termNumber = settings.arguments as int? ?? 1;
             return MaterialPageRoute(
-              builder: (_) => LessonPlayerScreen(lesson: lesson),
+              builder: (_) => P4WeekRoadmapScreen(termNumber: termNumber),
             );
-          case '/summary':
-            final args = settings.arguments as Map<String, dynamic>;
+          case '/p4_player':
+            final lesson = settings.arguments as P4Lesson;
             return MaterialPageRoute(
-              builder: (_) => LessonSummaryScreen(
-                lesson: args['lesson'] as Lesson,
-                correctCount: args['correctCount'] as int,
-              ),
+              builder: (_) => P4LessonPlayerScreen(lesson: lesson),
             );
           default:
-            return MaterialPageRoute(builder: (_) => const SplashScreen());
+            return MaterialPageRoute(builder: (_) => const P4TermSelectScreen());
         }
       },
     );

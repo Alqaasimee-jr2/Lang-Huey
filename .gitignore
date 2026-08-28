@@ -31,3 +31,7 @@ mvp/.packages
 mvp/.pub/
 mvp/.pub-cache/
 
+# Scratch & test media
+test_*.mp3
+test_*.wav
+

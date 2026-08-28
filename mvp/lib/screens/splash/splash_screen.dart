@@ -14,6 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _progressController;
+  Timer? _timer;
 
   @override
   void initState() {
@@ -23,23 +24,17 @@ class _SplashScreenState extends State<SplashScreen>
       duration: const Duration(milliseconds: 2500),
     )..forward();
 
-    Timer(const Duration(milliseconds: 2600), _checkIntroAndNavigate);
+    _timer = Timer(const Duration(milliseconds: 2600), _checkIntroAndNavigate);
   }
 
   Future<void> _checkIntroAndNavigate() async {
     if (!mounted) return;
-    final prefs = await SharedPreferences.getInstance();
-    final bool introSeen = prefs.getBool('intro_seen') ?? false;
-
-    if (introSeen) {
-      Navigator.pushReplacementNamed(context, '/menu');
-    } else {
-      Navigator.pushReplacementNamed(context, '/intro');
-    }
+    Navigator.pushReplacementNamed(context, '/p4_terms');
   }
 
   @override
   void dispose() {
+    _timer?.cancel();
     _progressController.dispose();
     super.dispose();
   }
@@ -58,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen>
             ),
             const SizedBox(height: 12),
             Text(
-              'JSS1 French Edition',
+              'Grade 4 / Primary 4 French Edition',
               style: LHText.subheading(LHColors.turquoise),
             ),
             const SizedBox(height: 48),

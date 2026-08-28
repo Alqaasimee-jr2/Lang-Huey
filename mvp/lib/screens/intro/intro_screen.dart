@@ -90,7 +90,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
-                    'STEP 1 OF 2 · TEACHER CUE SYSTEM',
+                    'STEP 1 OF 2 · TEACHER MANUAL GUIDE',
                     style: LHText.label(LHColors.teal),
                   ),
                 ),
@@ -101,7 +101,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  'The Teacher Cue bar at the bottom tells your staff exactly what to say and do at every single step. No French experience required.',
+                  'Teachers follow along with the step-by-step printed lesson manual. Every pronunciation, translation, and classroom activity is clearly guided with zero French experience needed.',
                   style: LHText.body(LHColors.charcoal.withOpacity(0.85)),
                 ),
                 const SizedBox(height: 48),
@@ -158,20 +158,33 @@ class _IntroScreenState extends State<IntroScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.record_voice_over_rounded,
+                  const Icon(Icons.menu_book_rounded,
                       size: 100, color: LHColors.teal),
                   const SizedBox(height: 24),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 24),
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: LHColors.teal,
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Text(
-                      'TEACHER CUE: "Play the audio twice. Ask the class to repeat after each play."',
-                      textAlign: TextAlign.center,
-                      style: LHText.cue(LHColors.white),
+                    child: Column(
+                      children: [
+                        Text(
+                          'TEACHER\'S COMPANION MANUAL',
+                          style: LHText.label(LHColors.gold).copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Full lesson plans, pronunciation guides & classroom prompts in your hands.',
+                          textAlign: TextAlign.center,
+                          style: LHText.body(LHColors.white).copyWith(
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

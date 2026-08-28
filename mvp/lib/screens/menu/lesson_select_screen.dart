@@ -20,31 +20,35 @@ class LessonSelectScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      'Lang Huey',
-                      style: LHText.subheading(LHColors.white).copyWith(
-                        fontWeight: FontWeight.w900,
+                Flexible(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Lang Huey',
+                        style: LHText.subheading(LHColors.white).copyWith(
+                          fontWeight: FontWeight.w900,
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 16),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 4,
+                      const SizedBox(width: 16),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 4,
+                        ),
+                        decoration: BoxDecoration(
+                          color: LHColors.turquoise.withOpacity(0.25),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          'SMARTBOARD EDITION',
+                          style: LHText.label(LHColors.turquoise),
+                        ),
                       ),
-                      decoration: BoxDecoration(
-                        color: LHColors.turquoise.withOpacity(0.25),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        'SMARTBOARD EDITION',
-                        style: LHText.label(LHColors.turquoise),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
+                const SizedBox(width: 16),
                 Text(
                   'JSS1 French — Term 1',
                   style: LHText.body(LHColors.turquoise).copyWith(
@@ -139,13 +143,16 @@ class LessonSelectScreen extends StatelessWidget {
                     const SizedBox(height: 6),
                     Row(
                       children: [
-                        Icon(Icons.collections_bookmark_rounded,
+                        const Icon(Icons.collections_bookmark_rounded,
                             size: 20, color: LHColors.turquoise),
                         const SizedBox(width: 6),
-                        Text(
-                          '${lesson.items.length} Vocabulary Items · ${lesson.checkQuestions.length} Check Questions',
-                          style: LHText.body(LHColors.grey).copyWith(
-                            fontSize: 18,
+                        Expanded(
+                          child: Text(
+                            '${lesson.items.length} Vocabulary Items · ${lesson.checkQuestions.length} Check Questions',
+                            style: LHText.body(LHColors.grey).copyWith(
+                              fontSize: 18,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ],

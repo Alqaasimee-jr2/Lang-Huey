@@ -23,4 +23,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/p4_term1/
     - assets/audio/
+    - assets/audio/p4_term1/
