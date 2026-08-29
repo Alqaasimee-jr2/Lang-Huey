@@ -24,5 +24,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/p5_term1/
+    - assets/images/p5_term2/
     - assets/audio/
     - assets/audio/p5_term1/
+    - assets/audio/p5_term2/

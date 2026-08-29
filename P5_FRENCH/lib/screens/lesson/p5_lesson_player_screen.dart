@@ -16,6 +16,18 @@ import '../../widgets/patterns/term1/p5_body_and_pain_clinic_widget.dart';
 import '../../widgets/patterns/term1/p5_term1_revision_rally_widget.dart';
 import '../../widgets/patterns/term1/p5_term1_vacation_widget.dart';
 
+// Term 2 Bespoke Pattern Widgets
+import '../../widgets/patterns/term2/p5_extended_family_widget.dart';
+import '../../widgets/patterns/term2/p5_family_tree_advanced_widget.dart';
+import '../../widgets/patterns/term2/p5_family_gathering_widget.dart';
+import '../../widgets/patterns/term2/p5_neighbor_studio_widget.dart';
+import '../../widgets/patterns/term2/p5_community_activity_widget.dart';
+import '../../widgets/patterns/term2/p5_gratitude_studio_widget.dart';
+import '../../widgets/patterns/term2/p5_thank_you_letter_widget.dart';
+import '../../widgets/patterns/term2/p5_weekly_timetable_widget.dart';
+import '../../widgets/patterns/term2/p5_term2_revision_rally_widget.dart';
+import '../../widgets/patterns/term2/p5_term2_vacation_widget.dart';
+
 enum LessonPhase {
   objectives,
   interactivePattern,
@@ -327,6 +339,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
 
   Widget _buildInteractivePatternView() {
     switch (widget.lesson.patternType) {
+      // Term 1 Patterns
       case P5PatternType.alphabetAndRevision:
         return P5AlphabetAndRevisionWidget(onComplete: _goToNextPhase);
       case P5PatternType.numberStudio21to30:
@@ -346,8 +359,30 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
       case P5PatternType.term1RevisionRally:
         return P5Term1RevisionRallyWidget(weekNumber: widget.lesson.week, onComplete: _goToNextPhase);
       case P5PatternType.term1Vacation:
-      default:
         return P5Term1VacationWidget(weekNumber: widget.lesson.week, onComplete: _goToNextPhase);
+
+      // Term 2 Patterns
+      case P5PatternType.extendedFamily:
+        return P5ExtendedFamilyWidget(onComplete: _goToNextPhase);
+      case P5PatternType.familyTreeAdvanced:
+        return P5FamilyTreeAdvancedWidget(onComplete: _goToNextPhase);
+      case P5PatternType.familyGathering:
+        return P5FamilyGatheringWidget(onComplete: _goToNextPhase);
+      case P5PatternType.neighborStudio:
+        return P5NeighborStudioWidget(onComplete: _goToNextPhase);
+      case P5PatternType.communityActivity:
+        return P5CommunityActivityWidget(onComplete: _goToNextPhase);
+      case P5PatternType.gratitudeStudio:
+        return P5GratitudeStudioWidget(onComplete: _goToNextPhase);
+      case P5PatternType.thankYouLetter:
+        return P5ThankYouLetterWidget(onComplete: _goToNextPhase);
+      case P5PatternType.weeklyTimetable:
+        return P5WeeklyTimetableWidget(onComplete: _goToNextPhase);
+      case P5PatternType.term2RevisionRally:
+        return P5Term2RevisionRallyWidget(onComplete: _goToNextPhase);
+      case P5PatternType.term2Vacation:
+      default:
+        return P5Term2VacationWidget(onComplete: _goToNextPhase);
     }
   }
 

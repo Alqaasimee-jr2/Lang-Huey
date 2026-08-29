@@ -27,11 +27,26 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
   - **Screen Wiring**:
     - `P5TermSelectScreen`: High-contrast smartboard term navigation cards.
     - `P5WeekRoadmapScreen`: 13-week grid roadmap with week cards, drill badges, and phrase counts.
-    - `P5LessonPlayerScreen`: 5-phase structured classroom flow (Objectives -> Interactive Lab -> Vocab Station -> Classwork Drills -> Summary/Homework) with tactile `0.8x / 1.0x` speed toggle.
-- **Term 1 Dedicated Multimedia Sprint Completed**:
-  - **138 Universal 44.1kHz MP3 Audio Files**: Synthesized in `P5_FRENCH/assets/audio/p5_term1/` using `gTTS(lang='fr')`.
-  - **4 Visual Educational Diagrams**: Generated high-contrast diagrams (`face_anatomy_diagram.png`, `body_clinic_diagram.png`, `tens_60_board.png`, `term1_vacation_celebration.png`) in `P5_FRENCH/assets/images/p5_term1/`.
-  - **Automated Verification**: Verified 100% audio key coverage with `verify_p5_term1_multimedia.py` and confirmed `flutter analyze` with 0 errors.
+- **Term 2 (Deuxième Trimestre) Full Build Completed**:
+  - **13 Complete Weeks of Curriculum** (`p5_term2_lessons.dart`): Ingested and curated official NERDC Primary 5 scheme covering Extended Family (*Les grands-parents, l'oncle, la tante, le cousin, la cousine*), Nephews & Nieces (*le neveu, la nièce, le petit-fils, la petite-fille, âgé/jeune, grande/petite famille*), Family Reunions & Village Trips (*Nous visitons nos grands-parents, au village, respecter les aînés*), Neighbors & Community (*Le voisin, la voisine, le quartier, la maison voisine, sympathique, aimable*), Mid-Term Speed Rally & Break, Neighborly Actions (*Aider son voisin, partager, saluer poliment, calme/bruyant/propre*), Expressing Gratitude (*Merci, Merci beaucoup, Je vous remercie, De rien, Je vous en prie, Pas de quoi*), Thank-You Letters & Appreciation (*C'est gentil, C'est très aimable, Tu es super*), 7 Days of the Week & Weekly Timetable (*Lundi to Dimanche, Quel jour sommes-nous ? Hier, Aujourd'hui, Demain*), Grand Term 2 Speed Rally, Speaking Portfolio Evaluation, and Second Term Certificate Celebration.
+  - **10 Bespoke Smartboard Pattern Widgets** (`P5_FRENCH/lib/widgets/patterns/term2/`):
+    1. `P5ExtendedFamilyWidget` (3-Generation Family Grid, Relationship Cards & Possessive Rules)
+    2. `P5FamilyTreeAdvancedWidget` (Nephews, Nieces & Age/Family Size Descriptors)
+    3. `P5FamilyGatheringWidget` (Family Reunion, Shared Meals & Village Trips)
+    4. `P5NeighborStudioWidget` (Neighbor Profile Generator & Street Card)
+    5. `P5CommunityActivityWidget` (Neighbor Mutual Assistance & Neighborhood Atmosphere)
+    6. `P5GratitudeStudioWidget` (Gratitude Expressions & Formal vs Casual Replies)
+    7. `P5ThankYouLetterWidget` (Interactive Thank-You Card & Compliment Builder)
+    8. `P5WeeklyTimetableWidget` (7-Day Calendar & Temporal Timeline: Hier, Aujourd'hui, Demain)
+    9. `P5Term2RevisionRallyWidget` (4-Station Team Buzzer Speed Rally & Scoreboard)
+    10. `P5Term2VacationWidget` (Second Term Certificate Celebration & Term 3 Preview)
+  - **Screen Routing & Navigation Integration**:
+    - Updated `P5WeekRoadmapScreen` to load and display Term 2 lessons with phrase badges.
+    - Updated `P5LessonPlayerScreen` to dynamically dispatch all 10 Term 2 pattern widgets.
+  - **Term 2 Dedicated Multimedia Sprint Completed**:
+    - **66 Universal 44.1kHz MP3 Audio Files**: Synthesized in `P5_FRENCH/assets/audio/p5_term2/` using `gTTS(lang='fr')`.
+    - **5 Visual Educational Diagrams**: Generated high-contrast diagrams (`family_tree_diagram.png`, `neighborhood_community_diagram.png`, `gratitude_postcard_board.png`, `weekly_timetable_board.png`, `term2_vacation_celebration.png`) in `P5_FRENCH/assets/images/p5_term2/`.
+    - **Verification**: Verified 100% audio key coverage with `verify_p5_term2_multimedia.py` and confirmed `flutter analyze` with 0 errors.
 
 ### Grade 4 / Primary 4 French Standalone App Architecture (`P4_FRENCH`)
 - **First Production Target**: Selected **Grade 4 / Primary 4 French Language** as the first complete standalone classroom smartboard application.

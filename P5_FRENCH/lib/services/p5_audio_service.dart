@@ -98,6 +98,12 @@ class P5AudioService {
     }
   }
 
+  Future<void> playClick() => playSfx(P5SfxType.click);
+  Future<void> playCorrect() => playSfx(P5SfxType.correct);
+  Future<void> playIncorrect() => playSfx(P5SfxType.incorrect);
+  Future<void> playCelebrate() => playSfx(P5SfxType.celebrate);
+  Future<void> playWhoosh() => playSfx(P5SfxType.whoosh);
+
   Future<void> stop() async {
     await _phrasePlayer.stop();
     await _sfxPlayer.stop();
