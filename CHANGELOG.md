@@ -6,6 +6,33 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ## [Unreleased] - 2026-08-28
 
+### Grade 5 / Primary 5 French Standalone App Architecture (`P5_FRENCH`)
+- **Standalone App Infrastructure Scaffolding**:
+  - Initialized dedicated standalone application directory in `P5_FRENCH/`.
+  - Configured `pubspec.yaml` manifest with `just_audio`, `provider`, `shared_preferences`, and `google_fonts`.
+  - Created high-contrast smartboard design system tokens (`P5Colors`, `P5Text`), comprehensive data models (`P5Lesson`, `P5VocabItem`, `P5InteractiveExercise`, `P5EvaluationQuestion`, `P5AssignmentTask`, `P5GrammarNote`), and `P5AudioService` with native `0.8x / 1.0x` pitch-preserving speed toggle.
+- **Term 1 (Premier Trimestre) Full Build Completed**:
+  - **13 Complete Weeks of Curriculum** (`p5_term1_lessons.dart`): Ingested and curated official NERDC Primary 5 scheme covering Alphabet Sounds & 1–20 Review, Counting 21–30 & Math Equations (*plus, moins, font*), Numbers 31–50, Store Prices in Naira & Telephone Numbers (*Combien ça coûte ?*), Numbers 51–60 & Base Tens Mastery (10 to 60), Mid-Term Speed Rally & Break, Presenting Others (*Voici / C'est / Il s'appelle / Elle s'appelle, gentil/gentille*), Classmate Passports (*Nigérian/e, Grand/e, Petit/e, Fort/e*), Head Anatomy (*la tête, les cheveux, les yeux, les dents*), Body Anatomy & Clinic (*le dos, le ventre*, *J'ai mal au dos / à la tête / aux dents*), Grand Speed Oral Rally, and Term 1 Certificate Celebration.
+  - **10 Bespoke Smartboard Pattern Widgets** (`P5_FRENCH/lib/widgets/patterns/term1/`):
+    1. `P5AlphabetAndRevisionWidget` (Interactive Alphabet Soundboard & Time Dial)
+    2. `P5NumberStudio21to30Widget` (21–30 Counting Board, Math Builder & *Combien ?* Quiz)
+    3. `P5NumberStudio31to50Widget` (Classroom Market Store Kiosk & Phone Keypad)
+    4. `P5NumberStudio51to60Widget` (Master Tens 10–60 & Mental Subtraction Lab)
+    5. `P5PresentOthersWidget` (3rd-Person Friend Introduction Studio)
+    6. `P5PresentOthersDescriptorWidget` (Student Passport & Physical Trait Builder)
+    7. `P5HeadAndFaceExplorerWidget` (Interactive Anatomical Head & Face Explorer)
+    8. `P5BodyAndPainClinicWidget` (Body Nodes & Doctor Prescription Clinic)
+    9. `P5Term1RevisionRallyWidget` (4-Station Team Buzzer Speed Rally)
+    10. `P5Term1VacationWidget` (Holiday Celebration & Term 2 Roadmap Preview)
+  - **Screen Wiring**:
+    - `P5TermSelectScreen`: High-contrast smartboard term navigation cards.
+    - `P5WeekRoadmapScreen`: 13-week grid roadmap with week cards, drill badges, and phrase counts.
+    - `P5LessonPlayerScreen`: 5-phase structured classroom flow (Objectives -> Interactive Lab -> Vocab Station -> Classwork Drills -> Summary/Homework) with tactile `0.8x / 1.0x` speed toggle.
+- **Term 1 Dedicated Multimedia Sprint Completed**:
+  - **138 Universal 44.1kHz MP3 Audio Files**: Synthesized in `P5_FRENCH/assets/audio/p5_term1/` using `gTTS(lang='fr')`.
+  - **4 Visual Educational Diagrams**: Generated high-contrast diagrams (`face_anatomy_diagram.png`, `body_clinic_diagram.png`, `tens_60_board.png`, `term1_vacation_celebration.png`) in `P5_FRENCH/assets/images/p5_term1/`.
+  - **Automated Verification**: Verified 100% audio key coverage with `verify_p5_term1_multimedia.py` and confirmed `flutter analyze` with 0 errors.
+
 ### Grade 4 / Primary 4 French Standalone App Architecture (`P4_FRENCH`)
 - **First Production Target**: Selected **Grade 4 / Primary 4 French Language** as the first complete standalone classroom smartboard application.
 - **Platform Stack**: **Flutter / Dart** targeting **Android APK** (optimized for Android Interactive Flat Panels / Smartboards with landscape orientation, high touch ergonomics, and 100% offline runtime).
