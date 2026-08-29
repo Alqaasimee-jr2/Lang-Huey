@@ -54,27 +54,40 @@ class P4InteractiveExercise {
 
 /// An evaluation or classwork question for whole-class smartboard discussion
 class P4EvaluationQuestion {
+  final int? questionNumber;
   final String question;
   final String answer;
   final String? hint;
 
   const P4EvaluationQuestion({
-    required this.question,
-    required this.answer,
+    this.questionNumber,
+    String? question,
+    String? questionText,
+    String? answer,
+    String? expectedAnswer,
     this.hint,
-  });
+  })  : question = question ?? questionText ?? '',
+        answer = answer ?? expectedAnswer ?? '';
 }
 
 /// A homework assignment task
 class P4AssignmentTask {
+  final int? taskNumber;
   final String category; // e.g. "Written", "Oral/Role-play", "Drawing & Design"
   final String instruction;
 
   const P4AssignmentTask({
-    required this.category,
-    required this.instruction,
-  });
+    this.taskNumber,
+    String? category,
+    String? topic,
+    String? instruction,
+    String? instructions,
+  })  : category = category ?? topic ?? 'Devoir',
+        instruction = instruction ?? instructions ?? '';
 }
+
+/// Backward compatibility alias for homework tasks
+typedef P4HomeworkTask = P4AssignmentTask;
 
 /// Alias for interactive classwork exercises
 typedef P4ClassworkExercise = P4InteractiveExercise;
@@ -98,6 +111,8 @@ class P4Lesson {
   final int week;
   final String topic;
   final String subtitle;
+  String get title => topic;
+  String get theme => subtitle;
   final P4PatternType patternType;
   final List<String> objectives;
   final String culturalInsight;
@@ -106,6 +121,7 @@ class P4Lesson {
   final List<P4InteractiveExercise> classworkExercises;
   final List<P4EvaluationQuestion> evaluationQuestions;
   final List<P4AssignmentTask> assignmentTasks;
+  List<P4AssignmentTask> get homeworkTasks => assignmentTasks;
   final Map<String, dynamic>? patternData;
 
   const P4Lesson({
@@ -120,7 +136,8 @@ class P4Lesson {
     this.grammarNotes,
     required this.classworkExercises,
     required this.evaluationQuestions,
-    required this.assignmentTasks,
+    List<P4AssignmentTask>? assignmentTasks,
+    List<P4AssignmentTask>? homeworkTasks,
     this.patternData,
-  });
+  }) : assignmentTasks = assignmentTasks ?? homeworkTasks ?? const [];
 }

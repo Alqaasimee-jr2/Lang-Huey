@@ -78,7 +78,12 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
     13. `P5LessonPlayerScreen` phase cycling & interactive pattern loading smoke test.
   - **Zero Overflow Layout Enhancements**: Wrapped header bars, roadmap titles, and step headers in `Expanded`/`Flexible`/`SingleChildScrollView` to guarantee 100% responsive display across all smartboard resolutions and test viewports.
 
-### Grade 4 / Primary 4 French Standalone App Architecture (`P4_FRENCH`)
+### Grade 4 / Primary 4 French Standalone App Architecture (`P4_FRENCH` / `mvp`)
+- **Web & Smartboard Execution Verification**:
+  - Resolved model constructor variance in `P4EvaluationQuestion` and `P4AssignmentTask` to natively support all legacy & modern parameter variations (`questionText`, `expectedAnswer`, `homeworkTasks`, `instructions`, `topic`, `taskNumber`).
+  - Fixed deprecated icon reference in `classroom_explorer_widget.dart` and `p4_term2_lessons.dart`.
+  - Successfully verified static analysis with **0 compilation errors**.
+  - Launched live interactive session via `flutter run -d edge` on Microsoft Edge.
 - **First Production Target**: Selected **Grade 4 / Primary 4 French Language** as the first complete standalone classroom smartboard application.
 - **Platform Stack**: **Flutter / Dart** targeting **Android APK** (optimized for Android Interactive Flat Panels / Smartboards with landscape orientation, high touch ergonomics, and 100% offline runtime).
 - **Term 3 (Troisième Trimestre) Architectural Direction & Pedagogical Curation**:

@@ -644,7 +644,7 @@ class P4Term2Lessons {
           french: 'Le professeur / La professeure',
           phonetics: 'luh pro-fess-ur',
           english: 'The teacher (male / female)',
-          icon: Icons.person_celebrate_rounded,
+          icon: Icons.school_rounded,
           audioKey: 'le_professeur',
         ),
         P4VocabItem(

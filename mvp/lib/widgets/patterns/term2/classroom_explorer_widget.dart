@@ -79,7 +79,7 @@ class _ClassroomExplorerWidgetState extends State<ClassroomExplorerWidget> {
       'phonetics': 'luh pro-fess-ur',
       'gender': 'Masculin',
       'example': 'Le professeur enseigne le français.',
-      'icon': Icons.person_celebrate_rounded,
+      'icon': Icons.school_rounded,
       'audio': 'le_professeur',
     },
     {
