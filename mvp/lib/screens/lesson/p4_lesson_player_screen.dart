@@ -52,8 +52,11 @@ class P4LessonPlayerScreen extends StatefulWidget {
 }
 
 class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
+  final P4AudioService _audioService = P4AudioService();
   LessonPhase _phase = LessonPhase.objectives;
   int _revealedQuestionIndex = -1;
+
+  void _goToNextPhase() => _nextPhase();
 
   // Classwork Interactive Drill state
   int _classworkSubTab = 0; // 0: Interactive Drills, 1: Scheme Evaluation Q&A
@@ -181,6 +184,44 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
           ),
 
           const SizedBox(width: 20),
+
+          // Speed Control Button (1.0x / 0.8x)
+          Material(
+            color: _audioService.playbackSpeed < 1.0 ? LHColors.gold : LHColors.white.withOpacity(0.15),
+            borderRadius: BorderRadius.circular(10),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(10),
+              onTap: () {
+                final newSpeed = _audioService.playbackSpeed == 1.0 ? 0.8 : 1.0;
+                setState(() {
+                  _audioService.setPlaybackSpeed(newSpeed);
+                });
+                _audioService.playSfx(P4SfxType.click);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                child: Row(
+                  children: [
+                    Icon(
+                      _audioService.playbackSpeed < 1.0 ? Icons.slow_motion_video_rounded : Icons.speed_rounded,
+                      size: 18,
+                      color: _audioService.playbackSpeed < 1.0 ? LHColors.charcoal : LHColors.white,
+                    ),
+                    const SizedBox(width: 6),
+                    Text(
+                      _audioService.playbackSpeed < 1.0 ? '0.8x Slower' : '1.0x Normal',
+                      style: LHText.body(_audioService.playbackSpeed < 1.0 ? LHColors.charcoal : LHColors.white).copyWith(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          const SizedBox(width: 12),
 
           Row(
             mainAxisSize: MainAxisSize.min,
@@ -505,19 +546,43 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                   ),
                 ],
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                decoration: BoxDecoration(
-                  color: LHColors.cream,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  '${widget.lesson.vocabItems.length} PHRASES TO PRACTICE',
-                  style: LHText.body(LHColors.charcoal).copyWith(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w800,
+              Row(
+                children: [
+                  ActionChip(
+                    avatar: Icon(
+                      _audioService.playbackSpeed < 1.0 ? Icons.slow_motion_video_rounded : Icons.speed_rounded,
+                      size: 18,
+                      color: LHColors.teal,
+                    ),
+                    label: Text(
+                      _audioService.playbackSpeed < 1.0 ? 'Speed: 0.8x (Slower)' : 'Speed: 1.0x (Normal)',
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                    ),
+                    backgroundColor: _audioService.playbackSpeed < 1.0 ? LHColors.gold.withOpacity(0.35) : LHColors.cream,
+                    onPressed: () {
+                      final newSpeed = _audioService.playbackSpeed == 1.0 ? 0.8 : 1.0;
+                      setState(() {
+                        _audioService.setPlaybackSpeed(newSpeed);
+                      });
+                      _audioService.playSfx(P4SfxType.click);
+                    },
                   ),
-                ),
+                  const SizedBox(width: 10),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: LHColors.cream,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      '${widget.lesson.vocabItems.length} PHRASES TO PRACTICE',
+                      style: LHText.body(LHColors.charcoal).copyWith(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

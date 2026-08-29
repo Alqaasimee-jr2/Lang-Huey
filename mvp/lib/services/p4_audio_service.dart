@@ -22,11 +22,21 @@ class P4AudioService {
 
   String? _currentlyPlayingKey;
   bool _isPlaying = false;
+  double _playbackSpeed = 1.0;
 
   bool get isPlaying => _isPlaying;
   String? get currentlyPlayingKey => _currentlyPlayingKey;
+  double get playbackSpeed => _playbackSpeed;
 
   Stream<bool> get playingStream => _phrasePlayer.playingStream;
+
+  /// Set playback speed (e.g. 0.8 for slower beginner pronunciation, 1.0 for normal)
+  Future<void> setPlaybackSpeed(double speed) async {
+    _playbackSpeed = speed.clamp(0.5, 1.5);
+    try {
+      await _phrasePlayer.setSpeed(_playbackSpeed);
+    } catch (_) {}
+  }
 
   /// Play a Primary 4 French vocabulary or phrase audio clip by its key
   Future<void> playPhrase(String audioKey, {int? term}) async {
@@ -69,6 +79,7 @@ class P4AudioService {
       }
 
       if (loaded) {
+        await _phrasePlayer.setSpeed(_playbackSpeed);
         await _phrasePlayer.play();
       }
     } catch (e) {

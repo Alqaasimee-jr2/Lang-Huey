@@ -1534,12 +1534,82 @@ final List<P4Lesson> p4Term1Lessons = [
   ),
 
   // ==========================================
-  // WEEK 12 & 13: TERM 1 COMPLETION & VACATION
+  // WEEK 12: ORAL EVALUATION & TERM 1 PORTFOLIO
   // ==========================================
   const P4Lesson(
     term: 1,
     week: 12,
-    topic: 'Fin du Premier Trimestre (Term 1 Wrap-up & Vacation)',
+    topic: 'Bilan et Évaluation Orale (Term 1 Oral Assessment & Portfolio)',
+    subtitle: 'Teacher-guided speaking and vocabulary evaluation for First Term',
+    patternType: P4PatternType.midTermReview,
+    objectives: [
+      'Assess pupil mastery in French greetings, numbers 1-20, and self-introduction.',
+      'Conduct interactive oral speaking stations with the whole class.',
+      'Record pupil achievement badges for Term 1.',
+    ],
+    culturalInsight:
+      'Oral evaluation in French primary schools is designed to celebrate speaking confidence! Pupils demonstrate greetings, recite numbers, and state their full name and nationality with pride.',
+    vocabItems: [
+      P4VocabItem(
+        french: 'L\'évaluation orale',
+        phonetics: 'lay-vah-loo-ah-syohn oh-rahl',
+        english: 'Oral speaking evaluation',
+        usageNote: 'Classroom assessment.',
+        icon: Icons.record_voice_over_rounded,
+        audioKey: 'levaluation_orale',
+      ),
+      P4VocabItem(
+        french: 'Très bien réussi !',
+        phonetics: 'tray byan ray-oo-see',
+        english: 'Very well done / Great success!',
+        usageNote: 'Teacher commendation.',
+        icon: Icons.thumb_up_rounded,
+        audioKey: 'tres_bien_reussi',
+      ),
+      P4VocabItem(
+        french: 'Bravo à tous !',
+        phonetics: 'brah-voh ah toos',
+        english: 'Bravo to all pupils!',
+        usageNote: 'Class celebration.',
+        icon: Icons.celebration_rounded,
+        audioKey: 'bravo_a_tous',
+      ),
+    ],
+    classworkExercises: [
+      P4InteractiveExercise(
+        prompt: 'In your oral presentation, which sentence comes first?',
+        options: ['Bonjour, je m\'appelle...', 'Au revoir!', 'J\'ai dix ans.', 'Bonne nuit!'],
+        correctOptionIndex: 0,
+        explanation: 'A polite oral introduction always starts with "Bonjour, je m\'appelle...".',
+      ),
+    ],
+    evaluationQuestions: [
+      P4EvaluationQuestion(
+        question: 'Recite your full French introduction: Greeting, Name, Age, Nationality, and Farewell.',
+        answer: 'Bonjour ! Je m\'appelle [Name]. J\'ai [Age] ans. Je suis Nigérian(e). Au revoir !',
+        hint: '5-part self-introduction.',
+      ),
+      P4EvaluationQuestion(
+        question: 'Count out loud from 11 to 20 in French.',
+        answer: 'Onze, douze, treize, quatorze, quinze, seize, dix-sept, dix-huit, dix-neuf, vingt.',
+        hint: '11 to 20 numbers.',
+      ),
+    ],
+    assignmentTasks: [
+      P4AssignmentTask(
+        category: 'Assessment Preparation',
+        instruction: 'Practice reciting your French numbers 1 to 20 smoothly before the holiday break.',
+      ),
+    ],
+  ),
+
+  // ==========================================
+  // WEEK 13: TERM 1 WRAP-UP & VACATION CELEBRATION
+  // ==========================================
+  const P4Lesson(
+    term: 1,
+    week: 13,
+    topic: 'Fin du Premier Trimestre (Term 1 Wrap-up & Vacation Celebration)',
     subtitle: 'Congratulations! Term 1 Complete — Félicitations et Bonnes Vacances!',
     patternType: P4PatternType.vacationCelebration,
     objectives: [
@@ -1551,7 +1621,7 @@ final List<P4Lesson> p4Term1Lessons = [
         'Félicitations! You have laid a solid foundation in French language: greetings, numbers 1-20, self-introductions, and geography. In Term 2, we will explore our families, classroom objects, school subjects, and colors!',
     vocabItems: [
       P4VocabItem(
-        french: 'Félicitations!',
+        french: 'Félicitations !',
         phonetics: 'fay-lee-see-tah-syohn',
         english: 'Congratulations!',
         usageNote: 'Well done on completing Term 1!',
@@ -1559,7 +1629,7 @@ final List<P4Lesson> p4Term1Lessons = [
         audioKey: 'felicitations',
       ),
       P4VocabItem(
-        french: 'Bonnes vacances!',
+        french: 'Bonnes vacances !',
         phonetics: 'bun vah-kahns',
         english: 'Happy holidays / Have a great vacation!',
         usageNote: 'End of term vacation greeting.',
@@ -1567,7 +1637,7 @@ final List<P4Lesson> p4Term1Lessons = [
         audioKey: 'bonnes_vacances',
       ),
       P4VocabItem(
-        french: 'À la rentrée!',
+        french: 'À la rentrée !',
         phonetics: 'ah lah rahn-tray',
         english: 'See you next term / when school resumes!',
         usageNote: 'Departure wish until next school term.',
