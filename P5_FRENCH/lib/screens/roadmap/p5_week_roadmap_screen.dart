@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/p5_term1_lessons.dart';
 import '../../data/p5_term2_lessons.dart';
+import '../../data/p5_term3_lessons.dart';
 import '../../models/p5_lesson_model.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
@@ -17,7 +18,7 @@ class P5WeekRoadmapScreen extends StatelessWidget {
         ? P5Term1Lessons.weeks
         : termNumber == 2
             ? P5Term2Lessons.weeks
-            : P5Term1Lessons.weeks;
+            : P5Term3Lessons.weeks;
     final termTheme = termNumber == 1
         ? 'Term 1: Numbers 21–60, Presenting Others & Body Anatomy (Weeks 1 to 13)'
         : termNumber == 2

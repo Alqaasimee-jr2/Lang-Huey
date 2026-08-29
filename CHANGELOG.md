@@ -47,6 +47,23 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
     - **66 Universal 44.1kHz MP3 Audio Files**: Synthesized in `P5_FRENCH/assets/audio/p5_term2/` using `gTTS(lang='fr')`.
     - **5 Visual Educational Diagrams**: Generated high-contrast diagrams (`family_tree_diagram.png`, `neighborhood_community_diagram.png`, `gratitude_postcard_board.png`, `weekly_timetable_board.png`, `term2_vacation_celebration.png`) in `P5_FRENCH/assets/images/p5_term2/`.
     - **Verification**: Verified 100% audio key coverage with `verify_p5_term2_multimedia.py` and confirmed `flutter analyze` with 0 errors.
+- **Term 3 (Troisième Trimestre) Full Build Completed**:
+  - **13 Complete Weeks of Curriculum** (`p5_term3_lessons.dart`): Ingested and curated official NERDC Primary 5 scheme covering Morning Daily Routine (*Se réveiller, se lever, se laver, s'habiller, prendre le petit-déjeuner, aller à l'école, à 6h00*), Afternoon & Night Routine (*Étudier, déjeuner, rentrer à la maison, faire les devoirs, dîner en famille, se coucher et dormir*), Sports (*Le football, le basketball, la natation, la course, le tennis, Je joue au...*), Hobbies & Social Invitations (*Lire, dessiner, chanter, danser, Veux-tu jouer avec moi ? Oui, avec plaisir / Non, je ne peux pas*), Mid-Term Speed Rally & Break, Core School Subjects (*Le français, l'anglais, les mathématiques, les sciences, l'histoire, ma matière préférée*), Classroom Stationery & Polite Borrowing (*Le stylo, le crayon, la règle, la gomme, le cahier, Prête-moi ton stylo / ta règle, s'il te plaît*), Future Career Dreams (*Le médecin, l'enseignant/e, l'infirmier/ière, le pilote, l'ingénieur, le policier, Quand je serai grand/e, je veux être...*), Foods, 3 Daily Meals & Dining Etiquette (*Le riz, le pain, le poulet, le poisson, les fruits, l'eau, le jus, J'ai faim, J'ai soif, Bon appétit !*), Grand Annual Speed Revision Rally, Annual Speaking Portfolio Evaluation, and Primary 5 Graduation & Promotion into Primary 6 (*Bienvenue en 6e année !*).
+  - **10 Bespoke Smartboard Pattern Widgets** (`P5_FRENCH/lib/widgets/patterns/term3/`):
+    1. `P5DailyRoutineMorningWidget` (6h00–7h30 Morning Timeline, Wake Up, Wash, Dress & Breakfast)
+    2. `P5DailyRoutineEveningWidget` (Afternoon Study, Homework, Dinner & Sleep Grid)
+    3. `P5SportsArenaWidget` (Sports Stadium, "Je joue au..." Selector & Preference Card)
+    4. `P5HobbiesLoungeWidget` (Creative Hobbies, Reading, Music & Interactive Play Invitation Station)
+    5. `P5SchoolSubjectsWidget` (5 Core Subjects Carousel & "Ma matière préférée" Builder)
+    6. `P5ClassroomBorrowingWidget` (Stationery Drawer, Masc/Fem Possessives: ton/ta & Polite Borrowing)
+    7. `P5ProfessionsCareerWidget` (6 Dream Careers, Gender Switch: grand/grande & Ambition Showcase)
+    8. `P5FoodBuffetWidget` (Jollof Rice, Agege Bread, Fruit Buffet & "Bon appétit !" Station)
+    9. `P5Term3RevisionRallyWidget` (4-Station Team Speed Buzzer Rally with Live Scoreboard)
+    10. `P5Term3GraduationWidget` (Primary 5 Certificate of Excellence & Promotion to Primary 6)
+  - **Term 3 Dedicated Multimedia Sprint Completed**:
+    - **64 Universal 44.1kHz MP3 Audio Files**: Synthesized in `P5_FRENCH/assets/audio/p5_term3/` using `gTTS(lang='fr')`.
+    - **5 Visual Educational Diagrams**: Generated high-contrast diagrams (`morning_routine_timeline.png`, `sports_and_hobbies_board.png`, `school_subjects_and_stationery.png`, `future_professions_showcase.png`, `term3_graduation_celebration.png`) in `P5_FRENCH/assets/images/p5_term3/`.
+    - **Full Academic Year Verification**: Executed `verify_p5_full_app.py` confirming 100% audio coverage across all 3 terms (268 MP3 files, 14 diagrams, 30 bespoke widgets, 39 curriculum weeks, 0 compilation errors).
 
 ### Grade 4 / Primary 4 French Standalone App Architecture (`P4_FRENCH`)
 - **First Production Target**: Selected **Grade 4 / Primary 4 French Language** as the first complete standalone classroom smartboard application.

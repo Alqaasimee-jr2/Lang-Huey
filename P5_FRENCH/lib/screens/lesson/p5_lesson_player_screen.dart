@@ -28,6 +28,18 @@ import '../../widgets/patterns/term2/p5_weekly_timetable_widget.dart';
 import '../../widgets/patterns/term2/p5_term2_revision_rally_widget.dart';
 import '../../widgets/patterns/term2/p5_term2_vacation_widget.dart';
 
+// Term 3 Bespoke Pattern Widgets
+import '../../widgets/patterns/term3/p5_daily_routine_morning_widget.dart';
+import '../../widgets/patterns/term3/p5_daily_routine_evening_widget.dart';
+import '../../widgets/patterns/term3/p5_sports_arena_widget.dart';
+import '../../widgets/patterns/term3/p5_hobbies_lounge_widget.dart';
+import '../../widgets/patterns/term3/p5_school_subjects_widget.dart';
+import '../../widgets/patterns/term3/p5_classroom_borrowing_widget.dart';
+import '../../widgets/patterns/term3/p5_professions_career_widget.dart';
+import '../../widgets/patterns/term3/p5_food_buffet_widget.dart';
+import '../../widgets/patterns/term3/p5_term3_revision_rally_widget.dart';
+import '../../widgets/patterns/term3/p5_term3_graduation_widget.dart';
+
 enum LessonPhase {
   objectives,
   interactivePattern,
@@ -381,8 +393,29 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
       case P5PatternType.term2RevisionRally:
         return P5Term2RevisionRallyWidget(onComplete: _goToNextPhase);
       case P5PatternType.term2Vacation:
-      default:
         return P5Term2VacationWidget(onComplete: _goToNextPhase);
+
+      // Term 3 Patterns
+      case P5PatternType.dailyRoutineMorning:
+        return P5DailyRoutineMorningWidget(onComplete: _goToNextPhase);
+      case P5PatternType.dailyRoutineEvening:
+        return P5DailyRoutineEveningWidget(onComplete: _goToNextPhase);
+      case P5PatternType.sportsArena:
+        return P5SportsArenaWidget(onComplete: _goToNextPhase);
+      case P5PatternType.hobbiesLounge:
+        return P5HobbiesLoungeWidget(onComplete: _goToNextPhase);
+      case P5PatternType.schoolSubjects:
+        return P5SchoolSubjectsWidget(onComplete: _goToNextPhase);
+      case P5PatternType.classroomBorrowing:
+        return P5ClassroomBorrowingWidget(onComplete: _goToNextPhase);
+      case P5PatternType.professionsCareer:
+        return P5ProfessionsCareerWidget(onComplete: _goToNextPhase);
+      case P5PatternType.foodAndBuffet:
+        return P5FoodBuffetWidget(onComplete: _goToNextPhase);
+      case P5PatternType.term3RevisionRally:
+        return P5Term3RevisionRallyWidget(onComplete: _goToNextPhase);
+      case P5PatternType.term3Graduation:
+        return P5Term3GraduationWidget(onComplete: _goToNextPhase);
     }
   }
 
