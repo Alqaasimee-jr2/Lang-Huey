@@ -119,18 +119,24 @@ class P4TermSelectScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 20),
 
-                    // Term 3 (Preview)
+                    // Term 3 (Unlocked & Complete)
                     Expanded(
                       child: _buildTermCard(
                         context: context,
                         termNumber: 3,
                         title: 'Troisième Trimestre',
                         englishTitle: 'Third Term',
-                        theme: 'Counting 0–20, Telling Time, Daily Routines & Food / Meals',
+                        theme: 'Telling Time, Daily Routine, Meals, Body Anatomy, Clothes & Weather',
                         weeksCount: 13,
-                        isUnlocked: false,
-                        badgeColor: LHColors.grey,
-                        onTap: null,
+                        isUnlocked: true,
+                        badgeColor: LHColors.gold,
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/p4_roadmap',
+                            arguments: 3,
+                          );
+                        },
                       ),
                     ),
                   ],

@@ -9,6 +9,25 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 ### Grade 4 / Primary 4 French Standalone App Architecture (`P4_FRENCH`)
 - **First Production Target**: Selected **Grade 4 / Primary 4 French Language** as the first complete standalone classroom smartboard application.
 - **Platform Stack**: **Flutter / Dart** targeting **Android APK** (optimized for Android Interactive Flat Panels / Smartboards with landscape orientation, high touch ergonomics, and 100% offline runtime).
+- **Term 3 (Troisième Trimestre) Architectural Direction & Pedagogical Curation**:
+  - **Comprehensive Foundation Completion**: Term 3 serves as the capstone of Primary 4 French, transitioning pupils from basic naming and labeling to expressive language (time, daily habits, food preferences, bodily health, clothing, and weather).
+  - **Topic-by-Topic Bespoke Curation**:
+    - *Week 1 (Telling Time / L'heure)*: Analog/digital smartboard clock mechanics with *Quelle heure est-il ? Il est ... heure(s)*, *midi*, and *minuit*.
+    - *Week 2 (Daily Routine / La routine quotidienne)*: Reflexive daily routine actions (*Je me réveille, Je me lave, Je prends le petit déjeuner, Je vais à l'école, Je dors*) tied to chronological time stamps.
+    - *Week 3 (Food & Meals / Les repas et la nourriture)*: 3-meal buffet system (*Le petit déjeuner, Le déjeuner, Le dîner*) and staple food items with gender articles (*Le riz, Le pain, Le poulet, Le poisson, Le lait, L'eau*).
+    - *Week 4 (Hunger, Thirst & Preferences / Faim, Soif et Préférences)*: Physical states and preference verbs (*J'ai faim, J'ai soif, Je veux manger..., Je veux boire..., J'aime / Je n'aime pas*).
+    - *Week 5 (Mid-Term Oral Speed Rally)*: Rapid 4-category oral review of Weeks 1–4.
+    - *Week 6 (Mid-Term Cultural Break & Dining Etiquette)*: Dining expressions (*Bon appétit ! Merci pour le repas*) and French culinary etiquette.
+    - *Week 7 (Parts of the Body / Les parties du corps)*: 9 anatomical nodes (*La tête, Les yeux, Le nez, La bouche, Les oreilles, Les bras, Les mains, Les jambes, Les pieds*) with singular and plural article agreements.
+    - *Week 8 (Health, Pain & Hygiene / La santé et l'hygiène)*: Expressing pain (*J'ai mal à la tête / aux dents / au ventre*) and daily hygiene imperatives (*Se laver les mains, Se brosser les dents*).
+    - *Week 9 (Clothes & Dressing / Les vêtements)*: Clothing items and color adjective gender agreement (*Une chemise blanche, Un pantalon noir, Une robe rouge, Des chaussures marron*).
+    - *Week 10 (Weather & Climate / Le temps qu'il fait)*: Weather conditions (*Il fait beau, Il fait chaud, Il fait froid, Il pleut*) and Nigerian seasons (*La saison des pluies vs La saison sèche*).
+    - *Week 11 (Grand Annual Speed Revision Rally)*: Comprehensive recap across all 3 terms of Primary 4 French.
+    - *Week 12 (Teacher Oral Evaluation & Review)*: Oral assessment checklist and student achievement portfolio.
+    - *Week 13 (Graduation & Holiday Celebration)*: Year-end promotion celebration (*Félicitations pour la 4e année ! Bonnes vacances et bienvenue en 5e année !*).
+  - **Two-Phase Delivery Pipeline**:
+    - **Phase 1 (Core Engine & Logic First)**: Complete curriculum data, 10 bespoke pattern widgets, screen navigation, and static analysis verification.
+    - **Phase 2 (Dedicated Multimedia Sprint)**: Generate all 44.1kHz MP3 audio files and vector illustrations.
 - **Execution Strategy (Term-by-Term Build)**:
   - **Sequential Delivery**: Complete **Term 1 (Weeks 1–13)** fully at a stretch before proceeding to subsequent terms.
   - **Zero Media First / Logic-First Pipeline**: Build all UI layouts, interactive mechanics, topic-specific learning patterns, vocabulary data, and evaluation flows first with clean vector/text elements. Focus specifically on audio/media asset production in the next dedicated pass.
@@ -44,6 +63,28 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
     - **183 Standard 44.1kHz MP3 Audio Files**: Synthesized and verified across all 13 weeks of Term 2 in `mvp/assets/audio/p4_term2/` for 100% offline smartboard playback.
     - **Visual Illustration Suite**: Generated 8 bespoke pedagogical diagrams and cards (`family_portrait.png`, `family_tree.png`, `classroom_map.png`, `campus_map.png`, `timetable_calendar.png`, `preposition_stage.png`, `color_wheel.png`, `vacation_celebration.png`) in `mvp/assets/images/p4_term2/`.
     - **Multi-Term Audio Resolver**: Enhanced [P4AudioService](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/services/p4_audio_service.dart) to seamlessly resolve Term 1, Term 2, and shared fallback audio assets automatically.
+- **Term 3 (Troisième Trimestre) Full Build & Dedicated Multimedia Sprint Complete**:
+  - **13 Complete Weeks of Curriculum** (`p4_term3_lessons.dart`): Added exhaustive NERDC curriculum content covering Time (*Quelle heure est-il ? Il est ... heure(s), midi, minuit*), Daily Routine (*Je me réveille, Je me lave, Je m'habille, Je prends le petit déjeuner, Je vais à l'école, Je me couche*), 3 Meals & Food Items (*Le petit déjeuner, Le déjeuner, Le dîner, Le pain, Le riz, Le poulet, Le poisson*), Hunger, Thirst & Preferences (*J'ai faim, J'ai soif, J'aime, Je préfère, Je déteste*), Body Anatomy (*La tête, Le visage, Les yeux, Le nez, La bouche, Les oreilles, Le bras, La main, Le ventre, La jambe, Le pied, Les dents*), Doctor Clinic & Hygiene (*J'ai mal à la tête / aux dents, Je me lave les mains, Je me brosse les dents*), Clothes & Color Agreement (*Une chemise blanche, Un pantalon noir, Une robe rouge, Des chaussures marron*), Weather & Seasons (*Il fait beau, Il fait chaud, Il fait froid, Il pleut, Il fait du vent, La saison des pluies, La saison sèche, L'harmattan*), Grand Annual Revision Rally, Oral Evaluation, and Year-End Graduation Diploma Celebration.
+  - **10 Bespoke Smartboard Pattern Widgets**:
+    1. [ClockTimeExplorerWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/clock_time_explorer_widget.dart) (Week 1: Telling time & hourly dials).
+    2. [DailyRoutineSequencerWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/daily_routine_sequencer_widget.dart) (Week 2: Timeline daily schedule).
+    3. [FoodAndMealsWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/food_and_meals_widget.dart) (Week 3: 3-meal buffet organizer & food items).
+    4. [HungerThirstDialWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/hunger_thirst_dial_widget.dart) (Week 4: Hunger/thirst states & preference constructor).
+    5. [BodyAnatomyExplorerWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/body_anatomy_explorer_widget.dart) (Week 7: 9 anatomical nodes & singular/plural gender agreements).
+    6. [HealthAndHygieneWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/health_and_hygiene_widget.dart) (Week 8: Doctor clinic symptoms diagnosis & daily hygiene habits).
+    7. [WardrobeStylistWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/wardrobe_stylist_widget.dart) (Week 9: Clothes rack & color adjective agreement lab).
+    8. [WeatherStudioWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/weather_studio_widget.dart) (Week 10: Weather broadcast & seasons comparison).
+    9. [Term3RevisionRallyWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/term3_revision_rally_widget.dart) (Weeks 5, 11 & 12: 4-category speed oral revision rally).
+    10. [Term3GraduationCelebrationWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/term3/term3_graduation_celebration_widget.dart) (Weeks 6 & 13: Mid-term dining etiquette and Year-End Primary 4 French Diploma of Excellence).
+  - **Full Navigation & Multi-Term Routing**:
+    - Unlocked Term 3 card in [P4TermSelectScreen](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/screens/term/p4_term_select_screen.dart).
+    - Added Term 3 dataset loading in [P4WeekRoadmapScreen](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/screens/roadmap/p4_week_roadmap_screen.dart).
+    - Wired all 10 Term 3 interactive widgets in [P4LessonPlayerScreen](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/screens/lesson/p4_lesson_player_screen.dart).
+    - Enhanced [P4AudioService](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/services/p4_audio_service.dart) to prioritize `assets/audio/p4_term3/` when playing Term 3 lessons.
+  - **Term 3 Multimedia Sprint & Universal Audio Engine Complete**:
+    - **168 Standard 44.1kHz MP3 Audio Files**: Synthesized and verified across all 13 weeks in `mvp/assets/audio/p4_term3/` using standard French speech synthesis.
+    - **8 Visual Educational Diagrams & Cards**: Generated high-contrast PNG diagram assets in `mvp/assets/images/p4_term3/` (`term3_banner.png`, `clock_diagram.png`, `daily_routine_timeline.png`, `three_meals_pyramid.png`, `body_anatomy_chart.png`, `health_hygiene_card.png`, `weather_seasons_map.png`, `graduation_certificate_template.png`).
+    - **100% Automated Asset Verification**: Ran `verify_term3_multimedia.py` confirming 100% audio key coverage (112/112 in lessons, 67/67 in pattern widgets, 8/8 diagrams).
 - **Term 1 Responsiveness & Text/Audio Alignment Sprint Complete**:
   - **Granular Dialogue Audio Triggers**:
     - [GreetingDialWidget](file:///c:/Users/DELL/Desktop/Lang%20Huey/mvp/lib/widgets/patterns/greeting_dial_widget.dart) (Week 2): Added distinct audio triggers to Question bubbles (`comment_allez_vous.mp3`, `comment_ca_va.mp3`, `ca_va.mp3`) and Reply bubbles (`tres_bien_merci.mp3`, `ca_va_bien.mp3`) across morning, evening, and bedtime periods for formal and informal speech.

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/p4_term1_lessons.dart';
 import '../../data/p4_term2_lessons.dart';
+import '../../data/p4_term3_lessons.dart';
 import '../../models/p4_lesson_model.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
@@ -12,10 +13,16 @@ class P4WeekRoadmapScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<P4Lesson> lessons = termNumber == 2 ? P4Term2Lessons.weeks : p4Term1Lessons;
-    final termTheme = termNumber == 2
-        ? 'Term 2: Family Members, School Environment, Objects, Prepositions & Colors (Weeks 1 to 13)'
-        : 'Term 1: Identity, Greetings, Numbers 1–20 & African Francophone Geography (Weeks 1 to 13)';
+    final List<P4Lesson> lessons = termNumber == 3
+        ? P4Term3Lessons.weeks
+        : termNumber == 2
+            ? P4Term2Lessons.weeks
+            : p4Term1Lessons;
+    final termTheme = termNumber == 3
+        ? 'Term 3: Telling Time, Daily Routine, Meals, Body Anatomy, Clothes & Weather (Weeks 1 to 13)'
+        : termNumber == 2
+            ? 'Term 2: Family Members, School Environment, Objects, Prepositions & Colors (Weeks 1 to 13)'
+            : 'Term 1: Identity, Greetings, Numbers 1–20 & African Francophone Geography (Weeks 1 to 13)';
 
     return Scaffold(
       backgroundColor: LHColors.teal,

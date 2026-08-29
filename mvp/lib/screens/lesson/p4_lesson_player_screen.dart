@@ -23,6 +23,16 @@ import '../../widgets/patterns/term2/preposition_playground_widget.dart';
 import '../../widgets/patterns/term2/color_studio_widget.dart';
 import '../../widgets/patterns/term2/term2_revision_rally_widget.dart';
 import '../../widgets/patterns/term2/term2_vacation_celebration_widget.dart';
+import '../../widgets/patterns/term3/clock_time_explorer_widget.dart';
+import '../../widgets/patterns/term3/daily_routine_sequencer_widget.dart';
+import '../../widgets/patterns/term3/food_and_meals_widget.dart';
+import '../../widgets/patterns/term3/hunger_thirst_dial_widget.dart';
+import '../../widgets/patterns/term3/body_anatomy_explorer_widget.dart';
+import '../../widgets/patterns/term3/health_and_hygiene_widget.dart';
+import '../../widgets/patterns/term3/wardrobe_stylist_widget.dart';
+import '../../widgets/patterns/term3/weather_studio_widget.dart';
+import '../../widgets/patterns/term3/term3_revision_rally_widget.dart';
+import '../../widgets/patterns/term3/term3_graduation_celebration_widget.dart';
 
 enum LessonPhase {
   objectives,
@@ -410,6 +420,38 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
         case 13:
         default:
           return Term2VacationCelebrationWidget(lesson: widget.lesson);
+      }
+    }
+
+    if (widget.lesson.term == 3) {
+      switch (widget.lesson.week) {
+        case 1:
+          return ClockTimeExplorerWidget(onComplete: _goToNextPhase);
+        case 2:
+          return DailyRoutineSequencerWidget(onComplete: _goToNextPhase);
+        case 3:
+          return FoodAndMealsWidget(onComplete: _goToNextPhase);
+        case 4:
+          return HungerThirstDialWidget(onComplete: _goToNextPhase);
+        case 5:
+          return Term3RevisionRallyWidget(weekNumber: 5, onComplete: _goToNextPhase);
+        case 6:
+          return Term3GraduationCelebrationWidget(weekNumber: 6, onComplete: _goToNextPhase);
+        case 7:
+          return BodyAnatomyExplorerWidget(onComplete: _goToNextPhase);
+        case 8:
+          return HealthAndHygieneWidget(onComplete: _goToNextPhase);
+        case 9:
+          return WardrobeStylistWidget(onComplete: _goToNextPhase);
+        case 10:
+          return WeatherStudioWidget(onComplete: _goToNextPhase);
+        case 11:
+          return Term3RevisionRallyWidget(weekNumber: 11, onComplete: _goToNextPhase);
+        case 12:
+          return Term3RevisionRallyWidget(weekNumber: 12, onComplete: _goToNextPhase);
+        case 13:
+        default:
+          return Term3GraduationCelebrationWidget(weekNumber: 13, onComplete: _goToNextPhase);
       }
     }
 

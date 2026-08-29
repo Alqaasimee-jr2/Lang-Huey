@@ -38,17 +38,19 @@ This document details pre-decided future milestones for the development, validat
 - [ ] Implement **30-Minute Structured Lesson Period Timer** & Section Navigators (Warmup -> Audio Drill -> Interactive Games -> Wrap-up Quiz).
 
 ## Milestone 4: Government Scheme of Work Content Bundles (French & Chinese) 🇳🇬
-- [ ] Author & digitize Term 1 Nigerian Scheme of Work for French (Primary 1-6, JSS 1-3, SSS 1-3).
-- [ ] Integrate crystal-clear offline native audio clips for vocabulary, phonetics, and dialogue drills.
+- [x] Author & digitize 3 Full Terms of Nigerian Scheme of Work for Primary 4 French:
+  - [x] **Term 1 (Weeks 1–13)**: Greetings, Numbers 1–20, Age, Identity & Francophone Geography (Complete + 95 Audio files + 10 Pattern Widgets).
+  - [x] **Term 2 (Weeks 1–13)**: Family, School Environment, Objects, Prepositions & Colors (Complete + 183 Audio files + 10 Pattern Widgets).
+  - [x] **Term 3 (Weeks 1–13)**: Telling Time, Daily Routine, Food/Meals, Body Anatomy, Clothes & Weather (Complete + 168 Audio files + 10 Pattern Widgets + Graduation Diploma).
+- [x] Integrate crystal-clear offline native audio clips for vocabulary, phonetics, and dialogue drills (446 total MP3 audio assets verified).
 - [ ] Prepare Phase 2 Chinese (Mandarin) Scheme of Work data schema & audio assets.
 
 ## Milestone 5: Smartboard Interactive Drills & Classroom Activities 🎮
-- [ ] Build touch-friendly matching games (Word <-> Picture / English <-> Foreign Language).
-- [ ] Build Team Quiz / Board Competition Mode (Group A vs Group B interactive board games).
-- [ ] Build Fill-in-the-Blanks and Listen-and-Tap exercises.
+- [x] Build 30 bespoke smartboard pattern widgets across Terms 1, 2 & 3 (Map Explorer, Time Dials, Routine Timelines, Wardrobe Stylist, Buffet Organizer, Preposition Playground, Speed Revision Rallies, Graduation Diploma).
+- [x] Build classroom vocabulary phonetics station, classwork drills, and cultural hooks.
+- [x] Audio SFX integration (correct chime, incorrect buzz, celebrate fanfare, click sound).
 
 ## Milestone 6: Android Smartboard Packaging & Offline USB Distribution 📦
-- [ ] Package app as an **Android Webview / Standalone APK** optimized for Android Smartboards (Pilot platform).
-- [ ] Package optional Windows desktop bundle for future school rollouts.
-- [ ] Create USB-based content update engine (allowing schools without internet to update terms/classes via flash drive).
+- [x] Multi-term navigation routing, audio priority resolver, and 100% offline asset bundle architecture.
+- [ ] Package app as an **Android Standalone APK** optimized for Android Smartboards.
 - [ ] Produce User Manual & Smartboard Installation Guide for School Administrators.

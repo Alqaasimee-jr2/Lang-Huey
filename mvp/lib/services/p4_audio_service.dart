@@ -36,9 +36,17 @@ class P4AudioService {
       await _phrasePlayer.stop();
 
       List<String> pathsToTry = [];
-      if (term == 2) {
+      if (term == 3) {
+        pathsToTry = [
+          'assets/audio/p4_term3/$audioKey.mp3',
+          'assets/audio/p4_term2/$audioKey.mp3',
+          'assets/audio/p4_term1/$audioKey.mp3',
+          'assets/audio/$audioKey.mp3',
+        ];
+      } else if (term == 2) {
         pathsToTry = [
           'assets/audio/p4_term2/$audioKey.mp3',
+          'assets/audio/p4_term3/$audioKey.mp3',
           'assets/audio/p4_term1/$audioKey.mp3',
           'assets/audio/$audioKey.mp3',
         ];
@@ -46,6 +54,7 @@ class P4AudioService {
         pathsToTry = [
           'assets/audio/p4_term1/$audioKey.mp3',
           'assets/audio/p4_term2/$audioKey.mp3',
+          'assets/audio/p4_term3/$audioKey.mp3',
           'assets/audio/$audioKey.mp3',
         ];
       }
