@@ -38,11 +38,16 @@ This document details pre-decided future milestones for the development, validat
 - [ ] Implement **30-Minute Structured Lesson Period Timer** & Section Navigators (Warmup -> Audio Drill -> Interactive Games -> Wrap-up Quiz).
 
 ## Milestone 4: Government Scheme of Work Content Bundles (French & Chinese) 🇳🇬
-- [x] Author & digitize 3 Full Terms of Nigerian Scheme of Work for Primary 4 French:
+- [x] Author & digitize 3 Full Terms of Nigerian Scheme of Work for Primary 4 French (`mvp/`):
   - [x] **Term 1 (Weeks 1–13)**: Greetings, Numbers 1–20, Age, Identity & Francophone Geography (Complete + 95 Audio files + 10 Pattern Widgets).
   - [x] **Term 2 (Weeks 1–13)**: Family, School Environment, Objects, Prepositions & Colors (Complete + 183 Audio files + 10 Pattern Widgets).
   - [x] **Term 3 (Weeks 1–13)**: Telling Time, Daily Routine, Food/Meals, Body Anatomy, Clothes & Weather (Complete + 168 Audio files + 10 Pattern Widgets + Graduation Diploma).
-- [x] Integrate crystal-clear offline native audio clips for vocabulary, phonetics, and dialogue drills (446 total MP3 audio assets verified).
+- [x] Author & digitize 3 Full Terms of Nigerian Scheme of Work for Primary 5 French (`P5_FRENCH/`):
+  - [x] **Term 1 (Weeks 1–13)**: Alphabet Sounds, Counting 21–60, Currency, Presenting Others, Anatomy & Pain Clinic (Complete + 138 Audio files + 10 Pattern Widgets).
+  - [x] **Term 2 (Weeks 1–13)**: Extended Family, Relatives, Community Neighbors, Gratitude Postcard, Weekly Timetable (Complete + 66 Audio files + 10 Pattern Widgets).
+  - [x] **Term 3 (Weeks 1–13)**: Daily Routine 6h00–21h00, Sports Arena, Hobbies Lounge, School Subjects, Career Dreams & Food Buffet (Complete + 64 Audio files + 10 Pattern Widgets + Graduation Diploma).
+  - [x] **Full-Year Automated Test Suite**: 14/14 Unit & Widget Tests passed (100% test coverage for audio assets, data schemas, and smartboard navigation).
+- [x] Integrate crystal-clear offline native audio clips for vocabulary, phonetics, and dialogue drills (714 total MP3 audio assets verified across P4 & P5).
 - [ ] Prepare Phase 2 Chinese (Mandarin) Scheme of Work data schema & audio assets.
 
 ## Milestone 5: Smartboard Interactive Drills & Classroom Activities 🎮

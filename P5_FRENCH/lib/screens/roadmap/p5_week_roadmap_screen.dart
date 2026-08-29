@@ -36,32 +36,39 @@ class P5WeekRoadmapScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.arrow_back_rounded, color: P5Colors.white, size: 28),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                    const SizedBox(width: 8),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'PRIMARY 5 FRENCH • TRIMESTRE $termNumber ROADMAP',
-                          style: P5Text.caption(P5Colors.turquoise).copyWith(
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 1.1,
-                          ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.arrow_back_rounded, color: P5Colors.white, size: 28),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'PRIMARY 5 FRENCH • TRIMESTRE $termNumber ROADMAP',
+                              style: P5Text.caption(P5Colors.turquoise).copyWith(
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 1.1,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            Text(
+                              termTheme,
+                              style: P5Text.heading(P5Colors.white).copyWith(fontSize: 18),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
-                        Text(
-                          termTheme,
-                          style: P5Text.heading(P5Colors.white).copyWith(fontSize: 18),
-                        ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
+                const SizedBox(width: 12),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   decoration: BoxDecoration(

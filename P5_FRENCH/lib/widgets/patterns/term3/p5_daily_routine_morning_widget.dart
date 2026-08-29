@@ -85,7 +85,14 @@ class _P5DailyRoutineMorningWidgetState extends State<P5DailyRoutineMorningWidge
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Chronologie de la Routine du Matin (6h00 à 7h30) :', style: P5Text.subheading(P5Colors.charcoal)),
+              Expanded(
+                child: Text(
+                  'Chronologie de la Routine du Matin (6h00 à 7h30) :',
+                  style: P5Text.subheading(P5Colors.charcoal),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              const SizedBox(width: 8),
               ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(backgroundColor: P5Colors.gold, foregroundColor: P5Colors.charcoal),
                 onPressed: () {

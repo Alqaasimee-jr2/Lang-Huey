@@ -60,10 +60,23 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
     8. `P5FoodBuffetWidget` (Jollof Rice, Agege Bread, Fruit Buffet & "Bon appétit !" Station)
     9. `P5Term3RevisionRallyWidget` (4-Station Team Speed Buzzer Rally with Live Scoreboard)
     10. `P5Term3GraduationWidget` (Primary 5 Certificate of Excellence & Promotion to Primary 6)
-  - **Term 3 Dedicated Multimedia Sprint Completed**:
-    - **64 Universal 44.1kHz MP3 Audio Files**: Synthesized in `P5_FRENCH/assets/audio/p5_term3/` using `gTTS(lang='fr')`.
-    - **5 Visual Educational Diagrams**: Generated high-contrast diagrams (`morning_routine_timeline.png`, `sports_and_hobbies_board.png`, `school_subjects_and_stationery.png`, `future_professions_showcase.png`, `term3_graduation_celebration.png`) in `P5_FRENCH/assets/images/p5_term3/`.
     - **Full Academic Year Verification**: Executed `verify_p5_full_app.py` confirming 100% audio coverage across all 3 terms (268 MP3 files, 14 diagrams, 30 bespoke widgets, 39 curriculum weeks, 0 compilation errors).
+- **Automated Unit & Widget Test Suite Verification (`P5_FRENCH/test/`)**:
+  - **14 Automated Tests Executed & Passed (100% Success)**:
+    1. `P5AudioService` singleton pattern enforcement.
+    2. `P5AudioService` playback speed boundaries and clamping (`[0.5, 1.5]`).
+    3. Curriculum dataset completeness across all 3 terms (13 + 13 + 13 = 39 weeks).
+    4. Metadata, objectives, exercise pairs, and grammar notes validation for Term 1.
+    5. Metadata, objectives, exercise pairs, and grammar notes validation for Term 2.
+    6. Metadata, objectives, exercise pairs, and grammar notes validation for Term 3.
+    7. Bespoke interactive pattern assignment uniqueness (30 distinct patterns).
+    8. Disk presence verification for all 268 audio keys referenced across all 39 weeks.
+    9. `P5TermSelectScreen` smoke test verifying 3 unlocked terms and grade badges.
+    10. `P5WeekRoadmapScreen` smoke test verifying Term 1 week cards.
+    11. `P5WeekRoadmapScreen` smoke test verifying Term 2 week cards.
+    12. `P5WeekRoadmapScreen` smoke test verifying Term 3 week cards.
+    13. `P5LessonPlayerScreen` phase cycling & interactive pattern loading smoke test.
+  - **Zero Overflow Layout Enhancements**: Wrapped header bars, roadmap titles, and step headers in `Expanded`/`Flexible`/`SingleChildScrollView` to guarantee 100% responsive display across all smartboard resolutions and test viewports.
 
 ### Grade 4 / Primary 4 French Standalone App Architecture (`P4_FRENCH`)
 - **First Production Target**: Selected **Grade 4 / Primary 4 French Language** as the first complete standalone classroom smartboard application.

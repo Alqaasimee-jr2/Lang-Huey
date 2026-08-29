@@ -20,44 +20,48 @@ class P5TermSelectScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                            decoration: BoxDecoration(
-                              color: P5Colors.gold,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: const Text(
-                              'GRADE 5 / PRIMARY 5',
-                              style: TextStyle(
-                                color: P5Colors.charcoal,
-                                fontWeight: FontWeight.w900,
-                                fontSize: 13,
-                                letterSpacing: 0.5,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                              decoration: BoxDecoration(
+                                color: P5Colors.gold,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Text(
+                                'GRADE 5 / PRIMARY 5',
+                                style: TextStyle(
+                                  color: P5Colors.charcoal,
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 13,
+                                  letterSpacing: 0.5,
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(width: 12),
-                          Text(
-                            'LANG HUEY SMARTBOARD',
-                            style: P5Text.caption(P5Colors.turquoise).copyWith(
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 1.2,
+                            const SizedBox(width: 12),
+                            Text(
+                              'LANG HUEY SMARTBOARD',
+                              style: P5Text.caption(P5Colors.turquoise).copyWith(
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 1.2,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'Langue Française — Cinquième Année',
-                        style: P5Text.heroHeading(P5Colors.white).copyWith(fontSize: 32),
-                      ),
-                    ],
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Langue Française — Cinquième Année',
+                          style: P5Text.heroHeading(P5Colors.white).copyWith(fontSize: 28),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
                   ),
+                  const SizedBox(width: 16),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
                     decoration: BoxDecoration(

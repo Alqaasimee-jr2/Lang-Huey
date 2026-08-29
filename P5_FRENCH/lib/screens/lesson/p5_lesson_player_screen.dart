@@ -129,107 +129,104 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
 
   Widget _buildHeaderBar() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       color: P5Colors.teal,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.arrow_back_rounded, color: P5Colors.white, size: 26),
-                onPressed: () => Navigator.pop(context),
-              ),
-              const SizedBox(width: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(
-                  color: P5Colors.gold,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  'TERM ${widget.lesson.term} • WEEK ${widget.lesson.week}',
-                  style: const TextStyle(
-                    color: P5Colors.charcoal,
-                    fontWeight: FontWeight.w900,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 12),
-              SizedBox(
-                width: 320,
-                child: Text(
-                  widget.lesson.topic,
-                  style: P5Text.subheading(P5Colors.white).copyWith(fontSize: 17, fontWeight: FontWeight.bold),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ],
+          IconButton(
+            icon: const Icon(Icons.arrow_back_rounded, color: P5Colors.white, size: 24),
+            onPressed: () => Navigator.pop(context),
           ),
-
-          Row(
-            children: [
-              // Speed Control Toggle
-              Material(
-                color: _audioService.playbackSpeed < 1.0 ? P5Colors.gold : P5Colors.white.withOpacity(0.15),
-                borderRadius: BorderRadius.circular(10),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(10),
-                  onTap: () {
-                    final newSpeed = _audioService.playbackSpeed == 1.0 ? 0.8 : 1.0;
-                    setState(() => _audioService.setPlaybackSpeed(newSpeed));
-                    _audioService.playSfx(P5SfxType.click);
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                    child: Row(
-                      children: [
-                        Icon(
-                          _audioService.playbackSpeed < 1.0 ? Icons.slow_motion_video_rounded : Icons.speed_rounded,
-                          size: 18,
-                          color: _audioService.playbackSpeed < 1.0 ? P5Colors.charcoal : P5Colors.white,
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          _audioService.playbackSpeed < 1.0 ? '0.8x Slower' : '1.0x Normal',
-                          style: P5Text.body(_audioService.playbackSpeed < 1.0 ? P5Colors.charcoal : P5Colors.white).copyWith(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ],
+          const SizedBox(width: 6),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: P5Colors.gold,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              'TERM ${widget.lesson.term} • W${widget.lesson.week}',
+              style: const TextStyle(
+                color: P5Colors.charcoal,
+                fontWeight: FontWeight.w900,
+                fontSize: 11,
+              ),
+            ),
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              widget.lesson.topic,
+              style: P5Text.subheading(P5Colors.white).copyWith(fontSize: 15, fontWeight: FontWeight.bold),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const SizedBox(width: 8),
+          // Speed Control Toggle
+          Material(
+            color: _audioService.playbackSpeed < 1.0 ? P5Colors.gold : P5Colors.white.withOpacity(0.15),
+            borderRadius: BorderRadius.circular(10),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(10),
+              onTap: () {
+                final newSpeed = _audioService.playbackSpeed == 1.0 ? 0.8 : 1.0;
+                setState(() => _audioService.setPlaybackSpeed(newSpeed));
+                _audioService.playSfx(P5SfxType.click);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      _audioService.playbackSpeed < 1.0 ? Icons.slow_motion_video_rounded : Icons.speed_rounded,
+                      size: 16,
+                      color: _audioService.playbackSpeed < 1.0 ? P5Colors.charcoal : P5Colors.white,
                     ),
-                  ),
+                    const SizedBox(width: 4),
+                    Text(
+                      _audioService.playbackSpeed < 1.0 ? '0.8x' : '1.0x',
+                      style: P5Text.body(_audioService.playbackSpeed < 1.0 ? P5Colors.charcoal : P5Colors.white).copyWith(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(width: 12),
-
-              // Phase Indicator Tabs
-              Row(
+            ),
+          ),
+          const SizedBox(width: 8),
+          // Phase Indicator Tabs
+          Flexible(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: _phaseSteps.map((step) {
                   final isCurrent = step['phase'] == _phase;
                   return Padding(
-                    padding: const EdgeInsets.only(left: 6),
+                    padding: const EdgeInsets.only(left: 4),
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        color: isCurrent ? P5Colors.turquoise : P5Colors.white.withOpacity(0.1),
+                        color: isCurrent ? P5Colors.gold : P5Colors.white.withOpacity(0.15),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
                             step['icon'] as IconData,
-                            size: 16,
+                            size: 14,
                             color: isCurrent ? P5Colors.charcoal : P5Colors.white,
                           ),
-                          const SizedBox(width: 4),
+                          const SizedBox(width: 3),
                           Text(
                             step['title'] as String,
-                            style: P5Text.body(isCurrent ? P5Colors.charcoal : P5Colors.white).copyWith(
-                              fontSize: 12,
-                              fontWeight: isCurrent ? FontWeight.w800 : FontWeight.w500,
+                            style: P5Text.caption(isCurrent ? P5Colors.charcoal : P5Colors.white).copyWith(
+                              fontWeight: isCurrent ? FontWeight.w900 : FontWeight.w600,
+                              fontSize: 10,
                             ),
                           ),
                         ],
@@ -238,7 +235,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
                   );
                 }).toList(),
               ),
-            ],
+            ),
           ),
         ],
       ),
