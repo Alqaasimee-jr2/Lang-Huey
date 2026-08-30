@@ -788,3 +788,38 @@ p {
     text-align: center;
   }
 }
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: block !important;
+  }
+  h1 {
+    font-size: 2.35rem;
+  }
+  h2 {
+    font-size: 1.85rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    padding: 0 !important;
+  }
+}
+

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { CheckCircle2, Monitor, Sparkles } from 'lucide-react';
 

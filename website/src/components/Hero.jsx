@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import { FileText } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -22,10 +25,10 @@ export default function Hero() {
           <div className="hero-cta-group">
             {/* STAGE GOLD RULE: Amber Gold touches EXCLUSIVELY ONE element per screen max */}
             <a href="#waitlist" className="btn btn-gold">Join the Community &rarr;</a>
-            <a href="/lang-huey-executive-brief.html" target="_blank" rel="noopener noreferrer" className="btn btn-ghost-white">
+            <Link href="/executive-brief" className="btn btn-ghost-white">
               <FileText size={18} />
               Board Executive Brief (PDF)
-            </a>
+            </Link>
           </div>
 
           <div className="stat-strip">

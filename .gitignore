@@ -4,6 +4,8 @@ website/node_modules/
 
 # Production build output
 website/dist/
+website/.next/
+.next/
 dist/
 
 # Logs & temp files

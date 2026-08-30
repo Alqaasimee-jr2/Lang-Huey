@@ -4,7 +4,20 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
-## [Unreleased] - 2026-08-28
+## [Unreleased] - 2026-08-30
+
+### Phase 0 Next.js Transition, Lead Routing & Full SEO Overhaul
+- **Next.js App Router Architecture**:
+  - Successfully migrated `website/` from Vite to **Next.js App Router** with Turbopack, automated sitemaps (`sitemap.js`), crawlers config (`robots.js`), and server-rendered SEO tags.
+- **Direct WhatsApp Lead Dispatch to +234 707 076 3135**:
+  - Implemented automatic WhatsApp pre-filled message dispatch routing leads directly to `+234 707 076 3135` upon form submission with school name, role, email, and smartboard availability.
+  - Retained `localStorage` backup and added floating WhatsApp action button for instant mobile inquiries.
+- **Social Media Open Graph & Meta Preview**:
+  - Added full Open Graph, Twitter Cards, and JSON-LD structured data (`EducationalOrganization`, `SoftwareApplication`) with 1200x630 teaser artwork preview.
+- **Dedicated Executive Brief Route (`/executive-brief`)**:
+  - Created standalone printable and shareable Next.js Executive Brief page with direct PDF generation styling.
+- **Official WhatsApp Channel & Welcome Message**:
+  - Integrated official channel (`https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h`) and authored pinned orientation message.
 
 ### Grade 5 / Primary 5 French Standalone App Architecture (`P5_FRENCH`)
 - **Standalone App Infrastructure Scaffolding**:

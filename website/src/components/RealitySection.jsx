@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { UserX, WifiOff, GraduationCap } from 'lucide-react';
 

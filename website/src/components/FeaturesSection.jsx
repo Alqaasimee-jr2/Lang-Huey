@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { BookOpen, WifiOff, ShieldCheck, CheckCircle } from 'lucide-react';
 
@@ -35,44 +37,55 @@ export default function FeaturesSection() {
         </div>
       </div>
 
-      {/* Authentic NERDC Scheme of Work Snippet Card */}
+      {/* Authentic NERDC Scheme of Work Showcase */}
       <div className="container">
         <div className="nerdc-card">
           <span className="caption-label">GOVERNMENT CURRICULUM ALIGNMENT</span>
           <h3 style={{ color: 'var(--color-primary)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>
-            JSS1 French: Term 1 Scheme of Work Snippets
+            Comprehensive Primary & Secondary French Coverage (78+ Weeks Digitized)
           </h3>
-          <p style={{ color: '#444', fontSize: '0.95rem' }}>
-            Every lesson in Lang Huey maps directly to the official Nigerian Educational Research & Development Council (NERDC) syllabus for junior secondary schools:
+          <p style={{ color: '#444', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+            Every lesson in Lang Huey maps directly to the official Nigerian Educational Research & Development Council (NERDC) syllabus:
           </p>
 
-          <div className="curriculum-list">
-            <div className="curriculum-item">
-              <CheckCircle size={18} color="var(--color-secondary)" />
+          <div className="curriculum-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+            <div className="curriculum-item" style={{ background: '#F5F0E8', padding: '1rem', borderRadius: '10px' }}>
+              <CheckCircle size={20} color="var(--color-primary)" />
               <div>
-                <span style={{ color: 'var(--color-primary)', fontWeight: 800 }}>WEEK 1–2: </span>
-                <span>Greetings & Self-Introduction (Salutations et Présentation)</span>
+                <span style={{ color: 'var(--color-primary)', fontWeight: 800 }}>PRIMARY 4 (39 WEEKS): </span>
+                <p style={{ fontSize: '0.85rem', color: '#444', margin: '0.2rem 0 0 0' }}>
+                  Greetings, Numbers 1–20, Francophone Geography, School Environment, Time, Daily Routine, Food Buffet, Body Clinic & Weather.
+                </p>
               </div>
             </div>
-            <div className="curriculum-item">
-              <CheckCircle size={18} color="var(--color-secondary)" />
+
+            <div className="curriculum-item" style={{ background: '#F5F0E8', padding: '1rem', borderRadius: '10px' }}>
+              <CheckCircle size={20} color="var(--color-primary)" />
               <div>
-                <span style={{ color: 'var(--color-primary)', fontWeight: 800 }}>WEEK 3–4: </span>
-                <span>School Objects & Classroom Environment (L'école et les objets)</span>
+                <span style={{ color: 'var(--color-primary)', fontWeight: 800 }}>PRIMARY 5 (39 WEEKS): </span>
+                <p style={{ fontSize: '0.85rem', color: '#444', margin: '0.2rem 0 0 0' }}>
+                  Alphabet Sounds, Counting 21–60 & Market Naira Math, Extended Family, Community Neighbors, Gratitude Letters, Timetable & Dream Careers.
+                </p>
               </div>
             </div>
-            <div className="curriculum-item">
-              <CheckCircle size={18} color="var(--color-secondary)" />
+
+            <div className="curriculum-item" style={{ background: '#F5F0E8', padding: '1rem', borderRadius: '10px' }}>
+              <CheckCircle size={20} color="var(--color-primary)" />
               <div>
-                <span style={{ color: 'var(--color-primary)', fontWeight: 800 }}>WEEK 5–6: </span>
-                <span>Numbers 1–100 & Age (Les Nombres et l'Âge)</span>
+                <span style={{ color: 'var(--color-primary)', fontWeight: 800 }}>JSS1 FRENCH PACK: </span>
+                <p style={{ fontSize: '0.85rem', color: '#444', margin: '0.2rem 0 0 0' }}>
+                  Greetings & Self-Introduction, Classroom Objects, Numbers 1–100 & Age, Family & Home, WAEC Foundation preparation.
+                </p>
               </div>
             </div>
-            <div className="curriculum-item">
-              <CheckCircle size={18} color="var(--color-secondary)" />
+
+            <div className="curriculum-item" style={{ background: '#F5F0E8', padding: '1rem', borderRadius: '10px' }}>
+              <CheckCircle size={20} color="var(--color-secondary)" />
               <div>
-                <span style={{ color: 'var(--color-primary)', fontWeight: 800 }}>WEEK 7–8: </span>
-                <span>Family & Home (La Famille)</span>
+                <span style={{ color: 'var(--color-primary)', fontWeight: 800 }}>30 INTERACTIVE PATTERNS: </span>
+                <p style={{ fontSize: '0.85rem', color: '#444', margin: '0.2rem 0 0 0' }}>
+                  Map Explorer, Time Dials, Market Kiosk, Body Anatomy Node Explorer, Doctor Pain Clinic, 4-Station Speed Revision Buzzer Rallies.
+                </p>
               </div>
             </div>
           </div>

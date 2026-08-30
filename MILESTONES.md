@@ -4,22 +4,25 @@ This document details pre-decided future milestones for the development, validat
 
 ---
 
-## Milestone 0: Lang Huey Prelaunch Landing Page (`langhuey.com.ng`) 🌐 *(Phase 0 Deliverable)*
+## Milestone 0: Lang Huey Prelaunch Platform (`lang-huey.vercel.app`) 🌐 *(Phase 0 Deliverable Completed)*
 - [x] Integrate Official Lang Huey Brand Guidelines v1.0 & Strategic Refinements.
-- [ ] Build 8-Section Prelaunch Community & Waitlist Landing Page:
-  - Section 1: Navbar (Lang Huey wordmark + Gold pill CTA "Join the Community")
-  - Section 2: Hero (Deep Teal `#0D7377`, Inter Black lowercase headline *"Your French class. Every week."* / *"french class. no teacher. no problem."*, Smartboard video showcase placeholder)
-  - Section 3: The Reality in Nigerian Schools (Warm Cream `#F5F0E8`, 3 Pain cards)
-  - Section 4: Introducing Lang Huey (Feature pills: NERDC Curriculum, No Internet, One-Time Payment + On-screen Teacher Cue Bar demo)
-  - Section 5: Features & Scheme of Work Snippets (NERDC JSS1 French Term 1 curriculum topics & trust badges)
-  - Section 6: Prelaunch Community & WhatsApp Channel Funnel (School registration form with Smartboard availability filter + WhatsApp Community invite)
-  - Section 7: Founder Note (Abdullah's story: *"my mother's school needed a french teacher. i built one."*)
-  - Section 8: Footer & Direct WhatsApp Channel link
-- [ ] Enforce Strict Brand Guidelines:
-  - Colors: Deep Teal `#0D7377`, Turquoise `#14BDCC`, Warm Cream `#F5F0E8`, Charcoal `#1C1C1C`, White `#FFFFFF`, Amber Gold `#F4A832`.
-  - Gold Rule: Amber Gold touches **ONE element per screen max** (primary CTA button or key price number).
-  - Voice: Direct, Confident, Human, Specific. No jargon, no AI buzzwords.
-  - Section Rhythm: Dark $\rightarrow$ Cream $\rightarrow$ Dark $\rightarrow$ Cream $\rightarrow$ Dark.
+- [x] Build Next.js App Router Prelaunch Community & Waitlist Platform:
+  - [x] Navbar: Lang Huey wordmark + Mobile drawer + Gold pill CTA.
+  - [x] Hero: Deep Teal `#0D7377`, Inter Black headline *"french class. no teacher. no problem."*, Smartboard video showcase, Executive Brief link.
+  - [x] LanguageTicker: Francophone flag badges & multi-language roadmap.
+  - [x] Reality in Nigerian Schools: 3 interactive pain cards (Teacher shortage, Network dependency, Exam preparation gap).
+  - [x] Introducing Lang Huey & Teacher Cue Bar Spotlight: Interactive on-screen guidance showcase.
+  - [x] Interactive Smartboard Simulator: Live vocabulary audio phonetics (*Bonjour*, *Merci*, *Le Bénin*, *Au revoir*), 0.8x/1.0x speed toggle, live Teacher Cue Bar updates & check drill.
+  - [x] NERDC Curriculum Showcase: Complete Primary 4 (39 weeks), Primary 5 (39 weeks), JSS1 French coverage & 30 bespoke pattern widgets.
+  - [x] Prelaunch Community Form & Lead Routing: Automatic lead message generation directly to **+234 707 076 3135** + `localStorage` persistence.
+  - [x] Post-Signup Modal: Instant redirect to Official WhatsApp Community Channel (`https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h`) and direct message.
+  - [x] Dedicated Executive Board Brief Route (`/executive-brief`): Print/Save as PDF ready.
+  - [x] Founder Note & Footer: Abdullah's story, NIT7ER attribution, direct phone and channel links.
+- [x] Enforce Strict Brand & SEO Guidelines:
+  - [x] Colors: Deep Teal `#0D7377`, Turquoise `#14BDCC`, Warm Cream `#F5F0E8`, Charcoal `#1C1C1C`, White `#FFFFFF`, Amber Gold `#F4A832`.
+  - [x] Gold Rule: Amber Gold touches **ONE element per screen max**.
+  - [x] SEO & Social Previews: Full Open Graph (1200x630), Twitter cards, JSON-LD structured data, sitemap.xml, robots.txt.
+  - [x] Mobile Ergonomics: 100% responsive display across all mobile & tablet viewports with floating WhatsApp inquiry button.
 
 ## Milestone 1: Project Foundation & Core Architecture 🎯
 - [x] Establish Project Repository, Rules, Changelog, and Milestone documentation.
