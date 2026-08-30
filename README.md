@@ -4,21 +4,21 @@
 
 **The Offline Foreign Language Classroom Delivery Engine for Nigerian Smartboards**
 
+[![Next.js](https://img.shields.io/badge/Next.js-15.1-0D7377?style=for-the-badge&logo=next.js&logoColor=14BDCC)](https://nextjs.org)
 [![React](https://img.shields.io/badge/React-18.2-0D7377?style=for-the-badge&logo=react&logoColor=14BDCC)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-5.0-F4A832?style=for-the-badge&logo=vite&logoColor=1C1C1C)](https://vitejs.dev)
-[![Live Web App](https://img.shields.io/badge/Live_Site-lang--huey.vercel.app-14BDCC?style=for-the-badge&logo=vercel&logoColor=white)](https://lang-huey.vercel.app)
+[![Live Web App](https://img.shields.io/badge/Live_Platform-lang--huey.vercel.app-14BDCC?style=for-the-badge&logo=vercel&logoColor=white)](https://lang-huey.vercel.app)
 [![Target Platform](https://img.shields.io/badge/Target_Platform-Android_Smartboards-0D7377?style=for-the-badge&logo=android&logoColor=white)](#)
 [![Curriculum](https://img.shields.io/badge/Curriculum-NERDC_Aligned-0D7377?style=for-the-badge)](#)
 [![Status](https://img.shields.io/badge/Status-Prelaunch_&_Ideation-F4A832?style=for-the-badge)](#)
 
 <p align="center">
-  <a href="https://lang-huey.vercel.app" target="_blank">🌐 Live Prelaunch Website</a> &bull;
+  <a href="https://lang-huey.vercel.app" target="_blank">🌐 Live Prelaunch Platform</a> &bull;
+  <a href="https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h" target="_blank">📢 WhatsApp Channel</a> &bull;
+  <a href="https://wa.me/2347070763135" target="_blank">📞 Direct Inquiries</a> &bull;
   <a href="#-about-lang-huey">About</a> &bull;
   <a href="#-the-core-innovation">Core Innovation</a> &bull;
-  <a href="#-brand-system">Brand System</a> &bull;
   <a href="#-curriculum-scope">Curriculum Scope</a> &bull;
-  <a href="#-getting-started">Getting Started</a> &bull;
-  <a href="#-roadmap">Roadmap</a>
+  <a href="#-getting-started">Getting Started</a>
 </p>
 
 ---
@@ -30,18 +30,17 @@
 > *"My mother runs a private school in Lagos. She couldn't find a French teacher. So I built one."*  
 > &mdash; **NIT7ER, Creator of Lang Huey**
 
-Across Nigeria, qualified foreign language teachers (French, Mandarin Chinese, Spanish) are scarce and expensive. Private secondary schools face constant teacher turnover, irregular timetable slots, and unreliable live virtual classes that fail due to unstable internet.
+Across Nigeria, qualified foreign language teachers (French, Mandarin Chinese, Spanish) are scarce and expensive. Private secondary and primary schools face constant teacher turnover, irregular timetable slots, and unreliable live virtual classes that fail due to unstable internet and power outages.
 
 **Lang Huey** turns underused Android Smartboards into fully functioning language classrooms. It enables **any staff member** — regardless of prior foreign language knowledge — to deliver structured, Ministry of Education (NERDC) aligned language lessons **100% offline**.
-
 
 ---
 
 ## ✨ The Core Product Innovation: The Teacher Cue Bar
 
-The heart of Lang Huey is the **On-Screen Teacher Cue Bar** located at the bottom of every lesson slide.
+The heart of Lang Huey is the **On-Screen Teacher Cue Bar** located at the bottom of every lesson display.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                                                                             │
 │                            🇫🇷  Bonjour !                                    │
@@ -56,9 +55,19 @@ It scripts exact step-by-step instructions in Standard English (*"Ask Student A 
 
 ---
 
+## 🎯 Action & Lead Routing Matrix
+
+| Action | Target Destination | URL / Action |
+| :--- | :--- | :--- |
+| **"JOIN THE COMMUNITY"** | **Official WhatsApp Channel** | `https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h` |
+| **"CHAT ON WHATSAPP"** | **Direct Phone Line** | `https://wa.me/2347070763135` (`+234 707 076 3135`) |
+| **"BOOK A SLOT"** | **Direct Lead Dispatch** | Submits school details directly to `+234 707 076 3135` via WhatsApp |
+
+---
+
 ## 🎨 Official Brand System (v1.0)
 
-Lang Huey follows a strict, highly aesthetic design architecture engineered for back-of-the-classroom visibility and ultra-fast web conversion:
+Lang Huey follows a strict design architecture engineered for back-of-the-classroom visibility and ultra-fast web conversion:
 
 | Element | Specification | Hex / Token | Usage |
 | :--- | :--- | :--- | :--- |
@@ -77,57 +86,65 @@ Lang Huey follows a strict, highly aesthetic design architecture engineered for 
 
 ---
 
-## 📚 NERDC Curriculum Scope (JSS1 French — Term 1)
+## 📚 NERDC Curriculum Scope (78+ Weeks Digitized)
 
 Every lesson in Lang Huey is mapped directly to the Nigerian Educational Research & Development Council syllabus:
 
-- 🇳🇬 **Week 1–2**: Greetings & Self-Introduction (*Salutations et Présentation*)
-- 🇳🇬 **Week 3–4**: School Environment & Classroom Objects (*L'école et les objets*)
-- 🇳🇬 **Week 5–6**: Numbers 1–100 & Age (*Les Nombres et l'Âge*)
-- 🇳🇬 **Week 7–8**: Family & Home Life (*La Famille*)
+### 🎒 Primary 4 French (`mvp/` — 39 Weeks Complete)
+- **Term 1 (Weeks 1–13)**: Greetings, Numbers 1–20, Age, Identity & Francophone Geography (95 Audio Assets, 10 Pattern Widgets).
+- **Term 2 (Weeks 1–13)**: Family, School Environment, Objects, Prepositions & Colors (183 Audio Assets, 10 Pattern Widgets).
+- **Term 3 (Weeks 1–13)**: Time, Daily Routine, Food/Meals, Body Anatomy, Clothes & Weather (168 Audio Assets, 10 Pattern Widgets).
+
+### 🎓 Primary 5 French (`P5_FRENCH/` — 39 Weeks Complete)
+- **Term 1 (Weeks 1–13)**: Alphabet Sounds, Counting 21–60, Currency, Presenting Others, Anatomy & Pain Clinic (138 Audio Assets, 10 Pattern Widgets).
+- **Term 2 (Weeks 1–13)**: Extended Family, Relatives, Community Neighbors, Gratitude Postcard, Weekly Timetable (66 Audio Assets, 10 Pattern Widgets).
+- **Term 3 (Weeks 1–13)**: Daily Routine 6h00–21h00, Sports Arena, Hobbies Lounge, School Subjects, Career Dreams & Food Buffet (64 Audio Assets, 10 Pattern Widgets).
+
+### 🏛️ Junior Secondary French (`JSS1 Pack`)
+- Foundation French syllabus: Greetings, School Objects, Numbers 1–100, Family & WAEC Foundation Preparation.
 
 ---
 
 ## 📁 Repository Structure
 
-```
+```text
 Lang Huey/
-├── README.md                           # 🌟 Glamorous repository documentation
+├── README.md                           # Master repository documentation
 ├── CHANGELOG.md                        # Master decision & action log
 ├── MILESTONES.md                       # Project roadmap & milestone tracking
-├── .gitignore                          # Git exclusions (node_modules, build outputs)
-├── linguaboard_landing_page_brief.md   # Landing page master brief
-├── linguaboard_product_brief.md        # Master product brief
-├── linguaboard_strategic_insight.md    # Strategic insights brief
-└── website/                            # 🚀 React 18 + Vite Prelaunch Website
-    ├── index.html                      # Single Page Application entry point
-    ├── lang-huey-executive-brief.html  # Printable Board Executive Brief (PDF View)
-    ├── package.json                    # Dependencies & scripts
-    ├── vite.config.js                  # Vite bundler configuration
+├── 01_lang_huey_master_brief.md        # Master product brief
+├── 02_lang_huey_brand_system.md        # Official design & brand system
+├── 03_lang_huey_mvp_architecture.md    # Android smartboard app architecture
+├── mvp/                                # Primary 4 French Standalone Flutter App
+├── P5_FRENCH/                          # Primary 5 French Standalone Flutter App
+└── website/                            # 🚀 Next.js 15 App Router Prelaunch Platform
+    ├── package.json                    # Dependencies & Next.js scripts
+    ├── public/                         # Static assets (audio, images, og-preview.jpg)
     └── src/
-        ├── App.jsx                     # Master React layout container
-        ├── main.jsx                    # React 18 root renderer
-        ├── components/                 # Modular JSX UI Components
-        │   ├── Navbar.jsx              # Brand header & Gold CTA
-        │   ├── Hero.jsx                # Headline & Animated Video Showcase
-        │   ├── LanguageTicker.jsx      # Supported language flags ribbon
-        │   ├── RealitySection.jsx      # Pain cards (No Teacher, Budget Drain, Exams)
-        │   ├── SolutionSection.jsx     # Teacher Cue Bar demonstration
-        │   ├── FeaturesSection.jsx     # 3 Core Pillars + NERDC Snippet Card
-        │   ├── PrelaunchCommunityForm.jsx # Smartboard qualification filter form
-        │   ├── FounderNote.jsx         # Abdullah's quote
-        │   ├── WaveBanner.jsx          # Deep Teal wave CTA banner
-        │   ├── Footer.jsx              # Near-black footer & WhatsApp link
-        │   └── PostSignupModal.jsx     # Institutional Guarantee & WhatsApp redirect modal
+        ├── app/
+        │   ├── layout.jsx              # Root SSR layout, SEO Open Graph & JSON-LD
+        │   ├── page.jsx                # Landing page container
+        │   ├── sitemap.js              # Automated Next.js SEO sitemap
+        │   ├── robots.js               # Crawlers indexing rules
+        │   └── executive-brief/        # Dedicated Executive Board Brief page
+        ├── components/                 # Modular UI Components
+        │   ├── Navbar.jsx              # Brand header, mobile drawer & CTAs
+        │   ├── Hero.jsx                # Video showcase & headline
+        │   ├── SmartboardInteractivePreview.jsx # Live interactive smartboard demo
+        │   ├── FeaturesSection.jsx     # NERDC curriculum showcase
+        │   ├── PrelaunchCommunityForm.jsx # Lead capture & WhatsApp dispatcher
+        │   ├── FloatingWhatsAppButton.jsx # Pinned WhatsApp inquiry floater
+        │   ├── PostSignupModal.jsx     # Post-submission modal
+        │   └── Footer.jsx              # Footer with WhatsApp Channel & Direct links
         └── css/
-            └── style.css               # Brand Guidelines v1.0 CSS & animations
+            └── style.css               # Brand tokens & responsive styles
 ```
 
 ---
 
 ## 🛠️ Local Development Setup
 
-To run the prelaunch website locally on your machine:
+To run the Next.js prelaunch platform locally:
 
 ```bash
 # 1. Clone the repository
@@ -139,13 +156,13 @@ cd Lang-Huey/website
 # 3. Install dependencies
 npm install
 
-# 4. Start local Vite dev server
+# 4. Start local Next.js dev server
 npm run dev
 ```
 
 The site will be live at `http://localhost:3000`.
 
-To build static production assets:
+To build the static production bundle:
 ```bash
 npm run build
 ```
@@ -154,22 +171,22 @@ npm run build
 
 ## 🎯 Project Roadmap
 
-- [x] **Milestone 0 (Phase 0)**: Master Specification, Brand Guidelines v1.0, and Prelaunch Website (`langhuey.com.ng`) with WhatsApp Community Channel Funnel.
-- [ ] **Milestone 1 (MVP)**: Lang Huey 3-Screen Smartboard App Engine (Lesson Select, Player with Teacher Cue Bar, Summary Screen).
-- [ ] **Milestone 2 (Content Package)**: Full JSS1 French 3-Term Content Package (24 lessons with local audio recordings).
-- [ ] **Milestone 3 (Expansion)**: Mandarin Chinese JSS1 Pack & Android APK Hardware Key Encryption Engine.
+- [x] **Milestone 0 (Phase 0)**: Master Specification, Brand Guidelines v1.0, and Next.js Prelaunch Platform (`lang-huey.vercel.app`) with WhatsApp Channel & Direct Dispatch.
+- [x] **Milestone 4 (Curriculum Digitization)**: Complete 39-Week Primary 4 & 39-Week Primary 5 French Schemes of Work (714 audio files, 30 bespoke smartboard patterns).
+- [ ] **Milestone 1 (MVP App Build)**: Package Android APK for Interactive Flat Panels with hardware activation key security.
+- [ ] **Milestone 6 (Pilot Rollout)**: School pilot installations in Lagos private schools.
 
 ---
 
 <div align="center">
 
-### 💬 Join the Lang Huey Founding Community
+### 💬 Connect with Lang Huey
 
-Are you a private school proprietor, principal, or administrator in Nigeria?  
-Connect directly with Abdullah on WhatsApp to shape the product:
+Are you a private school proprietor, principal, or educator in Nigeria?  
 
-[**Join Lang Huey WhatsApp Channel &rarr;**](https://chat.whatsapp.com/sample-channel-invite)
+👉 [**Join Official WhatsApp Community Channel &rarr;**](https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h)  
+📞 [**Direct WhatsApp Inquiry: +234 707 076 3135**](https://wa.me/2347070763135)
 
-*Lang Huey is not affiliated with any foreign edtech platform. &copy; 2026 Lang Huey.*
+*Lang Huey is a product of NIT7ER. &copy; 2026 Lang Huey.*
 
 </div>
