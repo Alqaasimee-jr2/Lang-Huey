@@ -27,13 +27,23 @@ Thumbs.db
 *.user
 
 # Flutter build artifacts
-mvp/.dart_tool/
-mvp/build/
-mvp/.packages
-mvp/.pub/
-mvp/.pub-cache/
+.dart_tool/
+**/.dart_tool/
+build/
+**/build/
+.packages
+**/.packages
+.pub/
+**/.pub/
+.pub-cache/
+**/.pub-cache/
+android/.gradle/
+**/android/.gradle/
+**/android/local.properties
 
 # Scratch & test media
 test_*.mp3
 test_*.wav
+temp_*.wav
+temp_*.mp3
 

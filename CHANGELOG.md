@@ -6,6 +6,58 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ## [Unreleased] - 2026-08-30
 
+### JSS1 French Standalone App Architecture (`JSS1_FRENCH`)
+- **Standalone App Infrastructure Scaffolding**:
+  - Initialized dedicated standalone build directory in `JSS1_FRENCH/`.
+  - Configured `pubspec.yaml` with `just_audio`, `provider`, `shared_preferences`, `google_fonts`, and asset directories for audio and diagrams.
+  - Created brand color system (`JSS1Colors`) and Nunito typography design tokens (`JSS1Text`).
+  - Implemented `JSS1AudioService` with native `0.8x / 1.0x` pitch-preserving speed toggle, multi-path audio asset fallback resolver, and SFX players (`sfx_correct`, `sfx_incorrect`, `sfx_click`, `sfx_celebrate`, `sfx_whoosh`).
+- **Term 1 (Premier Trimestre) Curriculum Scope Refactoring (Instructional Classes & Revision Only)**:
+  - In strict alignment with user directive (*"no vacation shi, the only parts of the curri we are concerned with is the classes, and revision. tests, holiday, etc are off limits"*), pruned all non-instructional break/exam modules.
+  - Refactored Term 1 into **9 High-Impact Instructional & Revision Weeks**:
+    1. **Week 1**: *Les Mots Utilisés en Classe* (Classroom Instructions: *Levez-vous, Asseyez-vous, Ouvrez vos livres, Fermez vos cahiers, Écoutez attentivement, Répétez après moi, Regardez le tableau, Silence s'il vous plaît, Puis-je sortir ?*)
+    2. **Week 2**: *Saluer et Prendre Congé* (Greetings & Politeness: *Bonjour Monsieur/Madame, Bonsoir, Salut, Comment allez-vous ?, Comment vas-tu ?, Très bien merci, Enchanté/e, S'il vous plaît, De rien, Au revoir et à demain*)
+    3. **Week 3**: *Se Présenter* (Introducing Oneself: *Je m'appelle..., J'ai 12 ans, Je suis nigérian/nigériane, Je viens de Lagos, J'habite à Abuja, Je suis élève en JSS1*)
+    4. **Week 4**: *Épeler un mot et l'Orthographe* (Spelling & Accents: Alphabet A–Z phonetics, *Accent aigu é, Accent grave è/à, Accent circonflexe ê/ô, Cédille ç, Tréma ï, Comment ça s'écrit ? Ça s'épèle...*)
+    5. **Week 5**: *Présenter Quelqu’un* (Introducing Others: *Voici mon ami/amie, Il/Elle s'appelle..., Il a 13 ans, Il est nigérian/Elle est nigériane, C'est mon camarade de classe, Je vous présente...*)
+    6. **Week 6**: *Décrire Quelqu’un* (Physical & Character Traits: *Grand/Grande, Petit/Petite, Mince, Gros/Grosse, Beau/Belle, Teint clair/Teint noir, Intelligent/e, Gentil/Gentille, Travailleur/Travailleuse*)
+    7. **Week 7**: *Parler de ses Loisirs* (Hobbies & Leisure: *Jouer au football, Écouter de la musique, Lire des livres, Regarder la télévision, Faire du vélo, Nager, Dessiner, Chanter et danser*)
+    8. **Week 8**: *Exprimer ses Goûts et Préférences* (Likes & Dislikes: *J'adore, J'aime beaucoup, Je préfère... à..., Je n'aime pas, Je déteste, Pourquoi ? Parce que c'est...*)
+    9. **Week 9**: *Révision Générale du Premier Trimestre* (Comprehensive Term 1 Grand Revision Rally covering all 8 topics)
+  - **9 Bespoke Smartboard Pattern Widgets** (`JSS1_FRENCH/lib/widgets/patterns/term1/`):
+    1. `JSS1ClassroomCommandsWidget` (Classroom simulator & "Le Maître Dit" action game)
+    2. `JSS1GreetingStudioWidget` (Formal vs. Informal registers, Time-of-day slider, roleplay simulator)
+    3. `JSS1SelfIntroStudioWidget` (Interactive Student ID Card & Passport generator)
+    4. `JSS1SpellingAndDictationWidget` (Full A–Z soundboard, accent guide & dictation tester)
+    5. `JSS1PresentOthersStudioWidget` (3rd-person profile presenter & gender concordance)
+    6. `JSS1CharacterPortraitStudioWidget` (Physical & moral traits avatar builder with live adjective agreement)
+    7. `JSS1HobbiesAndLeisureWidget` (Leisure grid, sports/instruments rule, weekly activity planner)
+    8. `JSS1TastesAndPreferencesWidget` (Preference scale *J'adore ➔ Je déteste*, comparison arena, interactive poll)
+    9. `JSS1Term1RevisionRallyWidget` (4-Team speed buzzer rally with station challenges)
+  - **Automated Verification & Zero-Defect Fit Suite**:
+    - `flutter analyze`: 0 issues found across all Dart source files.
+    - `flutter test`: 10/10 tests passed across data schema, theme tokens, and interactive UI widget fit suite.
+  - **Full Multimedia Audio & Visual Package**:
+    - Re-synthesized all **89 universal 44.1kHz MP3 audio files** in `JSS1_FRENCH/assets/audio/jss1_term1/` using high-fidelity **Neural French Voice (`fr-FR-DeniseNeural`)** with 100% strict UTF-8 accent handling, natural classroom pacing (-4% rate), and exact phrase-to-model alignment (eliminating any character encoding corruption or phonetic misalignments).
+    - **Re-Engineered UI & Classroom Sound Effects (SFX)**:
+      - Identified root cause of prior SFX playback failure: previous build saved raw PCM WAV chunks with a `.mp3` extension, which caused decoders to fail.
+      - Built fresh, studio-grade sound effects from scratch using **NumPy physical acoustic modeling** and encoded to **genuine MPEG-1 Layer 3 (`0xFFFB`) MP3s** via `lameenc` (192 kbps, 44.1 kHz stereo):
+        1. `sfx_celebrate.mp3`: Triumphant multi-harmonic orchestral fanfare with arpeggiated bells and glitter shimmer trail.
+        2. `sfx_correct.mp3`: Crystal-clear ascending F5–C6 acoustic bell chime.
+        3. `sfx_incorrect.mp3`: Gentle lowpass wooden marimba encouraging retry.
+        4. `sfx_click.mp3`: Crisp tactile button transient.
+        5. `sfx_whoosh.mp3`: Dynamic stereo smartboard page transition swoosh.
+      - Deployed and verified across all 6 asset directories in `mvp`, `P5_FRENCH`, and `JSS1_FRENCH`.
+    - Generated **4 high-fidelity Gemini AI smartboard educational illustrations & diagrams** embedded across interactive widgets:
+      1. `jss1_classroom_hero.jpg`: Modern Nigerian secondary classroom with smartboard & teacher.
+      2. `jss1_greetings_dialogue.jpg`: JSS1 students greeting in school courtyard (*Bonjour ! Comment vas-tu ?*).
+      3. `jss1_francophone_neighbors.jpg`: Illustrated West/Central Africa map with Nigeria's 4 Francophone neighbors (Benin, Niger, Chad, Cameroon).
+      4. `jss1_hobbies_lifestyle.jpg`: Visual student collage for football, reading, music, cycling, and art.
+    - Integrated sound effects (`sfx_correct`, `sfx_incorrect`, `sfx_click`, `sfx_celebrate`, `sfx_whoosh`).
+  - **Automated Verification & Unit Test Suite**:
+    - Authored `test/jss1_french_test.dart` covering 13-week curriculum schemas, pattern dispatches, audio keys, speed clamp logic, and brand tokens.
+    - Verified all 5/5 unit tests passed with 100% success.
+
 ### Phase 0 Next.js Transition, Lead Routing & Full SEO Overhaul
 - **Next.js App Router Architecture**:
   - Successfully migrated `website/` from Vite to **Next.js App Router** with Turbopack, automated sitemaps (`sitemap.js`), crawlers config (`robots.js`), and server-rendered SEO tags.

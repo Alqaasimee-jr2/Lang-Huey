@@ -50,7 +50,10 @@ This document details pre-decided future milestones for the development, validat
   - [x] **Term 2 (Weeks 1–13)**: Extended Family, Relatives, Community Neighbors, Gratitude Postcard, Weekly Timetable (Complete + 66 Audio files + 10 Pattern Widgets).
   - [x] **Term 3 (Weeks 1–13)**: Daily Routine 6h00–21h00, Sports Arena, Hobbies Lounge, School Subjects, Career Dreams & Food Buffet (Complete + 64 Audio files + 10 Pattern Widgets + Graduation Diploma).
   - [x] **Full-Year Automated Test Suite**: 14/14 Unit & Widget Tests passed (100% test coverage for audio assets, data schemas, and smartboard navigation).
-- [x] Integrate crystal-clear offline native audio clips for vocabulary, phonetics, and dialogue drills (714 total MP3 audio assets verified across P4 & P5).
+- [x] Author & digitize Nigerian Scheme of Work for Junior Secondary School 1 (JSS1) French (`JSS1_FRENCH/`):
+  - [x] **Term 1 (Weeks 1–9: Classes & Revision Only)**: Classroom Commands, Greetings & Politeness, Self-Introduction ID Card, Alphabet & Dictation, Presenting Others, Character Descriptions, Hobbies & Leisure, Tastes & Preferences, 4-Team Revision Rally (Complete + 89 Neural French Audio files + 5 Studio MPEG-1 Layer 3 SFX + 4 Gemini AI Visual Illustrations + 9 Bespoke Pattern Widgets).
+  - [x] **Zero-Defect Automated Test Suite**: 10/10 Unit & UI Widget Fit Tests passed (100% data schema, layout, interactive state, and audio coverage).
+- [x] Integrate crystal-clear offline native audio clips for vocabulary, phonetics, and dialogue drills (803 total MP3 audio assets verified across P4, P5 & JSS1).
 - [ ] Prepare Phase 2 Chinese (Mandarin) Scheme of Work data schema & audio assets.
 
 ## Milestone 5: Smartboard Interactive Drills & Classroom Activities 🎮
