@@ -211,7 +211,7 @@ export default function ExecutiveBriefPage() {
                   textDecoration: 'none'
                 }}
               >
-                <MessageCircle size={15} /> Join Channel
+                <MessageCircle size={15} /> Join the Community
               </a>
             </div>
           </div>

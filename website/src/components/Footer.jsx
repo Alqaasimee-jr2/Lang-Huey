@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle, Phone, Calendar } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -31,6 +31,7 @@ export default function Footer() {
         <div className="footer-right" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           <div style={{ color: 'white', fontWeight: 700, fontSize: '0.9rem' }}>Connect with NIT7ER</div>
           
+          {/* JOIN THE COMMUNITY -> CHANNEL */}
           <a 
             href="https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h" 
             target="_blank" 
@@ -38,16 +39,25 @@ export default function Footer() {
             className="whatsapp-link"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
           >
-            <MessageCircle size={16} /> Join WhatsApp Channel &rarr;
+            <MessageCircle size={16} /> Join the Community &rarr;
           </a>
 
+          {/* CHAT ON WHATSAPP -> NUMBER */}
           <a 
             href="https://wa.me/2347070763135?text=Hello%20Lang%20Huey%20Team%2C%20I%20have%20an%20inquiry%20for%20my%20school." 
             target="_blank" 
             rel="noopener noreferrer" 
             style={{ color: '#68D391', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontWeight: 600 }}
           >
-            <Phone size={14} /> Direct: +234 707 076 3135
+            <Phone size={14} /> Chat on WhatsApp (+234 707 076 3135)
+          </a>
+
+          {/* BOOK A SLOT -> NUMBER / FORM */}
+          <a 
+            href="#waitlist" 
+            style={{ color: 'var(--color-accent-gold)', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontWeight: 700 }}
+          >
+            <Calendar size={14} /> Book a Slot for Your School &rarr;
           </a>
         </div>
       </div>

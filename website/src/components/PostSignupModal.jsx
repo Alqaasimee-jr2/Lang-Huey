@@ -12,10 +12,10 @@ export default function PostSignupModal({ isOpen, schoolName, onClose }) {
       <div className="post-signup-card">
         <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🎉</div>
         <h2 style={{ color: 'var(--color-primary)', marginBottom: '0.5rem' }}>
-          Spot Reserved for <span>{schoolName || 'Your School'}</span>!
+          Slot Request Generated for <span>{schoolName || 'Your School'}</span>!
         </h2>
         <p style={{ color: '#444', fontSize: '0.95rem', marginBottom: '1.25rem' }}>
-          Thank you for joining the founding community of Lang Huey by NIT7ER. Your inquiry has been generated.
+          Thank you for reserving a spot for Lang Huey by NIT7ER. Connect with us on WhatsApp below.
         </p>
 
         {/* Institutional Guarantee Box */}
@@ -30,7 +30,7 @@ export default function PostSignupModal({ isOpen, schoolName, onClose }) {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '1.5rem' }}>
-          {/* STAGE GOLD RULE: Amber Gold touches ONE element per screen max */}
+          {/* JOIN THE COMMUNITY -> CHANNEL */}
           <a 
             href="https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h" 
             target="_blank" 
@@ -38,17 +38,18 @@ export default function PostSignupModal({ isOpen, schoolName, onClose }) {
             className="btn btn-gold" 
             style={{ width: '100%' }}
           >
-            <MessageCircle size={18} /> Join WhatsApp Community Channel &rarr;
+            <MessageCircle size={18} /> Join the Community &rarr;
           </a>
 
+          {/* CHAT ON WHATSAPP -> NUMBER */}
           <a 
-            href="https://wa.me/2347070763135?text=Hello%20Lang%20Huey%20Team%2C%20I%20just%20submitted%20the%20prelaunch%20form%20for%20my%20school." 
+            href="https://wa.me/2347070763135?text=Hello%20Lang%20Huey%20Team%2C%20I%20just%20submitted%20a%20slot%20request%20for%20my%20school." 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn btn-secondary-teal" 
             style={{ width: '100%' }}
           >
-            <Phone size={18} /> Direct WhatsApp Message (+234 707 076 3135)
+            <Phone size={18} /> Chat on WhatsApp (+234 707 076 3135)
           </a>
 
           <Link 

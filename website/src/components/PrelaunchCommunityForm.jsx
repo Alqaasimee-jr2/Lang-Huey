@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2, MessageCircle, PhoneCall } from 'lucide-react';
+import { CheckCircle2, MessageCircle, Phone, Calendar } from 'lucide-react';
 
 export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
   const [formData, setFormData] = useState({
@@ -26,15 +26,15 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
       console.warn('LocalStorage save skipped', err);
     }
 
-    // 2. Direct message lead details to WhatsApp +234 707 076 3135
+    // 2. Direct message lead details to WhatsApp +234 707 076 3135 (BOOK A SLOT)
     const msg = encodeURIComponent(
       `Hello Lang Huey / NIT7ER,\n\n` +
-      `I would like to register my school for Lang Huey updates & pilot consideration:\n` +
+      `I would like to BOOK A SLOT for my school (Lang Huey early pilot & demo consideration):\n` +
       `• School: ${formData.schoolName}\n` +
       `• Role: ${formData.role}\n` +
       `• Email: ${formData.email}\n` +
       `• Smartboard Availability: ${formData.smartboardStatus}\n\n` +
-      `Looking forward to hearing from you!`
+      `Please let me know the next steps!`
     );
     const waUrl = `https://wa.me/2347070763135?text=${msg}`;
     window.open(waUrl, '_blank');
@@ -65,7 +65,7 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
           <ul className="benefit-list">
             <li>
               <CheckCircle2 size={22} color="var(--color-secondary)" style={{ minWidth: '22px' }} /> 
-              <span>Direct line to NIT7ER team (+234 707 076 3135)</span>
+              <span>Direct access to the founding team (+234 707 076 3135)</span>
             </li>
             <li>
               <CheckCircle2 size={22} color="var(--color-secondary)" style={{ minWidth: '22px' }} /> 
@@ -78,6 +78,7 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
           </ul>
 
           <div style={{ marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+            {/* JOIN THE COMMUNITY -> CHANNEL */}
             <a 
               href="https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h" 
               target="_blank" 
@@ -96,11 +97,12 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
               }}
             >
               <MessageCircle size={18} color="var(--color-primary)" />
-              Join WhatsApp Channel &rarr;
+              Join the Community &rarr;
             </a>
 
+            {/* CHAT ON WHATSAPP -> NUMBER */}
             <a 
-              href="https://wa.me/2347070763135?text=Hello%20Lang%20Huey%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20software."
+              href="https://wa.me/2347070763135?text=Hello%20Lang%20Huey%20Team%2C%20I%20would%20like%20to%20chat%20on%20WhatsApp%20about%20your%20software."
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -116,16 +118,19 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
                 border: '1px solid #319795'
               }}
             >
-              <PhoneCall size={18} color="#319795" />
-              Direct Message: +234 707 076 3135
+              <Phone size={18} color="#319795" />
+              Chat on WhatsApp (+234 707 076 3135)
             </a>
           </div>
         </div>
 
-        {/* Registration Form Card */}
+        {/* BOOK A SLOT FORM CARD -> NUMBER */}
         <div>
           <div className="form-card">
-            <h3 className="form-title">Reserve Your School Spot</h3>
+            <h3 className="form-title">
+              <Calendar size={20} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '6px' }} />
+              Book a Slot for Your School
+            </h3>
             
             <form onSubmit={handleSubmit}>
               <div className="form-group">
@@ -189,11 +194,11 @@ export default function PrelaunchCommunityForm({ onRegisterSuccess }) {
 
               {/* STAGE GOLD RULE: Amber Gold touches EXCLUSIVELY ONE element per screen max */}
               <button type="submit" className="btn btn-gold" style={{ width: '100%', marginTop: '0.5rem' }}>
-                Submit & Open WhatsApp Direct &rarr;
+                Book a Slot on WhatsApp &rarr;
               </button>
 
               <p className="form-microtext">
-                Submissions automatically connect directly to +234 707 076 3135 on WhatsApp.
+                Submissions automatically send your slot reservation to +234 707 076 3135 on WhatsApp.
               </p>
             </form>
           </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FileText } from 'lucide-react';
+import { FileText, MessageCircle, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -19,15 +19,33 @@ export default function Hero() {
             Lang Huey runs complete French lessons on your school smartboard: offline, structured, and in your hands.
           </p>
           <p className="hero-supporting">
-            We're building this for Nigerian schools. Join us. Your input shapes the product.
+            We're building this for Nigerian schools. Join our community or book a slot for your school.
           </p>
           
-          <div className="hero-cta-group">
+          <div className="hero-cta-group" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             {/* STAGE GOLD RULE: Amber Gold touches EXCLUSIVELY ONE element per screen max */}
-            <a href="#waitlist" className="btn btn-gold">Join the Community &rarr;</a>
-            <Link href="/executive-brief" className="btn btn-ghost-white">
-              <FileText size={18} />
-              Board Executive Brief (PDF)
+            <a 
+              href="https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-gold"
+            >
+              <MessageCircle size={18} /> Join the Community &rarr;
+            </a>
+
+            <a 
+              href="#waitlist" 
+              className="btn btn-ghost-white"
+            >
+              <Calendar size={18} /> Book a Slot
+            </a>
+
+            <Link 
+              href="/executive-brief" 
+              className="btn btn-ghost-white" 
+              style={{ opacity: 0.9 }}
+            >
+              <FileText size={18} /> Brief (PDF)
             </Link>
           </div>
 

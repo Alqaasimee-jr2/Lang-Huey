@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Navbar() {
@@ -15,22 +15,34 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <a href="#solution" style={{ color: 'white', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>
+        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+          <a href="#solution" style={{ color: 'white', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600 }}>
             Solution
           </a>
-          <a href="#interactive-demo" style={{ color: 'white', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>
-            Interactive Demo
+          <a href="#interactive-demo" style={{ color: 'white', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600 }}>
+            Demo
           </a>
-          <a href="#features" style={{ color: 'white', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>
+          <a href="#features" style={{ color: 'white', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600 }}>
             Curriculum
           </a>
-          <Link href="/executive-brief" style={{ color: 'white', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>
+          <Link href="/executive-brief" style={{ color: 'white', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600 }}>
             Executive Brief
           </Link>
-          {/* Strict Gold Rule: Navbar uses Ghost button so Hero CTA is the ONLY gold button on screen */}
-          <a href="#waitlist" className="btn btn-ghost-teal" style={{ padding: '0.5rem 1.1rem', fontSize: '0.85rem' }}>
-            Join Waitlist &rarr;
+          <a 
+            href="https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost-teal" 
+            style={{ padding: '0.45rem 1rem', fontSize: '0.825rem' }}
+          >
+            <MessageCircle size={15} /> Join the Community
+          </a>
+          <a 
+            href="#waitlist" 
+            className="btn btn-ghost-white" 
+            style={{ padding: '0.45rem 1rem', fontSize: '0.825rem' }}
+          >
+            <Calendar size={15} /> Book a Slot
           </a>
         </nav>
 
@@ -94,25 +106,18 @@ export default function Navbar() {
             href="https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ 
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              color: 'var(--color-secondary)', 
-              textDecoration: 'none', 
-              fontSize: '0.95rem', 
-              fontWeight: 700 
-            }}
+            className="btn btn-ghost-teal"
+            style={{ textAlign: 'center' }}
           >
-            <MessageCircle size={18} /> Official WhatsApp Channel
+            <MessageCircle size={18} /> Join the Community &rarr;
           </a>
           <a 
             href="#waitlist" 
             onClick={() => setMobileMenuOpen(false)}
-            className="btn btn-ghost-teal"
-            style={{ textAlign: 'center', marginTop: '0.5rem' }}
+            className="btn btn-ghost-white"
+            style={{ textAlign: 'center' }}
           >
-            Join Waitlist &rarr;
+            <Calendar size={18} /> Book a Slot &rarr;
           </a>
         </div>
       )}

@@ -9,6 +9,10 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 ### Phase 0 Next.js Transition, Lead Routing & Full SEO Overhaul
 - **Next.js App Router Architecture**:
   - Successfully migrated `website/` from Vite to **Next.js App Router** with Turbopack, automated sitemaps (`sitemap.js`), crawlers config (`robots.js`), and server-rendered SEO tags.
+- **Call-To-Action (CTA) Routing Standardization**:
+  - Strictly harmonized all CTAs across the entire platform:
+    - **"JOIN THE COMMUNITY"**: Always routes directly to the Official WhatsApp Community Channel (`https://whatsapp.com/channel/0029Vb8YQkw96H4b8tpk0H0h`).
+    - **"CHAT ON WHATSAPP" / "BOOK A SLOT"**: Always routes directly to the direct WhatsApp phone number (`+234 707 076 3135` via `wa.me/2347070763135`).
 - **Direct WhatsApp Lead Dispatch to +234 707 076 3135**:
   - Implemented automatic WhatsApp pre-filled message dispatch routing leads directly to `+234 707 076 3135` upon form submission with school name, role, email, and smartboard availability.
   - Retained `localStorage` backup and added floating WhatsApp action button for instant mobile inquiries.
