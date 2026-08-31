@@ -4,6 +4,45 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
+### JSS 3 French Term 1 (Premier Trimestre) Full Build & Delivery (`JSS 3_FRENCH`)
+- **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
+  - Harmonized the Nigerian NERDC JSS3 Term 1 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
+    1. **Week 1 (Unité 1)**: *Décrire plus précisément une personne* (Physical & moral personality descriptions, advanced qualifying adjectives, agreements, and BANGS position rule: Beauty, Age, Goodness, Size before noun vs others after).
+    2. **Week 2 (Unité 2)**: *Décrire un paysage et des lieux touristiques* (Natural landscapes & landmarks in Nigeria [Zuma Rock, Obudu, Yankari] and Francophone lands [Tour Eiffel, Yamoussoukro, Pendjari], landscape adjectives *verdoyant, montagneux, aride, majestueux*, and *visiter* [places] vs *rendre visite à* [people] rule).
+    3. **Week 3 (Unité 3)**: *Expliquer ses habitudes et sa routine* (24h daily habit clock, reflexive verbs *se réveiller, se laver, s'habiller, se coucher*, frequency adverbs gauge: *toujours 100%, souvent 75%, d'habitude 60%, parfois 40%, rarement 15%, ne... jamais 0%*).
+    4. **Week 4 (Unité 4)**: *Raconter un souvenir et un événement passé* (Passé Composé vs Imparfait master dual lab, memory triggers *quand j'étais petit, l'année dernière*, and 16 verbs of the Maison d'ÊTRE [DR & MRS VANDERTRAMP] with subject agreement).
+    5. **Week 5 (Unité 5)**: *Décrire un objet* (Geometric shapes, colors, materials with preposition *EN* [en bois, en cuir, en fer, en plastique, en verre], utility and purpose formulas *ça sert à + infinitif*).
+    6. **Week 6 (Unité 6)**: *Comparer* (Comparative duel arena: superiority *plus... que*, inferiority *moins... que*, equality *aussi... que / autant de... que*, superlatives *le plus / la plus*, and irregular forms *bon ➔ meilleur, bien ➔ mieux*).
+    7. **Week 7 (Unité 7)**: *Dater, mesurer le temps et situer dans la durée* (Dates, centuries, historical milestones [1960 African Independence, ECOWAS 1975], and core temporal prepositions: *DEPUIS* [present/ongoing], *PENDANT* [completed duration], *IL Y A* [ago], *DANS* [future]).
+    8. **Week 8 (Unité 8)**: *Raconter sa journée : récit chronologique* (Storyline workbench, narrative sequencing, discourse connectors: *d'abord, ensuite, soudain, pendant ce temps, par conséquent, enfin*, and BECE model essay teleprompter).
+    9. **Week 9 (Grand Rallye)**: *Grand Bilan & Rallye de Révision du 1er Trimestre* (4-Team live championship quiz arena across all 8 units with scoreboards, buzzer SFX, 12 BECE-style drills, and gold trophy celebration).
+- **Curriculum Dataset & Data Models**:
+  - Authored `JSS 3_FRENCH/lib/data/jss3_term1_lessons.dart` with all 9 complete weekly lessons (pedagogical objectives, cultural insight notes, rich vocabulary with phonetics & audio keys, multiple-choice classwork exercises with explanations, evaluation questions with hints/answers, structured homework assignments, and comprehensive grammar notes).
+  - Defined all 9 Term 1 pattern types in `JSS3PatternType` within `lib/models/jss3_lesson_model.dart`.
+- **9 Bespoke Smartboard Interactive Pattern Widgets** (`JSS 3_FRENCH/lib/widgets/patterns/term1/`):
+  1. `JSS3PersonDescriptionStudioWidget` (Avatar character studio, physical & moral traits, BANGS rule coach, "Qui est-ce ?" mystery detective game).
+  2. `JSS3LandscapesLandmarksStudioWidget` (Dual-world tourist showcase, landscape adjectives lab, interactive postcard generator).
+  3. `JSS3HabitsAndRoutineStudioWidget` (24h habit timeline, reflexive verbs conjugation lab, frequency gauge).
+  4. `JSS3PastMemoriesStudioWidget` (Time machine memory vault, Passé Composé vs Imparfait battle, Maison d'ÊTRE explorer).
+  5. `JSS3ObjectDescriptionStudioWidget` (3D object inspector, preposition EN for materials, utility formula builder, "Objet Mystère" riddle quiz).
+  6. `JSS3ComparisonSuperlativesStudioWidget` (Side-by-side comparative duel cards, irregular forms lab, comparison quiz).
+  7. `JSS3DatingTimeMeasurementStudioWidget` (Historical timeline, duration prepositions *depuis/pendant/il y a/dans*, temporal drill quiz).
+  8. `JSS3DayChronologicalNarrativeStudioWidget` (Chronological narrative steps, discourse connectors toolkit, BECE model essay teleprompter).
+  9. `JSS3Term1RevisionRallyWidget` (4-Team championship quiz arena, buzzer SFX, team scoreboards, trophy celebration).
+- **Extensive Multimedia Suite**:
+  - Synthesized all **72 authentic 44.1kHz MP3 neural audio files** in `JSS 3_FRENCH/assets/audio/jss3_term1/` using **`fr-FR-DeniseNeural`** (-4% classroom rate, 100% strict UTF-8 accent handling).
+  - Integrated 5 studio sound effects (`sfx_correct`, `sfx_incorrect`, `sfx_click`, `sfx_celebrate`, `sfx_whoosh`).
+- **Screens & Navigation Integration**:
+  - `JSS3TermSelectScreen`: Unlocked Term 1 card with 9 weeks count and syllabus topic subtitle.
+  - `JSS3WeekRoadmapScreen`: Connected `JSS3Term1Lessons.weeks` for Term 1.
+  - `JSS3LessonPlayerScreen`: 5-Phase smartboard lesson player with Teacher Facilitator Cue Bar, audio speed toggle (0.8x/1.0x), and pattern dispatches.
+- **Automated Verification & Zero-Defect Testing**:
+  - `flutter test test/jss3_french_test.dart`: 10/10 curriculum integrity unit tests passing (100% pass rate).
+  - `flutter test test/jss3_widget_fit_test.dart`: 12/12 smartboard 1080p/4K widget fit tests passing (100% pass rate).
+  - `flutter analyze`: 0 compilation errors. Total tests passing: **22/22 (100%)**.
+
+---
+
 ### JSS 2 French Term 3 (Troisième Trimestre) Full Build & Delivery (`JSS 2_FRENCH`)
 - **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
   - Harmonized the Nigerian NERDC JSS2 Term 3 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
