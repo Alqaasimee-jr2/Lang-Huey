@@ -138,10 +138,21 @@ class _JSS3BECEVocabEssayPrepStudioWidgetState
               borderRadius: BorderRadius.circular(18),
               border: Border.all(color: const Color(0xFF0E6655).withOpacity(0.3), width: 1.5),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(14),
+                  child: Image.asset(
+                    'assets/images/jss3_term2/jss3_t2w8_abuja_excursion.jpg',
+                    height: 180,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => const SizedBox(),
+                  ),
+                ),
+                const SizedBox(height: 14),
+                const Row(
                   children: [
                     Icon(Icons.article_rounded, color: Color(0xFF0E6655)),
                     SizedBox(width: 8),

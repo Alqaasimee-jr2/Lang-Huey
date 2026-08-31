@@ -159,6 +159,17 @@ class _JSS3FuturePlansAndAspirationsStudioWidgetState
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Image.asset(
+              'assets/images/jss3_term2/jss3_t2w5_future_careers.jpg',
+              height: 180,
+              width: double.infinity,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) => const SizedBox(),
+            ),
+          ),
+          const SizedBox(height: 16),
           Text('Choisissez votre Ambition d\'Avenir :', style: LangHueyTextStyles.h3),
           const SizedBox(height: 12),
           SingleChildScrollView(

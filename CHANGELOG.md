@@ -4,6 +4,53 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
+### JSS 3 French Term 2 (Deuxième Trimestre) Full Build & Delivery (`JSS 3_FRENCH`)
+- **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
+  - Harmonized the Nigerian NERDC JSS3 Term 2 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
+    1. **Week 1 (Unité 1)**: *Relater un événement passé et situer les actions* (Combining Passé Composé for punctual actions + Imparfait for background setting/states + temporal adverbs: *autrefois, jadis, alors, à ce moment-là, pendant que, soudainement, la veille*).
+    2. **Week 2 (Unité 2)**: *Rapporter un fait récent : le passé récent (venir de)* (Formula: *VENIR [présent] + DE/D' + Infinitif*, "Le Journal Télévisé" breaking news desk, flash bulletins, sports and school announcements).
+    3. **Week 3 (Unité 3)**: *Comprendre un récit et écrire son journal intime* (French personal diary conventions: top-right date, "Cher journal,", emotional status: *fierté, soulagement, joie, espoir*, narrative reading comprehension).
+    4. **Week 4 (Unité 4)**: *Dire ce que l’on va faire : le futur proche et les intentions* (Formula: *ALLER [présent] + Infinitif*, 48h weekend schedule planner, negative structure *ne... pas aller + inf*, intention expressions).
+    5. **Week 5 (Unité 5)**: *Faire des projets d'avenir : le futur simple* (Universal future endings: *-ai, -as, -a, -ons, -ez, -ont*, 6 high-yield irregular stems *ser-, aur-, fer-, ir-, pourr-, voudr-*, career aspirations dream machine, and *SI + Présent ➔ Futur Simple* hypothesis framework).
+    6. **Week 6 (Unité 6)**: *Consolidation orale et écrite : jeux de rôles et dialogues* (4-Station communicative theatre: TV news flash, personal diary confidant, career ambitions debate, 4-tense synthesis matrix [PC, Imparfait, FP, FS], and error self-correction workbench).
+    7. **Week 7 (Unité 7)**: *Préparation intensive au BECE — Partie I : Grammaire & Conjugaison* (BECE QCM drills, COD pronouns *le, la, les*, COI pronouns *lui, leur [never with s]*, past participle agreement with ÊTRE, and tense concordance rules).
+    8. **Week 8 (Unité 8)**: *Préparation intensive au BECE — Partie II : Vocabulaire, Compréhension & Rédaction* (Reading comprehension passage *Excursion à Abuja*, 3-tier guided composition constructor [Introduction, Développement, Conclusion with connectors], and official examiner marking rubrics).
+    9. **Week 9 (Grand Rallye)**: *Grand Bilan & Rallye de Révision du 2e Trimestre (Simulation BECE)* (4-Team live championship arena across all Term 2 units with live scoreboards, buzzer SFX, 12 BECE mock drills, and Term 2 Silver Trophy podium).
+- **Curriculum Dataset & Data Models**:
+  - Authored `JSS 3_FRENCH/lib/data/jss3_term2_lessons.dart` with all 9 complete weekly lessons (pedagogical objectives, cultural insight notes, rich vocabulary with phonetics & audio keys, multiple-choice classwork exercises with explanations, evaluation questions with hints/answers, structured homework assignments, and comprehensive grammar notes).
+  - Extended `JSS3PatternType` enum in `lib/models/jss3_lesson_model.dart` with all 9 Term 2 pattern types.
+- **9 Bespoke Smartboard Interactive Pattern Widgets** (`JSS 3_FRENCH/lib/widgets/patterns/term2/`):
+  1. `JSS3NarratingPastEventsStudioWidget` (Storyline weaver, PC vs Imparfait battle, temporal adverbs toolbox).
+  2. `JSS3RecentEventsVenirDeStudioWidget` (Venir de phrase builder, breaking news desk, full conjugation table).
+  3. `JSS3DiaryAndNarrativeStudioWidget` (Lined-paper diary reader, emotions palette, structural layout rules).
+  4. `JSS3NearFutureIntentionsStudioWidget` (Weekend 48h schedule planner, Aller conjugation lab, negation workbench).
+  5. `JSS3FuturePlansAndAspirationsStudioWidget` (Career aspirations dream machine, irregular future stems lab, SI hypotheses simulator).
+  6. `JSS3Term2ConsolidationStudioWidget` (4-Station communicative theatre, 5-tense synthesis matrix, error correction workshop).
+  7. `JSS3BECEGrammarPrepStudioWidget` (BECE QCM drills arena, pronoun COD/COI transformer, gold examination rules).
+  8. `JSS3BECEVocabEssayPrepStudioWidget` (BECE reading comprehension reader, 3-tier essay constructor, marking rubrics).
+  9. `JSS3Term2RevisionRallyWidget` (4-Team championship quiz arena, buzzer SFX, scoreboards, Silver Trophy podium).
+- **Extensive Multimedia & Gemini AI Visual Suite**:
+  - Synthesized all **72 authentic 44.1kHz MP3 neural audio files** in `JSS 3_FRENCH/assets/audio/jss3_term2/` using **`fr-FR-DeniseNeural`** (-4% classroom speed, 100% strict UTF-8 accent handling).
+  - Integrated 5 studio sound effects (`sfx_correct`, `sfx_incorrect`, `sfx_click`, `sfx_celebrate`, `sfx_whoosh`).
+  - Integrated **Gemini AI Visual Art Assets** into Smartboard Pattern Studios and Reading Comprehension Labs:
+    1. `jss3_t1w1_portrait.jpg`: Two African secondary school pupils illustrating character and personality traits.
+    2. `jss3_t1w2_landscapes.jpg`: Dual panoramic artwork uniting Abuja's Zuma Rock and the Eiffel Tower.
+    3. `jss3_t2w2_news_desk.jpg`: High-tech television broadcast newsroom desk with breaking news ticker.
+    4. `jss3_t2w3_diary_art.jpg`: Atmospheric personal diary study desk for reflective writing comprehension.
+    5. `jss3_t2w5_future_careers.jpg`: Futuristic African cityscape with doctors, aerospace engineers, diplomats, and tech innovators.
+    6. `jss3_t2w8_abuja_excursion.jpg`: Secondary school excursion tour bus at Abuja monuments for official BECE reading comprehension.
+- **Screens & Navigation Integration**:
+  - `JSS3TermSelectScreen`: Unlocked Term 2 card with 9 weeks count and updated syllabus subtitle.
+  - `JSS3WeekRoadmapScreen`: Connected `JSS3Term2Lessons.weeks` for Term 2.
+  - `JSS3LessonPlayerScreen`: Dispatched all 9 Term 2 pattern studios in Phase 2.
+- **Automated Verification & Zero-Defect Testing**:
+  - `flutter test test/jss3_french_test.dart`: 10/10 Term 1 tests passing (100%).
+  - `flutter test test/jss3_term2_french_test.dart`: 8/8 Term 2 curriculum & audio tests passing (100%).
+  - `flutter test test/jss3_widget_fit_test.dart`: 16/16 1080p smartboard rendering & fit tests passing (100%).
+  - Total automated tests: **34/34 Tests Passing (100%)**.
+
+---
+
 ### JSS 3 French Term 1 (Premier Trimestre) Full Build & Delivery (`JSS 3_FRENCH`)
 - **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
   - Harmonized the Nigerian NERDC JSS3 Term 1 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):

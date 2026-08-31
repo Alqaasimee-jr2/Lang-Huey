@@ -151,6 +151,18 @@ class _JSS3DiaryAndNarrativeStudioWidgetState
           ),
           const SizedBox(height: 16),
 
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Image.asset(
+              'assets/images/jss3_term2/jss3_t2w3_diary_art.jpg',
+              height: 170,
+              width: double.infinity,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) => const SizedBox(),
+            ),
+          ),
+          const SizedBox(height: 16),
+
           // Lined paper container
           Container(
             padding: const EdgeInsets.all(24),

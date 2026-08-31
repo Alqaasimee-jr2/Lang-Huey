@@ -161,6 +161,18 @@ class _JSS3PersonDescriptionStudioWidgetState extends State<JSS3PersonDescriptio
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Image.asset(
+              'assets/images/jss3_term1/jss3_t1w1_portrait.jpg',
+              height: 180,
+              width: double.infinity,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) => const SizedBox(),
+            ),
+          ),
+          const SizedBox(height: 16),
+
           // Live Avatar Preview Card
           Container(
             padding: const EdgeInsets.all(20),

@@ -244,53 +244,64 @@ class _JSS3RecentEventsVenirDeStudioWidgetState
   }
 
   Widget _buildNewsroomTab() {
-    return ListView.builder(
+    return ListView(
       padding: const EdgeInsets.all(20),
-      itemCount: _newsHeadlines.length,
-      itemBuilder: (context, i) {
-        final item = _newsHeadlines[i];
-        return Container(
-          margin: const EdgeInsets.only(bottom: 16),
-          padding: const EdgeInsets.all(18),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: const Color(0xFFC0392B).withOpacity(0.3)),
-            boxShadow: [
-              BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
-            ],
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            'assets/images/jss3_term2/jss3_t2w2_news_desk.jpg',
+            height: 180,
+            width: double.infinity,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) => const SizedBox(),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFC0392B),
-                      borderRadius: BorderRadius.circular(6),
+        ),
+        const SizedBox(height: 16),
+        ..._newsHeadlines.map((item) {
+          return Container(
+            margin: const EdgeInsets.only(bottom: 16),
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: const Color(0xFFC0392B).withOpacity(0.3)),
+              boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFC0392B),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(item['badge']!, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 11)),
                     ),
-                    child: Text(item['badge']!, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 11)),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.access_time_rounded, size: 14, color: Colors.grey),
-                      const SizedBox(width: 4),
-                      Text(item['time']!, style: const TextStyle(fontSize: 12, color: Colors.grey)),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-              Text(item['headline']!, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: LangHueyColors.charcoal)),
-              const SizedBox(height: 8),
-              Text(item['detail']!, style: TextStyle(fontSize: 13, color: Colors.grey.shade700)),
-            ],
-          ),
-        );
-      },
+                    Row(
+                      children: [
+                        const Icon(Icons.access_time_rounded, size: 14, color: Colors.grey),
+                        const SizedBox(width: 4),
+                        Text(item['time']!, style: const TextStyle(fontSize: 12, color: Colors.grey)),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Text(item['headline']!, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: LangHueyColors.charcoal)),
+                const SizedBox(height: 8),
+                Text(item['detail']!, style: TextStyle(fontSize: 13, color: Colors.grey.shade700)),
+              ],
+            ),
+          );
+        }),
+      ],
     );
   }
 
