@@ -38,10 +38,36 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 - **Screens & Navigation Integration**:
   - `JSS2TermSelectScreen`: Unlocked Term 1 card with 9 weeks count and exact syllabus topic subtitle.
   - `JSS2WeekRoadmapScreen`: Connected `JSS2Term1Lessons.weeks` for Term 1.
-  - `JSS2LessonPlayerScreen`: 5-Phase lesson player (Objectives, Interactive Pattern, Vocab Lab, Classwork/Evaluation, Summary/Homework).
-- **Verification & Zero-Defect Testing**:
-  - `flutter analyze`: **0 errors, 0 warnings** across all files.
-  - `flutter test`: **18/18 unit and widget fit tests passed with 100% success rate**.
+  - `JSS2LessonPlayerScreen`: 5-Phase lesson player (Objectives & Facilitator Cue Bar, Interactive Pattern Lab, Vocab Lab with 0.8x/1.0x speed toggle, Classwork & Evaluation, Summary & Homework).
+- **Comprehensive Walkthrough & Pedagogical Flow**:
+  - **Phase 1: Objectifs & Repères**: Step-by-step Teacher Facilitator Cue Bar in Standard English, 4 pedagogical goals, Nigerian & Francophone cultural insights.
+  - **Phase 2: Lab Interactif**: Dispatches one of the 9 custom kinetic pattern widgets with responsive tactile touch mechanics.
+  - **Phase 3: Vocabulaire & Phonétique**: Interactive 2-column vocabulary grid with phonetic guides, usage notes, and one-touch neural audio playback.
+  - **Phase 4: Exercices & Évaluation**: Dual sub-tab interface featuring interactive multiple-choice drills with instant validation + 3 evaluation Q&A with revealable hints and answers.
+  - **Phase 5: Résumé & Devoirs**: Comprehensive grammar note with contraction rules (*de + le = du*) and structured homework assignment with model responses.
+- **Verification Procedures & Test Protocol**:
+  - *Automated Schema Tests*: `flutter test test/jss2_french_test.dart` (validating 9 lessons, 4+ objectives, vocabulary audio keys, and grammar notes).
+  - *Smartboard 1080p/4K UI Tests*: `flutter test test/jss2_widget_fit_test.dart` (simulating 1920x1080 smartboard canvas, phase transitions, and interactive touch controls).
+  - *Static Analysis*: `flutter analyze` (verifying 0 errors and zero warnings).
+- **Verified Automated Test Results (18/18 Tests Passed — 100% Pass Rate)**:
+  1. `jss2_french_test.dart`: Term 1 contains exactly 9 lessons (8 instructional + 1 revision rally) — **PASSED** ✅
+  2. `jss2_french_test.dart`: Every lesson has $\ge 4$ objectives and cultural insight — **PASSED** ✅
+  3. `jss2_french_test.dart`: Every lesson has rich vocabulary with phonetics and valid audioKey — **PASSED** ✅
+  4. `jss2_french_test.dart`: Every lesson has interactive exercises with valid correctOptionIndex — **PASSED** ✅
+  5. `jss2_french_test.dart`: Every lesson has evaluation questions and comprehensive grammar note — **PASSED** ✅
+  6. `jss2_french_test.dart`: Pattern types are properly mapped across all 9 weeks — **PASSED** ✅
+  7. `jss2_widget_fit_test.dart`: `JSS2TermSelectScreen` renders term cards and header branding — **PASSED** ✅
+  8. `jss2_widget_fit_test.dart`: `JSS2WeekRoadmapScreen` renders all 9 week cards for Term 1 — **PASSED** ✅
+  9. `jss2_widget_fit_test.dart`: Week 1 `JSS2SpatialPositionStudioWidget` renders correctly — **PASSED** ✅
+  10. `jss2_widget_fit_test.dart`: Week 2 `JSS2LocatingPlacesStudioWidget` renders correctly — **PASSED** ✅
+  11. `jss2_widget_fit_test.dart`: Week 3 `JSS2IndoorWelcomingGuidingStudioWidget` renders correctly — **PASSED** ✅
+  12. `jss2_widget_fit_test.dart`: Week 4 `JSS2DirectionsAndWayfindingStudioWidget` renders correctly — **PASSED** ✅
+  13. `jss2_widget_fit_test.dart`: Week 5 `JSS2TransportModesStudioWidget` renders correctly — **PASSED** ✅
+  14. `jss2_widget_fit_test.dart`: Week 6 `JSS2PublicTransitRouteStudioWidget` renders correctly — **PASSED** ✅
+  15. `jss2_widget_fit_test.dart`: Week 7 `JSS2SchedulesAndTimetablesStudioWidget` renders correctly — **PASSED** ✅
+  16. `jss2_widget_fit_test.dart`: Week 8 `JSS2TransportTroubleshootingStudioWidget` renders correctly — **PASSED** ✅
+  17. `jss2_widget_fit_test.dart`: Week 9 `JSS2Term1RevisionRallyWidget` renders correctly — **PASSED** ✅
+  18. `jss2_widget_fit_test.dart`: `JSS2LessonPlayerScreen` loads and switches phases smoothly — **PASSED** ✅
 
 ---
 
