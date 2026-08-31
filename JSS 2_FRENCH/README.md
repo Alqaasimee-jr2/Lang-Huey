@@ -8,7 +8,7 @@
 [![Dart](https://img.shields.io/badge/Dart-3.0+-0D7377?style=for-the-badge&logo=dart&logoColor=14BDCC)](https://dart.dev)
 [![Platform](https://img.shields.io/badge/Platform-Android_Smartboards_|_Desktop_|_Web-0D7377?style=for-the-badge&logo=android&logoColor=white)](#)
 [![Curriculum](https://img.shields.io/badge/Curriculum-NERDC_JSS2_Aligned-0D7377?style=for-the-badge)](#)
-[![Test Suite](https://img.shields.io/badge/Automated_Tests-18%2F18_Passing_(100%25)-10B981?style=for-the-badge)](#)
+[![Test Suite](https://img.shields.io/badge/Automated_Tests-25%2F25_Passing_(100%25)-10B981?style=for-the-badge)](#)
 
 </div>
 
@@ -16,11 +16,11 @@
 
 ## 📖 Overview
 
-**JSS 2 French** is a specialized, 100% offline smartboard classroom application built for Nigerian Junior Secondary School 2 (Year 8) classrooms. It provides a complete, structured interactive French curriculum enabling non-specialist teachers to facilitate French lessons through:
+**JSS 2 French** is a specialized, 100% offline smartboard classroom application built for Nigerian Junior Secondary School 2 (Year 8) classrooms. It provides a complete, structured interactive French curriculum covering both **Premier Trimestre (Term 1)** and **Deuxième Trimestre (Term 2)** (18 weeks total), enabling non-specialist teachers to facilitate French lessons through:
 - High-legibility 4K/1080p touch interfaces.
 - Step-by-step Standard English **Teacher Facilitator Guidance Cue Bars**.
-- 84 authentic 44.1kHz neural French audio pronunciation clips (`fr-FR-DeniseNeural`).
-- 9 bespoke kinetic smartboard widgets designed for tactile classroom collaboration.
+- 169 authentic 44.1kHz neural French audio pronunciation clips (`fr-FR-DeniseNeural` at -4% classroom speed).
+- 18 bespoke kinetic smartboard pattern widgets designed for tactile classroom collaboration.
 
 ---
 
@@ -42,40 +42,47 @@ In accordance with Lang Huey's instructional policy, the official Nigerian NERDC
 
 ---
 
-## 🎮 9 Bespoke Smartboard Interactive Pattern Widgets
+## 📚 Curriculum Breakdown — Deuxième Trimestre (Term 2)
 
-All pattern widgets are implemented in `lib/widgets/patterns/term1/`:
+The official Nigerian NERDC JSS2 Term 2 scheme of work is structured into **9 high-impact instructional and revision weeks**:
 
-1. **`JSS2SpatialPositionStudioWidget`**:
-   - 3D spatial stage with moveable classroom objects (livre, sac, stylo, règle, ballon).
-   - Real-time sentence generation with contractions (*du tableau, de la porte*).
-   - "Quiz de Positionnement" mini-game mode.
-2. **`JSS2LocatingPlacesStudioWidget`** :
-   - Interactive town street map with 8 landmark nodes.
-   - Distance & proximity calculator between selected origin and destination buildings.
-   - Contraction coach explaining `de + le = du` vs `de + la = de la`.
-3. **`JSS2IndoorWelcomingGuidingStudioWidget`** :
-   - Multi-floor school building floorplan navigator (RDC, 1er, 2e étage).
-   - Receptionist dialog constructor and step-by-step visitor escort generator.
-4. **`JSS2DirectionsAndWayfindingStudioWidget`** :
-   - GPS-style turn-by-turn route builder with compass rose.
-   - Action command controls (*Continuez tout droit, tournez à gauche, prenez le rond-point*).
-   - Walking distance and time estimation calculator.
-5. **`JSS2TransportModesStudioWidget`** :
-   - 4-Category vehicle garage (Land, Air, Water, Active/2-Wheels).
-   - Interactive **EN vs À sorting game** with instant score and audio feedback.
-6. **`JSS2PublicTransitRouteStudioWidget`** :
-   - Metro / BRT light rail transit line planner with transfer connection detection.
-   - Interactive ticket validator turnstile simulator with turnstile chime.
-7. **`JSS2SchedulesAndTimetablesStudioWidget`** :
-   - Airport and railway electronic departures board (*Tableau des départs*).
-   - 24-Hour and colloquial spoken time decoder with platform indicators.
-8. **`JSS2TransportTroubleshootingStudioWidget`** :
-   - Transit customer service desk simulating 4 real-world crisis scenarios.
-   - Resolution voucher and ticket exchange simulator.
-9. **`JSS2Term1RevisionRallyWidget`** :
-   - 4-Team live championship buzzer quiz arena (*Équipe Bleue, Verte, Rouge, Jaune*).
-   - Real-time score adjustments (+10 / -5), countdown timer, and victory trophy podium.
+| Week | Unité / Theme | Communicative & Grammatical Scope | Interactive Pattern Widget | Audio Assets |
+| :---: | :--- | :--- | :--- | :---: |
+| **1** | **Unité 9 : Établir des listes et inventaires** | School supplies inventories, grocery lists, stock counts, status badges (*au complet, en rupture*). | `JSS2ListAndInventoryStudioWidget` | 10 |
+| **2** | **Unité 10 : Les commerçants et marchandises** | Shopkeepers (*boulanger, boucher, épicier, poissonnier, libraire*), Packaging (*en boîte, en bouteille, en sachet, en vrac*). | `JSS2MerchantsAndGoodsStudioWidget` | 10 |
+| **3** | **Unité 11 : Acheter et marchander** | Market price inquiry (*Combien coûte...*), Bargaining (*Faites-moi un bon prix*), Cash/Card payment methods. | `JSS2ShoppingAndBargainingStudioWidget` | 10 |
+| **4** | **Unité 12 : Exprimer un besoin et son utilité** | Expressing need (*Avoir besoin de + nom/verbe*), Utility (*Ça sert à + infinitif, être utile pour*). | `JSS2NeedsAndUtilityStudioWidget` | 10 |
+| **5** | **Unité 13 : À la pharmacie** | Health symptoms (*J'ai mal à la tête/gorge/au ventre*), Fever/Cough, Prescription & Posology (*sirop, comprimés, pansements*). | `JSS2PharmacyAndHealthStudioWidget` | 10 |
+| **6** | **Unité 14 : Les vêtements, chaussures et accessoires** | Clothing items, Materials (*EN coton/cuir/soie*), Patterns (*À rayures/carreaux*), Sizes (*taille / pointure*). | `JSS2WardrobeAndStyleStudioWidget` | 10 |
+| **7** | **Unité 15 : Apprécier, comparer, choisir** | Comparatives (*plus... que, moins... que, aussi... que*), Expressing hesitation & personal choice (*Je préfère celui-ci*). | `JSS2ComparisonAndChoiceStudioWidget` | 10 |
+| **8** | **Unité 16 : Quantité et qualité des produits** | Metric measurement (kg, g, L, douzaines), Freshness/Quality, Mandatory *DE / D'* rule after quantity nouns. | `JSS2ProductQuantityQualityStudioWidget` | 10 |
+| **9** | **Grand Rallye du 2e Trimestre** | 4-Team live championship quiz arena across all Term 2 units with scoreboards, buzzer SFX, timer & victory podium celebration. | `JSS2Term2RevisionRallyWidget` | 5 |
+
+---
+
+## 🎮 18 Bespoke Smartboard Interactive Pattern Widgets
+
+### Term 1 Widgets (`lib/widgets/patterns/term1/`)
+1. **`JSS2SpatialPositionStudioWidget`**: 3D spatial stage with moveable classroom objects & sentence generator.
+2. **`JSS2LocatingPlacesStudioWidget`**: Interactive town map with landmark nodes & distance calculator.
+3. **`JSS2IndoorWelcomingGuidingStudioWidget`**: Multi-floor school floorplan navigator (RDC, 1er, 2e étage) & reception simulator.
+4. **`JSS2DirectionsAndWayfindingStudioWidget`**: Turn-by-turn route builder with compass rose & walking time estimator.
+5. **`JSS2TransportModesStudioWidget`**: 4-Category vehicle garage + EN vs À sorting game with audio feedback.
+6. **`JSS2PublicTransitRouteStudioWidget`**: Metro / BRT transit route planner with transfer connections & turnstile chime.
+7. **`JSS2SchedulesAndTimetablesStudioWidget`**: Electronic departures board with 24h/colloquial time decoder.
+8. **`JSS2TransportTroubleshootingStudioWidget`**: Transit customer service desk with delay, missed flight, and baggage claims.
+9. **`JSS2Term1RevisionRallyWidget`**: 4-Team live buzzer championship quiz arena with live scoreboards & podium.
+
+### Term 2 Widgets (`lib/widgets/patterns/term2/`)
+1. **`JSS2ListAndInventoryStudioWidget`**: Supply inventory checklist, stock counter, and status badges.
+2. **`JSS2MerchantsAndGoodsStudioWidget`**: Merchant storefronts & packaging format selector (*en boîte, en bouteille, en sachet, en vrac*).
+3. **`JSS2ShoppingAndBargainingStudioWidget`**: Live market price bargaining simulator with counter-offers & merchant reactions.
+4. **`JSS2NeedsAndUtilityStudioWidget`**: Needs & utility workshop (*avoir besoin de, ça sert à...*).
+5. **`JSS2PharmacyAndHealthStudioWidget`**: Pharmacy consultation counter with ailment diagnosis & medication dosage cards.
+6. **`JSS2WardrobeAndStyleStudioWidget`**: Virtual mannequin styling studio with fabric *EN* vs motif *À* selectors & sizes.
+7. **`JSS2ComparisonAndChoiceStudioWidget`**: Side-by-side comparative product cards with VS badge & choice expression.
+8. **`JSS2ProductQuantityQualityStudioWidget`**: Digital metric scale simulation (kg, g, L) with *DE/D'* grammar rule box.
+9. **`JSS2Term2RevisionRallyWidget`**: 4-Team live buzzer championship quiz arena across all 8 Term 2 units.
 
 ---
 
@@ -86,22 +93,26 @@ JSS 2_FRENCH/
 ├── assets/
 │   ├── audio/
 │   │   ├── jss2_term1/                 # 84 Authentic 44.1kHz MP3 neural audio files
+│   │   ├── jss2_term2/                 # 85 Authentic 44.1kHz MP3 neural audio files
 │   │   ├── sfx_celebrate.mp3           # Championship fanfare SFX
 │   │   ├── sfx_click.mp3               # UI tap SFX
 │   │   ├── sfx_correct.mp3             # Correct answer chime
 │   │   ├── sfx_incorrect.mp3           # Error buzz SFX
 │   │   └── sfx_whoosh.mp3              # Transition whoosh
 │   └── images/
-│       └── jss2_term1/
-│           └── jss2_spatial_positions.jpg # 3D classroom spatial illustration
+│       ├── jss2_term1/
+│       │   └── jss2_spatial_positions.jpg # Spatial positions classroom visual
+│       └── jss2_term2/
+│           └── jss2_commercants_et_marche.jpg # Market & commerce classroom visual
 ├── lib/
 │   ├── data/
-│   │   └── jss2_term1_lessons.dart     # 9 Complete weekly lesson datasets
+│   │   ├── jss2_term1_lessons.dart     # 9 Complete Term 1 weekly lesson datasets
+│   │   └── jss2_term2_lessons.dart     # 9 Complete Term 2 weekly lesson datasets
 │   ├── models/
 │   │   └── jss2_lesson_model.dart      # JSS2PatternType enum & data models
 │   ├── screens/
 │   │   ├── lesson/
-│   │   │   └── jss2_lesson_player_screen.dart # 5-Phase lesson player
+│   │   │   └── jss2_lesson_player_screen.dart # 5-Phase lesson player for Terms 1 & 2
 │   │   ├── roadmap/
 │   │   │   └── jss2_week_roadmap_screen.dart  # 9-Week visual roadmap
 │   │   └── term/
@@ -113,7 +124,8 @@ JSS 2_FRENCH/
 │   │   └── text_styles.dart            # Smartboard typography tokens
 │   ├── widgets/
 │   │   └── patterns/
-│   │       └── term1/                  # 9 Bespoke Term 1 pattern widgets
+│   │       ├── term1/                  # 9 Bespoke Term 1 pattern widgets
+│   │       └── term2/                  # 9 Bespoke Term 2 pattern widgets
 │   └── main.dart                       # App entry point
 ├── test/
 │   ├── jss2_french_test.dart           # Curriculum data & schema integrity tests
@@ -126,7 +138,7 @@ JSS 2_FRENCH/
 ## 🧪 Testing Procedures & Step-by-Step Verification
 
 ### 1. Automated Unit & Curriculum Schema Tests
-Verifies that all 9 weekly modules conform strictly to the data contract (objectives count, audio key mapping, exercise validation, grammar notes).
+Verifies that all 18 weekly modules (Terms 1 & 2) conform strictly to the data contract:
 
 ```powershell
 cd "c:\Users\DELL\Desktop\Lang Huey\JSS 2_FRENCH"
@@ -134,7 +146,7 @@ flutter test test/jss2_french_test.dart
 ```
 
 ### 2. Smartboard 1080p/4K UI Widget Fit Tests
-Simulates a high-resolution smartboard display (`1920x1080`, `devicePixelRatio: 1.0`) to verify layout rendering, phase switching, and interactive touch controls across all 9 bespoke widgets.
+Simulates a high-resolution smartboard display (`1920x1080`, `devicePixelRatio: 1.0`) across all 18 bespoke pattern widgets:
 
 ```powershell
 flutter test test/jss2_widget_fit_test.dart
@@ -161,24 +173,31 @@ flutter analyze
 | Test Suite | Test Case Description | Status | Pass Rate |
 | :--- | :--- | :---: | :---: |
 | **`jss2_french_test.dart`** | Term 1 contains exactly 9 lessons (8 instructional + 1 revision rally) | ✅ PASSED | 100% |
-| **`jss2_french_test.dart`** | Every lesson has >= 4 objectives and non-empty cultural insight | ✅ PASSED | 100% |
-| **`jss2_french_test.dart`** | Every lesson has rich vocabulary with phonetics and non-empty audioKey | ✅ PASSED | 100% |
-| **`jss2_french_test.dart`** | Every lesson has interactive exercises with valid correctOptionIndex | ✅ PASSED | 100% |
-| **`jss2_french_test.dart`** | Every lesson has evaluation questions and comprehensive grammar notes | ✅ PASSED | 100% |
-| **`jss2_french_test.dart`** | Pattern types are properly mapped across all 9 weeks | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Every Term 1 lesson has >= 4 objectives and cultural insights | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Every Term 1 lesson has rich vocabulary with phonetics and non-empty audioKey | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Every Term 1 lesson has interactive exercises with valid correctOptionIndex | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Every Term 1 lesson has evaluation questions and comprehensive grammar notes | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Term 2 contains exactly 9 lessons (8 instructional + 1 revision rally) | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Every Term 2 lesson has >= 4 objectives and cultural insights | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Every Term 2 lesson has rich vocabulary with phonetics and non-empty audioKey | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Every Term 2 lesson has interactive exercises with valid correctOptionIndex | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Every Term 2 lesson has evaluation questions and comprehensive grammar notes | ✅ PASSED | 100% |
+| **`jss2_french_test.dart`** | Pattern types are properly mapped across all 18 weeks (Terms 1 & 2) | ✅ PASSED | 100% |
 | **`jss2_widget_fit_test.dart`** | `JSS2TermSelectScreen` renders term cards and header branding | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | `JSS2WeekRoadmapScreen` renders all 9 week cards for Term 1 | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 1 `JSS2SpatialPositionStudioWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 2 `JSS2LocatingPlacesStudioWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 3 `JSS2IndoorWelcomingGuidingStudioWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 4 `JSS2DirectionsAndWayfindingStudioWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 5 `JSS2TransportModesStudioWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 6 `JSS2PublicTransitRouteStudioWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 7 `JSS2SchedulesAndTimetablesStudioWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 8 `JSS2TransportTroubleshootingStudioWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | Week 9 `JSS2Term1RevisionRallyWidget` renders correctly | ✅ PASSED | 100% |
-| **`jss2_widget_fit_test.dart`** | `JSS2LessonPlayerScreen` loads and switches phases smoothly | ✅ PASSED | 100% |
-| **Total** | **18 Automated Unit & Widget Fit Tests** | **✅ ALL 18 PASSED** | **100%** |
+| **`jss2_widget_fit_test.dart`** | `JSS2WeekRoadmapScreen` renders all 9 week cards for Terms 1 & 2 | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 1 Week 1 `JSS2SpatialPositionStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 1 Week 2 `JSS2LocatingPlacesStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 1 `JSS2ListAndInventoryStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 2 `JSS2MerchantsAndGoodsStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 3 `JSS2ShoppingAndBargainingStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 4 `JSS2NeedsAndUtilityStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 5 `JSS2PharmacyAndHealthStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 6 `JSS2WardrobeAndStyleStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 7 `JSS2ComparisonAndChoiceStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 8 `JSS2ProductQuantityQualityStudioWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | Term 2 Week 9 `JSS2Term2RevisionRallyWidget` renders correctly | ✅ PASSED | 100% |
+| **`jss2_widget_fit_test.dart`** | `JSS2LessonPlayerScreen` loads and switches phases smoothly for Term 2 | ✅ PASSED | 100% |
+| **Total** | **25 Automated Unit & Widget Fit Tests** | **✅ ALL 25 PASSED** | **100%** |
 
 ---
 

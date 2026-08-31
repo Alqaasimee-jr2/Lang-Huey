@@ -4,7 +4,41 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
-## [Unreleased] - 2026-08-31
+### JSS 2 French Term 2 (Deuxième Trimestre) Full Build & Delivery (`JSS 2_FRENCH`)
+- **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
+  - Harmonized the Nigerian NERDC JSS2 Term 2 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
+    1. **Week 1 (Unité 9)**: *Établir des listes/inventaires* (School supply inventories, grocery lists, stock counts, status badges, and quantifiers).
+    2. **Week 2 (Unité 10)**: *Les commerçants et marchandises* (Naming shopkeepers: *le boulanger, le boucher, l'épicier, le poissonnier, le libraire*, merchandise packaging formats: *en boîte, en bouteille, en sachet, en vrac*).
+    3. **Week 3 (Unité 11)**: *Acheter et marchander* (Market bargaining simulator: asking price *combien coûte / c'est combien*, negotiating discounts *faites-moi un bon prix*, payment methods *en espèces / par carte*).
+    4. **Week 4 (Unité 12)**: *Exprimer un besoin et son utilité* (Need and utility studio: *avoir besoin de + nom/verbe, servir à + infinitif, être utile pour*).
+    5. **Week 5 (Unité 13)**: *À la pharmacie* (Pharmacy counter: symptoms & ailments *j'ai mal à la tête/gorge/au ventre, j'ai de la fièvre*, remedies & posology *sirop, comprimés, pansements*).
+    6. **Week 6 (Unité 14)**: *Les vêtements, chaussures et accessoires* (Wardrobe & styling studio: clothing items, fabric materials with *EN*, motifs & patterns with *À*, sizes *taille / pointure*).
+    7. **Week 7 (Unité 15)**: *Apprécier, comparer, choisir* (Side-by-side comparison arena: *plus... que, moins... que, aussi... que*, expressing hesitation and personal choice *je préfère celui-ci / je prends celle-là*).
+    8. **Week 8 (Unité 16)**: *Quantité et qualité des produits* (Metric measurement & quality lab: digital scale with kg, g, L, dozens + mandatory *DE / D'* rule after quantity nouns).
+    9. **Week 9 (Grand Rallye)**: *Grand Bilan & Rallye de Révision du Deuxième Trimestre* (4-Team live championship quiz arena across all 8 units with scoreboards, buzzer SFX, and trophy podium).
+- **Curriculum Dataset & Models**:
+  - Authored `JSS 2_FRENCH/lib/data/jss2_term2_lessons.dart` with all 9 complete weekly lessons.
+  - Defined all Term 2 pattern types in `JSS2PatternType` within `lib/models/jss2_lesson_model.dart`.
+- **9 Bespoke Smartboard Interactive Pattern Widgets** (`JSS 2_FRENCH/lib/widgets/patterns/term2/`):
+  1. `JSS2ListAndInventoryStudioWidget` (Interactive checklist, stock counter, supply category filter).
+  2. `JSS2MerchantsAndGoodsStudioWidget` (Shopkeeper storefronts, packaging format selector, live phrase generator).
+  3. `JSS2ShoppingAndBargainingStudioWidget` (Live market price counter-offer simulator, merchant reaction engine, checkout wallet).
+  4. `JSS2NeedsAndUtilityStudioWidget` (Interactive school/home tool selector, purpose sentence synthesizer, utility rules).
+  5. `JSS2PharmacyAndHealthStudioWidget` (Doctor/pharmacist consultation desk, symptom selector, medicine dosage posology cards).
+  6. `JSS2WardrobeAndStyleStudioWidget` (Virtual mannequin styling station, material *EN* vs motif *À* chips, size pickers).
+  7. `JSS2ComparisonAndChoiceStudioWidget` (Side-by-side comparative product cards with VS badge, comparative synthesis box).
+  8. `JSS2ProductQuantityQualityStudioWidget` (Digital electronic scale simulation, metric weights, *DE/D'* grammar rule box).
+  9. `JSS2Term2RevisionRallyWidget` (4-Team live championship quiz arena with live scoreboards, question reveals, and podium celebration).
+- **Extensive Multimedia Suite**:
+  - Synthesized all **85 authentic 44.1kHz MP3 neural audio files** in `JSS 2_FRENCH/assets/audio/jss2_term2/` using **`fr-FR-DeniseNeural`** (-4% classroom rate).
+  - Generated educational visual artwork for market & commerce in `JSS 2_FRENCH/assets/images/jss2_term2/`.
+- **Screens & Navigation Integration**:
+  - `JSS2TermSelectScreen`: Unlocked Term 2 card with 9 weeks count and exact syllabus topic subtitle.
+  - `JSS2WeekRoadmapScreen`: Connected `JSS2Term2Lessons.weeks` for Term 2.
+  - `JSS2LessonPlayerScreen`: Connected all 9 Term 2 interactive widgets into Phase 2.
+- **Automated Verification**:
+  - `flutter test`: 25/25 unit and smartboard fit tests passing (100% pass rate).
+  - `flutter analyze`: 0 errors, 0 warnings.
 
 ### JSS2 French Term 1 (Premier Trimestre) Full Build & Delivery (`JSS 2_FRENCH`)
 - **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:

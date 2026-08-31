@@ -121,15 +121,15 @@ class JSS2TermSelectScreen extends StatelessWidget {
                   ),
                   const SizedBox(width: 24),
 
-                  // Term 2 (Locked)
+                  // Term 2 (Unlocked)
                   _buildTermCard(
                     context: context,
                     termNumber: 2,
                     title: 'DEUXIÈME TRIMESTRE',
-                    subtitle: 'Commerces & Achats, Repas & Restaurants, Logement & Hébergement, Activités Quotidiennes',
-                    weeksCount: '9 Semaines (À Venir)',
-                    icon: Icons.shopping_bag_rounded,
-                    isAvailable: false,
+                    subtitle: 'Listes & Inventaires, Commerçants, Achat & Marchandage, Utilité, Pharmacie, Vêtements, Comparaisons & Qualités',
+                    weeksCount: '9 Semaines Complètes',
+                    icon: Icons.storefront_rounded,
+                    isAvailable: true,
                   ),
                   const SizedBox(width: 24),
 
