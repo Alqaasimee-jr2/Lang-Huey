@@ -20,7 +20,7 @@ class JSS3WeekRoadmapScreen extends StatelessWidget {
 
     final termTitle = termNumber == 1
         ? 'Premier Trimestre • JSS 3'
-        : (termNumber == 2 ? 'Deuxième Trimestre • JSS 3' : 'Troisième Trimestre • JSS 3');
+        : 'Deuxième Trimestre (Trimestre Terminal • BECE)';
 
     return Scaffold(
       backgroundColor: LangHueyColors.warmCream,

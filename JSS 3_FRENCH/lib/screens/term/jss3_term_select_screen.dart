@@ -23,21 +23,12 @@ class JSS3TermSelectScreen extends StatelessWidget {
       },
       {
         'term': 2,
-        'title': 'Deuxième Trimestre',
-        'subtitle': 'Événements Passés, Passé Récent, Journal Intime, Futur Simple & BECE Prep',
-        'weeks': '9 Semaines Pédagogiques',
+        'title': 'Deuxième Trimestre (Trimestre Terminal)',
+        'subtitle': 'Passé Récent, Journal, Futur Simple, Préparation BECE & Support Bilingue Français-Anglais',
+        'weeks': '9 Semaines • Examen Final BECE',
         'isAvailable': true,
         'color': const Color(0xFF1B4F72),
-        'badge': 'Complet & Actif',
-      },
-      {
-        'term': 3,
-        'title': 'Troisième Trimestre',
-        'subtitle': 'Grand Rallye Final, Épreuves Nationales & BECE Brevet',
-        'weeks': 'Prochainement',
-        'isAvailable': false,
-        'color': const Color(0xFF6B7280),
-        'badge': 'Trimestre 3',
+        'badge': 'Trimestre Terminal • BECE',
       },
     ];
 

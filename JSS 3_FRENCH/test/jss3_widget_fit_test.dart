@@ -49,7 +49,7 @@ void main() {
 
       expect(find.text('LANG HUEY'), findsOneWidget);
       expect(find.text('Premier Trimestre'), findsOneWidget);
-      expect(find.text('Deuxième Trimestre'), findsOneWidget);
+      expect(find.textContaining('Deuxième Trimestre'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -116,7 +116,7 @@ void main() {
       await tester.pumpWidget(createSmartboardWrapper(const JSS3WeekRoadmapScreen(termNumber: 2)));
       await tester.pumpAndSettle();
 
-      expect(find.text('Deuxième Trimestre • JSS 3'), findsOneWidget);
+      expect(find.text('Deuxième Trimestre (Trimestre Terminal • BECE)'), findsOneWidget);
       expect(find.text('W1'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });

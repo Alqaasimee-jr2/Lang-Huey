@@ -4,9 +4,10 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
-### JSS 3 French Term 2 (Deuxième Trimestre) Full Build & Delivery (`JSS 3_FRENCH`)
-- **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
-  - Harmonized the Nigerian NERDC JSS3 Term 2 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
+#### JSS 3 French Terminal Curriculum (2-Term Structure) & Term 2 Delivery
+- **Curriculum Architecture**: Harmonized the Junior Secondary School 3 (JSS 3) syllabus into its official **2-Term Structure (Premier Trimestre & Deuxième Trimestre — Trimestre Terminal & Période Pré-Examen BECE)**.
+- **Dual French-English Parallel Scaffolding**: Integrated clear side-by-side English translations, contextual glosses, and bilingual pedagogical explanations throughout all 9 Term 2 lessons, pattern studios, reading passages, and exam workshops to maximize student comprehension before national BECE exams.
+- **9 High-Impact Terminal Weeks Delivered**:
     1. **Week 1 (Unité 1)**: *Relater un événement passé et situer les actions* (Combining Passé Composé for punctual actions + Imparfait for background setting/states + temporal adverbs: *autrefois, jadis, alors, à ce moment-là, pendant que, soudainement, la veille*).
     2. **Week 2 (Unité 2)**: *Rapporter un fait récent : le passé récent (venir de)* (Formula: *VENIR [présent] + DE/D' + Infinitif*, "Le Journal Télévisé" breaking news desk, flash bulletins, sports and school announcements).
     3. **Week 3 (Unité 3)**: *Comprendre un récit et écrire son journal intime* (French personal diary conventions: top-right date, "Cher journal,", emotional status: *fierté, soulagement, joie, espoir*, narrative reading comprehension).
