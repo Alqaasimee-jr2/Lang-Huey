@@ -100,8 +100,13 @@ Every lesson in Lang Huey is mapped directly to the Nigerian Educational Researc
 - **Term 2 (Weeks 1–13)**: Extended Family, Relatives, Community Neighbors, Gratitude Postcard, Weekly Timetable (66 Audio Assets, 10 Pattern Widgets).
 - **Term 3 (Weeks 1–13)**: Daily Routine 6h00–21h00, Sports Arena, Hobbies Lounge, School Subjects, Career Dreams & Food Buffet (64 Audio Assets, 10 Pattern Widgets).
 
-### 🏛️ Junior Secondary French (`JSS1 Pack`)
-- Foundation French syllabus: Greetings, School Objects, Numbers 1–100, Family & WAEC Foundation Preparation.
+### 🏛️ Junior Secondary School 1 French (`JSS1_FRENCH/` — 27 Weeks Complete)
+- **Term 1 (Weeks 1–9)**: Classroom Directives, Formal/Informal Greetings, Self-Introduction, Alphabet & Accents Dictation, Presenting Others, Character Portraits, Hobbies & Sports, Preferences, 4-Team Revision Rally (89 Audio Assets, 9 Pattern Widgets).
+- **Term 2 (Weeks 1–9)**: Object Properties (Size/Color/Shape/Texture), Polite Borrowing & Requests, Careers & Professions, Analog/Digital Clock Time, Daily Timelines 6h–21h, Calendar Dates, Event Chronology (*Avant/Pendant/Après*), Habits, Term 2 Revision Rally (80 Audio Assets, 9 Pattern Widgets).
+- **Term 3 (Weeks 1–9)**: Weather & Seasons Barometer, Frequency Adverbs (100% *Toujours* ➔ 0% *Jamais*), Invitations & Polite Excuses, Imperatives & School Signage, Permission & Advice Clinic, City Navigation, Communicative Roleplays, BECE Exam Prep Workshop, Grand Annual Championship Quiz Rally & Graduation Diploma (72 Audio Assets, 9 Pattern Widgets).
+
+### 🏆 Junior Secondary School 2 French (`JSS 2_FRENCH/` — Term 1 Complete)
+- **Term 1 (Weeks 1–9)**: Spatial Positions (*sur, sous, dans, devant, derrière, entre, à côté de*), Locating Places in Town (*près de, loin de, en face de*), Indoor Floorplan Navigation (*RDC, 1er étage, au bout du couloir*), City Street Wayfinding, Transport Modes & EN vs À Rule, Public Transit Routes & Line Transfers, Departures Boards & Schedules, Transit Troubleshooting Desk, Grand Term 1 4-Team Revision Championship Rally (84 Audio Assets, 9 Pattern Widgets, 18/18 Tests Passing).
 
 ---
 
@@ -115,8 +120,10 @@ Lang Huey/
 ├── 01_lang_huey_master_brief.md        # Master product brief
 ├── 02_lang_huey_brand_system.md        # Official design & brand system
 ├── 03_lang_huey_mvp_architecture.md    # Android smartboard app architecture
-├── mvp/                                # Primary 4 French Standalone Flutter App
-├── P5_FRENCH/                          # Primary 5 French Standalone Flutter App
+├── mvp/                                # Primary 4 French Standalone Flutter App (39 Weeks)
+├── P5_FRENCH/                          # Primary 5 French Standalone Flutter App (39 Weeks)
+├── JSS1_FRENCH/                        # Junior Secondary 1 French Standalone Flutter App (27 Weeks)
+├── JSS 2_FRENCH/                       # Junior Secondary 2 French Standalone Flutter App (Term 1)
 └── website/                            # 🚀 Next.js 15 App Router Prelaunch Platform
     ├── package.json                    # Dependencies & Next.js scripts
     ├── public/                         # Static assets (audio, images, og-preview.jpg)
