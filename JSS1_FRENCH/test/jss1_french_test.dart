@@ -1,5 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:jss1_french/data/jss1_term1_lessons.dart';
+import 'package:jss1_french/data/jss1_term2_lessons.dart';
+import 'package:jss1_french/data/jss1_term3_lessons.dart';
 import 'package:jss1_french/models/jss1_lesson_model.dart';
 import 'package:jss1_french/services/jss1_audio_service.dart';
 import 'package:jss1_french/theme/colors.dart';
@@ -26,7 +28,7 @@ void main() {
       }
     });
 
-    test('All 9 weeks have valid and distinct pattern types mapped', () {
+    test('All 9 weeks in Term 1 have valid and distinct pattern types mapped', () {
       final patternTypes = JSS1Term1Lessons.weeks.map((w) => w.patternType).toList();
       expect(patternTypes.length, equals(9));
       expect(patternTypes.contains(JSS1PatternType.classroomCommands), isTrue);
@@ -40,8 +42,96 @@ void main() {
       expect(patternTypes.contains(JSS1PatternType.term1RevisionRally), isTrue);
     });
 
-    test('All vocabulary items have valid french, phonetics, and audio keys', () {
+    test('All Term 1 vocabulary items have valid french, phonetics, and audio keys', () {
       for (final lesson in JSS1Term1Lessons.weeks) {
+        for (final item in lesson.vocabItems) {
+          expect(item.french.isNotEmpty, isTrue);
+          expect(item.phonetics.isNotEmpty, isTrue);
+          expect(item.english.isNotEmpty, isTrue);
+          expect(item.audioKey.isNotEmpty, isTrue);
+        }
+      }
+    });
+  });
+
+  group('JSS1 French - Term 2 Curriculum & Data Model Tests', () {
+    test('Term 2 contains exactly 9 complete instructional & revision weeks', () {
+      expect(JSS1Term2Lessons.weeks.length, equals(9));
+      for (int i = 0; i < 9; i++) {
+        final lesson = JSS1Term2Lessons.weeks[i];
+        expect(lesson.term, equals(2));
+        expect(lesson.week, equals(i + 1));
+        expect(lesson.topic.isNotEmpty, isTrue);
+        expect(lesson.subtitle.isNotEmpty, isTrue);
+        expect(lesson.objectives.isNotEmpty, isTrue);
+        expect(lesson.culturalInsight.isNotEmpty, isTrue);
+        expect(lesson.vocabItems.isNotEmpty, isTrue);
+        expect(lesson.classworkExercises.isNotEmpty, isTrue);
+        expect(lesson.evaluationQuestions.isNotEmpty, isTrue);
+        expect(lesson.assignmentTasks.isNotEmpty, isTrue);
+      }
+    });
+
+    test('All 9 weeks in Term 2 map to the exact NERDC topics and pattern types', () {
+      final patternTypes = JSS1Term2Lessons.weeks.map((w) => w.patternType).toList();
+      expect(patternTypes.length, equals(9));
+      expect(patternTypes.contains(JSS1PatternType.objectPropertiesStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.politeRequestsStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.professionsStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.clockTimeStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.dailyScheduleStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.calendarDatesStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.eventSequencerStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.weeklyRoutineStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.term2RevisionRally), isTrue);
+    });
+
+    test('All Term 2 vocabulary items have valid french, phonetics, and audio keys', () {
+      for (final lesson in JSS1Term2Lessons.weeks) {
+        for (final item in lesson.vocabItems) {
+          expect(item.french.isNotEmpty, isTrue);
+          expect(item.phonetics.isNotEmpty, isTrue);
+          expect(item.english.isNotEmpty, isTrue);
+          expect(item.audioKey.isNotEmpty, isTrue);
+        }
+      }
+    });
+  });
+
+  group('JSS1 French - Term 3 Curriculum & Data Model Tests (Classes & Revision Only)', () {
+    test('Term 3 contains exactly 9 complete instructional & revision weeks', () {
+      expect(JSS1Term3Lessons.weeks.length, equals(9));
+      for (int i = 0; i < 9; i++) {
+        final lesson = JSS1Term3Lessons.weeks[i];
+        expect(lesson.term, equals(3));
+        expect(lesson.week, equals(i + 1));
+        expect(lesson.topic.isNotEmpty, isTrue);
+        expect(lesson.subtitle.isNotEmpty, isTrue);
+        expect(lesson.objectives.isNotEmpty, isTrue);
+        expect(lesson.culturalInsight.isNotEmpty, isTrue);
+        expect(lesson.vocabItems.isNotEmpty, isTrue);
+        expect(lesson.classworkExercises.isNotEmpty, isTrue);
+        expect(lesson.evaluationQuestions.isNotEmpty, isTrue);
+        expect(lesson.assignmentTasks.isNotEmpty, isTrue);
+      }
+    });
+
+    test('All 9 weeks in Term 3 map to the exact NERDC topics and pattern types', () {
+      final patternTypes = JSS1Term3Lessons.weeks.map((w) => w.patternType).toList();
+      expect(patternTypes.length, equals(9));
+      expect(patternTypes.contains(JSS1PatternType.weatherAndSeasonsStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.frequencyAdverbsStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.invitationsStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.commandsAndProhibitionsStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.permissionAndAdviceStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.directionsAndProceduresStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.communicativeRoleplayStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.writtenOralWorkshopStudio), isTrue);
+      expect(patternTypes.contains(JSS1PatternType.term3AnnualGrandRally), isTrue);
+    });
+
+    test('All Term 3 vocabulary items have valid french, phonetics, and audio keys', () {
+      for (final lesson in JSS1Term3Lessons.weeks) {
         for (final item in lesson.vocabItems) {
           expect(item.french.isNotEmpty, isTrue);
           expect(item.phonetics.isNotEmpty, isTrue);

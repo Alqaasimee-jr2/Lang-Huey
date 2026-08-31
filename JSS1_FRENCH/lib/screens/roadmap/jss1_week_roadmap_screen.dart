@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../models/jss1_lesson_model.dart';
 import '../../data/jss1_term1_lessons.dart';
+import '../../data/jss1_term2_lessons.dart';
+import '../../data/jss1_term3_lessons.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
 import '../lesson/jss1_lesson_player_screen.dart';
@@ -23,9 +25,21 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
     _loadLessons();
   }
 
+  @override
+  void didUpdateWidget(covariant JSS1WeekRoadmapScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.term != widget.term) {
+      _loadLessons();
+    }
+  }
+
   void _loadLessons() {
     if (widget.term == 1) {
       _lessons = JSS1Term1Lessons.weeks;
+    } else if (widget.term == 2) {
+      _lessons = JSS1Term2Lessons.weeks;
+    } else if (widget.term == 3) {
+      _lessons = JSS1Term3Lessons.weeks;
     } else {
       _lessons = [];
     }

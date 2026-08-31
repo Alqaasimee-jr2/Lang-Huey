@@ -15,6 +15,28 @@ import '../../widgets/patterns/term1/jss1_hobbies_and_leisure_widget.dart';
 import '../../widgets/patterns/term1/jss1_tastes_and_preferences_widget.dart';
 import '../../widgets/patterns/term1/jss1_term1_revision_rally_widget.dart';
 
+// Term 2 Bespoke Teaching & Revision Pattern Widgets
+import '../../widgets/patterns/term2/jss1_object_properties_studio_widget.dart';
+import '../../widgets/patterns/term2/jss1_polite_requests_studio_widget.dart';
+import '../../widgets/patterns/term2/jss1_professions_studio_widget.dart';
+import '../../widgets/patterns/term2/jss1_clock_time_studio_widget.dart';
+import '../../widgets/patterns/term2/jss1_daily_schedule_studio_widget.dart';
+import '../../widgets/patterns/term2/jss1_calendar_dates_studio_widget.dart';
+import '../../widgets/patterns/term2/jss1_event_sequencer_studio_widget.dart';
+import '../../widgets/patterns/term2/jss1_weekly_routine_studio_widget.dart';
+import '../../widgets/patterns/term2/jss1_term2_revision_rally_widget.dart';
+
+// Term 3 Bespoke Teaching & Revision Pattern Widgets
+import '../../widgets/patterns/term3/jss1_weather_and_seasons_studio_widget.dart';
+import '../../widgets/patterns/term3/jss1_frequency_adverbs_studio_widget.dart';
+import '../../widgets/patterns/term3/jss1_invitations_studio_widget.dart';
+import '../../widgets/patterns/term3/jss1_commands_and_prohibitions_studio_widget.dart';
+import '../../widgets/patterns/term3/jss1_permission_and_advice_studio_widget.dart';
+import '../../widgets/patterns/term3/jss1_directions_and_procedures_studio_widget.dart';
+import '../../widgets/patterns/term3/jss1_communicative_roleplay_studio_widget.dart';
+import '../../widgets/patterns/term3/jss1_written_oral_workshop_studio_widget.dart';
+import '../../widgets/patterns/term3/jss1_term3_annual_grand_rally_widget.dart';
+
 enum JSS1LessonPhase {
   objectives,
   interactivePattern,
@@ -384,6 +406,7 @@ class _JSS1LessonPlayerScreenState extends State<JSS1LessonPlayerScreen> {
 
   Widget _buildPatternView() {
     switch (widget.lesson.patternType) {
+      // Term 1 Patterns
       case JSS1PatternType.classroomCommands:
         return JSS1ClassroomCommandsWidget(lesson: widget.lesson);
       case JSS1PatternType.greetingStudio:
@@ -402,6 +425,46 @@ class _JSS1LessonPlayerScreenState extends State<JSS1LessonPlayerScreen> {
         return JSS1TastesAndPreferencesWidget(lesson: widget.lesson);
       case JSS1PatternType.term1RevisionRally:
         return JSS1Term1RevisionRallyWidget(lesson: widget.lesson);
+
+      // Term 2 Patterns
+      case JSS1PatternType.objectPropertiesStudio:
+        return JSS1ObjectPropertiesStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.politeRequestsStudio:
+        return JSS1PoliteRequestsStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.professionsStudio:
+        return JSS1ProfessionsStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.clockTimeStudio:
+        return JSS1ClockTimeStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.dailyScheduleStudio:
+        return JSS1DailyScheduleStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.calendarDatesStudio:
+        return JSS1CalendarDatesStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.eventSequencerStudio:
+        return JSS1EventSequencerStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.weeklyRoutineStudio:
+        return JSS1WeeklyRoutineStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.term2RevisionRally:
+        return JSS1Term2RevisionRallyWidget(lesson: widget.lesson);
+
+      // Term 3 Patterns
+      case JSS1PatternType.weatherAndSeasonsStudio:
+        return JSS1WeatherAndSeasonsStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.frequencyAdverbsStudio:
+        return JSS1FrequencyAdverbsStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.invitationsStudio:
+        return JSS1InvitationsStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.commandsAndProhibitionsStudio:
+        return JSS1CommandsAndProhibitionsStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.permissionAndAdviceStudio:
+        return JSS1PermissionAndAdviceStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.directionsAndProceduresStudio:
+        return JSS1DirectionsAndProceduresStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.communicativeRoleplayStudio:
+        return JSS1CommunicativeRoleplayStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.writtenOralWorkshopStudio:
+        return JSS1WrittenOralWorkshopStudioWidget(lesson: widget.lesson);
+      case JSS1PatternType.term3AnnualGrandRally:
+        return JSS1Term3AnnualGrandRallyWidget(lesson: widget.lesson);
     }
   }
 

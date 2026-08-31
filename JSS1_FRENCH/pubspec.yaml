@@ -24,5 +24,9 @@ flutter:
   assets:
     - assets/images/
     - assets/images/jss1_term1/
+    - assets/images/jss1_term2/
+    - assets/images/jss1_term3/
     - assets/audio/
     - assets/audio/jss1_term1/
+    - assets/audio/jss1_term2/
+    - assets/audio/jss1_term3/

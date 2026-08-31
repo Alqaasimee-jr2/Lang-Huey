@@ -11,6 +11,28 @@ enum JSS1PatternType {
   hobbiesAndLeisure,        // Week 7: Parler de ses loisirs (Hobbies & Leisure activities)
   tastesAndPreferences,     // Week 8: Exprimer ses goûts et préférences (J'aime, Je n'aime pas, Je préfère)
   term1RevisionRally,       // Week 9: Comprehensive Term 1 Revision Rally
+
+  // Term 2 Teaching & Revision Patterns
+  objectPropertiesStudio,   // Week 1: Exprimer les propriétés des objets (size, color, shape, texture)
+  politeRequestsStudio,     // Week 2: Demander quelque chose à quelqu’un (polite requests, asking to see someone)
+  professionsStudio,        // Week 3: Décrire les professions (jobs, duties, what people do)
+  clockTimeStudio,          // Week 4: Demander et donner l’heure (telling time, hourly activities)
+  dailyScheduleStudio,      // Week 5: Expliquer ce que l’on fait à certaines heures de la journée
+  calendarDatesStudio,      // Week 6: Dire les dates (days, months, calendar dates)
+  eventSequencerStudio,     // Week 7: Situer un événement par rapport à un autre (avant, après, pendant)
+  weeklyRoutineStudio,      // Week 8: Demander et expliquer ce que l’on fait tous les jours de la semaine
+  term2RevisionRally,       // Week 9: Comprehensive Term 2 Revision Rally
+
+  // Term 3 Teaching & Revision Patterns
+  weatherAndSeasonsStudio,        // Week 1: Demander et indiquer le temps qu’il fait
+  frequencyAdverbsStudio,          // Week 2: Exprimer la fréquence d’une activité
+  invitationsStudio,               // Week 3: Inviter quelqu’un (accepter et refuser)
+  commandsAndProhibitionsStudio,   // Week 4: Donner un ordre, interdire, autoriser
+  permissionAndAdviceStudio,       // Week 5: Demander la permission, conseiller
+  directionsAndProceduresStudio,   // Week 6: Expliquer une démarche / donner un itinéraire
+  communicativeRoleplayStudio,     // Week 7: Révision des fonctions communicatives & jeux de rôles
+  writtenOralWorkshopStudio,       // Week 8: Atelier d'expression écrite et orale (BECE drill)
+  term3AnnualGrandRally,           // Week 9: Grand Bilan Annuel & Remise des Diplômes JSS1
 }
 
 class JSS1VocabItem {

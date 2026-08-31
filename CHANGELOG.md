@@ -4,6 +4,94 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
+## [Unreleased] - 2026-08-31
+
+### JSS1 French Term 3 (Troisième Trimestre) Full Build & Delivery
+- **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
+  - Harmonized the Nigerian NERDC JSS1 Term 3 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
+    1. **Week 1**: *Demander et indiquer le temps qu’il fait* (Weather expressions, seasons in Nigeria & France, barometer & thermometer studio).
+    2. **Week 2**: *Exprimer la fréquence d’une activité* (5-tier frequency gauge: *toujours 100%, souvent 75%, parfois 50%, rarement 20%, ne... jamais 0%*, syntax placement rules).
+    3. **Week 3**: *Inviter quelqu’un* (Inviting formulas *Tu veux + infinitif / Ça te dit de...*, accepting *Volontiers / Avec grand plaisir*, polite declining with excuses).
+    4. **Week 4**: *Donner un ordre, interdire, autoriser* (Imperative commands, prohibitions *Ne... pas / Il est interdit de / Défense de*, authorizations *Vous pouvez / C'est permis*, campus signage).
+    5. **Week 5**: *Demander la permission, conseiller* (Polite permission formulas *Puis-je... ? / Est-ce que je peux... ?*, advice clinic *Tu devrais... / Il faut...*).
+    6. **Week 6**: *Expliquer une démarche / donner un itinéraire* (City navigation *Allez tout droit, tournez à droite/gauche, prenez la 2e rue*, landmarks *en face de / à côté de*, procedure sequencing *D'abord, ensuite, puis, enfin*).
+    7. **Week 7**: *Révision des fonctions communicatives & jeux de rôles* (4 interactive scenario roleplays: At the market, At the clinic, School reception, Weekend invitation with dual speech bubbles).
+    8. **Week 8**: *Atelier d'expression écrite et orale (BECE Prep)* (Guided composition workbench, phonetics & accent dictation clinic, BECE / Junior WAEC exam drills).
+    9. **Week 9**: *Grand Bilan Annuel & Remise des Diplômes JSS1* (4-Team All-Year Championship Quiz Rally covering Terms 1, 2, and 3 + Interactive JSS1 French Graduation Diploma Certificate Generator).
+- **Curriculum Dataset & Data Models**:
+  - Authored `JSS1_FRENCH/lib/data/jss1_term3_lessons.dart` with all 9 complete weekly lessons (objectives, cultural insights, vocabulary with phonetic transcriptions & audio keys, classwork exercises, evaluation Q&A, homework, and in-depth grammar notes).
+  - Extended `JSS1PatternType` enum in `lib/models/jss1_lesson_model.dart` with all 9 Term 3 patterns.
+- **9 Bespoke Smartboard Interactive Pattern Widgets** (`JSS1_FRENCH/lib/widgets/patterns/term3/`):
+  1. `JSS1WeatherAndSeasonsStudioWidget` (Weather barometer, Nigeria vs France seasons explorer, thermometer slider, spoken forecast studio).
+  2. `JSS1FrequencyAdverbsStudioWidget` (5-Tier frequency gauge, interactive sentence builder, syntax lab).
+  3. `JSS1InvitationsStudioWidget` (3-Way invitation studio: Inviter, Accepter, Refuser poliment, invitation card builder).
+  4. `JSS1CommandsAndProhibitionsStudioWidget` (3-Way mode: Ordres, Interdictions, Autorisations, official school signage simulator).
+  5. `JSS1PermissionAndAdviceStudioWidget` (Permission & study advice clinic, modal verbs & conditional formulas).
+  6. `JSS1DirectionsAndProceduresStudioWidget` (Compass navigator, city landmarks, procedure sequencers).
+  7. `JSS1CommunicativeRoleplayStudioWidget` (4 Real-life communicative roleplay sketches with dual speech bubbles & simultaneous audio).
+  8. `JSS1WrittenOralWorkshopStudioWidget` (BECE prep station: guided writing workbench, dictation player, QCM test simulator).
+  9. `JSS1Term3AnnualGrandRallyWidget` (4-Team live championship rally arena + official JSS1 French Graduation Diploma Certificate Generator).
+- **Extensive Multimedia Suite (Audio & Gemini Visuals)**:
+  - Synthesized all **72 authentic 44.1kHz MP3 neural audio files** in `JSS1_FRENCH/assets/audio/jss1_term3/` using **`fr-FR-DeniseNeural`** (-4% classroom rate, 100% strict UTF-8 accent handling).
+  - Generated **6 rich educational illustrations & smartboard diagrams** via Gemini AI image generation:
+    1. `jss1_weather_and_seasons.jpg`: Split smartboard illustration of sunny tropical Nigerian weather vs rainy afternoon.
+    2. `jss1_invitations_social.jpg`: Cheerful Nigerian secondary school students exchanging birthday invitation in courtyard.
+    3. `jss1_rules_signage.jpg`: School regulations & campus discipline symbols poster.
+    4. `jss1_directions_city_map.jpg`: 3D isometric town map with school, hospital, library, post office, crossings, and directional signs.
+    5. `jss1_communicative_theatre.jpg`: French drama club sketch stage with students performing dialogue with speech bubbles.
+    6. `jss1_graduation_diploma_celebration.jpg`: Grand celebratory graduation podium with students holding golden JSS1 French diplomas.
+- **Screens & Navigation Integration**:
+  - `JSS1TermSelectScreen`: Unlocked Term 3 card with 9 weeks count and exact syllabus topic subtitle.
+  - `JSS1WeekRoadmapScreen`: Connected `JSS1Term3Lessons.weeks` for Term 3 and added `didUpdateWidget` lifecycle handler.
+  - `JSS1LessonPlayerScreen`: Dispatched all 9 Term 3 interactive widgets in `_buildPatternView()`.
+- **Verification & Zero-Defect Testing**:
+  - `flutter analyze`: **0 issues found** across all files.
+  - `flutter test`: **15/15 unit and widget fit tests passed with 100% success rate**.
+
+---
+- **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
+  - Harmonized the Nigerian NERDC JSS1 Term 2 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
+    1. **Week 1**: *Exprimer les propriétés des objets* (Object properties: size, color, shape, texture/weight, live adjective agreement rules).
+    2. **Week 2**: *Demander quelque chose à quelqu’un* (Polite classroom borrowing with tutoiement, school office requests with vouvoiement).
+    3. **Week 3**: *Décrire les professions* (Jobs, duties, workplace contexts, feminine/masculine profession forms).
+    4. **Week 4**: *Demander et donner l’heure* (Telling time, hour/minute hands, pile/et quart/et demie/moins le quart, midi/minuit).
+    5. **Week 5**: *Ce que l'on fait à certaines heures de la journée* (Hourly daily routine timeline from 6h to 21h).
+    6. **Week 6**: *Dire les dates* (7 days of week, 12 months, asking dates, Nigeria Independence Day 1er octobre).
+    7. **Week 7**: *Situer un événement par rapport à un autre* (Temporal prepositions: *avant, pendant, après*, and sequencing connectors: *d'abord, ensuite/puis, enfin*).
+    8. **Week 8**: *Activités de tous les jours de la semaine* (7-day routine planner, habit rule *Le + jour*).
+    9. **Week 9**: *Révision Générale du Deuxième Trimestre* (4-Team buzzer speed rally with 4 challenge stations covering all Term 2 topics).
+- **Curriculum Dataset & Data Models**:
+  - Authored `JSS1_FRENCH/lib/data/jss1_term2_lessons.dart` with all 9 complete weekly lessons (objectives, cultural insights, vocabulary with phonetic transcriptions & audio keys, classwork exercises, evaluation Q&A, homework, and in-depth grammar notes).
+  - Extended `JSS1PatternType` enum in `lib/models/jss1_lesson_model.dart` with all 9 Term 2 patterns.
+- **9 Bespoke Smartboard Interactive Pattern Widgets** (`JSS1_FRENCH/lib/widgets/patterns/term2/`):
+  1. `JSS1ObjectPropertiesStudioWidget` (Adjective agreement studio, 6 3D objects, size/color/shape/texture selectors).
+  2. `JSS1PoliteRequestsStudioWidget` (Classroom borrowing & School administration reception dialogue simulators).
+  3. `JSS1ProfessionsStudioWidget` (Interactive career gallery, gender concordances, duty matcher, oral studio).
+  4. `JSS1ClockTimeStudioWidget` (Dual analog/digital smartboard clock, interactive time sliders, quick presets).
+  5. `JSS1DailyScheduleStudioWidget` (6h–21h routine timeline with morning, afternoon, evening phases).
+  6. `JSS1CalendarDatesStudioWidget` (Interactive calendar date constructor, school milestone badges).
+  7. `JSS1EventSequencerStudioWidget` (Chronology lab, temporal prepositions & narrative story connectors).
+  8. `JSS1WeeklyRoutineStudioWidget` (7-day routine schedule board with *Le + jour* habit rule).
+  9. `JSS1Term2RevisionRallyWidget` (4-Team live buzzer quiz arena with point tracking and celebration podium).
+- **Extensive Multimedia Suite (Audio & Gemini Visuals)**:
+  - Synthesized all **80 authentic 44.1kHz MP3 neural audio files** in `JSS1_FRENCH/assets/audio/jss1_term2/` using **`fr-FR-DeniseNeural`** (-4% classroom rate, 100% strict UTF-8 accent handling).
+  - Generated **6 rich educational illustrations & smartboard diagrams** via Gemini AI image generation:
+    1. `jss1_object_properties_stage.jpg`: Demonstration table with shapes, sizes, colors, and textures in a modern classroom.
+    2. `jss1_polite_requests_reception.jpg`: Secondary school administration reception desk with student and administrator.
+    3. `jss1_professions_careers.jpg`: Inspiring career pathway poster showcasing 6 modern professions.
+    4. `jss1_clock_time_school.jpg`: Large analog & digital school smartboard clock at 8:00 AM.
+    5. `jss1_weekly_calendar_nigeria.jpg`: 7-Day adventure calendar and habit tracker featuring Nigerian Independence Day.
+    6. `jss1_term2_rally_trophy.jpg`: Grand Revision Rally buzzer stage with 4 team buzzers and trophy.
+- **Screens & Navigation Integration**:
+  - `JSS1TermSelectScreen`: Unlocked Term 2 card with 9 weeks count and exact syllabus topic subtitle.
+  - `JSS1WeekRoadmapScreen`: Connected `JSS1Term2Lessons.weeks` for Term 2.
+  - `JSS1LessonPlayerScreen`: Dispatched all 9 Term 2 interactive widgets in `_buildPatternView()`.
+- **Verification & Zero-Defect Testing**:
+  - `flutter analyze`: **0 issues found** across all files.
+  - `flutter test`: **15/15 unit and widget fit tests passed with 100% success rate**.
+
+---
+
 ## [Unreleased] - 2026-08-30
 
 ### JSS1 French Standalone App Architecture (`JSS1_FRENCH`)
