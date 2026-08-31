@@ -6,6 +6,45 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ## [Unreleased] - 2026-08-31
 
+### JSS2 French Term 1 (Premier Trimestre) Full Build & Delivery (`JSS 2_FRENCH`)
+- **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
+  - Harmonized the Nigerian NERDC JSS2 Term 1 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
+    1. **Week 1 (Unité 1)**: *Demander et expliquer la position* (Spatial prepositions *sur, sous, devant, derrière, dans, entre, à côté de, à gauche/droite*, asking location *Où est / Où se trouve*).
+    2. **Week 2 (Unité 2)**: *Situer les lieux* (Neighborhood & public buildings *la poste, la banque, l'hôpital, l'école, le marché, la pharmacie, le commissariat, la gare*, distance & proximity gauge *près de, loin de, en face de*, contraction rules *de + le = du*).
+    3. **Week 3 (Unité 3)**: *Accueillir et guider quelqu'un* (Indoor reception, multi-floor building floorplan *RDC, 1er, 2e étage*, welcoming visitors *Bienvenue ! Entrez, je vous en prie. Suivez-moi*, room locator *au bout du couloir à droite, première porte à gauche*).
+    4. **Week 4 (Unité 4)**: *Demander et indiquer le chemin* (Outdoor wayfinding & city street navigation *Continuez tout droit, tournez à gauche au carrefour, prenez la 2e rue, traversez le pont, au rond-point prenez la sortie*, time estimation *à 5 minutes à pied*).
+    5. **Week 5 (Unité 5)**: *Les moyens de transport* (Land, air, water, and active transit modes + interactive EN vs À grammar rule lab: *EN* for closed vehicles vs *À* for open/active transit).
+    6. **Week 6 (Unité 6)**: *Expliquer un trajet* (Public transit routes, Metro / BRT lines, transfers *changer à la station*, stop counts, journey timing, ticket validator simulation).
+    7. **Week 7 (Unité 7)**: *Demander et indiquer des horaires* (Electronic departures & arrivals monitor, 24-hour vs spoken time decoding, platform gates *quai / porte*, transit frequency).
+    8. **Week 8 (Unité 8)**: *Réagir à un problème de transport* (Transit trouble desk & assistance clinic: delays, missed connections, cancelled flights, lost luggage, customer service claim dialogs).
+    9. **Week 9 (Grand Rallye)**: *Grand Bilan & Rallye de Révision du Premier Trimestre* (4-Team live championship quiz arena across all 8 units with scoreboards, buzzer SFX, and trophy podium).
+- **Curriculum Dataset & Data Models**:
+  - Authored `JSS 2_FRENCH/lib/data/jss2_term1_lessons.dart` with all 9 complete weekly lessons (objectives, cultural insights, vocabulary with phonetic transcriptions & audio keys, classwork exercises, evaluation Q&A, homework, and in-depth grammar notes).
+  - Defined `JSS2PatternType` enum and lesson data models in `lib/models/jss2_lesson_model.dart`.
+- **9 Bespoke Smartboard Interactive Pattern Widgets** (`JSS 2_FRENCH/lib/widgets/patterns/term1/`):
+  1. `JSS2SpatialPositionStudioWidget` (3D moveable object positioning stage, spatial prepositions, sentence generator, position quiz).
+  2. `JSS2LocatingPlacesStudioWidget` (Interactive town map, landmark node locator, distance calculator, contraction coach).
+  3. `JSS2IndoorWelcomingGuidingStudioWidget` (Multi-floor school floorplan navigator, floor selector RDC/1er/2e, receptionist welcome simulator).
+  4. `JSS2DirectionsAndWayfindingStudioWidget` (Turn-by-turn wayfinding simulator, compass rose, GPS route builder, distance & time estimator).
+  5. `JSS2TransportModesStudioWidget` (4-Category vehicle garage + EN vs À sorting lab with instant validation).
+  6. `JSS2PublicTransitRouteStudioWidget` (3-Line transit network planner, line transfer calculator, ticket turnstile validator).
+  7. `JSS2SchedulesAndTimetablesStudioWidget` (Electronic departures board, 24h & spoken time decoder, platform gate indicator, frequency calculator).
+  8. `JSS2TransportTroubleshootingStudioWidget` (4 Crisis scenarios: delayed train, cancelled flight, missed bus, lost baggage + claim dialogs).
+  9. `JSS2Term1RevisionRallyWidget` (4-Team live buzzer championship quiz arena with live scoreboards, question reveals, and podium celebration).
+- **Extensive Multimedia Suite (Audio & Gemini Visuals)**:
+  - Synthesized all **84 authentic 44.1kHz MP3 neural audio files** in `JSS 2_FRENCH/assets/audio/jss2_term1/` using **`fr-FR-DeniseNeural`** (-4% classroom rate, 100% strict UTF-8 accent handling).
+  - Integrated 5 studio sound effects (`sfx_correct`, `sfx_incorrect`, `sfx_click`, `sfx_celebrate`, `sfx_whoosh`).
+  - Generated educational visual artwork for spatial positions in `JSS 2_FRENCH/assets/images/jss2_term1/`.
+- **Screens & Navigation Integration**:
+  - `JSS2TermSelectScreen`: Unlocked Term 1 card with 9 weeks count and exact syllabus topic subtitle.
+  - `JSS2WeekRoadmapScreen`: Connected `JSS2Term1Lessons.weeks` for Term 1.
+  - `JSS2LessonPlayerScreen`: 5-Phase lesson player (Objectives, Interactive Pattern, Vocab Lab, Classwork/Evaluation, Summary/Homework).
+- **Verification & Zero-Defect Testing**:
+  - `flutter analyze`: **0 errors, 0 warnings** across all files.
+  - `flutter test`: **18/18 unit and widget fit tests passed with 100% success rate**.
+
+---
+
 ### JSS1 French Term 3 (Troisième Trimestre) Full Build & Delivery
 - **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
   - Harmonized the Nigerian NERDC JSS1 Term 3 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
