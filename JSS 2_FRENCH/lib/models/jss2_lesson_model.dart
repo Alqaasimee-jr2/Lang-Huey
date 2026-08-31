@@ -22,6 +22,17 @@ enum JSS2PatternType {
   comparisonAndChoiceStudio,      // Week 7: Apprécier, comparer, choisir (plus/moins/aussi... que, hésitations)
   productQuantityQualityStudio,   // Week 8: Quantité et qualité des produits (poids métriques, mesures, fraîcheur)
   term2RevisionRally,             // Week 9: Grand Rallye de Révision du 2e Trimestre
+
+  // Term 3 Teaching & Revision Patterns
+  mathCalculationsStudio,         // Week 1: Opérations de calcul simple (addition, soustraction, multiplication, division)
+  foodAndDrinksStudio,            // Week 2: Nourriture et boissons (plats africains & français, repas quotidiens)
+  cookingRecipesStudio,           // Week 3: Recettes de cuisine (impératif culinaire, étapes de recette, ingrédients)
+  restaurantCafeStudio,           // Week 4: Au restaurant/café (réservation, commande, addition, politesse)
+  integratedRolePlayStudio,       // Week 5 (Projet): Jeux de rôle intégrés (transport, marché, pharmacie, restaurant)
+  consolidationExercisesStudio,   // Week 6 (Révision): Révision générale unités 17–20, exercices de consolidation
+  guidedConversationsStudio,      // Week 7 (Oral): Évaluation orale — conversations guidées sur tous thèmes
+  examPrepStudio,                 // Week 8 (Exam Prep): Préparation aux examens, expression écrite & orale
+  term3RevisionRally,             // Week 9 (Grand Bilan): Grand Rallye Final — Championnat de l'Année Complète
 }
 
 class JSS2VocabItem {

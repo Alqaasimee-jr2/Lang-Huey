@@ -4,6 +4,45 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
+### JSS 2 French Term 3 (Troisième Trimestre) Full Build & Delivery (`JSS 2_FRENCH`)
+- **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
+  - Harmonized the Nigerian NERDC JSS2 Term 3 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):
+    1. **Week 1 (Unité 17)**: *Les Opérations de Calcul Simple* (Arithmetic operations: *l'addition, la soustraction, la multiplication, la division, font / égalent*, numbers 1–1000, market calculations).
+    2. **Week 2 (Unité 18)**: *La Nourriture et les Boissons* (Daily meals: *petit-déjeuner, déjeuner, dîner*, African & French dishes, *manger/boire* present tense conjugation, expressing preferences).
+    3. **Week 3 (Unité 19)**: *Les Recettes de Cuisine* (Culinary imperative commands *épluchez, coupez, faites frire, mélangez*, step sequencing *d'abord, ensuite, enfin*, cooking utensils).
+    4. **Week 4 (Unité 20)**: *Au Restaurant / Café* (Reserving a table, interactive menu ordering, requesting the bill *l'addition, s'il vous plaît*, polite conditional *je voudrais*).
+    5. **Week 5 (Projet Oral & Écrit)**: *Jeux de Rôle Intégrés* (Multi-turn communicative simulations across 4 real-life scenarios: Transport, Market, Pharmacy, and Restaurant with dual speech bubbles and audio playback).
+    6. **Week 6 (Révision Générale Unités 17–20)**: *Exercices de Consolidation* (4-Station review arena: Math Station, Food Flashcard Station, Recipe Sequencing Station, and Restaurant Bill Station).
+    7. **Week 7 (Évaluation Orale & Pratique)**: *Conversations Guidées* (Guided speaking dialogues, phonetics liaison clinic, conversational markers, and real-time response branching).
+    8. **Week 8 (Préparation aux Examens)**: *Atelier d'Expression Écrite et Orale (BECE Prep)* (Standard WAEC/BECE format: QCM comprehension, error spotting & correction, guided writing, and rapid speed sprint drills).
+    9. **Week 9 (Grand Rallye Annuel)**: *Grand Bilan & Championnat JSS 2 de l'Année Complète* (4-Team live championship quiz arena across all 3 terms + interactive JSS 2 French Graduation Ceremony).
+- **Curriculum Dataset & Data Models**:
+  - Authored `JSS 2_FRENCH/lib/data/jss2_term3_lessons.dart` with all 9 complete weekly lessons (pedagogical objectives, cultural context notes, rich vocabulary with phonetics & audio keys, multiple-choice classwork exercises with explanations, evaluation questions with hints/answers, structured homework assignments, and comprehensive grammar notes).
+  - Defined all 9 Term 3 patterns in `JSS2PatternType` within `lib/models/jss2_lesson_model.dart`.
+- **9 Bespoke Smartboard Interactive Pattern Widgets** (`JSS 2_FRENCH/lib/widgets/patterns/term3/`):
+  1. `JSS2MathCalculationsStudioWidget` (4-Operation kinetic calculator, number sentence speaker, market transaction simulator, arithmetic quiz).
+  2. `JSS2FoodAndDrinksStudioWidget` (3-Meal builder, food/drink preference selector, present tense Manger/Boire conjugation drill).
+  3. `JSS2CookingRecipesStudioWidget` (Nigerian plantain/jollof vs French omelette/crêpes recipe sequencer, imperative verb lab, utensil organizer).
+  4. `JSS2RestaurantCafeStudioWidget` (Table reservation desk, interactive carte & order basket, bill calculator, dialogue builder).
+  5. `JSS2IntegratedRolePlayStudioWidget` (4-Scenario roleplay stage: Transport, Market, Pharmacy, Restaurant with dual speaker dialogues).
+  6. `JSS2ConsolidationExercisesStudioWidget` (4-Station consolidation workbench covering arithmetic, meals, recipes, and dining).
+  7. `JSS2GuidedConversationsStudioWidget` (Oral dialogue prompts, liaison phonetics player, conversational markers coach).
+  8. `JSS2ExamPrepStudioWidget` (BECE/WAEC exam studio: QCM test, grammar error spotting, composition writer, speed sprint).
+  9. `JSS2GrandRallyStudioWidget` (3-Term 20-unit championship quiz arena with live scoreboards, trophy unlocks, and graduation certificate generator).
+- **Extensive Multimedia Suite**:
+  - Synthesized all **72 authentic 44.1kHz MP3 neural audio files** in `JSS 2_FRENCH/assets/audio/jss2_term3/` using **`fr-FR-DeniseNeural`** (-4% classroom rate, 100% strict UTF-8 accent handling).
+  - Updated `generate_term3_audio.py` pipeline to robustly extract and synthesize complex French strings with quotes and accents.
+- **Screens & Navigation Integration**:
+  - `JSS2TermSelectScreen`: Unlocked Term 3 card with 9 weeks count and exact syllabus topic subtitle.
+  - `JSS2WeekRoadmapScreen`: Connected `JSS2Term3Lessons.weeks` for Term 3.
+  - `JSS2LessonPlayerScreen`: Connected all 9 Term 3 interactive widgets into Phase 2.
+- **Automated Verification & Zero-Defect Testing**:
+  - `flutter test test/jss2_french_test.dart`: 16/16 curriculum integrity unit tests passing (100% pass rate).
+  - `flutter test test/jss2_widget_fit_test.dart`: 24/24 smartboard 1080p/4K widget fit tests passing (100% pass rate).
+  - `flutter analyze`: 0 errors, 0 compilation blockers.
+
+---
+
 ### JSS 2 French Term 2 (Deuxième Trimestre) Full Build & Delivery (`JSS 2_FRENCH`)
 - **Scope & Strict Policy Alignment (Instructional Classes & Revision Only)**:
   - Harmonized the Nigerian NERDC JSS2 Term 2 curriculum into **9 High-Impact Instructional & Revision Weeks** (omitting Week 5 Midterm Exam and Week 7 Midterm Break in accordance with project directive):

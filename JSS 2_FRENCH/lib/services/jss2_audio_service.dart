@@ -64,6 +64,8 @@ class JSS2AudioService {
     }
   }
 
+  Future<void> playCelebrate() => playCelebration();
+
   Future<void> playWhoosh() async {
     try {
       await _sfxPlayer.setAsset('assets/audio/sfx_whoosh.mp3');

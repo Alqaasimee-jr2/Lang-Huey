@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:jss2_french/data/jss2_term1_lessons.dart';
 import 'package:jss2_french/data/jss2_term2_lessons.dart';
+import 'package:jss2_french/data/jss2_term3_lessons.dart';
 import 'package:jss2_french/screens/term/jss2_term_select_screen.dart';
 import 'package:jss2_french/screens/roadmap/jss2_week_roadmap_screen.dart';
 import 'package:jss2_french/screens/lesson/jss2_lesson_player_screen.dart';
@@ -19,6 +20,17 @@ import 'package:jss2_french/widgets/patterns/term2/jss2_wardrobe_and_style_studi
 import 'package:jss2_french/widgets/patterns/term2/jss2_comparison_and_choice_studio_widget.dart';
 import 'package:jss2_french/widgets/patterns/term2/jss2_product_quantity_quality_studio_widget.dart';
 import 'package:jss2_french/widgets/patterns/term2/jss2_term2_revision_rally_widget.dart';
+
+// Term 3 Widgets
+import 'package:jss2_french/widgets/patterns/term3/jss2_math_calculations_studio_widget.dart';
+import 'package:jss2_french/widgets/patterns/term3/jss2_food_and_drinks_studio_widget.dart';
+import 'package:jss2_french/widgets/patterns/term3/jss2_cooking_recipes_studio_widget.dart';
+import 'package:jss2_french/widgets/patterns/term3/jss2_restaurant_cafe_studio_widget.dart';
+import 'package:jss2_french/widgets/patterns/term3/jss2_integrated_role_play_studio_widget.dart';
+import 'package:jss2_french/widgets/patterns/term3/jss2_consolidation_exercises_studio_widget.dart';
+import 'package:jss2_french/widgets/patterns/term3/jss2_guided_conversations_studio_widget.dart';
+import 'package:jss2_french/widgets/patterns/term3/jss2_exam_prep_studio_widget.dart';
+import 'package:jss2_french/widgets/patterns/term3/jss2_grand_rally_studio_widget.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -228,6 +240,151 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Studio d\'Inventaire & Listes de Courses'), findsOneWidget);
+    });
+
+    // ─────────────────────────────────────────────────────────
+    // Term 3 Pattern Tests
+    // ─────────────────────────────────────────────────────────
+    testWidgets('15. Term 3 Week 1 JSS2MathCalculationsStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[0];
+      await tester.pumpWidget(wrapTestable(JSS2MathCalculationsStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Studio de Calcul — Les 4 Opérations'), findsOneWidget);
+      expect(find.text('Calculer'), findsOneWidget);
+      expect(find.text('Marché'), findsOneWidget);
+    });
+
+    testWidgets('16. Term 3 Week 2 JSS2FoodAndDrinksStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[1];
+      await tester.pumpWidget(wrapTestable(JSS2FoodAndDrinksStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('La Table Africaine & Française'), findsOneWidget);
+      expect(find.text('Repas'), findsOneWidget);
+      expect(find.text('Préférences'), findsOneWidget);
+    });
+
+    testWidgets('17. Term 3 Week 3 JSS2CookingRecipesStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[2];
+      await tester.pumpWidget(wrapTestable(JSS2CookingRecipesStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Studio de Recettes — Cuisine Mondiale'), findsOneWidget);
+      expect(find.text('Recette'), findsOneWidget);
+    });
+
+    testWidgets('18. Term 3 Week 4 JSS2RestaurantCafeStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[3];
+      await tester.pumpWidget(wrapTestable(JSS2RestaurantCafeStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Le Bistrot Franco-Nigérian'), findsOneWidget);
+      expect(find.text('Réservation'), findsOneWidget);
+      expect(find.text('Carte & Commande'), findsOneWidget);
+    });
+
+    testWidgets('19. Term 3 Week 5 JSS2IntegratedRolePlayStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[4];
+      await tester.pumpWidget(wrapTestable(JSS2IntegratedRolePlayStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.textContaining('Jeu de Rôle :'), findsWidgets);
+    });
+
+    testWidgets('20. Term 3 Week 6 JSS2ConsolidationExercisesStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[5];
+      await tester.pumpWidget(wrapTestable(JSS2ConsolidationExercisesStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Révision 4 Stations — Unités 17–20'), findsOneWidget);
+      expect(find.text('Calcul'), findsOneWidget);
+      expect(find.text('Nourriture'), findsOneWidget);
+    });
+
+    testWidgets('21. Term 3 Week 7 JSS2GuidedConversationsStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[6];
+      await tester.pumpWidget(wrapTestable(JSS2GuidedConversationsStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Studio de Conversations Guidées'), findsOneWidget);
+      expect(find.text('Prompts'), findsOneWidget);
+      expect(find.text('Liaison'), findsOneWidget);
+    });
+
+    testWidgets('22. Term 3 Week 8 JSS2ExamPrepStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[7];
+      await tester.pumpWidget(wrapTestable(JSS2ExamPrepStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Studio de Préparation aux Examens'), findsOneWidget);
+      expect(find.text('QCM'), findsOneWidget);
+      expect(find.text('Erreurs'), findsOneWidget);
+    });
+
+    testWidgets('23. Term 3 Week 9 JSS2GrandRallyStudioWidget renders correctly', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[8];
+      await tester.pumpWidget(wrapTestable(JSS2GrandRallyStudioWidget(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('GRAND RALLY — JSS 2 FRANÇAIS'), findsOneWidget);
+      expect(find.text('Trophées'), findsOneWidget);
+      expect(find.text('Rally Quiz'), findsOneWidget);
+      expect(find.text('Certificat'), findsOneWidget);
+    });
+
+    testWidgets('24. JSS2LessonPlayerScreen loads and switches phases smoothly for Term 3', (tester) async {
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      final lesson = JSS2Term3Lessons.weeks[0];
+      await tester.pumpWidget(wrapTestable(JSS2LessonPlayerScreen(lesson: lesson)));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Objectifs Pédagogiques de la Semaine :'), findsOneWidget);
+      expect(find.text('2. Lab Interactif'), findsOneWidget);
+
+      await tester.tap(find.text('2. Lab Interactif'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Studio de Calcul — Les 4 Opérations'), findsOneWidget);
     });
   });
 }

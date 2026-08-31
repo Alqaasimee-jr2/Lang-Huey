@@ -26,6 +26,17 @@ import '../../widgets/patterns/term2/jss2_comparison_and_choice_studio_widget.da
 import '../../widgets/patterns/term2/jss2_product_quantity_quality_studio_widget.dart';
 import '../../widgets/patterns/term2/jss2_term2_revision_rally_widget.dart';
 
+// Term 3 Widgets
+import '../../widgets/patterns/term3/jss2_math_calculations_studio_widget.dart';
+import '../../widgets/patterns/term3/jss2_food_and_drinks_studio_widget.dart';
+import '../../widgets/patterns/term3/jss2_cooking_recipes_studio_widget.dart';
+import '../../widgets/patterns/term3/jss2_restaurant_cafe_studio_widget.dart';
+import '../../widgets/patterns/term3/jss2_integrated_role_play_studio_widget.dart';
+import '../../widgets/patterns/term3/jss2_consolidation_exercises_studio_widget.dart';
+import '../../widgets/patterns/term3/jss2_guided_conversations_studio_widget.dart';
+import '../../widgets/patterns/term3/jss2_exam_prep_studio_widget.dart';
+import '../../widgets/patterns/term3/jss2_grand_rally_studio_widget.dart';
+
 class JSS2LessonPlayerScreen extends StatefulWidget {
   final JSS2LessonModel lesson;
 
@@ -456,6 +467,26 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
         return JSS2ProductQuantityQualityStudioWidget(lesson: widget.lesson);
       case JSS2PatternType.term2RevisionRally:
         return JSS2Term2RevisionRallyWidget(lesson: widget.lesson);
+
+      // Term 3 Patterns
+      case JSS2PatternType.mathCalculationsStudio:
+        return JSS2MathCalculationsStudioWidget(lesson: widget.lesson);
+      case JSS2PatternType.foodAndDrinksStudio:
+        return JSS2FoodAndDrinksStudioWidget(lesson: widget.lesson);
+      case JSS2PatternType.cookingRecipesStudio:
+        return JSS2CookingRecipesStudioWidget(lesson: widget.lesson);
+      case JSS2PatternType.restaurantCafeStudio:
+        return JSS2RestaurantCafeStudioWidget(lesson: widget.lesson);
+      case JSS2PatternType.integratedRolePlayStudio:
+        return JSS2IntegratedRolePlayStudioWidget(lesson: widget.lesson);
+      case JSS2PatternType.consolidationExercisesStudio:
+        return JSS2ConsolidationExercisesStudioWidget(lesson: widget.lesson);
+      case JSS2PatternType.guidedConversationsStudio:
+        return JSS2GuidedConversationsStudioWidget(lesson: widget.lesson);
+      case JSS2PatternType.examPrepStudio:
+        return JSS2ExamPrepStudioWidget(lesson: widget.lesson);
+      case JSS2PatternType.term3RevisionRally:
+        return JSS2GrandRallyStudioWidget(lesson: widget.lesson);
     }
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/jss2_term1_lessons.dart';
 import '../../data/jss2_term2_lessons.dart';
+import '../../data/jss2_term3_lessons.dart';
 import '../../models/jss2_lesson_model.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
@@ -19,6 +20,8 @@ class JSS2WeekRoadmapScreen extends StatelessWidget {
       return JSS2Term1Lessons.weeks;
     } else if (term == 2) {
       return JSS2Term2Lessons.weeks;
+    } else if (term == 3) {
+      return JSS2Term3Lessons.weeks;
     }
     return JSS2Term1Lessons.weeks;
   }
@@ -43,7 +46,7 @@ class JSS2WeekRoadmapScreen extends StatelessWidget {
       case 2:
         return 'Listes & Inventaires, Commerçants, Achat & Marchandage, Utilité, Pharmacie, Vêtements & Qualités';
       case 3:
-        return 'Santé, Loisirs, Voyages & Préparation BECE';
+        return 'Calcul Simple, Nourriture & Boissons, Recettes de Cuisine, Au Restaurant, Projet Oral, Révision & Grand Rally';
       default:
         return '';
     }

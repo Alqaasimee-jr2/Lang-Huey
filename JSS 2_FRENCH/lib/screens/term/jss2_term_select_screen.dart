@@ -133,15 +133,15 @@ class JSS2TermSelectScreen extends StatelessWidget {
                   ),
                   const SizedBox(width: 24),
 
-                  // Term 3 (Locked)
+                  // Term 3 (Unlocked)
                   _buildTermCard(
                     context: context,
                     termNumber: 3,
                     title: 'TROISIÈME TRIMESTRE',
-                    subtitle: 'Santé & Corps Humain, Voyages & Vacances, Préparation BECE / JSCE & Grand Bilan Annuel',
-                    weeksCount: '9 Semaines (À Venir)',
+                    subtitle: 'Calcul Simple, Nourriture & Boissons, Recettes de Cuisine, Au Restaurant, Projet Oral, Révision & Grand Rally',
+                    weeksCount: '9 Semaines Complètes',
                     icon: Icons.workspace_premium_rounded,
-                    isAvailable: false,
+                    isAvailable: true,
                   ),
                 ],
               ),
