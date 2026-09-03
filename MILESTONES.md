@@ -72,5 +72,5 @@ This document details pre-decided future milestones for the development, validat
 
 ## Milestone 6: Android Smartboard Packaging & Offline USB Distribution 📦
 - [x] Multi-term navigation routing, audio priority resolver, and 100% offline asset bundle architecture.
-- [ ] Package app as an **Android Standalone APK** optimized for Android Smartboards.
+- [x] Package app as an **Android Standalone APK** optimized for Android Smartboards — **5 APKs built & packaged in `APK FOLDER/`** (P4: 74.3MB, P5: 51.1MB, JSS1: 69.6MB, JSS2: 57.1MB, JSS3: 55.5MB — 307.6 MB total).
 - [ ] Produce User Manual & Smartboard Installation Guide for School Administrators.

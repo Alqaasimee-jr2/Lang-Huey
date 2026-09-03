@@ -47,3 +47,7 @@ test_*.wav
 temp_*.wav
 temp_*.mp3
 
+# APK distribution folder — binaries distributed via USB, not tracked in git
+APK FOLDER/
+*.apk
+

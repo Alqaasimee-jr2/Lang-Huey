@@ -4,6 +4,32 @@ All notable decisions, architectural thoughts, rationale, and project actions ar
 
 ---
 
+### Milestone 6 Progress: Android APK Packaging & USB Distribution (`APK FOLDER/`) — 03 September 2026
+- **All 5 Class Android APKs Successfully Built & Packaged**:
+  - Initialized Android platform for all 5 Flutter projects using `flutter create . --platforms=android --org com.langhuey`.
+  - Configured all 5 `AndroidManifest.xml` files with human-readable app labels and `android:screenOrientation="sensorLandscape"` for smartboard display.
+  - Built release APKs sequentially using `flutter build apk --release` (Flutter 3.41.2, Gradle, Android SDK 36):
+
+  | APK File | App Label | Size | SHA-256 |
+  |---|---|---|---|
+  | `Lang_Huey_Primary_4_French.apk` | Lang Huey - Primary 4 French | 74.3 MB | `30F6828...BB43` |
+  | `Lang_Huey_Primary_5_French.apk` | Lang Huey - Primary 5 French | 51.1 MB | `BF21198...43F` |
+  | `Lang_Huey_JSS_1_French.apk` | Lang Huey - JSS 1 French | 69.6 MB | `C680807...E3` |
+  | `Lang_Huey_JSS_2_French.apk` | Lang Huey - JSS 2 French | 57.1 MB | `85F1EDB...F1` |
+  | `Lang_Huey_JSS_3_French.apk` | Lang Huey - JSS 3 French | 55.5 MB | `E2B8DB2...6F` |
+
+  - **Total: 307.6 MB across 5 APKs** — all consolidated in `APK FOLDER/`.
+- **APK FOLDER Contents**:
+  - All 5 renamed APKs ready for USB sideloading onto Android smartboards.
+  - `README.txt` generated with full SHA-256 checksums, file sizes, and step-by-step sideloading guide for school administrators.
+- **Architecture Decisions**:
+  - Universal Fat APKs (all CPU architectures: arm64-v8a, armeabi-v7a, x86_64) for maximum smartboard hardware compatibility.
+  - Landscape orientation locked (`sensorLandscape`) — optimal for 16:9 / 4K smartboard displays.
+  - Signed with debug keystore — sufficient for internal school distribution via USB.
+  - Minimum Android API 21 (Android 5.0) — covers full range of Nigerian school smartboards.
+
+---
+
 #### JSS 3 French Terminal Curriculum (2-Term Structure) & Term 2 Delivery
 - **Curriculum Architecture**: Harmonized the Junior Secondary School 3 (JSS 3) syllabus into its official **2-Term Structure (Premier Trimestre & Deuxième Trimestre — Trimestre Terminal & Période Pré-Examen BECE)**.
 - **Dual French-English Parallel Scaffolding**: Integrated clear side-by-side English translations, contextual glosses, and bilingual pedagogical explanations throughout all 9 Term 2 lessons, pattern studios, reading passages, and exam workshops to maximize student comprehension before national BECE exams.
