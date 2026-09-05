@@ -77,7 +77,7 @@ class _Term2RevisionRallyWidgetState extends State<Term2RevisionRallyWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -180,7 +180,7 @@ class _Term2RevisionRallyWidgetState extends State<Term2RevisionRallyWidget> {
               itemBuilder: (context, idx) {
                 final item = items[idx];
                 return Material(
-                  color: LHColors.cream.withOpacity(0.5),
+                  color: LHColors.cream.withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(18),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(18),
@@ -189,7 +189,7 @@ class _Term2RevisionRallyWidgetState extends State<Term2RevisionRallyWidget> {
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
-                        border: Border.all(color: LHColors.teal.withOpacity(0.25), width: 1.5),
+                        border: Border.all(color: LHColors.teal.withValues(alpha: 0.25), width: 1.5),
                       ),
                       child: Row(
                         children: [

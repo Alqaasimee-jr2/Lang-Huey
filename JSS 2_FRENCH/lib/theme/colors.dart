@@ -9,4 +9,7 @@ class LangHueyColors {
   static const Color softTeal = Color(0xFFE0F4F5);
   static const Color cardSurface = Colors.white;
   static const Color textMuted = Color(0xFF6B7280);
+  static const Color green = Color(0xFF2E7D32);
+  static const Color red = Color(0xFFE53935);
+  static const Color lightGrey = Color(0xFFE0E0E0);
 }

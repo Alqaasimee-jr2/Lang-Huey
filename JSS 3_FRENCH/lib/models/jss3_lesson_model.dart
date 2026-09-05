@@ -24,6 +24,28 @@ enum JSS3PatternType {
   term2RevisionRally,              // Week 9: Grand Bilan & Rallye de Révision du 2e Trimestre (BECE Simulation)
 }
 
+enum TeachingStyle {
+  storyNarrative,
+  dialogueConversation,
+  interactiveStudio,
+  phoneticSoundboard,
+}
+
+enum DrillType {
+  singleChoice,
+  pairMatch,
+  fillGap,
+  trueFalse,
+  tapTranslation,
+}
+
+class DrillPair {
+  final String french;
+  final String english;
+
+  const DrillPair({required this.french, required this.english});
+}
+
 class JSS3VocabItem {
   final String french;
   final String phonetics;
@@ -44,15 +66,25 @@ class JSS3VocabItem {
 
 class JSS3InteractiveExercise {
   final String prompt;
+  final DrillType type;
   final List<String> options;
   final int correctOptionIndex;
   final String explanation;
+  final List<DrillPair>? pairs;
+  final List<String>? wordBank;
+  final String? sentenceWithGap;
+  final String? correctGapWord;
 
   const JSS3InteractiveExercise({
     required this.prompt,
-    required this.options,
-    required this.correctOptionIndex,
+    this.type = DrillType.singleChoice,
+    this.options = const [],
+    this.correctOptionIndex = 0,
     required this.explanation,
+    this.pairs,
+    this.wordBank,
+    this.sentenceWithGap,
+    this.correctGapWord,
   });
 }
 
@@ -102,6 +134,7 @@ class JSS3LessonModel {
   final List<String> objectives;
   final String culturalInsight;
   final JSS3PatternType patternType;
+  final TeachingStyle teachingStyle;
   final List<JSS3VocabItem> vocabulary;
   final List<JSS3InteractiveExercise> exercises;
   final List<JSS3EvaluationQuestion> evaluation;
@@ -118,6 +151,7 @@ class JSS3LessonModel {
     required this.objectives,
     required this.culturalInsight,
     required this.patternType,
+    this.teachingStyle = TeachingStyle.interactiveStudio,
     required this.vocabulary,
     required this.exercises,
     required this.evaluation,

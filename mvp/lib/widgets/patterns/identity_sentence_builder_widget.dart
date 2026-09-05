@@ -94,7 +94,7 @@ class _IdentitySentenceBuilderWidgetState
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Row(
         children: [
@@ -204,7 +204,7 @@ class _IdentitySentenceBuilderWidgetState
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: LHColors.teal.withOpacity(0.08),
+                    color: LHColors.teal.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -226,7 +226,7 @@ class _IdentitySentenceBuilderWidgetState
               decoration: BoxDecoration(
                 color: LHColors.cream,
                 borderRadius: BorderRadius.circular(22),
-                border: Border.all(color: LHColors.teal.withOpacity(0.4), width: 2),
+                border: Border.all(color: LHColors.teal.withValues(alpha: 0.4), width: 2),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -253,7 +253,7 @@ class _IdentitySentenceBuilderWidgetState
                     decoration: BoxDecoration(
                       color: LHColors.white,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: LHColors.turquoise.withOpacity(0.4)),
+                      border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.4)),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -292,7 +292,7 @@ class _IdentitySentenceBuilderWidgetState
                     decoration: BoxDecoration(
                       color: LHColors.white,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: LHColors.gold.withOpacity(0.5)),
+                      border: Border.all(color: LHColors.gold.withValues(alpha: 0.5)),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -341,7 +341,7 @@ class _IdentitySentenceBuilderWidgetState
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -380,7 +380,7 @@ class _IdentitySentenceBuilderWidgetState
               itemBuilder: (context, index) {
                 final p = _pronouns[index];
                 return Material(
-                  color: LHColors.cream.withOpacity(0.5),
+                  color: LHColors.cream.withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(18),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(18),
@@ -389,7 +389,7 @@ class _IdentitySentenceBuilderWidgetState
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
-                        border: Border.all(color: LHColors.teal.withOpacity(0.2), width: 1.5),
+                        border: Border.all(color: LHColors.teal.withValues(alpha: 0.2), width: 1.5),
                       ),
                       child: Row(
                         children: [

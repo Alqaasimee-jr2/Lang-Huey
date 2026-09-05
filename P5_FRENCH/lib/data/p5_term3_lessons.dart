@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/p5_lesson_model.dart';
 
 class P5Term3Lessons {
-  static const List<P5Lesson> weeks = [
+  static final List<P5Lesson> weeks = [
     // ==========================================
     // WEEK 1: LES ACTIVITÉS QUOTIDIENNES (PART I: MATIN)
     // ==========================================
@@ -95,6 +95,38 @@ class P5Term3Lessons {
           ],
           correctOptionIndex: 1,
           explanation: '"Je m\'habille à sept heures" means "I get dressed at 7:00 AM".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Je me réveille', english: 'I wake up'),
+            DrillPair(french: 'Je me lève', english: 'I get out of bed'),
+            DrillPair(french: 'Je me lave', english: 'I wash / bathe'),
+            DrillPair(french: 'Je m\'habille', english: 'I get dressed (in school uniform)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (I wake up):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Je me réveille', 'Je me lève', 'Je me lave', 'Je m\'habille'],
+          correctWord: 'Je me réveille',
+          explanation: 'Correct! "Je me réveille" translates to "I wake up".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Je me lève"?',
+          options: ['I get out of bed', 'I wake up', 'I wash / bathe', 'I get dressed (in school uniform)'],
+          correctOptionIndex: 0,
+          explanation: '"Je me lève" translates to "I get out of bed".',
         ),
       ],
       evaluationQuestions: [
@@ -201,6 +233,38 @@ class P5Term3Lessons {
           options: ['Je me réveille', 'Je me couche', 'Je me lave', 'Je m\'habille'],
           correctOptionIndex: 1,
           explanation: '"Je me couche" means "I go to bed / I lie down".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'J\'étudie à l\'école', english: 'I study at school'),
+            DrillPair(french: 'Je déjeune à midi', english: 'I have lunch at 12:00 PM'),
+            DrillPair(french: 'Je rentre à la maison', english: 'I return home (after school)'),
+            DrillPair(french: 'Je fais mes devoirs', english: 'I do my homework'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (I study at school):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['J\'étudie à l\'école', 'Je déjeune à midi', 'Je rentre à la maison', 'Je fais mes devoirs'],
+          correctWord: 'J\'étudie à l\'école',
+          explanation: 'Correct! "J\'étudie à l\'école" translates to "I study at school".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Je déjeune à midi"?',
+          options: ['I have lunch at 12:00 PM', 'I study at school', 'I return home (after school)', 'I do my homework'],
+          correctOptionIndex: 0,
+          explanation: '"Je déjeune à midi" translates to "I have lunch at 12:00 PM".',
         ),
       ],
       evaluationQuestions: [
@@ -310,6 +374,38 @@ class P5Term3Lessons {
           options: ['La course', 'La natation', 'Le tennis', 'Le basketball'],
           correctOptionIndex: 1,
           explanation: '"La natation" means swimming.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le football', english: 'Football / Soccer'),
+            DrillPair(french: 'Le basketball', english: 'Basketball'),
+            DrillPair(french: 'La natation', english: 'Swimming'),
+            DrillPair(french: 'La course', english: 'Running / Track racing'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Football / Soccer):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le football', 'Le basketball', 'La natation', 'La course'],
+          correctWord: 'Le football',
+          explanation: 'Correct! "Le football" translates to "Football / Soccer".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Le basketball"?',
+          options: ['Basketball', 'Football / Soccer', 'Swimming', 'Running / Track racing'],
+          correctOptionIndex: 0,
+          explanation: '"Le basketball" translates to "Basketball".',
         ),
       ],
       evaluationQuestions: [
@@ -430,6 +526,38 @@ class P5Term3Lessons {
           correctOptionIndex: 1,
           explanation: '"Oui, avec plaisir !" means "Yes, with pleasure!".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Lire un livre', english: 'To read a book'),
+            DrillPair(french: 'Dessiner et peindre', english: 'To draw and paint'),
+            DrillPair(french: 'Chanter et danser', english: 'To sing and dance'),
+            DrillPair(french: 'Écouter de la musique', english: 'To listen to music'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (To read a book):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Lire un livre', 'Dessiner et peindre', 'Chanter et danser', 'Écouter de la musique'],
+          correctWord: 'Lire un livre',
+          explanation: 'Correct! "Lire un livre" translates to "To read a book".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Dessiner et peindre"?',
+          options: ['To draw and paint', 'To read a book', 'To sing and dance', 'To listen to music'],
+          correctOptionIndex: 0,
+          explanation: '"Dessiner et peindre" translates to "To draw and paint".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -455,6 +583,7 @@ class P5Term3Lessons {
       topic: 'Examen de Mi-Trimestre (Mid-Term Oral Speed Rally)',
       subtitle: 'Mid-Term Speed Review & Team Buzzer Stations for Weeks 1 to 4',
       patternType: P5PatternType.term3RevisionRally,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         'Consolidate daily routine reflexive verbs and time expressions.',
         'Review sports, hobbies, and social invitation phrases.',
@@ -491,6 +620,42 @@ class P5Term3Lessons {
           ],
           correctOptionIndex: 1,
           explanation: '"Je me réveille à six heures" means "I wake up at 6:00 AM".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'La routine et les loisirs', english: 'Daily routine and leisure'),
+            DrillPair(french: 'Le champion du 3e trimestre', english: 'Champion of Term 3'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Daily routine and leisure):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['La routine et les loisirs', 'Le champion du 3e trimestre', 'Merci', 'Merci'],
+          correctWord: 'La routine et les loisirs',
+          explanation: 'Correct! "La routine et les loisirs" translates to "Daily routine and leisure".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Le champion du 3e trimestre"?',
+          options: ['Champion of Term 3', 'Daily routine and leisure', 'Goodbye', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Le champion du 3e trimestre" translates to "Champion of Term 3".',
+        ),
+        P5InteractiveExercise(
+          prompt: 'Which of the following is an essential habit for mastering French in class?',
+          options: ['Practicing spoken dialogue with enthusiasm', 'Staying completely silent', 'Ignoring pronunciation rules', 'Reading without listening'],
+          correctOptionIndex: 0,
+          explanation: 'Active speaking and confident practice are key to fluency in French.',
         ),
       ],
       evaluationQuestions: [
@@ -547,6 +712,42 @@ class P5Term3Lessons {
           options: ['Bon repos !', 'Au revoir', 'Merci', 'Je dîne'],
           correctOptionIndex: 0,
           explanation: '"Bon repos !" wishes a good rest.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Bon repos de mi-trimestre !', english: 'Have a good mid-term rest!'),
+            DrillPair(french: 'À très bientôt en classe !', english: 'See you very soon in class!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Have a good mid-term rest!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Bon repos de mi-trimestre !', 'À très bientôt en classe !', 'Merci', 'Merci'],
+          correctWord: 'Bon repos de mi-trimestre !',
+          explanation: 'Correct! "Bon repos de mi-trimestre !" translates to "Have a good mid-term rest!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "À très bientôt en classe !"?',
+          options: ['See you very soon in class!', 'Have a good mid-term rest!', 'Goodbye', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"À très bientôt en classe !" translates to "See you very soon in class!".',
+        ),
+        P5InteractiveExercise(
+          prompt: 'Which of the following is an essential habit for mastering French in class?',
+          options: ['Practicing spoken dialogue with enthusiasm', 'Staying completely silent', 'Ignoring pronunciation rules', 'Reading without listening'],
+          correctOptionIndex: 0,
+          explanation: 'Active speaking and confident practice are key to fluency in French.',
         ),
       ],
       evaluationQuestions: [
@@ -649,6 +850,38 @@ class P5Term3Lessons {
           correctOptionIndex: 1,
           explanation: 'Mathematics is "les mathématiques".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le français', english: 'French language'),
+            DrillPair(french: 'L\'anglais', english: 'English language'),
+            DrillPair(french: 'Les mathématiques (Les maths)', english: 'Mathematics'),
+            DrillPair(french: 'Les sciences', english: 'Science'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (French language):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le français', 'L\'anglais', 'Les mathématiques (Les maths)', 'Les sciences'],
+          correctWord: 'Le français',
+          explanation: 'Correct! "Le français" translates to "French language".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "L\'anglais"?',
+          options: ['English language', 'French language', 'Mathematics', 'Science'],
+          correctOptionIndex: 0,
+          explanation: '"L\'anglais" translates to "English language".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -743,6 +976,46 @@ class P5Term3Lessons {
           ],
           correctOptionIndex: 1,
           explanation: 'Since "règle" is feminine ("la règle"), we say "ta règle".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le stylo', english: 'The pen (Masculine)'),
+            DrillPair(french: 'Le crayon', english: 'The pencil (Masculine)'),
+            DrillPair(french: 'La règle', english: 'The ruler (Feminine)'),
+            DrillPair(french: 'La gomme', english: 'The eraser / rubber (Feminine)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The pen (Masculine)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le stylo', 'Le crayon', 'La règle', 'La gomme'],
+          correctWord: 'Le stylo',
+          explanation: 'Correct! "Le stylo" translates to "The pen (Masculine)".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Le crayon"?',
+          options: ['The pencil (Masculine)', 'The pen (Masculine)', 'The ruler (Feminine)', 'The eraser / rubber (Feminine)'],
+          correctOptionIndex: 0,
+          explanation: '"Le crayon" translates to "The pencil (Masculine)".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "The ruler (Feminine)":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['La règle', 'Le stylo', 'Le crayon', 'La gomme'],
+          correctWord: 'La règle',
+          explanation: 'Exact ! "La règle" means "The ruler (Feminine)".',
         ),
       ],
       evaluationQuestions: [
@@ -863,6 +1136,38 @@ class P5Term3Lessons {
           correctOptionIndex: 1,
           explanation: 'The feminine form of "l\'enseignant" is "l\'enseignante".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le médecin', english: 'The doctor / Physician'),
+            DrillPair(french: 'L\'enseignant / L\'enseignante', english: 'The teacher (Male / Female)'),
+            DrillPair(french: 'L\'infirmier / L\'infirmière', english: 'The nurse (Male / Female)'),
+            DrillPair(french: 'Le pilote', english: 'The airplane pilot'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The doctor / Physician):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le médecin', 'L\'enseignant / L\'enseignante', 'L\'infirmier / L\'infirmière', 'Le pilote'],
+          correctWord: 'Le médecin',
+          explanation: 'Correct! "Le médecin" translates to "The doctor / Physician".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "L\'enseignant / L\'enseignante"?',
+          options: ['The teacher (Male / Female)', 'The doctor / Physician', 'The nurse (Male / Female)', 'The airplane pilot'],
+          correctOptionIndex: 0,
+          explanation: '"L\'enseignant / L\'enseignante" translates to "The teacher (Male / Female)".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -977,6 +1282,38 @@ class P5Term3Lessons {
           correctOptionIndex: 1,
           explanation: '"J\'ai soif" means "I am thirsty".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le riz', english: 'Rice (Jollof or white rice)'),
+            DrillPair(french: 'Le pain', english: 'Bread'),
+            DrillPair(french: 'Le poulet et le poisson', english: 'Chicken and fish'),
+            DrillPair(french: 'Les fruits et les légumes', english: 'Fruits and vegetables'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Rice (Jollof or white rice)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le riz', 'Le pain', 'Le poulet et le poisson', 'Les fruits et les légumes'],
+          correctWord: 'Le riz',
+          explanation: 'Correct! "Le riz" translates to "Rice (Jollof or white rice)".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Le pain"?',
+          options: ['Bread', 'Rice (Jollof or white rice)', 'Chicken and fish', 'Fruits and vegetables'],
+          correctOptionIndex: 0,
+          explanation: '"Le pain" translates to "Bread".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1039,6 +1376,42 @@ class P5Term3Lessons {
           correctOptionIndex: 0,
           explanation: '"Je veux être ingénieur" states your future career dream.',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'La révision générale annuelle', english: 'Annual grand revision'),
+            DrillPair(french: 'Le grand champion de 5e année', english: 'Grand Primary 5 Champion'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Annual grand revision):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['La révision générale annuelle', 'Le grand champion de 5e année', 'Merci', 'Merci'],
+          correctWord: 'La révision générale annuelle',
+          explanation: 'Correct! "La révision générale annuelle" translates to "Annual grand revision".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Le grand champion de 5e année"?',
+          options: ['Grand Primary 5 Champion', 'Annual grand revision', 'Goodbye', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Le grand champion de 5e année" translates to "Grand Primary 5 Champion".',
+        ),
+        P5InteractiveExercise(
+          prompt: 'Which of the following is an essential habit for mastering French in class?',
+          options: ['Practicing spoken dialogue with enthusiasm', 'Staying completely silent', 'Ignoring pronunciation rules', 'Reading without listening'],
+          correctOptionIndex: 0,
+          explanation: 'Active speaking and confident practice are key to fluency in French.',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1064,6 +1437,7 @@ class P5Term3Lessons {
       topic: 'Bilan et Évaluation Orale Annuelle',
       subtitle: 'Teacher-guided Speaking Assessment & Annual Achievement Portfolio',
       patternType: P5PatternType.term3RevisionRally,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Conduct end-of-year speaking evaluations.',
         'Assess pronunciation accuracy, vocabulary breadth, and sentence structure.',
@@ -1096,6 +1470,42 @@ class P5Term3Lessons {
           correctOptionIndex: 1,
           explanation: '"Excellent travail !" is high praise meaning "Excellent work!".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'L\'évaluation finale', english: 'The final speaking assessment'),
+            DrillPair(french: 'Excellent travail !', english: 'Excellent work!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The final speaking assessment):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['L\'évaluation finale', 'Excellent travail !', 'Merci', 'Merci'],
+          correctWord: 'L\'évaluation finale',
+          explanation: 'Correct! "L\'évaluation finale" translates to "The final speaking assessment".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Excellent travail !"?',
+          options: ['Excellent work!', 'The final speaking assessment', 'Goodbye', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Excellent travail !" translates to "Excellent work!".',
+        ),
+        P5InteractiveExercise(
+          prompt: 'Which of the following is an essential habit for mastering French in class?',
+          options: ['Practicing spoken dialogue with enthusiasm', 'Staying completely silent', 'Ignoring pronunciation rules', 'Reading without listening'],
+          correctOptionIndex: 0,
+          explanation: 'Active speaking and confident practice are key to fluency in French.',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1121,6 +1531,7 @@ class P5Term3Lessons {
       topic: 'Remise des Diplômes et Passage en 6e Année (Primary 6)',
       subtitle: 'Congratulations on Completing Primary 5 French — Bienvenue en 6e Année !',
       patternType: P5PatternType.term3Graduation,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Celebrate the triumphant completion of Primary 5 French Language!',
         'Award the Primary 5 French Certificate of Excellence.',
@@ -1160,6 +1571,45 @@ class P5Term3Lessons {
           options: ['Primary 1', 'Primary 4', 'Primary 6 (6e année)', 'Preschool'],
           correctOptionIndex: 2,
           explanation: 'Congratulations! You are officially promoted to Primary 6 (6e année)!',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Félicitations pour votre réussite !', english: 'Congratulations on your great success!'),
+            DrillPair(french: 'Bienvenue en 6e année !', english: 'Welcome to Primary 6 (Grade 6)!'),
+            DrillPair(french: 'Excellentes vacances à tous !', english: 'Have a wonderful vacation everyone!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Congratulations on your great success!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Félicitations pour votre réussite !', 'Bienvenue en 6e année !', 'Excellentes vacances à tous !', 'Merci'],
+          correctWord: 'Félicitations pour votre réussite !',
+          explanation: 'Correct! "Félicitations pour votre réussite !" translates to "Congratulations on your great success!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Bienvenue en 6e année !"?',
+          options: ['Welcome to Primary 6 (Grade 6)!', 'Congratulations on your great success!', 'Have a wonderful vacation everyone!', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Bienvenue en 6e année !" translates to "Welcome to Primary 6 (Grade 6)!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "Have a wonderful vacation everyone!":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['Excellentes vacances à tous !', 'Félicitations pour votre réussite !', 'Bienvenue en 6e année !', 'S\'il vous plaît'],
+          correctWord: 'Excellentes vacances à tous !',
+          explanation: 'Exact ! "Excellentes vacances à tous !" means "Have a wonderful vacation everyone!".',
         ),
       ],
       evaluationQuestions: [

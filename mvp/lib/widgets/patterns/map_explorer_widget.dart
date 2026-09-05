@@ -87,7 +87,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,7 +118,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
                 decoration: BoxDecoration(
                   color: LHColors.cream,
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: LHColors.teal.withOpacity(0.2)),
+                  border: Border.all(color: LHColors.teal.withValues(alpha: 0.2)),
                 ),
                 child: Row(
                   children: [
@@ -183,7 +183,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
               final color = Color(int.parse(c['color']!));
 
               return Material(
-                color: isSelected ? color : LHColors.cream.withOpacity(0.5),
+                color: isSelected ? color : LHColors.cream.withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(18),
                 elevation: isSelected ? 4 : 0,
                 child: InkWell(
@@ -203,7 +203,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
                               width: 44,
                               height: 44,
                               decoration: BoxDecoration(
-                                color: isSelected ? LHColors.white : color.withOpacity(0.15),
+                                color: isSelected ? LHColors.white : color.withValues(alpha: 0.15),
                                 shape: BoxShape.circle,
                               ),
                               child: Center(
@@ -227,7 +227,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
                                 ),
                                 Text(
                                   c['direction']!,
-                                  style: LHText.body(isSelected ? LHColors.white.withOpacity(0.85) : LHColors.grey).copyWith(
+                                  style: LHText.body(isSelected ? LHColors.white.withValues(alpha: 0.85) : LHColors.grey).copyWith(
                                     fontSize: 14,
                                   ),
                                 ),
@@ -262,7 +262,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
             decoration: BoxDecoration(
               color: LHColors.cream,
               borderRadius: BorderRadius.circular(22),
-              border: Border.all(color: LHColors.teal.withOpacity(0.3), width: 2),
+              border: Border.all(color: LHColors.teal.withValues(alpha: 0.3), width: 2),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -343,7 +343,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
                   decoration: BoxDecoration(
                     color: LHColors.white,
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: LHColors.turquoise.withOpacity(0.4)),
+                    border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.4)),
                   ),
                   child: Row(
                     children: [
@@ -365,7 +365,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: LHColors.teal.withOpacity(0.08),
+                    color: LHColors.teal.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Row(
@@ -415,7 +415,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
               final isSelected = idx == _selectedAlphabetIndex;
 
               return Material(
-                color: isSelected ? LHColors.teal : LHColors.cream.withOpacity(0.6),
+                color: isSelected ? LHColors.teal : LHColors.cream.withValues(alpha: 0.6),
                 borderRadius: BorderRadius.circular(18),
                 elevation: isSelected ? 4 : 0,
                 child: InkWell(
@@ -474,7 +474,7 @@ class _MapExplorerWidgetState extends State<MapExplorerWidget> {
             decoration: BoxDecoration(
               color: LHColors.cream,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: LHColors.gold.withOpacity(0.5), width: 2),
+              border: Border.all(color: LHColors.gold.withValues(alpha: 0.5), width: 2),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

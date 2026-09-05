@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/p5_lesson_model.dart';
 
 class P5Term2Lessons {
-  static const List<P5Lesson> weeks = [
+  static final List<P5Lesson> weeks = [
     // ==========================================
     // WEEK 1: PARLER DE LA GRANDE FAMILLE (PART I)
     // ==========================================
@@ -104,6 +104,32 @@ class P5Term2Lessons {
           options: ['C\'est ma tante', 'C\'est mon oncle', 'Voici mon cousin', 'C\'est mon frère'],
           correctOptionIndex: 1,
           explanation: '"C\'est mon oncle" means "This is my uncle".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Les grands-parents', english: 'The grandparents'),
+            DrillPair(french: 'Le grand-père', english: 'The grandfather'),
+            DrillPair(french: 'La grand-mère', english: 'The grandmother'),
+            DrillPair(french: 'L\'oncle', english: 'The uncle'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The grandparents):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Les grands-parents', 'Le grand-père', 'La grand-mère', 'L\'oncle'],
+          correctWord: 'Les grands-parents',
+          explanation: 'Correct! "Les grands-parents" translates to "The grandparents".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
         ),
       ],
       evaluationQuestions: [
@@ -248,6 +274,32 @@ class P5Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"J\'ai une grande famille" means "I have a big family".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le neveu', english: 'The nephew'),
+            DrillPair(french: 'La nièce', english: 'The niece'),
+            DrillPair(french: 'Le petit-fils', english: 'The grandson'),
+            DrillPair(french: 'La petite-fille', english: 'The granddaughter'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The nephew):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le neveu', 'La nièce', 'Le petit-fils', 'La petite-fille'],
+          correctWord: 'Le neveu',
+          explanation: 'Correct! "Le neveu" translates to "The nephew".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -364,6 +416,38 @@ class P5Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Nous mangeons ensemble" translates to "We eat together".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Nous visitons nos grands-parents', english: 'We visit our grandparents'),
+            DrillPair(french: 'La réunion de famille', english: 'The family reunion / Gathering'),
+            DrillPair(french: 'Au village', english: 'In the village / Hometown'),
+            DrillPair(french: 'Nous mangeons ensemble', english: 'We eat together'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (We visit our grandparents):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Nous visitons nos grands-parents', 'La réunion de famille', 'Au village', 'Nous mangeons ensemble'],
+          correctWord: 'Nous visitons nos grands-parents',
+          explanation: 'Correct! "Nous visitons nos grands-parents" translates to "We visit our grandparents".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "La réunion de famille"?',
+          options: ['The family reunion / Gathering', 'We visit our grandparents', 'In the village / Hometown', 'We eat together'],
+          correctOptionIndex: 0,
+          explanation: '"La réunion de famille" translates to "The family reunion / Gathering".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -399,6 +483,7 @@ class P5Term2Lessons {
       topic: 'Parler des Voisins (Partie I: Voisinage et Présentations)',
       subtitle: 'Neighborhood Vocabulary & Neighbor Introductions: "Voici mon voisin / ma voisine"',
       patternType: P5PatternType.neighborStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Identify neighborhood vocabulary: "le voisin", "la voisine", "les voisins", "le quartier".',
         'Introduce a neighbor politely using "Voici mon voisin / ma voisine".',
@@ -470,6 +555,38 @@ class P5Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Le quartier" translates to the neighborhood or district.',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le voisin', english: 'The male neighbor'),
+            DrillPair(french: 'La voisine', english: 'The female neighbor'),
+            DrillPair(french: 'Les voisins', english: 'The neighbors (Plural)'),
+            DrillPair(french: 'Le quartier', english: 'The neighborhood / Area'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The male neighbor):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le voisin', 'La voisine', 'Les voisins', 'Le quartier'],
+          correctWord: 'Le voisin',
+          explanation: 'Correct! "Le voisin" translates to "The male neighbor".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "La voisine"?',
+          options: ['The female neighbor', 'The male neighbor', 'The neighbors (Plural)', 'The neighborhood / Area'],
+          correctOptionIndex: 0,
+          explanation: '"La voisine" translates to "The female neighbor".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -495,6 +612,7 @@ class P5Term2Lessons {
       topic: 'Examen de Mi-Trimestre (Mid-Term Oral Speed Rally)',
       subtitle: 'Mid-Term Speed Review & Team Buzzer Stations for Weeks 1 to 4',
       patternType: P5PatternType.term2RevisionRally,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Consolidate extended family relationships and possessive adjective mastery.',
         'Demonstrate fluency in introducing and describing neighbors.',
@@ -534,6 +652,45 @@ class P5Term2Lessons {
           options: ['Mon grand-père', 'Mon oncle', 'Mon cousin', 'Mon neveu'],
           correctOptionIndex: 1,
           explanation: 'Your father\'s brother is your uncle ("mon oncle").',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'La grande famille', english: 'The extended family'),
+            DrillPair(french: 'Les bons voisins', english: 'The good neighbors'),
+            DrillPair(french: 'Le champion du trimestre', english: 'The term champion'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The extended family):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['La grande famille', 'Les bons voisins', 'Le champion du trimestre', 'Merci'],
+          correctWord: 'La grande famille',
+          explanation: 'Correct! "La grande famille" translates to "The extended family".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Les bons voisins"?',
+          options: ['The good neighbors', 'The extended family', 'The term champion', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Les bons voisins" translates to "The good neighbors".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "The term champion":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['Le champion du trimestre', 'La grande famille', 'Les bons voisins', 'S\'il vous plaît'],
+          correctWord: 'Le champion du trimestre',
+          explanation: 'Exact ! "Le champion du trimestre" means "The term champion".',
         ),
       ],
       evaluationQuestions: [
@@ -591,6 +748,42 @@ class P5Term2Lessons {
           options: ['Bonsoir', 'Bonnes vacances !', 'De rien', 'Au secours'],
           correctOptionIndex: 1,
           explanation: '"Bonnes vacances !" wishes a happy holiday.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Bonnes vacances de mi-trimestre !', english: 'Happy mid-term break!'),
+            DrillPair(french: 'À très bientôt !', english: 'See you very soon!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Happy mid-term break!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Bonnes vacances de mi-trimestre !', 'À très bientôt !', 'Merci', 'Merci'],
+          correctWord: 'Bonnes vacances de mi-trimestre !',
+          explanation: 'Correct! "Bonnes vacances de mi-trimestre !" translates to "Happy mid-term break!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "À très bientôt !"?',
+          options: ['See you very soon!', 'Happy mid-term break!', 'Goodbye', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"À très bientôt !" translates to "See you very soon!".',
+        ),
+        P5InteractiveExercise(
+          prompt: 'Which of the following is an essential habit for mastering French in class?',
+          options: ['Practicing spoken dialogue with enthusiasm', 'Staying completely silent', 'Ignoring pronunciation rules', 'Reading without listening'],
+          correctOptionIndex: 0,
+          explanation: 'Active speaking and confident practice are key to fluency in French.',
         ),
       ],
       evaluationQuestions: [
@@ -692,6 +885,38 @@ class P5Term2Lessons {
           ],
           correctOptionIndex: 1,
           explanation: '"Mon quartier est calme" means "My neighborhood is quiet/calm".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Aider son voisin', english: 'To help one\'s neighbor'),
+            DrillPair(french: 'Partager avec les voisins', english: 'To share with neighbors'),
+            DrillPair(french: 'Saluer poliment', english: 'To greet politely'),
+            DrillPair(french: 'Mon quartier est calme', english: 'My neighborhood is quiet / calm'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (To help one\'s neighbor):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Aider son voisin', 'Partager avec les voisins', 'Saluer poliment', 'Mon quartier est calme'],
+          correctWord: 'Aider son voisin',
+          explanation: 'Correct! "Aider son voisin" translates to "To help one\'s neighbor".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Partager avec les voisins"?',
+          options: ['To share with neighbors', 'To help one\'s neighbor', 'To greet politely', 'My neighborhood is quiet / calm'],
+          correctOptionIndex: 0,
+          explanation: '"Partager avec les voisins" translates to "To share with neighbors".',
         ),
       ],
       evaluationQuestions: [
@@ -797,6 +1022,38 @@ class P5Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Merci beaucoup" translates to "Thank you very much".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Merci', english: 'Thank you'),
+            DrillPair(french: 'Merci beaucoup !', english: 'Thank you very much!'),
+            DrillPair(french: 'Merci bien !', english: 'Thanks a lot / Thank you kindly'),
+            DrillPair(french: 'Je vous remercie', english: 'I thank you (Formal / Respectful)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Thank you):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Merci', 'Merci beaucoup !', 'Merci bien !', 'Je vous remercie'],
+          correctWord: 'Merci',
+          explanation: 'Correct! "Merci" translates to "Thank you".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Merci beaucoup !"?',
+          options: ['Thank you very much!', 'Thank you', 'Thanks a lot / Thank you kindly', 'I thank you (Formal / Respectful)'],
+          correctOptionIndex: 0,
+          explanation: '"Merci beaucoup !" translates to "Thank you very much!".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -883,6 +1140,46 @@ class P5Term2Lessons {
           ],
           correctOptionIndex: 1,
           explanation: '"Merci pour le cadeau, c\'est très gentil !" is the polite, grateful response.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'C\'est gentil !', english: 'That is kind of you / That\'s nice!'),
+            DrillPair(french: 'C\'est très aimable !', english: 'That is very kind / amiable!'),
+            DrillPair(french: 'Tu es super !', english: 'You are awesome / great!'),
+            DrillPair(french: 'Merci pour le cadeau', english: 'Thank you for the gift'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (That is kind of you / That\'s nice!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['C\'est gentil !', 'C\'est très aimable !', 'Tu es super !', 'Merci pour le cadeau'],
+          correctWord: 'C\'est gentil !',
+          explanation: 'Correct! "C\'est gentil !" translates to "That is kind of you / That\'s nice!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "C\'est très aimable !"?',
+          options: ['That is very kind / amiable!', 'That is kind of you / That\'s nice!', 'You are awesome / great!', 'Thank you for the gift'],
+          correctOptionIndex: 0,
+          explanation: '"C\'est très aimable !" translates to "That is very kind / amiable!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "You are awesome / great!":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['Tu es super !', 'C\'est gentil !', 'C\'est très aimable !', 'Merci pour le cadeau'],
+          correctWord: 'Tu es super !',
+          explanation: 'Exact ! "Tu es super !" means "You are awesome / great!".',
         ),
       ],
       evaluationQuestions: [
@@ -980,6 +1277,38 @@ class P5Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'The day after Friday is Saturday ("Samedi").',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Lundi, Mardi, Mercredi', english: 'Monday, Tuesday, Wednesday'),
+            DrillPair(french: 'Jeudi, Vendredi', english: 'Thursday, Friday'),
+            DrillPair(french: 'Samedi, Dimanche (Le week-end)', english: 'Saturday, Sunday (The weekend)'),
+            DrillPair(french: 'Quel jour sommes-nous ?', english: 'What day is it today?'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Monday, Tuesday, Wednesday):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Lundi, Mardi, Mercredi', 'Jeudi, Vendredi', 'Samedi, Dimanche (Le week-end)', 'Quel jour sommes-nous ?'],
+          correctWord: 'Lundi, Mardi, Mercredi',
+          explanation: 'Correct! "Lundi, Mardi, Mercredi" translates to "Monday, Tuesday, Wednesday".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Jeudi, Vendredi"?',
+          options: ['Thursday, Friday', 'Monday, Tuesday, Wednesday', 'Saturday, Sunday (The weekend)', 'What day is it today?'],
+          correctOptionIndex: 0,
+          explanation: '"Jeudi, Vendredi" translates to "Thursday, Friday".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1020,6 +1349,7 @@ class P5Term2Lessons {
       topic: 'Révision Générale du Deuxième Trimestre',
       subtitle: 'Comprehensive Speed Oral Rally across Weeks 1 to 10',
       patternType: P5PatternType.term2RevisionRally,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Review extended family terms, neighbor relationships, gratitude, and days of the week.',
         'Participate in classroom team speed buzzer challenges.',
@@ -1065,6 +1395,45 @@ class P5Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'The weekend days are "Samedi" (Saturday) and "Dimanche" (Sunday).',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'La révision du deuxième trimestre', english: 'Second term revision'),
+            DrillPair(french: 'La famille et les voisins', english: 'Family and neighbors'),
+            DrillPair(french: 'La politesse et les jours', english: 'Politeness and days of the week'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Second term revision):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['La révision du deuxième trimestre', 'La famille et les voisins', 'La politesse et les jours', 'Merci'],
+          correctWord: 'La révision du deuxième trimestre',
+          explanation: 'Correct! "La révision du deuxième trimestre" translates to "Second term revision".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "La famille et les voisins"?',
+          options: ['Family and neighbors', 'Second term revision', 'Politeness and days of the week', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"La famille et les voisins" translates to "Family and neighbors".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "Politeness and days of the week":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['La politesse et les jours', 'La révision du deuxième trimestre', 'La famille et les voisins', 'S\'il vous plaît'],
+          correctWord: 'La politesse et les jours',
+          explanation: 'Exact ! "La politesse et les jours" means "Politeness and days of the week".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1090,6 +1459,7 @@ class P5Term2Lessons {
       topic: 'Bilan et Évaluation Orale du Deuxième Trimestre',
       subtitle: 'Teacher-guided Speaking Evaluation & Student Achievement Portfolio',
       patternType: P5PatternType.term2RevisionRally,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Conduct individual and group oral evaluation stations.',
         'Assess pronunciation, fluency, and vocabulary recall for Term 2.',
@@ -1130,6 +1500,45 @@ class P5Term2Lessons {
           correctOptionIndex: 0,
           explanation: '"Je vous en prie" is the height of polite French manners.',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'L\'évaluation orale', english: 'Oral speaking evaluation'),
+            DrillPair(french: 'Très bien réussi !', english: 'Very well done!'),
+            DrillPair(french: 'Félicitations pour le 2e trimestre !', english: 'Congratulations on Term 2!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Oral speaking evaluation):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['L\'évaluation orale', 'Très bien réussi !', 'Félicitations pour le 2e trimestre !', 'Merci'],
+          correctWord: 'L\'évaluation orale',
+          explanation: 'Correct! "L\'évaluation orale" translates to "Oral speaking evaluation".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Très bien réussi !"?',
+          options: ['Very well done!', 'Oral speaking evaluation', 'Congratulations on Term 2!', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Très bien réussi !" translates to "Very well done!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "Congratulations on Term 2!":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['Félicitations pour le 2e trimestre !', 'L\'évaluation orale', 'Très bien réussi !', 'S\'il vous plaît'],
+          correctWord: 'Félicitations pour le 2e trimestre !',
+          explanation: 'Exact ! "Félicitations pour le 2e trimestre !" means "Congratulations on Term 2!".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1155,6 +1564,7 @@ class P5Term2Lessons {
       topic: 'Fin du Deuxième Trimestre (Term 2 Wrap-up & Vacation Celebration)',
       subtitle: 'Congratulations on Completing Term 2 — Bonnes Vacances & Term 3 Preview !',
       patternType: P5PatternType.term2Vacation,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Celebrate the completion of Second Term Primary 5 French!',
         'Review badge collections and achievements.',
@@ -1199,6 +1609,45 @@ class P5Term2Lessons {
           ],
           correctOptionIndex: 0,
           explanation: 'Term 3 expands into daily routines, sports, careers, and French meals!',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Félicitations !', english: 'Congratulations!'),
+            DrillPair(french: 'Bonnes vacances !', english: 'Happy holidays / Have a great vacation!'),
+            DrillPair(french: 'À la rentrée pour le 3e trimestre !', english: 'See you next term for Term 3!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Congratulations!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Félicitations !', 'Bonnes vacances !', 'À la rentrée pour le 3e trimestre !', 'Merci'],
+          correctWord: 'Félicitations !',
+          explanation: 'Correct! "Félicitations !" translates to "Congratulations!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Bonnes vacances !"?',
+          options: ['Happy holidays / Have a great vacation!', 'Congratulations!', 'See you next term for Term 3!', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Bonnes vacances !" translates to "Happy holidays / Have a great vacation!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "See you next term for Term 3!":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['À la rentrée pour le 3e trimestre !', 'Félicitations !', 'Bonnes vacances !', 'S\'il vous plaît'],
+          correctWord: 'À la rentrée pour le 3e trimestre !',
+          explanation: 'Exact ! "À la rentrée pour le 3e trimestre !" means "See you next term for Term 3!".',
         ),
       ],
       evaluationQuestions: [

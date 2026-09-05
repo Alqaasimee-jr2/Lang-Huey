@@ -4,7 +4,7 @@ import '../models/jss2_lesson_model.dart';
 class JSS2Term2Lessons {
   static final List<JSS2LessonModel> weeks = [
     // Week 1: Établir des listes et inventaires
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 1,
       termNumber: 2,
       theme: 'Unité 9 : Établir des listes/inventaires',
@@ -19,6 +19,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'In Nigerian households and schools, making a grocery list before going to Balogun, Bodija, or Wuse Market helps manage budgets and prevents forgotten essentials.',
       patternType: JSS2PatternType.listAndInventoryStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'la liste des courses',
@@ -114,6 +115,38 @@ class JSS2Term2Lessons {
           correctOptionIndex: 0,
           explanation: '"Des stylos" (pluriel indéfini) et "une trousse" (féminin singulier).',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'la liste des courses', english: 'the grocery / shopping list'),
+            DrillPair(french: 'l\'inventaire du matériel', english: 'the equipment / supplies inventory'),
+            DrillPair(french: 'les fournitures scolaires', english: 'school supplies'),
+            DrillPair(french: 'Il manque deux cahiers.', english: 'Two notebooks are missing.'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (the grocery / shopping list):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['la liste des courses', 'l\'inventaire du matériel', 'les fournitures scolaires', 'Il manque deux cahiers.'],
+          correctWord: 'la liste des courses',
+          explanation: 'Correct! "la liste des courses" translates to "the grocery / shopping list".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "l\'inventaire du matériel"?',
+          options: ['the equipment / supplies inventory', 'the grocery / shopping list', 'school supplies', 'Two notebooks are missing.'],
+          correctOptionIndex: 0,
+          explanation: '"l\'inventaire du matériel" translates to "the equipment / supplies inventory".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -147,7 +180,7 @@ class JSS2Term2Lessons {
     ),
 
     // Week 2: Les commerçants et marchandises
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 2,
       termNumber: 2,
       theme: 'Unité 10 : Les commerçants et marchandises',
@@ -162,6 +195,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'In Francophone African markets (like Marché Sandaga in Dakar or Marché Dantokpa in Cotonou), trade is specialized by quarters: butcher stalls, spice vendors, and fabric merchants.',
       patternType: JSS2PatternType.merchantsAndGoodsStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       vocabulary: [
         JSS2VocabItem(
           french: 'le boucher à la boucherie',
@@ -257,6 +291,38 @@ class JSS2Term2Lessons {
           correctOptionIndex: 2,
           explanation: 'Les produits non emballés se vendent "en vrac".',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'le boucher à la boucherie', english: 'the butcher at the butcher shop'),
+            DrillPair(french: 'le boulanger à la boulangerie', english: 'the baker at the bakery'),
+            DrillPair(french: 'l\'épicier à l\'épicerie', english: 'the grocer at the grocery store'),
+            DrillPair(french: 'le poissonnier à la poissonnerie', english: 'the fishmonger at the fish market'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (the butcher at the butcher shop):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['le boucher à la boucherie', 'le boulanger à la boulangerie', 'l\'épicier à l\'épicerie', 'le poissonnier à la poissonnerie'],
+          correctWord: 'le boucher à la boucherie',
+          explanation: 'Correct! "le boucher à la boucherie" translates to "the butcher at the butcher shop".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "le boulanger à la boulangerie"?',
+          options: ['the baker at the bakery', 'the butcher at the butcher shop', 'the grocer at the grocery store', 'the fishmonger at the fish market'],
+          correctOptionIndex: 0,
+          explanation: '"le boulanger à la boulangerie" translates to "the baker at the bakery".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -289,7 +355,7 @@ class JSS2Term2Lessons {
     ),
 
     // Week 3: Acheter et marchander
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 3,
       termNumber: 2,
       theme: 'Unité 11 : Acheter et marchander',
@@ -304,6 +370,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'Bargaining (*marchander*) is an art and polite social dance in West African markets (Nigeria, Togo, Benin, Senegal). Opening with a friendly greeting and respectful tone always yields the best discount.',
       patternType: JSS2PatternType.shoppingAndBargainingStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       vocabulary: [
         JSS2VocabItem(
           french: 'Je voudrais deux kilos de riz.',
@@ -399,6 +466,38 @@ class JSS2Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Faites-moi un bon prix" ou "Vous me faites une réduction ?" sont les formules de marchandage.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Je voudrais deux kilos de riz.', english: 'I would like two kilograms of rice.'),
+            DrillPair(french: 'Combien coûte ce paquet ?', english: 'How much does this packet cost?'),
+            DrillPair(french: 'C\'est combien le panier ?', english: 'How much is the basket?'),
+            DrillPair(french: 'C\'est trop cher, monsieur !', english: 'It is too expensive, sir!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (I would like two kilograms of rice.):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Je voudrais deux kilos de riz.', 'Combien coûte ce paquet ?', 'C\'est combien le panier ?', 'C\'est trop cher, monsieur !'],
+          correctWord: 'Je voudrais deux kilos de riz.',
+          explanation: 'Correct! "Je voudrais deux kilos de riz." translates to "I would like two kilograms of rice.".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "Combien coûte ce paquet ?"?',
+          options: ['How much does this packet cost?', 'I would like two kilograms of rice.', 'How much is the basket?', 'It is too expensive, sir!'],
+          correctOptionIndex: 0,
+          explanation: '"Combien coûte ce paquet ?" translates to "How much does this packet cost?".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -426,7 +525,7 @@ class JSS2Term2Lessons {
     ),
 
     // Week 4: Exprimer un besoin et son utilité
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 4,
       termNumber: 2,
       theme: 'Unité 12 : Exprimer un besoin et son utilité',
@@ -441,6 +540,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'In technology, craft workshops, and domestic life in Nigeria, explaining why a specific tool is indispensable is essential for collaborative vocational work.',
       patternType: JSS2PatternType.needsAndUtilityStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'J\'ai besoin d\'un dictionnaire.',
@@ -536,6 +636,38 @@ class JSS2Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Avoir besoin de..." exprime le besoin.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'J\'ai besoin d\'un dictionnaire.', english: 'I need a dictionary.'),
+            DrillPair(french: 'À quoi sert cet outil ?', english: 'What is this tool used for?'),
+            DrillPair(french: 'Ça sert à écrire des notes.', english: 'It is used for writing notes.'),
+            DrillPair(french: 'les ciseaux pour couper le papier', english: 'scissors to cut paper'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (I need a dictionary.):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['J\'ai besoin d\'un dictionnaire.', 'À quoi sert cet outil ?', 'Ça sert à écrire des notes.', 'les ciseaux pour couper le papier'],
+          correctWord: 'J\'ai besoin d\'un dictionnaire.',
+          explanation: 'Correct! "J\'ai besoin d\'un dictionnaire." translates to "I need a dictionary.".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "À quoi sert cet outil ?"?',
+          options: ['What is this tool used for?', 'I need a dictionary.', 'It is used for writing notes.', 'scissors to cut paper'],
+          correctOptionIndex: 0,
+          explanation: '"À quoi sert cet outil ?" translates to "What is this tool used for?".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -563,7 +695,7 @@ class JSS2Term2Lessons {
     ),
 
     // Week 5: À la pharmacie
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 5,
       termNumber: 2,
       theme: 'Unité 13 : À la pharmacie',
@@ -578,6 +710,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'In Nigeria, community pharmacists and patent medicine stores are the first port of call for malaria and minor ailments. In French, clear communication of symptoms ensures accurate remedy recommendations.',
       patternType: JSS2PatternType.pharmacyAndHealthStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       vocabulary: [
         JSS2VocabItem(
           french: 'Je ne me sens pas bien.',
@@ -673,6 +806,38 @@ class JSS2Term2Lessons {
           correctOptionIndex: 2,
           explanation: '"Bon rétablissement !" signifie "Get well soon".',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Je ne me sens pas bien.', english: 'I do not feel well.'),
+            DrillPair(french: 'J\'ai mal à la tête.', english: 'I have a headache.'),
+            DrillPair(french: 'J\'ai mal au ventre.', english: 'I have a stomach ache.'),
+            DrillPair(french: 'J\'ai mal à la gorge.', english: 'I have a sore throat.'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (I do not feel well.):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Je ne me sens pas bien.', 'J\'ai mal à la tête.', 'J\'ai mal au ventre.', 'J\'ai mal à la gorge.'],
+          correctWord: 'Je ne me sens pas bien.',
+          explanation: 'Correct! "Je ne me sens pas bien." translates to "I do not feel well.".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "J\'ai mal à la tête."?',
+          options: ['I have a headache.', 'I do not feel well.', 'I have a stomach ache.', 'I have a sore throat.'],
+          correctOptionIndex: 0,
+          explanation: '"J\'ai mal à la tête." translates to "I have a headache.".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -700,7 +865,7 @@ class JSS2Term2Lessons {
     ),
 
     // Week 6: Vêtements, chaussures et accessoires
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 6,
       termNumber: 2,
       theme: 'Unité 14 : Les vêtements, chaussures et accessoires',
@@ -715,6 +880,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'In Nigeria, fashion is vibrant and iconic: from exquisite lace, Ankara and Aso-Oke to bespoke tailored shirts. In French, describing fabrics (*en coton, en soie*) and patterns (*à motifs fleuris*) is high culture.',
       patternType: JSS2PatternType.wardrobeAndStyleStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'la chemise et le pantalon',
@@ -810,6 +976,38 @@ class JSS2Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'La "pointure" désigne la taille des chaussures (la taille désigne les vêtements).',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'la chemise et le pantalon', english: 'the shirt and the trousers / pants'),
+            DrillPair(french: 'la robe et la jupe', english: 'the dress and the skirt'),
+            DrillPair(french: 'les chaussures en cuir noir', english: 'black leather shoes'),
+            DrillPair(french: 'la ceinture et le chapeau', english: 'the belt and the hat'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (the shirt and the trousers / pants):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['la chemise et le pantalon', 'la robe et la jupe', 'les chaussures en cuir noir', 'la ceinture et le chapeau'],
+          correctWord: 'la chemise et le pantalon',
+          explanation: 'Correct! "la chemise et le pantalon" translates to "the shirt and the trousers / pants".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "la robe et la jupe"?',
+          options: ['the dress and the skirt', 'the shirt and the trousers / pants', 'black leather shoes', 'the belt and the hat'],
+          correctOptionIndex: 0,
+          explanation: '"la robe et la jupe" translates to "the dress and the skirt".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -837,7 +1035,7 @@ class JSS2Term2Lessons {
     ),
 
     // Week 7: Apprécier, comparer, choisir
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 7,
       termNumber: 2,
       theme: 'Unité 15 : Apprécier, comparer, choisir',
@@ -852,6 +1050,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'When shopping for gifts, shoes, or outfits for Sunday service or Eid celebrations in Nigeria, comparing quality and getting a friend\'s second opinion is an interactive social ritual.',
       patternType: JSS2PatternType.comparisonAndChoiceStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'C\'est vraiment magnifique !',
@@ -947,6 +1146,38 @@ class JSS2Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"J\'hésite entre..." exprime le dilemme du choix.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'C\'est vraiment magnifique !', english: 'It is truly magnificent / gorgeous!'),
+            DrillPair(french: 'Cette robe est très élégante.', english: 'This dress is very elegant.'),
+            DrillPair(french: 'Ce pantalon est plus cher que l\'autre.', english: 'These trousers are more expensive than the other.'),
+            DrillPair(french: 'Cette chemise est moins chaude.', english: 'This shirt is less warm.'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (It is truly magnificent / gorgeous!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['C\'est vraiment magnifique !', 'Cette robe est très élégante.', 'Ce pantalon est plus cher que l\'autre.', 'Cette chemise est moins chaude.'],
+          correctWord: 'C\'est vraiment magnifique !',
+          explanation: 'Correct! "C\'est vraiment magnifique !" translates to "It is truly magnificent / gorgeous!".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "Cette robe est très élégante."?',
+          options: ['This dress is very elegant.', 'It is truly magnificent / gorgeous!', 'These trousers are more expensive than the other.', 'This shirt is less warm.'],
+          correctOptionIndex: 0,
+          explanation: '"Cette robe est très élégante." translates to "This dress is very elegant.".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -974,7 +1205,7 @@ class JSS2Term2Lessons {
     ),
 
     // Week 8: Quantité et qualité des produits
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 8,
       termNumber: 2,
       theme: 'Unité 16 : Quantité et qualité des produits',
@@ -989,6 +1220,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'From Nigerian food staples (plantains, yams, palm oil, groundnuts) to imported provisions, metric units (kilogram, liter, dozen) govern daily market trades across all ECOWAS nations.',
       patternType: JSS2PatternType.productQuantityQualityStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'un kilo de tomates bien mûres',
@@ -1084,6 +1316,38 @@ class JSS2Term2Lessons {
           correctOptionIndex: 2,
           explanation: 'Une douzaine équivaut exactement à 12 unités.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'un kilo de tomates bien mûres', english: 'a kilo of ripe tomatoes'),
+            DrillPair(french: 'un demi-kilo d\'oignons frais', english: 'half a kilo of fresh onions'),
+            DrillPair(french: 'deux cent cinquante grammes de beurre', english: '250 grams of butter'),
+            DrillPair(french: 'un litre d\'huile d\'arachide', english: 'a liter of groundnut oil'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (a kilo of ripe tomatoes):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['un kilo de tomates bien mûres', 'un demi-kilo d\'oignons frais', 'deux cent cinquante grammes de beurre', 'un litre d\'huile d\'arachide'],
+          correctWord: 'un kilo de tomates bien mûres',
+          explanation: 'Correct! "un kilo de tomates bien mûres" translates to "a kilo of ripe tomatoes".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "un demi-kilo d\'oignons frais"?',
+          options: ['half a kilo of fresh onions', 'a kilo of ripe tomatoes', '250 grams of butter', 'a liter of groundnut oil'],
+          correctOptionIndex: 0,
+          explanation: '"un demi-kilo d\'oignons frais" translates to "half a kilo of fresh onions".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -1111,7 +1375,7 @@ class JSS2Term2Lessons {
     ),
 
     // Week 9: Grand Rallye de Révision du Deuxième Trimestre
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 9,
       termNumber: 2,
       theme: 'Grand Rallye : Bilan du Deuxième Trimestre JSS2',
@@ -1126,6 +1390,7 @@ class JSS2Term2Lessons {
       ],
       culturalInsight: 'Grand academic rallies celebrate intellectual dexterity and collaborative excellence, creating indelible memories of French mastery in Nigerian secondary schools.',
       patternType: JSS2PatternType.term2RevisionRally,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'Bienvenue au Grand Rallye du 2e Trimestre !',
@@ -1180,6 +1445,38 @@ class JSS2Term2Lessons {
           options: ['Un kilo du riz', 'Un kilo de riz', 'Un kilo des riz', 'Un kilo le riz'],
           correctOptionIndex: 1,
           explanation: 'Après un nom de quantité, on emploie obligatoirement "DE" (un kilo de riz).',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Bienvenue au Grand Rallye du 2e Trimestre !', english: 'Welcome to the 2nd Term Grand Rally!'),
+            DrillPair(french: 'Coup de buzzer pour l\'Équipe Verte !', english: 'Buzzer hit for the Green Team!'),
+            DrillPair(french: 'Excellente réponse, dix points marqués !', english: 'Excellent answer, ten points awarded!'),
+            DrillPair(french: 'Dernière ligne droite du championnat !', english: 'Final stretch of the championship!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Welcome to the 2nd Term Grand Rally!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Bienvenue au Grand Rallye du 2e Trimestre !', 'Coup de buzzer pour l\'Équipe Verte !', 'Excellente réponse, dix points marqués !', 'Dernière ligne droite du championnat !'],
+          correctWord: 'Bienvenue au Grand Rallye du 2e Trimestre !',
+          explanation: 'Correct! "Bienvenue au Grand Rallye du 2e Trimestre !" translates to "Welcome to the 2nd Term Grand Rally!".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "Coup de buzzer pour l\'Équipe Verte !"?',
+          options: ['Buzzer hit for the Green Team!', 'Welcome to the 2nd Term Grand Rally!', 'Excellent answer, ten points awarded!', 'Final stretch of the championship!'],
+          correctOptionIndex: 0,
+          explanation: '"Coup de buzzer pour l\'Équipe Verte !" translates to "Buzzer hit for the Green Team!".',
         ),
       ],
       evaluation: [

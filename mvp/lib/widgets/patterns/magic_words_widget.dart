@@ -109,7 +109,7 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,7 +138,7 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
                 decoration: BoxDecoration(
                   color: LHColors.cream,
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: LHColors.teal.withOpacity(0.2)),
+                  border: Border.all(color: LHColors.teal.withValues(alpha: 0.2)),
                 ),
                 child: Row(
                   children: [
@@ -208,7 +208,7 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
               final isSelected = index == _selectedWordIndex;
 
               return Material(
-                color: isSelected ? LHColors.teal : LHColors.cream.withOpacity(0.6),
+                color: isSelected ? LHColors.teal : LHColors.cream.withValues(alpha: 0.6),
                 borderRadius: BorderRadius.circular(18),
                 elevation: isSelected ? 4 : 0,
                 child: InkWell(
@@ -225,7 +225,7 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
                           width: 44,
                           height: 44,
                           decoration: BoxDecoration(
-                            color: isSelected ? LHColors.white : LHColors.teal.withOpacity(0.15),
+                            color: isSelected ? LHColors.white : LHColors.teal.withValues(alpha: 0.15),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -283,7 +283,7 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
             decoration: BoxDecoration(
               color: LHColors.cream,
               borderRadius: BorderRadius.circular(22),
-              border: Border.all(color: LHColors.gold.withOpacity(0.5), width: 2),
+              border: Border.all(color: LHColors.gold.withValues(alpha: 0.5), width: 2),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -331,7 +331,7 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
                   decoration: BoxDecoration(
                     color: LHColors.white,
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: LHColors.turquoise.withOpacity(0.4)),
+                    border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.4)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -365,7 +365,7 @@ class _MagicWordsWidgetState extends State<MagicWordsWidget> {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: LHColors.teal.withOpacity(0.08),
+                    color: LHColors.teal.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(

@@ -39,7 +39,7 @@ class P4WeekRoadmapScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Material(
-                      color: LHColors.white.withOpacity(0.15),
+                      color: LHColors.white.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(12),
                       child: InkWell(
                         borderRadius: BorderRadius.circular(12),
@@ -73,9 +73,9 @@ class P4WeekRoadmapScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   decoration: BoxDecoration(
-                    color: LHColors.turquoise.withOpacity(0.2),
+                    color: LHColors.turquoise.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: LHColors.turquoise.withOpacity(0.4)),
+                    border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.4)),
                   ),
                   child: Text(
                     'NERDC NIGERIAN CURRICULUM',
@@ -148,10 +148,10 @@ class P4WeekRoadmapScreen extends StatelessWidget {
                 width: 64,
                 height: 64,
                 decoration: BoxDecoration(
-                  color: isSpecial ? LHColors.gold.withOpacity(0.2) : LHColors.teal.withOpacity(0.1),
+                  color: isSpecial ? LHColors.gold.withValues(alpha: 0.2) : LHColors.teal.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: isSpecial ? LHColors.gold : LHColors.teal.withOpacity(0.3),
+                    color: isSpecial ? LHColors.gold : LHColors.teal.withValues(alpha: 0.3),
                     width: 1.5,
                   ),
                 ),

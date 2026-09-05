@@ -2,6 +2,152 @@
 
 All notable decisions, architectural thoughts, rationale, and project actions are recorded in this log.
 
+### Phase 3: P4 Codebase Remediation & Audit Resolution — 05 September 2026
+- **Context & Objectives**:
+  - Full execution of the implementation plan approved by the user following the P4 (`mvp/`) codebase audit.
+  - Rectified audit false positives and permanently fixed all verified critical and high-priority issues.
+- **Key Actions & Architectural Decisions**:
+  1. **False Positive Correction (C-1 & C-2)**:
+     - Investigated Term 2 assignment and drill counts: initial grep looked for `P4AssignmentTask(`, whereas Term 2 utilizes `P4HomeworkTask` typedef alias, containing **29 homework tasks** across all 13 weeks.
+     - Term 2 drills use `P4ClassworkExercise` (39) + `P4InteractiveExercise` (39) = **78 total drills** (6/week). Term 2 curriculum is 100% complete and verified.
+  2. **Runtime Safety & Route Guard (C-4)**:
+     - In `lib/app.dart`, replaced unsafe `as P4Lesson` cast on `/p4_player` with null and type validation (`if (lesson == null || lesson is! P4Lesson)`), gracefully redirecting invalid invocations back to `P4TermSelectScreen`.
+  3. **Multi-Path SFX Candidate Fallback Chain (C-3)**:
+     - In `lib/services/p4_audio_service.dart`, replaced hardcoded `assets/audio/p4_term1/` path with a candidate search chain: `assets/audio/sfx/`, `assets/audio/`, and `assets/audio/p4_term1/`.
+  4. **Removal of 13 Dead Legacy Pre-Phase-3 Files (H-1)**:
+     - Deleted all orphaned, unrouted pre-Phase-3 code and directories:
+       - `lib/data/french_lessons.dart`
+       - `lib/models/lesson.dart`, `lesson_item.dart`, `check_question.dart`
+       - `lib/services/audio_service.dart`
+       - `lib/screens/player/` (`lesson_player_screen.dart` + 4 stale child widgets)
+       - `lib/screens/summary/` (`lesson_summary_screen.dart`)
+       - `lib/screens/menu/` (`lesson_select_screen.dart`)
+       - `lib/screens/intro/` (`intro_screen.dart`)
+  5. **Design System & Palette Alignment (H-2)**:
+     - In `lib/widgets/drills/p4_interactive_drill_engine_widget.dart`, replaced hardcoded Material colors (`Colors.purple`, `Colors.indigo`, `Colors.orange.shade800`, `Colors.teal.shade700`, `Colors.brown`) with brand design tokens (`LHColors.teal`, `LHColors.turquoise`, `LHColors.gold`, `LHColors.charcoal`).
+  6. **Smartboard Touch Target Ergonomics ≥60px (H-6)**:
+     - Player screen top AppBar back button expanded from `padding: all(8)` to `padding: all(16)` (28px icon + 32px padding = 60px touch target).
+     - Drill engine word bank chips enforced to `minHeight: 60px` with 16px vertical padding.
+     - Drill option rows enforced to `minHeight: 62px` with 18px vertical padding.
+     - Pair-match option cards enforced to `minHeight: 56px` with 16px vertical padding.
+  7. **Warning Resolutions (H-4, H-5)**:
+     - In `lib/screens/onboarding/onboarding_screen.dart`, fixed `catchError` handler to explicitly return `null` matching `Future<Duration?>`.
+     - In `lib/screens/splash/splash_screen.dart`, removed unused `shared_preferences` import.
+     - Static analysis warnings dropped from 2 to **0**.
+  8. **Pattern Routing Strategy Documentation & Assert Guard (H-7)**:
+     - Documented the dual routing design in `p4_lesson_player_screen.dart`: Term 1 routes via `P4PatternType` enum, while Terms 2 & 3 route via curriculum week integers (1..13).
+     - Added runtime assertion ensuring `widget.lesson.week >= 1 && widget.lesson.week <= 13`.
+  9. **Bulk Migration of `withOpacity` to `withValues(alpha:)` (H-3)**:
+     - Bulk migrated all 153 remaining `.withOpacity(...)` calls across all 26 active Dart files in `lib/` to modern Flutter `withValues(alpha: ...)`. Zero deprecated calls remain.
+- **Verification & Testing Results**:
+  - `flutter analyze --no-pub`: **0 errors, 0 warnings**, 967 infos (purely `prefer_const_constructors` in data files).
+  - `flutter test`: **6/6 tests passed** (4/4 curriculum data tests + 2/2 onboarding & splash flow widget tests).
+
+### Phase 3: P4 Extensive Codebase Audit — 05 September 2026
+- **Action**: Full audit of the Primary 4 (`mvp/`) codebase generated as `mvp/P4_EXTENSIVE_AUDIT.md`.
+- **Methodology**: Automated (`flutter analyze`, `flutter test`), grep-based content metrics, and manual code review.
+- **Key Findings**:
+  - **Data**: 39 lessons, 195 drills (across 5 modalities), 290 vocab items, 125 teacher Q&A entries. All 4 curriculum data tests pass.
+  - **Critical Gap (C-1, C-2)**: Term 2 has **zero assignment tasks** and only ~3 drills/week (50% of the 6-drill minimum). Requires immediate content remediation.
+  - **Silent Failure (C-3)**: SFX audio is hardcoded to `assets/audio/p4_term1/` path — fails silently for all terms if files are absent.
+  - **Unsafe Cast (C-4)**: `/p4_player` route argument is cast without null guard — will throw `TypeError` at runtime.
+  - **Static Analysis**: 0 errors, 2 warnings, 1172 infos. The 1172 infos are 954 `prefer_const_constructors` + 204 `withOpacity` deprecations + 14 misc.
+  - **Dead Code**: 12+ pre-Phase-3 legacy files (old player, old models, old services) were never removed — structural debt to be cleared before Phase 4.
+  - **Classroom Readiness**: Term 1 and Term 3 are ready. Term 2 is NOT ready until C-1 and C-2 are resolved.
+- **Decisions**:
+  - All Critical issues (C-1 to C-4) flagged as prerequisites for Phase 4 work.
+  - Dead file removal and `withOpacity` bulk migration scheduled as High priority cleanup.
+
+### Phase 3: Comprehensive Teaching Experience Upgrade Across All 5 Classes — 05 September 2026
+- **Scope & Context**:
+  - Systematic operational overhaul of the teaching and learning architecture across all five Lang Huey projects:
+    - Primary 4 (`mvp/`) — 3 Terms (39 weeks)
+    - Primary 5 (`P5_FRENCH/`) — 3 Terms (39 weeks)
+    - JSS 1 (`JSS1_FRENCH/`) — 3 Terms (27 weeks)
+    - JSS 2 (`JSS 2_FRENCH/`) — 3 Terms (27 weeks)
+    - JSS 3 (`JSS 3_FRENCH/`) — 2 Terms (18 weeks)
+- **Key Architectural Decisions & User Requirements Implemented**:
+  1. **App Shell in English (Duolingo Operational Model)**:
+     - Main navigation, Term Selection, Roadmaps, Lesson Player headers, tab bars, bottom navigation controls, and feedback banners converted to English.
+     - French is preserved strictly as the target learning material with parallel English scaffolding, phonetics, and audio playback.
+  2. **No UI for Class Objectives on Student Smartboard**:
+     - Removed the dry, static "Objectives" phase from the student-facing smartboard lesson flow.
+     - Lesson player converted from a 5-phase structure to a streamlined 4-phase learning flow starting immediately on the Learning Lab / Learning Model.
+     - Syllabus pedagogical objectives, cultural insight hooks, and teacher facilitator guidance relocated to an on-demand, non-disruptive **Teacher Guide Drawer** accessible via the AppBar.
+  3. **Abolished Static Evaluation Q&A in Favor of Dynamic Drills**:
+     - Completely removed static Q&A evaluation tabs.
+     - Replaced with a minimum of 6 interactive, gamified drills per lesson across every single week in all terms.
+  4. **Learning Model vs. Interactive Drills Distinction**:
+     - **Phase 1 (Learning Model / Interactive Lab)**: Introduces the core concepts using topic-tailored pedagogy (`TeachingStyle.storyNarrative`, `TeachingStyle.dialogueConversation`, `TeachingStyle.interactiveStudio`, or `TeachingStyle.phoneticSoundboard`).
+     - **Phase 3 (Practice Drills)**: Actively reinforces and verifies comprehension through interactive modalities.
+  5. **Polymorphic Multi-Modal Drill Engines Built for Smartboards**:
+     - Created class-specific interactive drill engines (`P4InteractiveDrillEngineWidget`, `P5InteractiveDrillEngineWidget`, `JSS1InteractiveDrillEngineWidget`, `JSS2InteractiveDrillEngineWidget`, `JSS3InteractiveDrillEngineWidget`).
+     - Supported drill modalities:
+       - *Multiple Choice / Single Choice*: Immediate feedback with color-coded answer validation.
+       - *Match the Pairs*: French-to-English tactile chip matching with visual pairing lines and chime feedback.
+       - *Fill in the Gap*: Sentence with masked word slot and word bank chips.
+       - *True or False*: Rapid rule and cultural comprehension verification.
+       - *Tap Translation*: Target French phrase identification in English.
+     - Built with 60px+ touch targets optimized for classroom smartboards, native sound effects (`sfx_click`, `sfx_correct`, `sfx_incorrect`, `sfx_celebrate`), real-time scoring, and animated completion dialogs.
+- **Verification & Testing Results (100% Pass Rate Across All 5 Projects)**:
+  - **Primary 4 (`mvp/`)**: 6/6 tests passed (`test/p4_curriculum_data_test.dart` & `test/widget_test.dart`).
+  - **Primary 5 (`P5_FRENCH/`)**: 7/7 tests passed (`test/p5_curriculum_data_test.dart` & `test/p5_splash_onboarding_test.dart`).
+  - **JSS 1 (`JSS1_FRENCH/`)**: 12/12 tests passed (`test/jss1_french_test.dart` & `test/jss1_splash_onboarding_test.dart`).
+  - **JSS 2 (`JSS 2_FRENCH/`)**: 17/17 tests passed (`test/jss2_french_test.dart` & `test/jss2_splash_onboarding_test.dart`).
+  - **JSS 3 (`JSS 3_FRENCH/`)**: 19/19 tests passed (`test/jss3_french_test.dart`, `test/jss3_term2_french_test.dart`, & `test/jss3_splash_onboarding_test.dart`).
+  - **Total verified tests**: 61 automated tests passed with 0 errors across the workspace.
+
+---
+
+### Phase 2 MVP Feature Upgrade: Animated Splash Screen & Duolingo-Inspired Classroom Onboarding across All 5 Classes — 05 September 2026
+- **Scope & Context**:
+  - Phase 2 MVP Feature Upgrade requested across all 5 classroom projects: Primary 4 (`mvp/`), Primary 5 (`P5_FRENCH/`), JSS 1 (`JSS1_FRENCH/`), JSS 2 (`JSS 2_FRENCH/`), and JSS 3 (`JSS 3_FRENCH/`).
+  - Implemented 2 core customer-facing features:
+    1. **Animated Splash Screen** based on the official design specification in `logo files/lang-huey-splash-screen.html`.
+    2. **Duolingo-Inspired Classroom Onboarding Experience** introducing the entire class and teacher to the new French learning experience.
+- **Brand & Creative Constraints Strictly Enforced**:
+  - **Mascot Only**: Only Huey's simple mascot head is displayed across splash and onboarding screens (no waving limbs, no student/teacher classroom illustrations).
+  - **No Hardware Jargon**: Avoided technical and marketing buzzwords; no explicit mention of "smartboard" hardware — keeping language natural, welcoming, and inspiring.
+  - **French First**: French text is bold, large, and placed first, followed by clear parallel English guidance below.
+  - **Auto-Playing Neural Speech Cues**: When each onboarding slide slides in, an authentic French audio clip automatically plays using `fr-FR-DeniseNeural` (-4% speed), while Huey's mouth animates in sync.
+  - **Always Skippable & Replayable**: Prominent "Passer / Skip" button on every slide. Returning users automatically bypass onboarding to Term Select, and can replay onboarding anytime via the new "Guide / Kickoff" button in the Term Select header.
+- **Architectural Deliverables**:
+  1. **Neural Audio Production & Asset Pipeline**:
+     - Created `scripts/generate_onboarding_audio.py` to synthesize high-quality 44.1kHz MP3 files:
+       - `onboarding_slide1_bonjour.mp3`: *"Bonjour tout le monde ! Je m'appelle Huey."*
+       - `onboarding_slide2_voix_haute.mp3`: *"Ici, on apprend à voix haute ! Répétez avec fierté !"*
+       - `onboarding_slide3_aventure.mp3`: *"C'est parti ! Prêts pour l'aventure ? Allons-y !"*
+     - Distributed audio assets to `assets/audio/onboarding/` across all 5 projects and registered in all `pubspec.yaml` files.
+  2. **60fps Native Custom-Painted Mascot Head Widget (`LangHueyMascotHeadWidget`)**:
+     - Built `lib/widgets/mascot/lang_huey_mascot_head_widget.dart` in all 5 projects using pure `CustomPainter` with 0 external raster dependencies:
+       - Soft rounded teal head (`#0D7377`) with gentle floating bob animation.
+       - Articulated antenna with harmonic rotation (`-6°` to `+6°`).
+       - Golden star finial (`#F4A832`) with continuous pulse & twinkle (`scale 1.0` to `1.25`).
+       - Expressive blinking eyes with pupil tracking, dark pupils, and twin white specular highlights.
+       - Vibrant coral/rose cheeks with pulsing glow.
+       - Audio-synced talking mouth mechanism with subtle tongue detail.
+  3. **Animated Splash Screen (`AnimatedSplashScreen`)**:
+     - Recreated `lang-huey-splash-screen.html` in Flutter (`lib/screens/splash/animated_splash_screen.dart`):
+       - Radiating animated glow orb (`#14BDCC` / `#0D7377`).
+       - Mascot entrance with overshoot curve (`Curves.easeOutBack`).
+       - Split-color wordmark *"Lang "* (White) + *"Huey"* (`#F4A832` Gold) + class-specific pill badge (`PRIMARY 4 FRENCH`, `JSS 3 FRENCH`, etc.).
+       - Shimmering loading bar and automatic 2.8s timer checking `SharedPreferences` (`has_seen_onboarding`) before routing.
+  4. **3-Step Classroom Onboarding Screen (`OnboardingScreen`)**:
+     - Implemented in `lib/screens/onboarding/onboarding_screen.dart` across all 5 projects:
+       - *Slide 1: L'Introduction*: *"Bonjour tout le monde !"* / *"Hello everyone!"* (Introducing Huey and the interactive French engine).
+       - *Slide 2: La Voix Haute*: *"Ici, on apprend à voix haute !"* / *"Here, we learn out loud!"* (Encouraging collective classroom speaking and confident pronunciation).
+       - *Slide 3: L'Aventure*: *"Prêts pour l'aventure ?"* / *"Ready for the adventure?"* (Call to action to begin learning together).
+       - Progress indicator pills, dual Next/Skip controls, and replayable navigation with `just_audio`.
+  5. **Term Select Screen Upgrades**:
+     - Added "Guide / Kickoff" header button to all 5 Term Select screens (`mvp`, `P5_FRENCH`, `JSS1_FRENCH`, `JSS 2_FRENCH`, `JSS 3_FRENCH`) to allow teachers and students to replay the kickoff guide at any time.
+- **Verification & Zero Regressions**:
+  - Automated tests verified for splash and onboarding across all 5 projects:
+    - Primary 4 (`mvp/`): `test/widget_test.dart` (Passed 100%)
+    - Primary 5 (`P5_FRENCH/`): `test/p5_splash_onboarding_test.dart` (Passed 100%) & `test/p5_curriculum_data_test.dart` (Passed 100%)
+    - JSS 1 (`JSS1_FRENCH/`): `test/jss1_splash_onboarding_test.dart` (Passed 100%) & `test/jss1_french_test.dart` (Passed 100%)
+    - JSS 2 (`JSS 2_FRENCH/`): `test/jss2_splash_onboarding_test.dart` (Passed 100%) & `test/jss2_french_test.dart` (Passed 100%)
+    - JSS 3 (`JSS 3_FRENCH/`): `test/jss3_splash_onboarding_test.dart` (Passed 100%) & `test/jss3_french_test.dart` + `test/jss3_term2_french_test.dart` (Passed 100%)
+
 ---
 
 ### Milestone 6 Progress: Android APK Packaging & USB Distribution (`APK FOLDER/`) — 03 September 2026

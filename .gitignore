@@ -40,6 +40,8 @@ build/
 android/.gradle/
 **/android/.gradle/
 **/android/local.properties
+**/.kotlin/
+**/android/.kotlin/
 
 # Scratch & test media
 test_*.mp3

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/jss1_lesson_model.dart';
 
 class JSS1Term3Lessons {
-  static const List<JSS1Lesson> weeks = [
+  static final List<JSS1Lesson> weeks = [
     // ==========================================
     // SEMAINE 1: Demander et indiquer le temps qu’il fait
     // ==========================================
@@ -12,6 +12,7 @@ class JSS1Term3Lessons {
       topic: "Demander et indiquer le temps qu’il fait",
       subtitle: "Weather expressions, seasons in Nigeria & France, asking and telling about the weather",
       patternType: JSS1PatternType.weatherAndSeasonsStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Demander le temps qu'il fait en utilisant 'Quel temps fait-il ?'",
         "Décrire les conditions météorologiques courantes (Il fait beau, chaud, froid, frais, il pleut)",
@@ -105,6 +106,32 @@ class JSS1Term3Lessons {
           correctOptionIndex: 1,
           explanation: "L'harmattan est le vent sec et poussiéreux caractéristique de la saison sèche au Nigeria.",
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Quel temps fait-il ?', english: 'What is the weather like?'),
+            DrillPair(french: 'Il fait beau / Il fait chaud', english: 'The weather is fine / It is hot'),
+            DrillPair(french: 'Il fait froid / Il fait frais', english: 'It is cold / It is cool'),
+            DrillPair(french: 'Il pleut / Il y a de la pluie', english: 'It is raining / There is rain'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (What is the weather like?):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Quel temps fait-il ?', 'Il fait beau / Il fait chaud', 'Il fait froid / Il fait frais', 'Il pleut / Il y a de la pluie'],
+          correctWord: 'Quel temps fait-il ?',
+          explanation: 'Correct! "Quel temps fait-il ?" translates to "What is the weather like?".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -154,6 +181,7 @@ class JSS1Term3Lessons {
       topic: "Exprimer la fréquence d’une activité",
       subtitle: "Using adverbs of frequency: toujours, souvent, parfois, rarement, jamais",
       patternType: JSS1PatternType.frequencyAdverbsStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Comprendre et mémoriser l'échelle des 5 adverbes de fréquence (100% à 0%)",
         "Positionner correctement l'adverbe de fréquence directement après le verbe conjugué",
@@ -257,6 +285,32 @@ class JSS1Term3Lessons {
           correctOptionIndex: 2,
           explanation: "'Toujours' exprime une action constante à 100%.",
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Toujours', english: 'Always (100% frequency)'),
+            DrillPair(french: 'Souvent', english: 'Often / Frequently (75% frequency)'),
+            DrillPair(french: 'Parfois / Quelquefois', english: 'Sometimes / Occasionally (50% frequency)'),
+            DrillPair(french: 'Rarement', english: 'Rarely / Seldom (20% frequency)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Always (100% frequency)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Toujours', 'Souvent', 'Parfois / Quelquefois', 'Rarement'],
+          correctWord: 'Toujours',
+          explanation: 'Correct! "Toujours" translates to "Always (100% frequency)".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -306,6 +360,7 @@ class JSS1Term3Lessons {
       topic: "Inviter quelqu’un",
       subtitle: "Making, accepting and politely declining invitations with standard French social formulas",
       patternType: JSS1PatternType.invitationsStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         "Proposer une invitation amicale ('Tu veux venir... ?', 'Je t'invite à...')",
         "Accepter chaleureusement une invitation ('Avec grand plaisir !', 'Volontiers !')",
@@ -404,6 +459,32 @@ class JSS1Term3Lessons {
           correctOptionIndex: 0,
           explanation: "'Ça te dit de + infinitif ?' équivaut à 'Do you feel like / Do you want to... ?'.",
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Tu veux venir chez moi ce week-end ?', english: 'Do you want to come to my house this weekend?'),
+            DrillPair(french: 'Oui, avec grand plaisir !', english: 'Yes, with great pleasure!'),
+            DrillPair(french: 'Désolé(e), je ne peux pas, je dois étudier', english: 'Sorry, I cannot, I have to study'),
+            DrillPair(french: 'À quelle heure commence la fête ?', english: 'What time does the party start?'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Do you want to come to my house this weekend?):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Tu veux venir chez moi ce week-end ?', 'Oui, avec grand plaisir !', 'Désolé(e), je ne peux pas, je dois étudier', 'À quelle heure commence la fête ?'],
+          correctWord: 'Tu veux venir chez moi ce week-end ?',
+          explanation: 'Correct! "Tu veux venir chez moi ce week-end ?" translates to "Do you want to come to my house this weekend?".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -453,6 +534,7 @@ class JSS1Term3Lessons {
       topic: "Donner un ordre, interdire, autoriser",
       subtitle: "Commands, prohibition, giving authorization, classroom regulations and public signage",
       patternType: JSS1PatternType.commandsAndProhibitionsStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Donner des consignes et ordres clairs à l'impératif ('Faites attention !', 'Taisez-vous !')",
         "Exprimer des interdictions strictes ('Ne bavardez pas !', 'Il est interdit de...')",
@@ -551,6 +633,32 @@ class JSS1Term3Lessons {
           correctOptionIndex: 1,
           explanation: "'Défense de' signifie qu'il est rigoureusement défendu de faire l'action.",
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Faites attention et écoutez !', english: 'Pay attention and listen!'),
+            DrillPair(french: 'Taisez-vous et faites silence !', english: 'Be quiet and keep silent!'),
+            DrillPair(french: 'Ne bavardez pas pendant le cours !', english: 'Do not chat during the lesson!'),
+            DrillPair(french: 'Il est strictement interdit de tricher', english: 'It is strictly forbidden to cheat'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Pay attention and listen!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Faites attention et écoutez !', 'Taisez-vous et faites silence !', 'Ne bavardez pas pendant le cours !', 'Il est strictement interdit de tricher'],
+          correctWord: 'Faites attention et écoutez !',
+          explanation: 'Correct! "Faites attention et écoutez !" translates to "Pay attention and listen!".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -600,6 +708,7 @@ class JSS1Term3Lessons {
       topic: "Demander la permission, conseiller",
       subtitle: "Asking for permission, giving helpful advice and study tips using polite conditional and modal formulas",
       patternType: JSS1PatternType.permissionAndAdviceStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         "Demander poliment la permission ('Puis-je... ?', 'Est-ce que je peux... ?', 'Permettez-moi de...')",
         "Donner des conseils bienveillants pour réussir ses études ('Tu devrais...', 'Il faut...')",
@@ -693,6 +802,32 @@ class JSS1Term3Lessons {
           correctOptionIndex: 0,
           explanation: "'Permettez-moi de' demande solennellement la permission.",
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Puis-je emprunter votre dictionnaire ?', english: 'May I borrow your dictionary, Sir/Madam?'),
+            DrillPair(french: 'Est-ce que je peux poser une question ?', english: 'Can I ask a question?'),
+            DrillPair(french: 'Oui, bien sûr, vas-y !', english: 'Yes, of course, go ahead!'),
+            DrillPair(french: 'Tu devrais réviser tes leçons chaque soir', english: 'You should review your lessons every evening'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (May I borrow your dictionary, Sir/Madam?):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Puis-je emprunter votre dictionnaire ?', 'Est-ce que je peux poser une question ?', 'Oui, bien sûr, vas-y !', 'Tu devrais réviser tes leçons chaque soir'],
+          correctWord: 'Puis-je emprunter votre dictionnaire ?',
+          explanation: 'Correct! "Puis-je emprunter votre dictionnaire ?" translates to "May I borrow your dictionary, Sir/Madam?".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -742,6 +877,7 @@ class JSS1Term3Lessons {
       topic: "Expliquer une démarche à quelqu’un",
       subtitle: "Giving directions, navigating urban routes and explaining step-by-step procedures",
       patternType: JSS1PatternType.directionsAndProceduresStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         "Indiquer précisément un itinéraire dans la ville ('Allez tout droit', 'Tournez à droite / à gauche')",
         "Situer des bâtiments publics à l'aide de prépositions de lieu ('en face de', 'à côté de', 'au carrefour')",
@@ -845,6 +981,32 @@ class JSS1Term3Lessons {
           correctOptionIndex: 1,
           explanation: "'En face de' indique une position directement opposée et visible en face.",
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Pardon Monsieur, où se trouve la bibliothèque ?', english: 'Excuse me Sir, where is the library located?'),
+            DrillPair(french: 'Allez tout droit sur deux cents mètres', english: 'Go straight ahead for two hundred meters'),
+            DrillPair(french: 'Tournez à droite / Tournez à gauche', english: 'Turn right / Turn left'),
+            DrillPair(french: 'Prenez la deuxième rue à droite', english: 'Take the second street on the right'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Excuse me Sir, where is the library located?):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Pardon Monsieur, où se trouve la bibliothèque ?', 'Allez tout droit sur deux cents mètres', 'Tournez à droite / Tournez à gauche', 'Prenez la deuxième rue à droite'],
+          correctWord: 'Pardon Monsieur, où se trouve la bibliothèque ?',
+          explanation: 'Correct! "Pardon Monsieur, où se trouve la bibliothèque ?" translates to "Excuse me Sir, where is the library located?".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -894,6 +1056,7 @@ class JSS1Term3Lessons {
       topic: "Révision des Fonctions Communicatives",
       subtitle: "Integrating learned communicative patterns in dialogues, sketches and realistic role plays across real-life contexts",
       patternType: JSS1PatternType.communicativeRoleplayStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         "Réactiver et intégrer l'ensemble des fonctions communicatives apprises durant l'année",
         "Jouer des saynètes et sketchs réalistes (Au marché, À l'infirmerie, À l'accueil, Invitations)",
@@ -997,6 +1160,32 @@ class JSS1Term3Lessons {
           correctOptionIndex: 1,
           explanation: "'C'est une excellente idée !' valide une sortie avec plaisir.",
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Bonjour Madame, combien coûte ce cahier ?', english: 'Hello Madam, how much does this notebook cost?'),
+            DrillPair(french: 'Bonjour ! Ça coûte cinq cents nairas', english: 'Hello! It costs five hundred nairas'),
+            DrillPair(french: 'Prenez ce médicament et reposez-vous', english: 'Take this medicine and get some rest'),
+            DrillPair(french: 'Pardon Monsieur, puis-je parler au délégué ?', english: 'Excuse me Sir, may I speak with the class prefect?'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Hello Madam, how much does this notebook cost?):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Bonjour Madame, combien coûte ce cahier ?', 'Bonjour ! Ça coûte cinq cents nairas', 'Prenez ce médicament et reposez-vous', 'Pardon Monsieur, puis-je parler au délégué ?'],
+          correctWord: 'Bonjour Madame, combien coûte ce cahier ?',
+          explanation: 'Correct! "Bonjour Madame, combien coûte ce cahier ?" translates to "Hello Madam, how much does this notebook cost?".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -1046,6 +1235,7 @@ class JSS1Term3Lessons {
       topic: "Pratique de l'expression écrite et orale (BECE)",
       subtitle: "Guided composition, listening comprehension, spelling & dictation clinic and BECE / Junior WAEC exam drills",
       patternType: JSS1PatternType.writtenOralWorkshopStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Rédiger un paragraphe suivi et cohérent de présentation personnelle et de description (Autoportrait en 6 phrases)",
         "Maîtriser l'orthographe lexicale, les accents français (aigu, grave, circonflexe, cédille, tréma) et les accords de base",
@@ -1149,6 +1339,32 @@ class JSS1Term3Lessons {
           correctOptionIndex: 0,
           explanation: "'Je voudrais devenir + profession' exprime élégamment l'aspiration future.",
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'La rédaction et la composition écrite', english: 'Essay writing and written composition'),
+            DrillPair(french: 'La compréhension orale et auditive', english: 'Listening comprehension'),
+            DrillPair(french: 'Choisissez la bonne réponse parmi les options', english: 'Choose the correct answer among the options'),
+            DrillPair(french: 'Complétez le texte à trous avec les mots justes', english: 'Fill in the blanks with the correct words'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Essay writing and written composition):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['La rédaction et la composition écrite', 'La compréhension orale et auditive', 'Choisissez la bonne réponse parmi les options', 'Complétez le texte à trous avec les mots justes'],
+          correctWord: 'La rédaction et la composition écrite',
+          explanation: 'Correct! "La rédaction et la composition écrite" translates to "Essay writing and written composition".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -1198,6 +1414,7 @@ class JSS1Term3Lessons {
       topic: "Grand Bilan Annuel & Remise des Diplômes JSS1",
       subtitle: "Comprehensive 4-team all-year championship quiz rally and official JSS1 French graduation diploma ceremony",
       patternType: JSS1PatternType.term3AnnualGrandRally,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Passer en revue et célébrer l'ensemble des connaissances acquises durant les 3 trimestres de JSS1",
         "Participer avec dynamisme au Grand Rallye des 4 Équipes (Bleue, Verte, Or, Rouge)",
@@ -1300,6 +1517,32 @@ class JSS1Term3Lessons {
           ],
           correctOptionIndex: 0,
           explanation: "'Pardon Monsieur, où se trouve... ?' est la formule de politesse idéale pour s'orienter.",
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Grand Rallye Annuel des Champions de Français JSS1', english: 'Grand Annual French Champions Rally JSS1'),
+            DrillPair(french: 'Station 1 : Les bases du premier trimestre', english: 'Station 1: Foundations of Term 1'),
+            DrillPair(french: 'Station 2 : Le deuxième trimestre en action', english: 'Station 2: Term 2 in Action'),
+            DrillPair(french: 'Station 3 : La maîtrise du troisième trimestre', english: 'Station 3: Mastery of Term 3'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Grand Annual French Champions Rally JSS1):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Grand Rallye Annuel des Champions de Français JSS1', 'Station 1 : Les bases du premier trimestre', 'Station 2 : Le deuxième trimestre en action', 'Station 3 : La maîtrise du troisième trimestre'],
+          correctWord: 'Grand Rallye Annuel des Champions de Français JSS1',
+          explanation: 'Correct! "Grand Rallye Annuel des Champions de Français JSS1" translates to "Grand Annual French Champions Rally JSS1".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
         ),
       ],
       evaluationQuestions: [

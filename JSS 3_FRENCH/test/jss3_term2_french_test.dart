@@ -80,14 +80,23 @@ void main() {
       for (final lesson in JSS3Term2Lessons.weeks) {
         expect(
           lesson.exercises.length,
-          greaterThanOrEqualTo(4),
-          reason: 'Week ${lesson.weekNumber} must have >= 4 exercises',
+          greaterThanOrEqualTo(6),
+          reason: 'Week ${lesson.weekNumber} must have >= 6 exercises',
         );
         for (final ex in lesson.exercises) {
           expect(ex.prompt.trim().isNotEmpty, isTrue);
-          expect(ex.options.length, greaterThanOrEqualTo(3));
-          expect(ex.correctOptionIndex, greaterThanOrEqualTo(0));
-          expect(ex.correctOptionIndex, lessThan(ex.options.length));
+          if (ex.type == DrillType.singleChoice || ex.type == DrillType.trueFalse || ex.type == DrillType.tapTranslation) {
+            expect(ex.options.length, greaterThanOrEqualTo(2));
+            expect(ex.correctOptionIndex, greaterThanOrEqualTo(0));
+            expect(ex.correctOptionIndex, lessThan(ex.options.length));
+          } else if (ex.type == DrillType.pairMatch) {
+            expect(ex.pairs, isNotNull);
+            expect(ex.pairs!.length, greaterThanOrEqualTo(2));
+          } else if (ex.type == DrillType.fillGap) {
+            expect(ex.wordBank, isNotNull);
+            expect(ex.wordBank!.length, greaterThanOrEqualTo(2));
+            expect(ex.correctGapWord, isNotNull);
+          }
           expect(ex.explanation.trim().isNotEmpty, isTrue);
         }
       }

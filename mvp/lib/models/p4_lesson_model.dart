@@ -37,18 +37,50 @@ class P4VocabItem {
   });
 }
 
+enum TeachingStyle {
+  storyNarrative,
+  dialogueConversation,
+  interactiveStudio,
+  phoneticSoundboard,
+}
+
+enum DrillType {
+  singleChoice,
+  pairMatch,
+  fillGap,
+  trueFalse,
+  tapTranslation,
+}
+
+class DrillPair {
+  final String french;
+  final String english;
+
+  const DrillPair({required this.french, required this.english});
+}
+
 /// An interactive smartboard exercise/drill for classwork
 class P4InteractiveExercise {
   final String prompt;
+  final DrillType type;
   final List<String> options;
   final int correctOptionIndex;
   final String explanation;
+  final List<DrillPair>? pairs;
+  final List<String>? wordBank;
+  final String? sentenceWithGap;
+  final String? correctGapWord;
 
   const P4InteractiveExercise({
     required this.prompt,
-    required this.options,
-    required this.correctOptionIndex,
+    this.type = DrillType.singleChoice,
+    this.options = const [],
+    this.correctOptionIndex = 0,
     required this.explanation,
+    this.pairs,
+    this.wordBank,
+    this.sentenceWithGap,
+    this.correctGapWord,
   });
 }
 
@@ -114,6 +146,7 @@ class P4Lesson {
   String get title => topic;
   String get theme => subtitle;
   final P4PatternType patternType;
+  final TeachingStyle teachingStyle;
   final List<String> objectives;
   final String culturalInsight;
   final List<P4VocabItem> vocabItems;
@@ -130,6 +163,7 @@ class P4Lesson {
     required this.topic,
     required this.subtitle,
     required this.patternType,
+    this.teachingStyle = TeachingStyle.interactiveStudio,
     required this.objectives,
     required this.culturalInsight,
     required this.vocabItems,

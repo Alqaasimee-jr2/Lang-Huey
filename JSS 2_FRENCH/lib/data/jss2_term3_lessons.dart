@@ -5,7 +5,7 @@ import '../models/jss2_lesson_model.dart';
 /// 9 High-Impact Instructional & Revision Weeks
 /// Nigerian NERDC Curriculum — Scheme of Work Aligned
 class JSS2Term3Lessons {
-  static const List<JSS2LessonModel> weeks = [
+  static final List<JSS2LessonModel> weeks = [
     // ─────────────────────────────────────────────────────
     // WEEK 1 — Unité 17: Opérations de calcul simple
     // ─────────────────────────────────────────────────────
@@ -26,6 +26,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'In Francophone West Africa (Côte d\'Ivoire, Bénin, Sénégal), arithmetic lessons in primary and JSS are often conducted entirely in French. Knowing numbers and operations fluently is essential for market transactions, taxi fares, and school exams. The word "calcul" (calculation) is used daily in Nigerian Francophone schools.',
       patternType: JSS2PatternType.mathCalculationsStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'l\'addition',
@@ -117,6 +118,25 @@ class JSS2Term3Lessons {
           correctOptionIndex: 2,
           explanation: '"La soustraction" means subtraction. Dix moins quatre font six.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'l\'addition', english: 'addition'),
+            DrillPair(french: 'la soustraction', english: 'subtraction'),
+            DrillPair(french: 'la multiplication', english: 'multiplication'),
+            DrillPair(french: 'la division', english: 'division'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (addition):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['l\'addition', 'la soustraction', 'la multiplication', 'la division'],
+          correctWord: 'l\'addition',
+          explanation: 'Correct! "l\'addition" translates to "addition".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -181,6 +201,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'West African Francophone cuisine blends beautifully with French cooking traditions. Dishes like "le riz au gras" (jollof rice), "la sauce gombo" (okra soup), and "l\'attiéké" (cassava couscous) are commonly discussed in French lessons across Nigeria and West Africa. French pupils learn about "les crêpes", "la baguette", and "le fromage". JSS2 lessons bridge both worlds.',
       patternType: JSS2PatternType.foodAndDrinksStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       vocabulary: [
         JSS2VocabItem(
           french: 'le petit-déjeuner',
@@ -272,6 +293,25 @@ class JSS2Term3Lessons {
           correctOptionIndex: 2,
           explanation: '"Eau" starts with a vowel → de l\'eau.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'le petit-déjeuner', english: 'breakfast'),
+            DrillPair(french: 'le déjeuner', english: 'lunch'),
+            DrillPair(french: 'le dîner', english: 'dinner / supper'),
+            DrillPair(french: 'le riz / le pain', english: 'rice / bread'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (breakfast):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['le petit-déjeuner', 'le déjeuner', 'le dîner', 'le riz / le pain'],
+          correctWord: 'le petit-déjeuner',
+          explanation: 'Correct! "le petit-déjeuner" translates to "breakfast".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -336,6 +376,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'French cuisine is UNESCO-listed as intangible cultural heritage. In West Africa, recipes are increasingly written in French — from "la sauce arachide" (groundnut soup) to "le foufou" preparation. This unit bridges Nigerian and French culinary traditions.',
       patternType: JSS2PatternType.cookingRecipesStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       vocabulary: [
         JSS2VocabItem(
           french: 'couper / trancher',
@@ -427,6 +468,25 @@ class JSS2Term3Lessons {
           correctOptionIndex: 0,
           explanation: '"Faites frire dans une poêle." A frying pan (poêle) is used for frying.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'couper / trancher', english: 'to cut / to slice'),
+            DrillPair(french: 'mélanger / remuer', english: 'to mix / to stir'),
+            DrillPair(french: 'faire cuire / faire frire', english: 'to cook / to fry'),
+            DrillPair(french: 'ajouter / verser', english: 'to add / to pour'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (to cut / to slice):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['couper / trancher', 'mélanger / remuer', 'faire cuire / faire frire', 'ajouter / verser'],
+          correctWord: 'couper / trancher',
+          explanation: 'Correct! "couper / trancher" translates to "to cut / to slice".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -491,6 +551,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'French dining etiquette is a cultural institution: asking for "l\'addition" (the bill), saying "Bon appétit !" before eating, keeping hands (not elbows) on the table. In Francophone West African restaurants, these French protocols mix with local customs. Tipping (le pourboire) is appreciated but not mandatory.',
       patternType: JSS2PatternType.restaurantCafeStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       vocabulary: [
         JSS2VocabItem(
           french: 'Je voudrais réserver une table',
@@ -587,6 +648,25 @@ class JSS2Term3Lessons {
           correctOptionIndex: 0,
           explanation: 'Classic French meal order: Entrée → Plat principal → Dessert.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Je voudrais réserver une table', english: 'I would like to book a table'),
+            DrillPair(french: 'la carte / le menu', english: 'the à la carte menu / set menu'),
+            DrillPair(french: 'Je prends / Je voudrais', english: 'I'),
+            DrillPair(french: 'Ça coûte combien ? / C\'est combien ?', english: 'How much does it cost?'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (I would like to book a table):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Je voudrais réserver une table', 'la carte / le menu', 'Je prends / Je voudrais', 'Ça coûte combien ? / C\'est combien ?'],
+          correctWord: 'Je voudrais réserver une table',
+          explanation: 'Correct! "Je voudrais réserver une table" translates to "I would like to book a table".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -651,6 +731,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'Role-play (jeux de rôle) is a cornerstone of communicative language teaching, rooted in the "méthode directe". Nigerian JSS French classrooms increasingly adopt this method to move beyond rote learning. Real-world scenario practice prepares pupils for BECE/JSCE oral examinations and real-life travel to Francophone countries.',
       patternType: JSS2PatternType.integratedRolePlayStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       vocabulary: [
         JSS2VocabItem(
           french: 'Excusez-moi, pourriez-vous…',
@@ -762,6 +843,25 @@ class JSS2Term3Lessons {
           correctOptionIndex: 0,
           explanation: 'After a meal, compliment the food and ask for the bill.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Excusez-moi, pourriez-vous…', english: 'Excuse me, could you…'),
+            DrillPair(french: 'Je voudrais… / J\'ai besoin de…', english: 'I would like… / I need…'),
+            DrillPair(french: 'Quel est le prix de… / Ça coûte combien ?', english: 'What is the price of… / How much?'),
+            DrillPair(french: 'Où se trouve… / Comment aller à… ?', english: 'Where is… / How do I get to…?'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Excuse me, could you…):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Excusez-moi, pourriez-vous…', 'Je voudrais… / J\'ai besoin de…', 'Quel est le prix de… / Ça coûte combien ?', 'Où se trouve… / Comment aller à… ?'],
+          correctWord: 'Excusez-moi, pourriez-vous…',
+          explanation: 'Correct! "Excusez-moi, pourriez-vous…" translates to "Excuse me, could you…".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -826,6 +926,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'Consolidation weeks (semaines de révision) are built into the French academic calendar before major examinations (baccalauréat, brevet). Nigerian JSS pupils benefit from this structured approach — reviewing, recycling, and reinforcing before their BECE/JSCE assessments.',
       patternType: JSS2PatternType.consolidationExercisesStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'Réviser / consolider',
@@ -917,6 +1018,25 @@ class JSS2Term3Lessons {
           correctOptionIndex: 0,
           explanation: '"L\'addition" = the bill.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Réviser / consolider', english: 'to revise / to consolidate'),
+            DrillPair(french: 'les opérations', english: 'the operations'),
+            DrillPair(french: 'le repas / la recette', english: 'the meal / the recipe'),
+            DrillPair(french: 'commander / payer', english: 'to order / to pay'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (to revise / to consolidate):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Réviser / consolider', 'les opérations', 'le repas / la recette', 'commander / payer'],
+          correctWord: 'Réviser / consolider',
+          explanation: 'Correct! "Réviser / consolider" translates to "to revise / to consolidate".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -980,6 +1100,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'The BECE oral component in Nigeria tests real communicative competence. French examiners look for: natural flow, appropriate vocabulary, self-correction, and cultural awareness. In France, the "contrôle continu" (continuous assessment) means every oral interaction counts. Confidence in spoken French is a lifelong skill.',
       patternType: JSS2PatternType.guidedConversationsStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       vocabulary: [
         JSS2VocabItem(
           french: 'la prononciation',
@@ -1071,6 +1192,25 @@ class JSS2Term3Lessons {
           correctOptionIndex: 0,
           explanation: 'Yes/no questions in French typically have a rising intonation.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'la prononciation', english: 'pronunciation'),
+            DrillPair(french: 'la liaison', english: 'liaison (linking sounds)'),
+            DrillPair(french: 'Pardon ? / Comment ?', english: 'Pardon? / What? (didn'),
+            DrillPair(french: 'Oui, exactement / Tout à fait', english: 'Yes, exactly / Absolutely'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (pronunciation):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['la prononciation', 'la liaison', 'Pardon ? / Comment ?', 'Oui, exactement / Tout à fait'],
+          correctWord: 'la prononciation',
+          explanation: 'Correct! "la prononciation" translates to "pronunciation".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -1135,6 +1275,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'The BECE in Nigeria is the gateway examination at the end of JSS3. French is a core subject testing: reading comprehension, vocabulary, grammar, guided composition, and listening/oral. Preparation at JSS2 builds the foundation. Understanding the exam format is as important as knowing the language.',
       patternType: JSS2PatternType.examPrepStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: "l'examen / le brevet",
@@ -1226,6 +1367,25 @@ class JSS2Term3Lessons {
           correctOptionIndex: 0,
           explanation: '"Souligner" = to underline. Find and underline adjectives.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'la compréhension écrite', english: 'reading comprehension'),
+            DrillPair(french: 'souligner / encercler / relier', english: 'to underline / to circle / to match'),
+            DrillPair(french: 'Lisez attentivement', english: 'Read carefully'),
+            DrillPair(french: 'complétez / transformez', english: 'complete / transform'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (reading comprehension):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['la compréhension écrite', 'souligner / encercler / relier', 'Lisez attentivement', 'complétez / transformez'],
+          correctWord: 'la compréhension écrite',
+          explanation: 'Correct! "la compréhension écrite" translates to "reading comprehension".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -1290,6 +1450,7 @@ class JSS2Term3Lessons {
       culturalInsight:
           'End-of-year celebrations (fêtes de fin d\'année) are deeply embedded in French culture — from school prize-giving ceremonies (remise des prix) to theatrical performances. In Francophone West Africa, the "fête scolaire" marks the end of the academic year with songs, dances, and awards.',
       patternType: JSS2PatternType.term3RevisionRally,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'Félicitations ! Bravo !',
@@ -1380,6 +1541,25 @@ class JSS2Term3Lessons {
           options: ['vingt-huit', 'vingt-six', 'trente', 'vingt-quatre'],
           correctOptionIndex: 0,
           explanation: '16 + 12 = 28 = vingt-huit.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Félicitations ! Bravo !', english: 'Congratulations! / Well done!'),
+            DrillPair(french: 'le champion / la championne', english: 'the champion (m/f)'),
+            DrillPair(french: 'le podium / le trophée', english: 'the podium / the trophy'),
+            DrillPair(french: 'le score / les points', english: 'the score / the points'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Congratulations! / Well done!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Félicitations ! Bravo !', 'le champion / la championne', 'le podium / le trophée', 'le score / les points'],
+          correctWord: 'Félicitations ! Bravo !',
+          explanation: 'Correct! "Félicitations ! Bravo !" translates to "Congratulations! / Well done!".',
         ),
       ],
       evaluation: [

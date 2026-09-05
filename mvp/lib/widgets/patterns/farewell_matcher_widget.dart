@@ -75,7 +75,7 @@ class _FarewellMatcherWidgetState extends State<FarewellMatcherWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +127,7 @@ class _FarewellMatcherWidgetState extends State<FarewellMatcherWidget> {
                       final isSelected = index == _selectedSituationIndex;
 
                       return Material(
-                        color: isSelected ? LHColors.teal : LHColors.cream.withOpacity(0.5),
+                        color: isSelected ? LHColors.teal : LHColors.cream.withValues(alpha: 0.5),
                         borderRadius: BorderRadius.circular(18),
                         elevation: isSelected ? 4 : 0,
                         child: InkWell(
@@ -159,7 +159,7 @@ class _FarewellMatcherWidgetState extends State<FarewellMatcherWidget> {
                                       ),
                                       Text(
                                         item['time'] as String,
-                                        style: LHText.body(isSelected ? LHColors.white.withOpacity(0.85) : LHColors.grey).copyWith(
+                                        style: LHText.body(isSelected ? LHColors.white.withValues(alpha: 0.85) : LHColors.grey).copyWith(
                                           fontSize: 13,
                                         ),
                                       ),
@@ -189,7 +189,7 @@ class _FarewellMatcherWidgetState extends State<FarewellMatcherWidget> {
                     decoration: BoxDecoration(
                       color: LHColors.cream,
                       borderRadius: BorderRadius.circular(22),
-                      border: Border.all(color: LHColors.gold.withOpacity(0.5), width: 2),
+                      border: Border.all(color: LHColors.gold.withValues(alpha: 0.5), width: 2),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -242,7 +242,7 @@ class _FarewellMatcherWidgetState extends State<FarewellMatcherWidget> {
                           decoration: BoxDecoration(
                             color: LHColors.white,
                             borderRadius: BorderRadius.circular(14),
-                            border: Border.all(color: LHColors.turquoise.withOpacity(0.4)),
+                            border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.4)),
                           ),
                           child: Text(
                             'Classroom Context: ${selected['tip']}',

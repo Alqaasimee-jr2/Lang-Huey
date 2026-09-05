@@ -88,7 +88,7 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Row(
         children: [
@@ -180,7 +180,7 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: LHColors.teal.withOpacity(0.08),
+                    color: LHColors.teal.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -205,7 +205,7 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
                 border: Border.all(color: LHColors.teal, width: 3),
                 boxShadow: [
                   BoxShadow(
-                    color: LHColors.charcoal.withOpacity(0.12),
+                    color: LHColors.charcoal.withValues(alpha: 0.12),
                     blurRadius: 16,
                     offset: const Offset(0, 4),
                   ),
@@ -246,7 +246,7 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
                         decoration: BoxDecoration(
                           color: LHColors.white,
                           borderRadius: BorderRadius.circular(14),
-                          border: Border.all(color: LHColors.teal.withOpacity(0.4), width: 2),
+                          border: Border.all(color: LHColors.teal.withValues(alpha: 0.4), width: 2),
                         ),
                         child: Center(
                           child: Icon(
@@ -332,7 +332,7 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -447,7 +447,7 @@ class _IdCardWorkshopWidgetState extends State<IdCardWorkshopWidget> {
           Container(
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: LHColors.teal.withOpacity(0.08),
+              color: LHColors.teal.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Row(

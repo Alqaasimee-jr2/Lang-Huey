@@ -50,7 +50,7 @@ class P5WeekRoadmapScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'PRIMARY 5 FRENCH • TRIMESTRE $termNumber ROADMAP',
+                              'PRIMARY 5 FRENCH • TERM $termNumber ROADMAP',
                               style: P5Text.caption(P5Colors.turquoise).copyWith(
                                 fontWeight: FontWeight.w800,
                                 letterSpacing: 1.1,
@@ -142,7 +142,7 @@ class P5WeekRoadmapScreen extends StatelessWidget {
                               Icon(Icons.record_voice_over_rounded, size: 16, color: P5Colors.teal.withOpacity(0.6)),
                               const SizedBox(width: 4),
                               Text(
-                                '${lesson.vocabItems.length} phrases',
+                                '${lesson.vocabItems.length} words',
                                 style: P5Text.caption(P5Colors.charcoal).copyWith(fontSize: 11, fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -170,7 +170,7 @@ class P5WeekRoadmapScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${lesson.classworkExercises.length} Drills • ${lesson.evaluationQuestions.length} Q&A',
+                            '${lesson.classworkExercises.length} Practice Drills',
                             style: P5Text.caption(P5Colors.teal).copyWith(fontWeight: FontWeight.w700, fontSize: 11),
                           ),
                           const CircleAvatar(

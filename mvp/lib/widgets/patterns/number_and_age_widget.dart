@@ -108,7 +108,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Row(
         children: [
@@ -129,7 +129,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
                 final isSelected = digit == _selectedNumber;
 
                 return Material(
-                  color: isSelected ? LHColors.teal : LHColors.cream.withOpacity(0.6),
+                  color: isSelected ? LHColors.teal : LHColors.cream.withValues(alpha: 0.6),
                   borderRadius: BorderRadius.circular(16),
                   elevation: isSelected ? 4 : 0,
                   child: InkWell(
@@ -175,7 +175,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
               decoration: BoxDecoration(
                 color: LHColors.cream,
                 borderRadius: BorderRadius.circular(22),
-                border: Border.all(color: LHColors.gold.withOpacity(0.6), width: 2),
+                border: Border.all(color: LHColors.gold.withValues(alpha: 0.6), width: 2),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -222,7 +222,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
                         decoration: BoxDecoration(
                           color: LHColors.white,
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: LHColors.teal.withOpacity(0.3)),
+                          border: Border.all(color: LHColors.teal.withValues(alpha: 0.3)),
                         ),
                         child: Text(
                           'Pronunciation: [ ${currentItem['sound']} ]',
@@ -279,7 +279,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Row(
         children: [
@@ -401,7 +401,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: LHColors.teal.withOpacity(0.08),
+                    color: LHColors.teal.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -423,7 +423,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
               decoration: BoxDecoration(
                 color: LHColors.cream,
                 borderRadius: BorderRadius.circular(22),
-                border: Border.all(color: LHColors.teal.withOpacity(0.4), width: 2),
+                border: Border.all(color: LHColors.teal.withValues(alpha: 0.4), width: 2),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -460,7 +460,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
                     decoration: BoxDecoration(
                       color: LHColors.white,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: LHColors.turquoise.withOpacity(0.4)),
+                      border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.4)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -488,7 +488,7 @@ class _NumberAndAgeWidgetState extends State<NumberAndAgeWidget> {
                     decoration: BoxDecoration(
                       color: LHColors.white,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: LHColors.gold.withOpacity(0.5)),
+                      border: Border.all(color: LHColors.gold.withValues(alpha: 0.5)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,10 +1,3 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,41 +6,89 @@ import 'package:lang_huey/app.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Lang Huey smoke test loads splash screen and navigates', (WidgetTester tester) async {
-    tester.view.physicalSize = const Size(1280, 800);
+  testWidgets('Splash screen loads and navigates to Onboarding on first launch', (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(1920, 1080);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(() => tester.view.resetPhysicalSize());
 
-    SharedPreferences.setMockInitialValues({'intro_seen': true});
+    // First time launch: onboarding not completed
+    SharedPreferences.setMockInitialValues({});
 
-    // Build our app
     await tester.pumpWidget(const LangHueyApp());
 
-    // Verify splash screen renders title
-    expect(find.text('Lang Huey'), findsWidgets);
+    // Verify splash screen renders title and edition badge
+    expect(find.text('Lang Huey', findRichText: true), findsWidgets);
+    expect(find.text('PRIMARY 4 FRENCH'), findsOneWidget);
 
-    // Fast-forward animation & timer
-    await tester.pumpAndSettle(const Duration(seconds: 4));
+    // Fast-forward past splash timer (2.8s)
+    await tester.pump(const Duration(milliseconds: 3000));
+    await tester.pump(const Duration(milliseconds: 500)); // route transition
 
-    // Verify navigation reached lesson menu
-    expect(find.text('Select a Lesson to Begin'), findsOneWidget);
+    // Should navigate to Onboarding screen (Slide 1)
+    expect(find.text('Bonjour tout le monde !'), findsOneWidget);
+    expect(find.text('Hello everyone!'), findsOneWidget);
 
-    // Tap the first lesson to open player
-    await tester.tap(find.text('Les expressions de salutation (Greetings)'));
-    await tester.pumpAndSettle();
+    // Tap Next to go to Slide 2
+    await tester.tap(find.text('Continuer / Next →'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 600));
+    await tester.pump();
 
-    // Verify player opens directly on first vocabulary item (Bonjour)
-    expect(find.text('Bonjour'), findsOneWidget);
-    expect(find.text('Good morning / Hello'), findsOneWidget);
+    // Verify Slide 2 content
+    expect(find.text('Ici, on apprend à voix haute !'), findsOneWidget);
+    expect(find.text('Here, we learn out loud!'), findsOneWidget);
 
-    // Verify Teacher Cue bar is NOT present
-    expect(find.text('TEACHER CUE'), findsNothing);
+    // Tap Skip button
+    await tester.tap(find.text('Passer / Skip'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 600));
+    await tester.pump();
 
-    // Tap Next
-    await tester.tap(find.text('NEXT ▶'));
-    await tester.pumpAndSettle();
+    // Should arrive at P4TermSelectScreen
+    expect(find.text('Premier Trimestre'), findsOneWidget);
+    expect(find.text('Deuxième Trimestre'), findsOneWidget);
+    expect(find.text('Troisième Trimestre'), findsOneWidget);
+  });
 
-    // Verify next vocab item (Bonsoir)
-    expect(find.text('Bonsoir'), findsOneWidget);
+  testWidgets('Splash screen fast-tracks returning user directly to Term Select', (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(1920, 1080);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() => tester.view.resetPhysicalSize());
+
+    // Returning user
+    SharedPreferences.setMockInitialValues({'lang_huey_onboarding_completed': true});
+
+    await tester.pumpWidget(const LangHueyApp());
+
+    // Verify splash screen
+    expect(find.text('Lang Huey', findRichText: true), findsWidgets);
+
+    // Fast-forward past splash timer (2.8s)
+    await tester.pump(const Duration(milliseconds: 3000));
+    await tester.pump(const Duration(milliseconds: 500)); // route transition
+
+    // Navigates directly to Term Select screen
+    expect(find.text('Premier Trimestre'), findsOneWidget);
+    expect(find.text('Deuxième Trimestre'), findsOneWidget);
+    expect(find.text('Guide / Kickoff'), findsOneWidget);
+
+    // Tap Guide / Kickoff to reopen onboarding
+    await tester.tap(find.text('Guide / Kickoff'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 600));
+    await tester.pump();
+
+    // Verify onboarding opens in replay mode
+    expect(find.text('Bonjour tout le monde !'), findsOneWidget);
+    expect(find.text('Fermer / Close'), findsOneWidget);
+
+    // Tap Fermer / Close to return
+    await tester.tap(find.text('Fermer / Close'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 600));
+    await tester.pump();
+
+    // Back at Term Select screen
+    expect(find.text('Premier Trimestre'), findsOneWidget);
   });
 }

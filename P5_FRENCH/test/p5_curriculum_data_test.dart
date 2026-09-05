@@ -13,7 +13,7 @@ void main() {
       expect(P5Term3Lessons.weeks.length, equals(13));
     });
 
-    test('All weeks in Term 1 have valid metadata and non-empty components', () {
+    test('All weeks in Term 1 have valid metadata, teachingStyle, and min 6 drills', () {
       for (int i = 0; i < P5Term1Lessons.weeks.length; i++) {
         final lesson = P5Term1Lessons.weeks[i];
         expect(lesson.term, equals(1));
@@ -23,13 +23,13 @@ void main() {
         expect(lesson.objectives.isNotEmpty, isTrue, reason: 'Week ${i + 1} objectives are empty');
         expect(lesson.culturalInsight.isNotEmpty, isTrue, reason: 'Week ${i + 1} cultural insight is empty');
         expect(lesson.vocabItems.isNotEmpty, isTrue, reason: 'Week ${i + 1} vocab items are empty');
-        expect(lesson.classworkExercises.isNotEmpty, isTrue, reason: 'Week ${i + 1} classwork is empty');
-        expect(lesson.evaluationQuestions.isNotEmpty, isTrue, reason: 'Week ${i + 1} evaluation is empty');
+        expect(lesson.classworkExercises.length, greaterThanOrEqualTo(6), reason: 'Week ${i + 1} drills count < 6');
+        expect(lesson.teachingStyle, isNotNull);
         expect(lesson.assignmentTasks.isNotEmpty, isTrue, reason: 'Week ${i + 1} assignments are empty');
       }
     });
 
-    test('All weeks in Term 2 have valid metadata and non-empty components', () {
+    test('All weeks in Term 2 have valid metadata, teachingStyle, and min 6 drills', () {
       for (int i = 0; i < P5Term2Lessons.weeks.length; i++) {
         final lesson = P5Term2Lessons.weeks[i];
         expect(lesson.term, equals(2));
@@ -39,13 +39,13 @@ void main() {
         expect(lesson.objectives.isNotEmpty, isTrue, reason: 'Week ${i + 1} objectives are empty');
         expect(lesson.culturalInsight.isNotEmpty, isTrue, reason: 'Week ${i + 1} cultural insight is empty');
         expect(lesson.vocabItems.isNotEmpty, isTrue, reason: 'Week ${i + 1} vocab items are empty');
-        expect(lesson.classworkExercises.isNotEmpty, isTrue, reason: 'Week ${i + 1} classwork is empty');
-        expect(lesson.evaluationQuestions.isNotEmpty, isTrue, reason: 'Week ${i + 1} evaluation is empty');
+        expect(lesson.classworkExercises.length, greaterThanOrEqualTo(6), reason: 'Week ${i + 1} drills count < 6');
+        expect(lesson.teachingStyle, isNotNull);
         expect(lesson.assignmentTasks.isNotEmpty, isTrue, reason: 'Week ${i + 1} assignments are empty');
       }
     });
 
-    test('All weeks in Term 3 have valid metadata and non-empty components', () {
+    test('All weeks in Term 3 have valid metadata, teachingStyle, and min 6 drills', () {
       for (int i = 0; i < P5Term3Lessons.weeks.length; i++) {
         final lesson = P5Term3Lessons.weeks[i];
         expect(lesson.term, equals(3));
@@ -55,8 +55,8 @@ void main() {
         expect(lesson.objectives.isNotEmpty, isTrue, reason: 'Week ${i + 1} objectives are empty');
         expect(lesson.culturalInsight.isNotEmpty, isTrue, reason: 'Week ${i + 1} cultural insight is empty');
         expect(lesson.vocabItems.isNotEmpty, isTrue, reason: 'Week ${i + 1} vocab items are empty');
-        expect(lesson.classworkExercises.isNotEmpty, isTrue, reason: 'Week ${i + 1} classwork is empty');
-        expect(lesson.evaluationQuestions.isNotEmpty, isTrue, reason: 'Week ${i + 1} evaluation is empty');
+        expect(lesson.classworkExercises.length, greaterThanOrEqualTo(6), reason: 'Week ${i + 1} drills count < 6');
+        expect(lesson.teachingStyle, isNotNull);
         expect(lesson.assignmentTasks.isNotEmpty, isTrue, reason: 'Week ${i + 1} assignments are empty');
       }
     });

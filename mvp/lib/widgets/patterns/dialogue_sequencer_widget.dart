@@ -83,7 +83,7 @@ class _DialogueSequencerWidgetState extends State<DialogueSequencerWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,7 +163,7 @@ class _DialogueSequencerWidgetState extends State<DialogueSequencerWidget> {
               decoration: BoxDecoration(
                 color: LHColors.cream,
                 borderRadius: BorderRadius.circular(22),
-                border: Border.all(color: LHColors.teal.withOpacity(0.3), width: 2),
+                border: Border.all(color: LHColors.teal.withValues(alpha: 0.3), width: 2),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

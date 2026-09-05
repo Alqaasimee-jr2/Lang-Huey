@@ -15,4 +15,8 @@ class LHColors {
   static const correct    = Color(0xFF4CAF82);
   static const incorrect  = Color(0xFFE24B4A);
   static const surface    = Color(0xFFFFFFFF);
+  static const softTeal   = Color(0xFFE0F4F5);
+  static const green      = Color(0xFF2E7D32);
+  static const red        = Color(0xFFC62828);
+  static const lightGrey  = Color(0xFFF3F4F6);
 }

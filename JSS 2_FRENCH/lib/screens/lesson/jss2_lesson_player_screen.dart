@@ -3,6 +3,7 @@ import '../../models/jss2_lesson_model.dart';
 import '../../services/jss2_audio_service.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
+import '../../widgets/drills/jss2_interactive_drill_engine_widget.dart';
 
 // Term 1 Widgets
 import '../../widgets/patterns/term1/jss2_spatial_position_studio_widget.dart';
@@ -51,30 +52,156 @@ class JSS2LessonPlayerScreen extends StatefulWidget {
 
 class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
   final JSS2AudioService _audioService = JSS2AudioService();
-  int _currentPhase = 0; // 0: Objectifs, 1: Lab, 2: Vocab, 3: Exercices, 4: Résumé
-
-  // Classwork state
-  late List<int?> _selectedExerciseAnswers;
-  late List<bool> _showExplanations;
-
-  // Evaluation hints
-  late List<bool> _showEvaluationHints;
-  late List<bool> _showEvaluationAnswers;
-
+  int _currentPhase = 0; // 0: Lab, 1: Vocab, 2: Drills, 3: Summary
   bool _isSlowAudio = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _selectedExerciseAnswers = List.filled(widget.lesson.exercises.length, null);
-    _showExplanations = List.filled(widget.lesson.exercises.length, false);
-    _showEvaluationHints = List.filled(widget.lesson.evaluation.length, false);
-    _showEvaluationAnswers = List.filled(widget.lesson.evaluation.length, false);
-  }
 
   void _switchPhase(int newPhase) {
     setState(() => _currentPhase = newPhase);
     _audioService.playClick();
+  }
+
+  void _nextPhase() {
+    if (_currentPhase < 3) {
+      _switchPhase(_currentPhase + 1);
+    } else {
+      Navigator.pop(context, true);
+    }
+  }
+
+  void _prevPhase() {
+    if (_currentPhase > 0) {
+      _switchPhase(_currentPhase - 1);
+    }
+  }
+
+  void _showTeacherGuideModal() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          margin: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(24),
+            boxShadow: const [
+              BoxShadow(color: Colors.black38, blurRadius: 24, offset: Offset(0, -4)),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: LangHueyColors.deepTeal,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(Icons.school_rounded, color: LangHueyColors.amberGold, size: 24),
+                      ),
+                      const SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Teacher Facilitator Guide',
+                            style: LangHueyTextStyles.h2.copyWith(fontSize: 18, color: LangHueyColors.deepTeal),
+                          ),
+                          Text(
+                            'For Teacher Reference Only • Not Displayed on Student Smartboard',
+                            style: LangHueyTextStyles.bodySmall.copyWith(fontSize: 11),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.close_rounded, size: 28),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              ),
+              const Divider(height: 24),
+
+              Text(
+                'Official NERDC Curriculum Objectives:',
+                style: LangHueyTextStyles.h3.copyWith(fontSize: 14),
+              ),
+              const SizedBox(height: 8),
+              ...widget.lesson.objectives.map((obj) => Padding(
+                    padding: const EdgeInsets.only(bottom: 6),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('• ', style: TextStyle(fontWeight: FontWeight.bold, color: LangHueyColors.deepTeal, fontSize: 16)),
+                        Expanded(
+                          child: Text(obj, style: LangHueyTextStyles.bodyLarge.copyWith(fontSize: 13, height: 1.3)),
+                        ),
+                      ],
+                    ),
+                  )),
+              const SizedBox(height: 14),
+
+              // Teacher Facilitator Prompt
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: LangHueyColors.amberGold.withOpacity(0.15),
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: LangHueyColors.amberGold, width: 1.5),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.lightbulb_rounded, color: LangHueyColors.amberGold, size: 24),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Facilitator Teaching Prompt:',
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: LangHueyColors.charcoal),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            widget.lesson.teacherFacilitatorPrompt,
+                            style: LangHueyTextStyles.bodySmall.copyWith(color: LangHueyColors.charcoal, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+
+              // Cultural Insight
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: LangHueyColors.warmCream,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.black12),
+                ),
+                child: Text(
+                  'Cultural Insight: ${widget.lesson.culturalInsight}',
+                  style: LangHueyTextStyles.bodySmall.copyWith(fontSize: 11, fontStyle: FontStyle.italic),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -84,10 +211,10 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Top Navigation & Smartboard Control Header
+            // Top Navigation Header
             _buildTopHeader(),
 
-            // 5-Phase Navigation Tabs
+            // 4-Phase Navigation Tabs
             _buildPhaseTabs(),
 
             // Main Lesson Body
@@ -98,8 +225,8 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
               ),
             ),
 
-            // Persistent On-Screen Teacher Facilitator Prompt Cue Bar
-            _buildTeacherCueBar(),
+            // Bottom Action Bar
+            _buildBottomActionBar(),
           ],
         ),
       ),
@@ -121,7 +248,7 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
               IconButton(
                 icon: const Icon(Icons.arrow_back_rounded, color: LangHueyColors.deepTeal),
                 onPressed: () => Navigator.pop(context),
-                tooltip: 'Retour à la feuille de route',
+                tooltip: 'Back to Roadmap',
               ),
               const SizedBox(width: 8),
               Column(
@@ -136,7 +263,7 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
-                          'TRIMESTRE ${widget.lesson.termNumber} • SEMAINE ${widget.lesson.weekNumber}',
+                          'TERM ${widget.lesson.termNumber} • WEEK ${widget.lesson.weekNumber}',
                           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10),
                         ),
                       ),
@@ -158,7 +285,31 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
           ),
           Row(
             children: [
-              // Slow Audio Toggle
+              // Teacher Guide Trigger
+              InkWell(
+                onTap: _showTeacherGuideModal,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: LangHueyColors.amberGold,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: const [
+                      BoxShadow(color: Colors.black12, blurRadius: 4),
+                    ],
+                  ),
+                  child: const Row(
+                    children: [
+                      Icon(Icons.school_rounded, color: LangHueyColors.charcoal, size: 18),
+                      SizedBox(width: 6),
+                      Text('Teacher Guide', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 12, color: LangHueyColors.charcoal)),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+
+              // Audio Speed Toggle
               ActionChip(
                 avatar: Icon(
                   _isSlowAudio ? Icons.slow_motion_video_rounded : Icons.speed_rounded,
@@ -166,7 +317,7 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
                   size: 18,
                 ),
                 label: Text(
-                  _isSlowAudio ? 'Vitesse : 0.8x (Lente)' : 'Vitesse : 1.0x (Normale)',
+                  _isSlowAudio ? 'Speed: 0.8x' : 'Speed: 1.0x',
                   style: TextStyle(
                     color: _isSlowAudio ? Colors.white : LangHueyColors.charcoal,
                     fontSize: 11,
@@ -179,21 +330,6 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
                   _audioService.setSlowRate(_isSlowAudio);
                 },
               ),
-              const SizedBox(width: 12),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(
-                  color: LangHueyColors.softTeal,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Row(
-                  children: [
-                    Icon(Icons.cast_for_education_rounded, color: LangHueyColors.deepTeal, size: 16),
-                    SizedBox(width: 6),
-                    Text('JSS 2 French Engine', style: TextStyle(color: LangHueyColors.deepTeal, fontWeight: FontWeight.bold, fontSize: 11)),
-                  ],
-                ),
-              ),
             ],
           ),
         ],
@@ -203,11 +339,10 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
 
   Widget _buildPhaseTabs() {
     final phases = [
-      {'title': '1. Objectifs', 'icon': Icons.stars_rounded},
-      {'title': '2. Lab Interactif', 'icon': Icons.touch_app_rounded},
-      {'title': '3. Vocabulaire', 'icon': Icons.volume_up_rounded},
-      {'title': '4. Exercices', 'icon': Icons.quiz_rounded},
-      {'title': '5. Résumé', 'icon': Icons.menu_book_rounded},
+      {'title': '1. Learning Lab', 'icon': Icons.touch_app_rounded},
+      {'title': '2. Vocabulary & Audio', 'icon': Icons.volume_up_rounded},
+      {'title': '3. Practice Drills', 'icon': Icons.quiz_rounded},
+      {'title': '4. Summary & Homework', 'icon': Icons.menu_book_rounded},
     ];
 
     return Container(
@@ -271,159 +406,16 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
   Widget _buildPhaseContent() {
     switch (_currentPhase) {
       case 0:
-        return _buildObjectivesView();
-      case 1:
         return _buildInteractiveLabView();
-      case 2:
+      case 1:
         return _buildVocabView();
+      case 2:
+        return _buildDrillsView();
       case 3:
-        return _buildClassworkView();
-      case 4:
         return _buildSummaryView();
       default:
-        return _buildObjectivesView();
+        return _buildInteractiveLabView();
     }
-  }
-
-  Widget _buildObjectivesView() {
-    return SingleChildScrollView(
-      key: const ValueKey('objectives_view'),
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Banner
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF0D7377), Color(0xFF14BDCC)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.lesson.frenchTitle,
-                  style: LangHueyTextStyles.h1.copyWith(color: Colors.white, fontSize: 24),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  widget.lesson.englishSubtitle,
-                  style: LangHueyTextStyles.bodyLarge.copyWith(color: Colors.white.withOpacity(0.9)),
-                ),
-              ],
-            ),
-          ),
-
-          const SizedBox(height: 20),
-
-          // Objectives Card
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: Colors.black12),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.stars_rounded, color: LangHueyColors.deepTeal, size: 24),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text('Objectifs Pédagogiques de la Semaine :', style: LangHueyTextStyles.h3),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                ...List.generate(widget.lesson.objectives.length, (index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(top: 2),
-                          padding: const EdgeInsets.all(6),
-                          decoration: const BoxDecoration(
-                            color: LangHueyColors.softTeal,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Text(
-                            '${index + 1}',
-                            style: const TextStyle(
-                              color: LangHueyColors.deepTeal,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Text(
-                            widget.lesson.objectives[index],
-                            style: LangHueyTextStyles.bodyLarge.copyWith(fontSize: 14),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                }),
-              ],
-            ),
-          ),
-
-          const SizedBox(height: 20),
-
-          // Cultural Insight Card
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: LangHueyColors.warmCream,
-              borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: LangHueyColors.amberGold.withOpacity(0.5)),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Icon(Icons.lightbulb_rounded, color: LangHueyColors.amberGold, size: 28),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Repères Culturels & Contexte Pédagogique :',
-                        style: TextStyle(
-                          color: Colors.brown.shade800,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        ),
-                      ),
-                      const SizedBox(height: 6),
-                      Text(
-                        widget.lesson.culturalInsight,
-                        style: TextStyle(
-                          color: LangHueyColors.charcoal,
-                          fontSize: 13,
-                          height: 1.4,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
   }
 
   Widget _buildInteractiveLabView() {
@@ -500,8 +492,8 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Vocabulaire & Phonétique Clés :', style: LangHueyTextStyles.h2.copyWith(fontSize: 18)),
-              Text('${widget.lesson.vocabulary.length} expressions authentiques', style: LangHueyTextStyles.bodySmall),
+              Text('Vocabulary Station & Audio Pronunciation:', style: LangHueyTextStyles.h2.copyWith(fontSize: 18)),
+              Text('${widget.lesson.vocabulary.length} Authentic Expressions', style: LangHueyTextStyles.bodySmall),
             ],
           ),
           const SizedBox(height: 14),
@@ -574,7 +566,7 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
                       onPressed: () {
                         _audioService.playPhrase(v.audioKey, term: widget.lesson.termNumber);
                       },
-                      tooltip: 'Écouter',
+                      tooltip: 'Listen',
                     ),
                   ],
                 ),
@@ -586,214 +578,14 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
     );
   }
 
-  Widget _buildClassworkView() {
-    return SingleChildScrollView(
-      key: const ValueKey('classwork_view'),
+  Widget _buildDrillsView() {
+    return Padding(
+      key: const ValueKey('drills_view'),
       padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Sub-Section 1: Interactive Exercises
-          Text('1. Exercices Pratiques en Classe :', style: LangHueyTextStyles.h2.copyWith(fontSize: 18)),
-          const SizedBox(height: 12),
-          ...List.generate(widget.lesson.exercises.length, (exIndex) {
-            final ex = widget.lesson.exercises[exIndex];
-            final selected = _selectedExerciseAnswers[exIndex];
-            final showExp = _showExplanations[exIndex];
-
-            return Container(
-              margin: const EdgeInsets.only(bottom: 16),
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.black12),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Question ${exIndex + 1} : ${ex.prompt}',
-                    style: LangHueyTextStyles.h3.copyWith(fontSize: 15),
-                  ),
-                  const SizedBox(height: 12),
-                  ...List.generate(ex.options.length, (optIndex) {
-                    final isOptionSelected = selected == optIndex;
-                    final isCorrect = optIndex == ex.correctOptionIndex;
-
-                    Color tileColor = Colors.grey.shade50;
-                    Color borderColor = Colors.black12;
-
-                    if (selected != null) {
-                      if (isOptionSelected) {
-                        tileColor = isCorrect ? Colors.green.shade50 : Colors.red.shade50;
-                        borderColor = isCorrect ? Colors.green : Colors.red;
-                      } else if (isCorrect) {
-                        tileColor = Colors.green.shade50;
-                        borderColor = Colors.green;
-                      }
-                    }
-
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 6),
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            _selectedExerciseAnswers[exIndex] = optIndex;
-                            _showExplanations[exIndex] = true;
-                          });
-                          if (isCorrect) {
-                            _audioService.playCorrect();
-                          } else {
-                            _audioService.playIncorrect();
-                          }
-                        },
-                        borderRadius: BorderRadius.circular(10),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                          decoration: BoxDecoration(
-                            color: tileColor,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: borderColor),
-                          ),
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 12,
-                                backgroundColor: isOptionSelected
-                                    ? (isCorrect ? Colors.green : Colors.red)
-                                    : LangHueyColors.softTeal,
-                                child: Text(
-                                  String.fromCharCode(65 + optIndex),
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold,
-                                    color: isOptionSelected ? Colors.white : LangHueyColors.deepTeal,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Text(
-                                  ex.options[optIndex],
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: isOptionSelected ? FontWeight.bold : FontWeight.normal,
-                                  ),
-                                ),
-                              ),
-                              if (selected != null && isOptionSelected)
-                                Icon(
-                                  isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                                  color: isCorrect ? Colors.green : Colors.red,
-                                  size: 20,
-                                ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  }),
-                  if (showExp)
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: LangHueyColors.softTeal.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(Icons.info_outline_rounded, color: LangHueyColors.deepTeal, size: 18),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: Text(
-                              ex.explanation,
-                              style: const TextStyle(color: LangHueyColors.deepTeal, fontSize: 12),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                ],
-              ),
-            );
-          }),
-
-          const SizedBox(height: 16),
-
-          // Sub-Section 2: Evaluation Q&A
-          Text('2. Questions d\'Évaluation & Auto-Contrôle :', style: LangHueyTextStyles.h2.copyWith(fontSize: 18)),
-          const SizedBox(height: 12),
-          ...List.generate(widget.lesson.evaluation.length, (qIndex) {
-            final q = widget.lesson.evaluation[qIndex];
-            final showHint = _showEvaluationHints[qIndex];
-            final showAns = _showEvaluationAnswers[qIndex];
-
-            return Container(
-              margin: const EdgeInsets.only(bottom: 14),
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.black12),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Q${qIndex + 1} : ${q.question}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                  const SizedBox(height: 8),
-                  Row(
-                    children: [
-                      OutlinedButton.icon(
-                        onPressed: () {
-                          setState(() => _showEvaluationHints[qIndex] = !_showEvaluationHints[qIndex]);
-                          _audioService.playClick();
-                        },
-                        icon: const Icon(Icons.lightbulb_outline_rounded, size: 16),
-                        label: Text(showHint ? 'Masquer l\'indice' : 'Voir l\'indice'),
-                      ),
-                      const SizedBox(width: 8),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          setState(() => _showEvaluationAnswers[qIndex] = !_showEvaluationAnswers[qIndex]);
-                          if (!showAns) _audioService.playCorrect();
-                        },
-                        icon: Icon(showAns ? Icons.visibility_off_rounded : Icons.visibility_rounded, size: 16),
-                        label: Text(showAns ? 'Masquer la réponse' : 'Afficher la réponse'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: LangHueyColors.deepTeal,
-                          foregroundColor: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  if (showHint)
-                    Container(
-                      margin: const EdgeInsets.only(top: 8),
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: LangHueyColors.warmCream,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Text('💡 Indice : ${q.hint}', style: TextStyle(fontSize: 12, color: Colors.brown.shade800)),
-                    ),
-                  if (showAns)
-                    Container(
-                      margin: const EdgeInsets.only(top: 8),
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Colors.green.shade50,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.green.shade200),
-                      ),
-                      child: Text('✅ Réponse : ${q.answer}', style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.green)),
-                    ),
-                ],
-              ),
-            );
-          }),
-        ],
+      child: JSS2InteractiveDrillEngineWidget(
+        drills: widget.lesson.exercises,
+        term: widget.lesson.termNumber,
+        onComplete: _nextPhase,
       ),
     );
   }
@@ -822,13 +614,13 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
                   children: [
                     const Icon(Icons.bookmark_rounded, color: LangHueyColors.deepTeal, size: 24),
                     const SizedBox(width: 8),
-                    Expanded(child: Text('Fiche Grammaticale : ${g.title}', style: LangHueyTextStyles.h3)),
+                    Expanded(child: Text('Grammar Sheet: ${g.title}', style: LangHueyTextStyles.h3)),
                   ],
                 ),
                 const Divider(height: 24),
                 Text(g.explanation, style: LangHueyTextStyles.bodyLarge.copyWith(height: 1.5, fontSize: 13)),
                 const SizedBox(height: 14),
-                Text('Exemples types :', style: TextStyle(fontWeight: FontWeight.bold, color: LangHueyColors.deepTeal, fontSize: 13)),
+                Text('Examples:', style: TextStyle(fontWeight: FontWeight.bold, color: LangHueyColors.deepTeal, fontSize: 13)),
                 const SizedBox(height: 6),
                 ...g.examples.map((ex) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 3),
@@ -860,7 +652,7 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
                   children: [
                     const Icon(Icons.assignment_rounded, color: LangHueyColors.deepTeal, size: 24),
                     const SizedBox(width: 8),
-                    Text('Travail à Domicile (Devoirs) :', style: LangHueyTextStyles.h3),
+                    Text('Take-Home Assignments & Practice:', style: LangHueyTextStyles.h3),
                   ],
                 ),
                 const SizedBox(height: 12),
@@ -886,48 +678,42 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
     );
   }
 
-  Widget _buildTeacherCueBar() {
+  Widget _buildBottomActionBar() {
+    final isFirst = _currentPhase == 0;
+    final isLast = _currentPhase == 3;
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      decoration: BoxDecoration(
-        color: LangHueyColors.charcoal,
-        border: const Border(top: BorderSide(color: Colors.black26)),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        border: Border(top: BorderSide(color: Colors.black12)),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: LangHueyColors.amberGold,
-              borderRadius: BorderRadius.circular(8),
+          ElevatedButton.icon(
+            onPressed: isFirst ? null : _prevPhase,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: LangHueyColors.warmCream,
+              foregroundColor: LangHueyColors.charcoal,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             ),
-            child: const Icon(Icons.lightbulb_rounded, color: LangHueyColors.charcoal, size: 20),
+            icon: const Icon(Icons.arrow_back_rounded, size: 18),
+            label: const Text('Previous Phase'),
           ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text(
-                  '💡 TEACHER FACILITATOR GUIDANCE CUE BAR (STANDARD ENGLISH)',
-                  style: TextStyle(
-                    color: LangHueyColors.amberGold,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1.1,
-                    fontSize: 10,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  widget.lesson.teacherFacilitatorPrompt,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    height: 1.3,
-                  ),
-                ),
-              ],
+          ElevatedButton.icon(
+            onPressed: _nextPhase,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isLast ? LangHueyColors.green : LangHueyColors.deepTeal,
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            ),
+            icon: Icon(isLast ? Icons.check_circle_rounded : Icons.arrow_forward_rounded, size: 18),
+            label: Text(
+              isLast ? 'Complete Lesson' : 'Next Phase',
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
         ],

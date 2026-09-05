@@ -1,5 +1,28 @@
 import 'package:flutter/material.dart';
 
+enum TeachingStyle {
+  storyNarrative,          // Immersive French story with contextual comprehension
+  conversationalDialogue,  // Turn-taking peer exchange with communicative focus
+  interactiveStudio,       // Hands-on grammar/vocabulary exploratory studio
+  phoneticSoundboard,      // Audio-guided pronunciation & phonetics lab
+}
+
+enum DrillType {
+  singleChoice,      // 4-option multiple choice with instant feedback
+  pairMatch,         // Interactive pair matcher
+  fillGap,           // Gap fill with word bank
+  sentenceBuilder,   // Scrambled word chips into sentence tray
+  trueFalse,         // VRAI (True) / FAUX (False)
+  storyComprehension,// Story/dialogue event check
+  listenAudio,       // Audio association
+}
+
+class DrillPair {
+  final String french;
+  final String english;
+  const DrillPair({required this.french, required this.english});
+}
+
 enum JSS2PatternType {
   // Term 1 Teaching & Revision Patterns
   spatialPositionStudio,          // Week 1: Demander et expliquer la position (sur, sous, devant, derrière, etc.)
@@ -58,12 +81,28 @@ class JSS2InteractiveExercise {
   final List<String> options;
   final int correctOptionIndex;
   final String explanation;
+  final DrillType type;
+  final String? frenchStimulus;
+  final String? audioKey;
+  final List<DrillPair>? pairs;
+  final String? sentenceTemplate;
+  final List<String>? wordBank;
+  final String? correctWord;
+  final List<String>? correctSentenceOrder;
 
   const JSS2InteractiveExercise({
     required this.prompt,
-    required this.options,
-    required this.correctOptionIndex,
+    this.options = const [],
+    this.correctOptionIndex = 0,
     required this.explanation,
+    this.type = DrillType.singleChoice,
+    this.frenchStimulus,
+    this.audioKey,
+    this.pairs,
+    this.sentenceTemplate,
+    this.wordBank,
+    this.correctWord,
+    this.correctSentenceOrder,
   });
 }
 
@@ -113,6 +152,7 @@ class JSS2LessonModel {
   final List<String> objectives;
   final String culturalInsight;
   final JSS2PatternType patternType;
+  final TeachingStyle teachingStyle;
   final List<JSS2VocabItem> vocabulary;
   final List<JSS2InteractiveExercise> exercises;
   final List<JSS2EvaluationQuestion> evaluation;
@@ -129,6 +169,7 @@ class JSS2LessonModel {
     required this.objectives,
     required this.culturalInsight,
     required this.patternType,
+    this.teachingStyle = TeachingStyle.interactiveStudio,
     required this.vocabulary,
     required this.exercises,
     required this.evaluation,

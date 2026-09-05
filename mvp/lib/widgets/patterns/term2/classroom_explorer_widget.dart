@@ -108,7 +108,7 @@ class _ClassroomExplorerWidgetState extends State<ClassroomExplorerWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +159,7 @@ class _ClassroomExplorerWidgetState extends State<ClassroomExplorerWidget> {
                       final isSelected = idx == _selectedItemIndex;
 
                       return Material(
-                        color: isSelected ? LHColors.teal : LHColors.cream.withOpacity(0.6),
+                        color: isSelected ? LHColors.teal : LHColors.cream.withValues(alpha: 0.6),
                         borderRadius: BorderRadius.circular(16),
                         elevation: isSelected ? 4 : 0,
                         child: InkWell(
@@ -209,7 +209,7 @@ class _ClassroomExplorerWidgetState extends State<ClassroomExplorerWidget> {
                     decoration: BoxDecoration(
                       color: LHColors.cream,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: LHColors.teal.withOpacity(0.4), width: 2),
+                      border: Border.all(color: LHColors.teal.withValues(alpha: 0.4), width: 2),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -258,7 +258,7 @@ class _ClassroomExplorerWidgetState extends State<ClassroomExplorerWidget> {
                           decoration: BoxDecoration(
                             color: LHColors.white,
                             borderRadius: BorderRadius.circular(14),
-                            border: Border.all(color: LHColors.turquoise.withOpacity(0.3)),
+                            border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3)),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -276,7 +276,7 @@ class _ClassroomExplorerWidgetState extends State<ClassroomExplorerWidget> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                           decoration: BoxDecoration(
-                            color: LHColors.gold.withOpacity(0.2),
+                            color: LHColors.gold.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(

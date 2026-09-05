@@ -3,6 +3,7 @@ import '../../models/p5_lesson_model.dart';
 import '../../services/p5_audio_service.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
+import '../../widgets/drills/p5_interactive_drill_engine_widget.dart';
 
 // Term 1 Bespoke Pattern Widgets
 import '../../widgets/patterns/term1/p5_alphabet_and_revision_widget.dart';
@@ -41,11 +42,10 @@ import '../../widgets/patterns/term3/p5_term3_revision_rally_widget.dart';
 import '../../widgets/patterns/term3/p5_term3_graduation_widget.dart';
 
 enum LessonPhase {
-  objectives,
-  interactivePattern,
-  vocabLab,
-  classwork,
-  summary,
+  interactivePattern, // Phase 1: Learning Model / Interactive Lab
+  vocabLab,           // Phase 2: Vocabulary & Phonetics Station
+  classwork,          // Phase 3: Topic-Adapted Practice Drills (6+)
+  summary,            // Phase 4: Summary & Homework
 }
 
 class P5LessonPlayerScreen extends StatefulWidget {
@@ -59,23 +59,15 @@ class P5LessonPlayerScreen extends StatefulWidget {
 
 class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
   final P5AudioService _audioService = P5AudioService();
-  LessonPhase _phase = LessonPhase.objectives;
-  int _revealedQuestionIndex = -1;
+  LessonPhase _phase = LessonPhase.interactivePattern;
 
   void _goToNextPhase() => _nextPhase();
 
-  // Classwork Interactive Drill state
-  int _classworkSubTab = 0; // 0: Interactive Drills, 1: Scheme Evaluation Q&A
-  int _activeExerciseIndex = 0;
-  int? _selectedOptionIndex;
-  bool _hasCheckedAnswer = false;
-
   final List<Map<String, dynamic>> _phaseSteps = [
-    {'phase': LessonPhase.objectives, 'title': '1. Objectives', 'icon': Icons.flag_rounded},
-    {'phase': LessonPhase.interactivePattern, 'title': '2. Interactive Lab', 'icon': Icons.touch_app_rounded},
-    {'phase': LessonPhase.vocabLab, 'title': '3. Vocabulary & Phonetics', 'icon': Icons.record_voice_over_rounded},
-    {'phase': LessonPhase.classwork, 'title': '4. Classwork & Drills', 'icon': Icons.quiz_rounded},
-    {'phase': LessonPhase.summary, 'title': '5. Summary & Homework', 'icon': Icons.assignment_turned_in_rounded},
+    {'phase': LessonPhase.interactivePattern, 'title': '1. Learning Lab', 'icon': Icons.touch_app_rounded},
+    {'phase': LessonPhase.vocabLab, 'title': '2. Vocabulary & Practice', 'icon': Icons.record_voice_over_rounded},
+    {'phase': LessonPhase.classwork, 'title': '3. Practice Drills', 'icon': Icons.quiz_rounded},
+    {'phase': LessonPhase.summary, 'title': '4. Summary & Homework', 'icon': Icons.assignment_turned_in_rounded},
   ];
 
   void _nextPhase() {
@@ -83,10 +75,6 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
     if (currentIndex < _phaseSteps.length - 1) {
       setState(() {
         _phase = _phaseSteps[currentIndex + 1]['phase'] as LessonPhase;
-        _revealedQuestionIndex = -1;
-        _activeExerciseIndex = 0;
-        _selectedOptionIndex = null;
-        _hasCheckedAnswer = false;
       });
     } else {
       Navigator.pop(context, true);
@@ -98,12 +86,121 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
     if (currentIndex > 0) {
       setState(() {
         _phase = _phaseSteps[currentIndex - 1]['phase'] as LessonPhase;
-        _revealedQuestionIndex = -1;
-        _activeExerciseIndex = 0;
-        _selectedOptionIndex = null;
-        _hasCheckedAnswer = false;
       });
     }
+  }
+
+  void _showTeacherGuideModal() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          margin: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: P5Colors.white,
+            borderRadius: BorderRadius.circular(24),
+            boxShadow: const [
+              BoxShadow(color: Colors.black38, blurRadius: 24, offset: Offset(0, -4)),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: P5Colors.teal,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(Icons.school_rounded, color: P5Colors.gold, size: 24),
+                      ),
+                      const SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Teacher Facilitator Guide',
+                            style: P5Text.heading(P5Colors.teal).copyWith(fontSize: 18),
+                          ),
+                          Text(
+                            'For Teacher Reference Only • Not Displayed on Student Smartboard',
+                            style: P5Text.caption(P5Colors.grey).copyWith(fontSize: 11),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.close_rounded, size: 28),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              ),
+              const Divider(height: 24),
+
+              Text(
+                'Official NERDC Curriculum Objectives:',
+                style: P5Text.subheading(P5Colors.charcoal).copyWith(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              ...widget.lesson.objectives.map((obj) => Padding(
+                    padding: const EdgeInsets.only(bottom: 6),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('• ', style: TextStyle(fontWeight: FontWeight.bold, color: P5Colors.teal, fontSize: 16)),
+                        Expanded(
+                          child: Text(obj, style: P5Text.body(P5Colors.charcoal).copyWith(fontSize: 13, height: 1.3)),
+                        ),
+                      ],
+                    ),
+                  )),
+              const SizedBox(height: 14),
+
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: P5Colors.gold.withOpacity(0.15),
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: P5Colors.gold, width: 1.5),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.lightbulb_rounded, color: P5Colors.gold, size: 24),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Cultural Insight Note:',
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: P5Colors.charcoal),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            widget.lesson.culturalInsight,
+                            style: P5Text.caption(P5Colors.charcoal).copyWith(fontSize: 12, height: 1.3),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -136,6 +233,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
           IconButton(
             icon: const Icon(Icons.arrow_back_rounded, color: P5Colors.white, size: 24),
             onPressed: () => Navigator.pop(context),
+            tooltip: 'Back to Roadmap',
           ),
           const SizedBox(width: 6),
           Container(
@@ -162,6 +260,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
             ),
           ),
           const SizedBox(width: 8),
+
           // Speed Control Toggle
           Material(
             color: _audioService.playbackSpeed < 1.0 ? P5Colors.gold : P5Colors.white.withOpacity(0.15),
@@ -185,7 +284,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
                     ),
                     const SizedBox(width: 4),
                     Text(
-                      _audioService.playbackSpeed < 1.0 ? '0.8x' : '1.0x',
+                      _audioService.playbackSpeed < 1.0 ? '0.8x Slower' : '1.0x Normal',
                       style: P5Text.body(_audioService.playbackSpeed < 1.0 ? P5Colors.charcoal : P5Colors.white).copyWith(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
@@ -197,7 +296,33 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
             ),
           ),
           const SizedBox(width: 8),
-          // Phase Indicator Tabs
+
+          // Teacher Guide Trigger Button
+          Material(
+            color: P5Colors.white.withOpacity(0.15),
+            borderRadius: BorderRadius.circular(10),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(10),
+              onTap: _showTeacherGuideModal,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.menu_book_rounded, size: 16, color: P5Colors.gold),
+                    const SizedBox(width: 5),
+                    Text(
+                      'Teacher Guide',
+                      style: P5Text.body(P5Colors.white).copyWith(fontSize: 11, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 8),
+
+          // 4 Phase Indicator Tabs
           Flexible(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -244,8 +369,6 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
 
   Widget _buildPhaseContent() {
     switch (_phase) {
-      case LessonPhase.objectives:
-        return _buildObjectivesView();
       case LessonPhase.interactivePattern:
         return _buildInteractivePatternView();
       case LessonPhase.vocabLab:
@@ -255,95 +378,6 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
       case LessonPhase.summary:
         return _buildSummaryView();
     }
-  }
-
-  Widget _buildObjectivesView() {
-    return Container(
-      padding: const EdgeInsets.all(28),
-      decoration: BoxDecoration(
-        color: P5Colors.white,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              const Icon(Icons.flag_rounded, color: P5Colors.teal, size: 28),
-              const SizedBox(width: 10),
-              Text(
-                'Objectifs de la Leçon (Lesson Objectives)',
-                style: P5Text.heading(P5Colors.teal).copyWith(fontSize: 22),
-              ),
-            ],
-          ),
-          const SizedBox(height: 6),
-          Text(widget.lesson.subtitle, style: P5Text.subheading(P5Colors.charcoal).copyWith(fontSize: 16)),
-          const Divider(height: 24),
-
-          Expanded(
-            child: ListView.builder(
-              itemCount: widget.lesson.objectives.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 14,
-                        backgroundColor: P5Colors.teal,
-                        child: Text('${index + 1}', style: const TextStyle(color: P5Colors.white, fontWeight: FontWeight.bold, fontSize: 13)),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(
-                          widget.lesson.objectives[index],
-                          style: P5Text.body(P5Colors.charcoal).copyWith(fontSize: 16, height: 1.3),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          ),
-
-          // Cultural Insight Banner
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: P5Colors.gold.withOpacity(0.15),
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: P5Colors.gold, width: 1.5),
-            ),
-            child: Row(
-              children: [
-                const Icon(Icons.lightbulb_rounded, color: P5Colors.gold, size: 28),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Aperçu Culturel (Cultural Insight):',
-                        style: P5Text.subheading(P5Colors.charcoal).copyWith(fontSize: 14, fontWeight: FontWeight.w800),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        widget.lesson.culturalInsight,
-                        style: P5Text.caption(P5Colors.charcoal).copyWith(fontSize: 13, height: 1.3),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
   }
 
   Widget _buildInteractivePatternView() {
@@ -440,38 +474,16 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  ActionChip(
-                    avatar: Icon(
-                      _audioService.playbackSpeed < 1.0 ? Icons.slow_motion_video_rounded : Icons.speed_rounded,
-                      size: 18,
-                      color: P5Colors.teal,
-                    ),
-                    label: Text(
-                      _audioService.playbackSpeed < 1.0 ? 'Speed: 0.8x (Slower)' : 'Speed: 1.0x (Normal)',
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
-                    ),
-                    backgroundColor: _audioService.playbackSpeed < 1.0 ? P5Colors.gold.withOpacity(0.3) : P5Colors.cream,
-                    onPressed: () {
-                      final newSpeed = _audioService.playbackSpeed == 1.0 ? 0.8 : 1.0;
-                      setState(() => _audioService.setPlaybackSpeed(newSpeed));
-                      _audioService.playSfx(P5SfxType.click);
-                    },
-                  ),
-                  const SizedBox(width: 10),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: P5Colors.cream,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Text(
-                      '${widget.lesson.vocabItems.length} PHRASES TO PRACTICE',
-                      style: P5Text.body(P5Colors.charcoal).copyWith(fontSize: 13, fontWeight: FontWeight.w800),
-                    ),
-                  ),
-                ],
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                decoration: BoxDecoration(
+                  color: P5Colors.cream,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  '${widget.lesson.vocabItems.length} PHRASES TO PRACTICE',
+                  style: P5Text.body(P5Colors.charcoal).copyWith(fontSize: 13, fontWeight: FontWeight.w800),
+                ),
               ),
             ],
           ),
@@ -530,171 +542,10 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
   }
 
   Widget _buildClassworkView() {
-    return Container(
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: P5Colors.white,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  ChoiceChip(
-                    avatar: const Icon(Icons.touch_app_rounded, size: 18),
-                    label: Text('1. Interactive Drills (${widget.lesson.classworkExercises.length})'),
-                    selected: _classworkSubTab == 0,
-                    onSelected: (s) => setState(() => _classworkSubTab = 0),
-                  ),
-                  const SizedBox(width: 12),
-                  ChoiceChip(
-                    avatar: const Icon(Icons.quiz_rounded, size: 18),
-                    label: Text('2. Scheme Evaluation Q&A (${widget.lesson.evaluationQuestions.length})'),
-                    selected: _classworkSubTab == 1,
-                    onSelected: (s) => setState(() => _classworkSubTab = 1),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const Divider(height: 20),
-
-          Expanded(
-            child: _classworkSubTab == 0 ? _buildExercisesTab() : _buildEvaluationsTab(),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildExercisesTab() {
-    if (widget.lesson.classworkExercises.isEmpty) {
-      return const Center(child: Text('No interactive drills for this week.'));
-    }
-    final ex = widget.lesson.classworkExercises[_activeExerciseIndex];
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Exercise ${_activeExerciseIndex + 1} of ${widget.lesson.classworkExercises.length}:',
-          style: P5Text.caption(P5Colors.teal).copyWith(fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 6),
-        Text(ex.prompt, style: P5Text.subheading(P5Colors.charcoal).copyWith(fontSize: 18)),
-        const SizedBox(height: 14),
-
-        Expanded(
-          child: ListView.builder(
-            itemCount: ex.options.length,
-            itemBuilder: (context, index) {
-              final isSelected = _selectedOptionIndex == index;
-              final isCorrect = index == ex.correctOptionIndex;
-              Color bg = P5Colors.cream;
-              if (_hasCheckedAnswer) {
-                if (isCorrect) bg = P5Colors.green.withOpacity(0.2);
-                else if (isSelected) bg = P5Colors.red.withOpacity(0.2);
-              } else if (isSelected) {
-                bg = P5Colors.turquoise.withOpacity(0.3);
-              }
-
-              return Card(
-                color: bg,
-                margin: const EdgeInsets.only(bottom: 8),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                child: ListTile(
-                  title: Text(ex.options[index], style: P5Text.body(P5Colors.charcoal)),
-                  onTap: _hasCheckedAnswer ? null : () => setState(() => _selectedOptionIndex = index),
-                ),
-              );
-            },
-          ),
-        ),
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            if (!_hasCheckedAnswer)
-              ElevatedButton(
-                onPressed: _selectedOptionIndex == null ? null : () {
-                  setState(() => _hasCheckedAnswer = true);
-                  final isCorrect = _selectedOptionIndex == ex.correctOptionIndex;
-                  _audioService.playSfx(isCorrect ? P5SfxType.correct : P5SfxType.incorrect);
-                },
-                child: const Text('Check Answer'),
-              )
-            else
-              Text(
-                _selectedOptionIndex == ex.correctOptionIndex ? 'Correct! ${ex.explanation}' : 'Incorrect. ${ex.explanation}',
-                style: TextStyle(
-                  color: _selectedOptionIndex == ex.correctOptionIndex ? P5Colors.green : P5Colors.red,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-            if (_activeExerciseIndex < widget.lesson.classworkExercises.length - 1)
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _activeExerciseIndex++;
-                    _selectedOptionIndex = null;
-                    _hasCheckedAnswer = false;
-                  });
-                },
-                child: const Text('Next Drill'),
-              ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget _buildEvaluationsTab() {
-    return ListView.builder(
-      itemCount: widget.lesson.evaluationQuestions.length,
-      itemBuilder: (context, index) {
-        final q = widget.lesson.evaluationQuestions[index];
-        final isRevealed = _revealedQuestionIndex == index;
-        return Card(
-          color: P5Colors.cream,
-          margin: const EdgeInsets.only(bottom: 12),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CircleAvatar(
-                      radius: 14,
-                      backgroundColor: P5Colors.teal,
-                      child: Text('${index + 1}', style: const TextStyle(color: P5Colors.white, fontWeight: FontWeight.bold)),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Text(q.question, style: P5Text.subheading(P5Colors.charcoal).copyWith(fontSize: 16)),
-                    ),
-                    TextButton.icon(
-                      onPressed: () => setState(() => _revealedQuestionIndex = isRevealed ? -1 : index),
-                      icon: Icon(isRevealed ? Icons.visibility_off_rounded : Icons.visibility_rounded),
-                      label: Text(isRevealed ? 'Hide' : 'Reveal Answer'),
-                    ),
-                  ],
-                ),
-                if (isRevealed) ...[
-                  const Divider(height: 16),
-                  Text('Answer: ${q.answer}', style: P5Text.body(P5Colors.green).copyWith(fontWeight: FontWeight.bold)),
-                ],
-              ],
-            ),
-          ),
-        );
-      },
+    return P5InteractiveDrillEngineWidget(
+      drills: widget.lesson.classworkExercises,
+      term: widget.lesson.term,
+      onComplete: _goToNextPhase,
     );
   }
 

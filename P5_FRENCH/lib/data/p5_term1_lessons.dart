@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/p5_lesson_model.dart';
 
 class P5Term1Lessons {
-  static const List<P5Lesson> weeks = [
+  static final List<P5Lesson> weeks = [
     // ==========================================
     // WEEK 1: RÉVISION - SALUTATIONS & ALPHABET
     // ==========================================
@@ -104,6 +104,32 @@ class P5Term1Lessons {
           options: ['Dix-huit (18)', 'Vingt (20)', 'Seize (16)', 'Quinze (15)'],
           correctOptionIndex: 1,
           explanation: '19 is Dix-neuf, and 20 is Vingt.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Bonjour', english: 'Good morning / Hello'),
+            DrillPair(french: 'Bonsoir', english: 'Good evening'),
+            DrillPair(french: 'Salut !', english: 'Hi / Bye (Informal)'),
+            DrillPair(french: 'Au revoir', english: 'Goodbye'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Good morning / Hello):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Bonjour', 'Bonsoir', 'Salut !', 'Au revoir'],
+          correctWord: 'Bonjour',
+          explanation: 'Correct! "Bonjour" translates to "Good morning / Hello".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
         ),
       ],
       evaluationQuestions: [
@@ -247,6 +273,32 @@ class P5Term1Lessons {
           ],
           correctOptionIndex: 1,
           explanation: '"Combien de crayons as-tu ?" translates directly to "How many pencils do you have?".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Vingt et un (21)', english: 'Twenty-one (21)'),
+            DrillPair(french: 'Vingt-deux (22)', english: 'Twenty-two (22)'),
+            DrillPair(french: 'Vingt-trois (23)', english: 'Twenty-three (23)'),
+            DrillPair(french: 'Vingt-cinq (25)', english: 'Twenty-five (25)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Twenty-one (21)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Vingt et un (21)', 'Vingt-deux (22)', 'Vingt-trois (23)', 'Vingt-cinq (25)'],
+          correctWord: 'Vingt et un (21)',
+          explanation: 'Correct! "Vingt et un (21)" translates to "Twenty-one (21)".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
         ),
       ],
       evaluationQuestions: [
@@ -392,6 +444,32 @@ class P5Term1Lessons {
           correctOptionIndex: 1,
           explanation: '30 + 15 = 45 (Quarante-cinq).',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Trente et un (31)', english: 'Thirty-one (31)'),
+            DrillPair(french: 'Trente-cinq (35)', english: 'Thirty-five (35)'),
+            DrillPair(french: 'Quarante (40)', english: 'Forty (40)'),
+            DrillPair(french: 'Quarante et un (41)', english: 'Forty-one (41)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Thirty-one (31)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Trente et un (31)', 'Trente-cinq (35)', 'Quarante (40)', 'Quarante et un (41)'],
+          correctWord: 'Trente et un (31)',
+          explanation: 'Correct! "Trente et un (31)" translates to "Thirty-one (31)".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -528,6 +606,32 @@ class P5Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'Dix (10), Vingt (20), Trente (30), Quarante (40), Cinquante (50), Soixante (60).',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Cinquante et un (51)', english: 'Fifty-one (51)'),
+            DrillPair(french: 'Cinquante-cinq (55)', english: 'Fifty-five (55)'),
+            DrillPair(french: 'Cinquante-neuf (59)', english: 'Fifty-nine (59)'),
+            DrillPair(french: 'Soixante (60)', english: 'Sixty (60)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Fifty-one (51)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Cinquante et un (51)', 'Cinquante-cinq (55)', 'Cinquante-neuf (59)', 'Soixante (60)'],
+          correctWord: 'Cinquante et un (51)',
+          explanation: 'Correct! "Cinquante et un (51)" translates to "Fifty-one (51)".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -574,6 +678,7 @@ class P5Term1Lessons {
       topic: 'Examen de Mi-Trimestre (Mid-Term Oral Speed Rally)',
       subtitle: 'Interactive Smartboard Oral Review & Speed Quiz for Weeks 1 to 4',
       patternType: P5PatternType.term1RevisionRally,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Demonstrate mastery in greetings, French alphabet sounds, and self-introduction.',
         'Rapidly calculate and recite French numbers from 1 to 60.',
@@ -628,6 +733,38 @@ class P5Term1Lessons {
           options: ['J\'ai dix ans', 'Je m\'appelle Tunde', 'Ça va bien', 'Bonsoir'],
           correctOptionIndex: 1,
           explanation: '"Je m\'appelle..." is the correct sentence to state your name.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'La révision de mi-trimestre', english: 'Mid-term revision'),
+            DrillPair(french: 'Le champion / La championne', english: 'The champion (Boy / Girl)'),
+            DrillPair(french: 'Très rapide !', english: 'Very fast / Quick response!'),
+            DrillPair(french: 'Bravo à tous !', english: 'Well done everyone!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Mid-term revision):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['La révision de mi-trimestre', 'Le champion / La championne', 'Très rapide !', 'Bravo à tous !'],
+          correctWord: 'La révision de mi-trimestre',
+          explanation: 'Correct! "La révision de mi-trimestre" translates to "Mid-term revision".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Le champion / La championne"?',
+          options: ['The champion (Boy / Girl)', 'Mid-term revision', 'Very fast / Quick response!', 'Well done everyone!'],
+          correctOptionIndex: 0,
+          explanation: '"Le champion / La championne" translates to "The champion (Boy / Girl)".',
         ),
       ],
       evaluationQuestions: [
@@ -698,6 +835,45 @@ class P5Term1Lessons {
           options: ['Good morning', 'Have a good rest / vacation', 'Happy birthday', 'Goodbye forever'],
           correctOptionIndex: 1,
           explanation: '"Bon repos" translates to "Have a good rest".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le congé', english: 'The holiday / Break'),
+            DrillPair(french: 'Bon repos !', english: 'Have a good rest!'),
+            DrillPair(french: 'À bientôt !', english: 'See you soon!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The holiday / Break):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le congé', 'Bon repos !', 'À bientôt !', 'Merci'],
+          correctWord: 'Le congé',
+          explanation: 'Correct! "Le congé" translates to "The holiday / Break".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Bon repos !"?',
+          options: ['Have a good rest!', 'The holiday / Break', 'See you soon!', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Bon repos !" translates to "Have a good rest!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "See you soon!":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['À bientôt !', 'Le congé', 'Bon repos !', 'S\'il vous plaît'],
+          correctWord: 'À bientôt !',
+          explanation: 'Exact ! "À bientôt !" means "See you soon!".',
         ),
       ],
       evaluationQuestions: [
@@ -821,6 +997,32 @@ class P5Term1Lessons {
           options: ['Gentil', 'Gentille', 'Gentils', 'Gentilles'],
           correctOptionIndex: 1,
           explanation: 'The feminine singular form of "gentil" is "gentille".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Voici...', english: 'Here is... / This is...'),
+            DrillPair(french: 'C\'est mon ami / mon amie', english: 'This is my friend (Boy / Girl)'),
+            DrillPair(french: 'Il s\'appelle...', english: 'His name is... (He is called...)'),
+            DrillPair(french: 'Elle s\'appelle...', english: 'Her name is... (She is called...)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Here is... / This is...):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Voici...', 'C\'est mon ami / mon amie', 'Il s\'appelle...', 'Elle s\'appelle...'],
+          correctWord: 'Voici...',
+          explanation: 'Correct! "Voici..." translates to "Here is... / This is...".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
         ),
       ],
       evaluationQuestions: [
@@ -958,6 +1160,32 @@ class P5Term1Lessons {
           correctOptionIndex: 0,
           explanation: '"Il est fort" means "He is strong".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Il a dix ans', english: 'He is ten years old'),
+            DrillPair(french: 'Elle a neuf ans', english: 'She is nine years old'),
+            DrillPair(french: 'Il est nigérian', english: 'He is Nigerian'),
+            DrillPair(french: 'Elle est nigériane', english: 'She is Nigerian'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (He is ten years old):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Il a dix ans', 'Elle a neuf ans', 'Il est nigérian', 'Elle est nigériane'],
+          correctWord: 'Il a dix ans',
+          explanation: 'Correct! "Il a dix ans" translates to "He is ten years old".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1091,6 +1319,32 @@ class P5Term1Lessons {
           options: ['un', 'une', 'des', 'les'],
           correctOptionIndex: 1,
           explanation: '"Bouche" is a feminine noun, so we use "une bouche".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'La tête', english: 'The head'),
+            DrillPair(french: 'Le visage', english: 'The face'),
+            DrillPair(french: 'Les cheveux', english: 'The hair'),
+            DrillPair(french: 'Les yeux (l\'œil)', english: 'The eyes (One eye)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The head):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['La tête', 'Le visage', 'Les cheveux', 'Les yeux (l\'œil)'],
+          correctWord: 'La tête',
+          explanation: 'Correct! "La tête" translates to "The head".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
         ),
       ],
       evaluationQuestions: [
@@ -1232,6 +1486,32 @@ class P5Term1Lessons {
           correctOptionIndex: 2,
           explanation: 'For plural nouns like "les dents", we use "aux" (à + les = aux).',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le bras', english: 'The arm'),
+            DrillPair(french: 'La main / Les doigts', english: 'The hand / The fingers'),
+            DrillPair(french: 'Le ventre', english: 'The stomach / Belly'),
+            DrillPair(french: 'Le dos', english: 'The back'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The arm):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le bras', 'La main / Les doigts', 'Le ventre', 'Le dos'],
+          correctWord: 'Le bras',
+          explanation: 'Correct! "Le bras" translates to "The arm".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1278,6 +1558,7 @@ class P5Term1Lessons {
       topic: 'Révision Générale du Premier Trimestre',
       subtitle: 'Comprehensive Speed Oral Revision Rally across Weeks 1 to 10',
       patternType: P5PatternType.term1RevisionRally,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Review and consolidate all First Term Primary 5 topics.',
         'Rapidly answer questions on counting 1–60, introductions, and body anatomy.',
@@ -1337,6 +1618,38 @@ class P5Term1Lessons {
           correctOptionIndex: 1,
           explanation: '"Elle est mon amie et elle est gentille" uses feminine agreements for friend and kind.',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'La révision générale', english: 'General revision'),
+            DrillPair(french: 'Les nombres 1 à 60', english: 'Numbers 1 to 60'),
+            DrillPair(french: 'Présenter les autres', english: 'Presenting others'),
+            DrillPair(french: 'Le corps humain', english: 'The human body'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (General revision):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['La révision générale', 'Les nombres 1 à 60', 'Présenter les autres', 'Le corps humain'],
+          correctWord: 'La révision générale',
+          explanation: 'Correct! "La révision générale" translates to "General revision".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Les nombres 1 à 60"?',
+          options: ['Numbers 1 to 60', 'General revision', 'Presenting others', 'The human body'],
+          correctOptionIndex: 0,
+          explanation: '"Les nombres 1 à 60" translates to "Numbers 1 to 60".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1367,6 +1680,7 @@ class P5Term1Lessons {
       topic: 'Bilan et Évaluation Orale du Premier Trimestre',
       subtitle: 'Teacher-guided Speaking Evaluation & Student Achievement Portfolio',
       patternType: P5PatternType.term1RevisionRally,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Conduct individual and group oral evaluation stations.',
         'Assess pronunciation, fluency, and vocabulary recall.',
@@ -1407,6 +1721,45 @@ class P5Term1Lessons {
           correctOptionIndex: 1,
           explanation: '"Félicitations !" means "Congratulations!".',
         ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'L\'évaluation orale', english: 'Oral evaluation'),
+            DrillPair(french: 'Très bien réussi !', english: 'Very well done!'),
+            DrillPair(french: 'Félicitations !', english: 'Congratulations!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Oral evaluation):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['L\'évaluation orale', 'Très bien réussi !', 'Félicitations !', 'Merci'],
+          correctWord: 'L\'évaluation orale',
+          explanation: 'Correct! "L\'évaluation orale" translates to "Oral evaluation".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Très bien réussi !"?',
+          options: ['Very well done!', 'Oral evaluation', 'Congratulations!', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Très bien réussi !" translates to "Very well done!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "Congratulations!":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['Félicitations !', 'L\'évaluation orale', 'Très bien réussi !', 'S\'il vous plaît'],
+          correctWord: 'Félicitations !',
+          explanation: 'Exact ! "Félicitations !" means "Congratulations!".',
+        ),
       ],
       evaluationQuestions: [
         P5EvaluationQuestion(
@@ -1432,6 +1785,7 @@ class P5Term1Lessons {
       topic: 'Fin du Premier Trimestre (Term 1 Wrap-up & Vacation Celebration)',
       subtitle: 'Congratulations on Completing Term 1 French — Bonnes Vacances !',
       patternType: P5PatternType.term1Vacation,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Celebrate the successful completion of First Term Primary 5 French!',
         'Review badge collections and achievements.',
@@ -1471,6 +1825,45 @@ class P5Term1Lessons {
           options: ['Bonne nuit', 'Bonnes vacances !', 'De rien', 'Au secours'],
           correctOptionIndex: 1,
           explanation: '"Bonnes vacances !" is the standard French wish for a great school holiday.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Félicitations !', english: 'Congratulations!'),
+            DrillPair(french: 'Bonnes vacances !', english: 'Happy holidays / Have a great vacation!'),
+            DrillPair(french: 'À la rentrée !', english: 'See you next term / when school resumes!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Congratulations!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Félicitations !', 'Bonnes vacances !', 'À la rentrée !', 'Merci'],
+          correctWord: 'Félicitations !',
+          explanation: 'Correct! "Félicitations !" translates to "Congratulations!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to pronunciation and polite formulas is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to learning French.',
+        ),
+        P5InteractiveExercise(
+          prompt: 'What is the correct English translation for "Bonnes vacances !"?',
+          options: ['Happy holidays / Have a great vacation!', 'Congratulations!', 'See you next term / when school resumes!', 'Goodbye'],
+          correctOptionIndex: 0,
+          explanation: '"Bonnes vacances !" translates to "Happy holidays / Have a great vacation!".',
+        ),
+        P5InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Choose the correct French term for "See you next term / when school resumes!":',
+          sentenceTemplate: 'En classe, nous disons ___ avec politesse.',
+          wordBank: ['À la rentrée !', 'Félicitations !', 'Bonnes vacances !', 'S\'il vous plaît'],
+          correctWord: 'À la rentrée !',
+          explanation: 'Exact ! "À la rentrée !" means "See you next term / when school resumes!".',
         ),
       ],
       evaluationQuestions: [

@@ -35,10 +35,38 @@ This document details pre-decided future milestones for the development, validat
 - [ ] Create visual flashcard, vocabulary grid, and phonetic display components.
 
 ## Milestone 3: Teacher Facilitator System & Duolingo-Style Onboarding 👩‍🏫
-- [ ] Design interactive 2-minute **First-Time Teacher Walkthrough** (orienting non-French teachers on how to run a lesson).
+- [x] Design and implement animated 60fps **Animated Splash Screen** with glowing orb, bouncing Huey mascot head, gold typography, and class badge across all 5 projects (`mvp`, `P5_FRENCH`, `JSS1_FRENCH`, `JSS 2_FRENCH`, `JSS 3_FRENCH`).
+- [x] Design and implement **Duolingo-Inspired Classroom & Teacher Kickoff Onboarding**:
+  - [x] 3-Slide progressive orientation (*L'Introduction*, *La Voix Haute*, *L'Aventure*).
+  - [x] Auto-playing authentic French neural speech cues with mouth animation synchronization.
+  - [x] Prominent French-first presentation with parallel English scaffolding.
+  - [x] Always skippable on first/subsequent launches with persistent replayability via "Guide / Kickoff" header button on Term Select.
 - [ ] Implement **60-Second Pre-Lesson Briefing Card** (Lesson objectives, key phonetic hints for teacher, physical classroom setup).
-- [ ] Build live on-screen **Facilitator Guidance Overlay** (Step-by-step Standard English prompts for active class).
+- [x] Build live on-screen **Facilitator Guidance Overlay / Cue Bar** (Step-by-step Standard English prompts for active class).
 - [ ] Implement **30-Minute Structured Lesson Period Timer** & Section Navigators (Warmup -> Audio Drill -> Interactive Games -> Wrap-up Quiz).
+
+## Milestone 3.5: Comprehensive Teaching Experience & Duolingo-Style Interactive Drills 🎮 *(Phase 3 Completed)*
+- [x] **App Shell in English (Duolingo Operational Model)**:
+  - [x] Main navigation, Term Selection, Roadmaps, Lesson Player headers, tab bars, bottom navigation controls, and feedback banners converted to English across all 5 classes.
+  - [x] French reserved for target learning content with English translations, phonetics, and native audio.
+- [x] **No UI for Class Objectives on Student Smartboard**:
+  - [x] Removed dry "Objectives" phase from student smartboard flow; player streamlined to 4 phases starting directly on the learning model.
+  - [x] Relocated syllabus pedagogical objectives, cultural insight hooks, and teacher facilitator guidance to an on-demand **Teacher Guide Drawer** accessible via AppBar.
+- [x] **Abolished Static Evaluation Q&A in Favor of Dynamic Gamified Drills**:
+  - [x] Replaced static Q&A evaluation tabs across all topics with interactive drill engines.
+  - [x] Enforced a minimum of 6 interactive drills per lesson across every single week in all terms.
+- [x] **Learning Model vs. Interactive Drills Pedagogy**:
+  - [x] Phase 1 (Learning Model) presents the lesson via its topic-appropriate style (`storyNarrative`, `dialogueConversation`, `interactiveStudio`, or `phoneticSoundboard`).
+  - [x] Phase 3 (Practice Drills) actively reinforces and tests comprehension through interactive smartboard drills.
+- [x] **Polymorphic Multi-Modal Drill Engines Built for All 5 Classes**:
+  - [x] `P4InteractiveDrillEngineWidget` (Primary 4 / `mvp/`) — 39 weeks upgraded.
+  - [x] `P5InteractiveDrillEngineWidget` (Primary 5 / `P5_FRENCH/`) — 39 weeks upgraded.
+  - [x] `JSS1InteractiveDrillEngineWidget` (JSS 1 / `JSS1_FRENCH/`) — 27 weeks upgraded.
+  - [x] `JSS2InteractiveDrillEngineWidget` (JSS 2 / `JSS 2_FRENCH/`) — 27 weeks upgraded.
+  - [x] `JSS3InteractiveDrillEngineWidget` (JSS 3 / `JSS 3_FRENCH/`) — 18 weeks upgraded.
+  - [x] 5 core modalities: Single Choice, Match the Pairs, Fill in the Gap, True/False, Tap Translation with 60px+ touch targets and sound effects.
+- [x] **100% Automated Test Suite Verification**:
+  - [x] 61/61 unit, widget, and curriculum integrity tests passed with zero errors across all 5 projects.
 
 ## Milestone 4: Government Scheme of Work Content Bundles (French & Chinese) 🇳🇬
 - [x] Author & digitize 3 Full Terms of Nigerian Scheme of Work for Primary 4 French (`mvp/`):

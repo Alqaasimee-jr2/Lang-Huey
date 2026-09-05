@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
 import '../roadmap/jss1_week_roadmap_screen.dart';
+import '../onboarding/onboarding_screen.dart';
 
 class JSS1TermSelectScreen extends StatelessWidget {
   const JSS1TermSelectScreen({super.key});
@@ -16,19 +17,19 @@ class JSS1TermSelectScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top Brand Header
+              // Top Header Bar
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(12),
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: JSS1Colors.teal,
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: const Icon(Icons.school_rounded, color: JSS1Colors.gold, size: 32),
+                        child: const Icon(Icons.school_rounded, color: JSS1Colors.gold, size: 28),
                       ),
                       const SizedBox(width: 16),
                       Column(
@@ -36,16 +37,19 @@ class JSS1TermSelectScreen extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Text('LANG HUEY', style: JSS1Text.heading(JSS1Colors.teal).copyWith(letterSpacing: 1.5)),
-                              const SizedBox(width: 10),
+                              Text(
+                                'JSS 1 French Language Engine',
+                                style: JSS1Text.heading(JSS1Colors.teal),
+                              ),
+                              const SizedBox(width: 8),
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                                 decoration: BoxDecoration(
                                   color: JSS1Colors.gold,
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(6),
                                 ),
                                 child: Text(
-                                  'JSS 1 FRENCH',
+                                  'JSS 1',
                                   style: JSS1Text.caption(JSS1Colors.charcoal).copyWith(fontWeight: FontWeight.w900),
                                 ),
                               ),
@@ -59,23 +63,56 @@ class JSS1TermSelectScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: JSS1Colors.white,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: JSS1Colors.lightGrey),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.cast_for_education_rounded, color: JSS1Colors.teal, size: 20),
-                        const SizedBox(width: 8),
-                        Text(
-                          'Mode Smartboard 1080p / 4K',
-                          style: JSS1Text.caption(JSS1Colors.charcoal).copyWith(fontWeight: FontWeight.bold),
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const OnboardingScreen(isReplayMode: true),
+                            ),
+                          );
+                        },
+                        borderRadius: BorderRadius.circular(12),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: JSS1Colors.teal.withOpacity(0.08),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: JSS1Colors.teal.withOpacity(0.3)),
+                          ),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.school_rounded, color: JSS1Colors.teal, size: 20),
+                              const SizedBox(width: 8),
+                              Text(
+                                'Guide / Kickoff',
+                                style: JSS1Text.caption(JSS1Colors.teal).copyWith(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(width: 12),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: JSS1Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: JSS1Colors.lightGrey),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.cast_for_education_rounded, color: JSS1Colors.teal, size: 20),
+                            const SizedBox(width: 8),
+                            Text(
+                              'Smartboard 1080p / 4K Mode',
+                              style: JSS1Text.caption(JSS1Colors.charcoal).copyWith(fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -83,11 +120,11 @@ class JSS1TermSelectScreen extends StatelessWidget {
               const SizedBox(height: 36),
 
               Text(
-                'Sélectionnez le Trimestre Scolaire',
+                'Select School Term',
                 style: JSS1Text.heroHeading(JSS1Colors.charcoal).copyWith(fontSize: 28),
               ),
               Text(
-                'Explorez les modules de cours et de révision de français pour la classe de JSS1 (7e Année).',
+                'Explore French curriculum modules and practice drills for Junior Secondary School 1.',
                 style: JSS1Text.body(JSS1Colors.grey),
               ),
 
@@ -100,8 +137,8 @@ class JSS1TermSelectScreen extends StatelessWidget {
                     _buildTermCard(
                       context,
                       termNumber: 1,
-                      title: 'Premier Trimestre',
-                      subtitle: 'Ordres de classe, Salutations, Présentation, Orthographe, Descriptions, Loisirs & Goûts',
+                      title: 'Term 1 — First Term',
+                      subtitle: 'Classroom Commands, Greetings, Introductions, Spelling, Descriptions, Hobbies & Preferences',
                       weeksCount: 9,
                       icon: Icons.flag_rounded,
                       isAvailable: true,
@@ -111,8 +148,8 @@ class JSS1TermSelectScreen extends StatelessWidget {
                     _buildTermCard(
                       context,
                       termNumber: 2,
-                      title: 'Deuxième Trimestre',
-                      subtitle: 'Propriétés des objets, Demandes polies, Métiers & professions, L\'heure, Routine, Dates & Chronologie',
+                      title: 'Term 2 — Second Term',
+                      subtitle: 'Object Properties, Polite Requests, Professions, Telling Time, Daily Routines & Calendar Dates',
                       weeksCount: 9,
                       icon: Icons.calendar_month_rounded,
                       isAvailable: true,
@@ -122,8 +159,8 @@ class JSS1TermSelectScreen extends StatelessWidget {
                     _buildTermCard(
                       context,
                       termNumber: 3,
-                      title: 'Troisième Trimestre',
-                      subtitle: 'Météo & Saisons, Fréquence, Invitations, Ordres & Règles, Conseils, Itinéraires, Atelier BECE & Diplôme JSS1',
+                      title: 'Term 3 — Third Term',
+                      subtitle: 'Weather & Seasons, Frequency, Invitations, Rules, Giving Directions, BECE Prep & Graduation',
                       weeksCount: 9,
                       icon: Icons.celebration_rounded,
                       isAvailable: true,
@@ -172,7 +209,7 @@ class JSS1TermSelectScreen extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: JSS1Colors.charcoal.withValues(alpha: 0.06),
+                color: JSS1Colors.charcoal.withOpacity(0.06),
                 blurRadius: 16,
                 offset: const Offset(0, 6),
               ),
@@ -185,7 +222,7 @@ class JSS1TermSelectScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: isAvailable ? accentColor : JSS1Colors.grey.withValues(alpha: 0.2),
+                  color: isAvailable ? accentColor : JSS1Colors.grey.withOpacity(0.2),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(22),
                     topRight: Radius.circular(22),
@@ -198,11 +235,11 @@ class JSS1TermSelectScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
-                        color: isAvailable ? JSS1Colors.white.withValues(alpha: 0.2) : JSS1Colors.lightGrey,
+                        color: isAvailable ? JSS1Colors.white.withOpacity(0.2) : JSS1Colors.lightGrey,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
-                        isAvailable ? 'DISPONIBLE' : 'BIENTÔT',
+                        isAvailable ? 'AVAILABLE' : 'COMING SOON',
                         style: TextStyle(
                           color: isAvailable ? JSS1Colors.white : JSS1Colors.grey,
                           fontSize: 11,
@@ -225,7 +262,7 @@ class JSS1TermSelectScreen extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('TRIMESTRE $termNumber', style: JSS1Text.caption(isAvailable ? accentColor : JSS1Colors.grey).copyWith(fontWeight: FontWeight.w900, letterSpacing: 1)),
+                          Text('TERM $termNumber', style: JSS1Text.caption(isAvailable ? accentColor : JSS1Colors.grey).copyWith(fontWeight: FontWeight.w900, letterSpacing: 1)),
                           const SizedBox(height: 4),
                           Text(title, style: JSS1Text.heading(JSS1Colors.charcoal).copyWith(fontSize: 20)),
                           const SizedBox(height: 10),
@@ -246,7 +283,7 @@ class JSS1TermSelectScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              isAvailable ? 'Ouvrir les 13 Semaines' : 'Trimestre Verrouillé',
+                              isAvailable ? 'Open $weeksCount Weeks' : 'Term Locked',
                               style: JSS1Text.body(isAvailable ? JSS1Colors.white : JSS1Colors.grey).copyWith(fontWeight: FontWeight.w800),
                             ),
                             if (isAvailable) ...[

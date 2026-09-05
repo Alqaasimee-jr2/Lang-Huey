@@ -19,6 +19,7 @@ void main() {
         expect(lesson.objectives.length >= 4, isTrue, reason: 'Week ${lesson.weekNumber} must have >= 4 objectives');
         expect(lesson.culturalInsight.isNotEmpty, isTrue);
         expect(lesson.teacherFacilitatorPrompt.isNotEmpty, isTrue);
+        expect(lesson.teachingStyle, isNotNull);
       }
     });
 
@@ -34,14 +35,21 @@ void main() {
       }
     });
 
-    test('Every Term 1 lesson has interactive exercises with valid correctOptionIndex', () {
+    test('Every Term 1 lesson has min 6 interactive drills with valid mechanics', () {
       for (final lesson in JSS2Term1Lessons.weeks) {
-        expect(lesson.exercises.isNotEmpty, isTrue);
+        expect(lesson.exercises.length, greaterThanOrEqualTo(6));
         for (final ex in lesson.exercises) {
           expect(ex.prompt.isNotEmpty, isTrue);
-          expect(ex.options.length >= 2, isTrue);
-          expect(ex.correctOptionIndex >= 0 && ex.correctOptionIndex < ex.options.length, isTrue);
           expect(ex.explanation.isNotEmpty, isTrue);
+          if (ex.type == DrillType.singleChoice || ex.type == DrillType.trueFalse) {
+            expect(ex.options.length >= 2, isTrue);
+            expect(ex.correctOptionIndex >= 0 && ex.correctOptionIndex < ex.options.length, isTrue);
+          } else if (ex.type == DrillType.pairMatch) {
+            expect(ex.pairs != null && ex.pairs!.isNotEmpty, isTrue);
+          } else if (ex.type == DrillType.fillGap) {
+            expect(ex.correctWord != null && ex.correctWord!.isNotEmpty, isTrue);
+            expect(ex.wordBank != null && ex.wordBank!.isNotEmpty, isTrue);
+          }
         }
       }
     });
@@ -75,6 +83,7 @@ void main() {
         expect(lesson.objectives.length >= 4, isTrue, reason: 'Week ${lesson.weekNumber} must have >= 4 objectives');
         expect(lesson.culturalInsight.isNotEmpty, isTrue);
         expect(lesson.teacherFacilitatorPrompt.isNotEmpty, isTrue);
+        expect(lesson.teachingStyle, isNotNull);
       }
     });
 
@@ -90,14 +99,21 @@ void main() {
       }
     });
 
-    test('Every Term 2 lesson has interactive exercises with valid correctOptionIndex', () {
+    test('Every Term 2 lesson has min 6 interactive drills with valid mechanics', () {
       for (final lesson in JSS2Term2Lessons.weeks) {
-        expect(lesson.exercises.isNotEmpty, isTrue);
+        expect(lesson.exercises.length, greaterThanOrEqualTo(6));
         for (final ex in lesson.exercises) {
           expect(ex.prompt.isNotEmpty, isTrue);
-          expect(ex.options.length >= 2, isTrue);
-          expect(ex.correctOptionIndex >= 0 && ex.correctOptionIndex < ex.options.length, isTrue);
           expect(ex.explanation.isNotEmpty, isTrue);
+          if (ex.type == DrillType.singleChoice || ex.type == DrillType.trueFalse) {
+            expect(ex.options.length >= 2, isTrue);
+            expect(ex.correctOptionIndex >= 0 && ex.correctOptionIndex < ex.options.length, isTrue);
+          } else if (ex.type == DrillType.pairMatch) {
+            expect(ex.pairs != null && ex.pairs!.isNotEmpty, isTrue);
+          } else if (ex.type == DrillType.fillGap) {
+            expect(ex.correctWord != null && ex.correctWord!.isNotEmpty, isTrue);
+            expect(ex.wordBank != null && ex.wordBank!.isNotEmpty, isTrue);
+          }
         }
       }
     });
@@ -131,6 +147,7 @@ void main() {
         expect(lesson.objectives.length >= 4, isTrue, reason: 'Week ${lesson.weekNumber} must have >= 4 objectives');
         expect(lesson.culturalInsight.isNotEmpty, isTrue);
         expect(lesson.teacherFacilitatorPrompt.isNotEmpty, isTrue);
+        expect(lesson.teachingStyle, isNotNull);
       }
     });
 
@@ -146,14 +163,21 @@ void main() {
       }
     });
 
-    test('Every Term 3 lesson has interactive exercises with valid correctOptionIndex', () {
+    test('Every Term 3 lesson has min 6 interactive drills with valid mechanics', () {
       for (final lesson in JSS2Term3Lessons.weeks) {
-        expect(lesson.exercises.isNotEmpty, isTrue);
+        expect(lesson.exercises.length, greaterThanOrEqualTo(6));
         for (final ex in lesson.exercises) {
           expect(ex.prompt.isNotEmpty, isTrue);
-          expect(ex.options.length >= 2, isTrue);
-          expect(ex.correctOptionIndex >= 0 && ex.correctOptionIndex < ex.options.length, isTrue);
           expect(ex.explanation.isNotEmpty, isTrue);
+          if (ex.type == DrillType.singleChoice || ex.type == DrillType.trueFalse) {
+            expect(ex.options.length >= 2, isTrue);
+            expect(ex.correctOptionIndex >= 0 && ex.correctOptionIndex < ex.options.length, isTrue);
+          } else if (ex.type == DrillType.pairMatch) {
+            expect(ex.pairs != null && ex.pairs!.isNotEmpty, isTrue);
+          } else if (ex.type == DrillType.fillGap) {
+            expect(ex.correctWord != null && ex.correctWord!.isNotEmpty, isTrue);
+            expect(ex.wordBank != null && ex.wordBank!.isNotEmpty, isTrue);
+          }
         }
       }
     });

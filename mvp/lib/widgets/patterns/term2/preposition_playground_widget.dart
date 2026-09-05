@@ -88,7 +88,7 @@ class _PrepositionPlaygroundWidgetState
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,7 +171,7 @@ class _PrepositionPlaygroundWidgetState
                     decoration: BoxDecoration(
                       color: LHColors.cream,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: LHColors.teal.withOpacity(0.3), width: 2),
+                      border: Border.all(color: LHColors.teal.withValues(alpha: 0.3), width: 2),
                     ),
                     child: Stack(
                       alignment: Alignment.center,
@@ -186,7 +186,7 @@ class _PrepositionPlaygroundWidgetState
                             border: Border.all(color: LHColors.teal, width: 3),
                             boxShadow: [
                               BoxShadow(
-                                color: LHColors.charcoal.withOpacity(0.08),
+                                color: LHColors.charcoal.withValues(alpha: 0.08),
                                 blurRadius: 10,
                                 offset: const Offset(0, 4),
                               ),
@@ -218,7 +218,7 @@ class _PrepositionPlaygroundWidgetState
                                 borderRadius: BorderRadius.circular(14),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: LHColors.charcoal.withOpacity(0.2),
+                                    color: LHColors.charcoal.withValues(alpha: 0.2),
                                     blurRadius: 8,
                                     offset: const Offset(0, 3),
                                   ),
@@ -253,7 +253,7 @@ class _PrepositionPlaygroundWidgetState
                     decoration: BoxDecoration(
                       color: LHColors.white,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: LHColors.gold.withOpacity(0.6), width: 2),
+                      border: Border.all(color: LHColors.gold.withValues(alpha: 0.6), width: 2),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -316,7 +316,7 @@ class _PrepositionPlaygroundWidgetState
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
-                            color: LHColors.teal.withOpacity(0.08),
+                            color: LHColors.teal.withValues(alpha: 0.08),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(

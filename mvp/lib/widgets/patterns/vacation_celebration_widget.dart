@@ -23,7 +23,7 @@ class VacationCelebrationWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,7 +62,7 @@ class VacationCelebrationWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: LHColors.cream,
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: LHColors.gold.withOpacity(0.5)),
+                    border: Border.all(color: LHColors.gold.withValues(alpha: 0.5)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,9 +87,9 @@ class VacationCelebrationWidget extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
-                    color: LHColors.teal.withOpacity(0.08),
+                    color: LHColors.teal.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: LHColors.teal.withOpacity(0.3)),
+                    border: Border.all(color: LHColors.teal.withValues(alpha: 0.3)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,7 +112,7 @@ class VacationCelebrationWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             decoration: BoxDecoration(
-              color: LHColors.teal.withOpacity(0.1),
+              color: LHColors.teal.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(14),
             ),
             child: Row(

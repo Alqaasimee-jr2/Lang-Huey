@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
+import '../onboarding/onboarding_screen.dart';
 
 class P4TermSelectScreen extends StatelessWidget {
   const P4TermSelectScreen({super.key});
@@ -32,9 +33,9 @@ class P4TermSelectScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
                         decoration: BoxDecoration(
-                          color: LHColors.turquoise.withOpacity(0.25),
+                          color: LHColors.turquoise.withValues(alpha: 0.25),
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: LHColors.turquoise.withOpacity(0.5)),
+                          border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.5)),
                         ),
                         child: Text(
                           'GRADE 4 / PRIMARY 4 FRENCH',
@@ -43,16 +44,52 @@ class P4TermSelectScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: LHColors.white.withOpacity(0.12),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Text(
-                      'NIT7ER · 2026',
-                      style: LHText.label(LHColors.white).copyWith(fontSize: 12),
-                    ),
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const OnboardingScreen(isReplayMode: true),
+                            ),
+                          );
+                        },
+                        borderRadius: BorderRadius.circular(12),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: LHColors.turquoise.withValues(alpha: 0.25),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.6)),
+                          ),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.school_rounded, color: LHColors.turquoise, size: 16),
+                              const SizedBox(width: 8),
+                              Text(
+                                'Guide / Kickoff',
+                                style: LHText.label(LHColors.white).copyWith(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: LHColors.white.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          'NIT7ER · 2026',
+                          style: LHText.label(LHColors.white).copyWith(fontSize: 12),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -173,7 +210,7 @@ class P4TermSelectScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(24),
             border: isUnlocked
                 ? Border.all(color: LHColors.turquoise, width: 2.5)
-                : Border.all(color: LHColors.grey.withOpacity(0.3), width: 1.5),
+                : Border.all(color: LHColors.grey.withValues(alpha: 0.3), width: 1.5),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,7 +222,7 @@ class P4TermSelectScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                     decoration: BoxDecoration(
-                      color: isUnlocked ? LHColors.teal : LHColors.grey.withOpacity(0.2),
+                      color: isUnlocked ? LHColors.teal : LHColors.grey.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
@@ -233,38 +270,43 @@ class P4TermSelectScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    '$weeksCount Weekly Lessons',
-                    style: LHText.body(LHColors.charcoal).copyWith(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
+                  Flexible(
+                    child: Text(
+                      '$weeksCount Lessons',
+                      style: LHText.body(LHColors.charcoal).copyWith(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
+                  const SizedBox(width: 8),
                   if (isUnlocked)
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                       decoration: BoxDecoration(
                         color: LHColors.gold,
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
-                            color: LHColors.gold.withOpacity(0.4),
+                            color: LHColors.gold.withValues(alpha: 0.4),
                             blurRadius: 8,
                             offset: const Offset(0, 3),
                           ),
                         ],
                       ),
                       child: Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'Open Term',
+                            'Open',
                             style: LHText.body(LHColors.charcoal).copyWith(
-                              fontSize: 15,
+                              fontSize: 14,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
-                          const SizedBox(width: 6),
-                          const Icon(Icons.arrow_forward_rounded, color: LHColors.charcoal, size: 18),
+                          const SizedBox(width: 4),
+                          const Icon(Icons.arrow_forward_rounded, color: LHColors.charcoal, size: 16),
                         ],
                       ),
                     ),

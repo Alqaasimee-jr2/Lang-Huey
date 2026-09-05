@@ -112,8 +112,24 @@ class P4AudioService {
       }
 
       await _sfxPlayer.stop();
-      await _sfxPlayer.setAsset('assets/audio/p4_term1/$sfxName.mp3');
-      await _sfxPlayer.play();
+      final candidatePaths = [
+        'assets/audio/sfx/$sfxName.mp3',
+        'assets/audio/$sfxName.mp3',
+        'assets/audio/p4_term1/$sfxName.mp3',
+      ];
+      bool loaded = false;
+      for (final path in candidatePaths) {
+        try {
+          await _sfxPlayer.setAsset(path);
+          loaded = true;
+          break;
+        } catch (_) {
+          // Continue to next fallback path
+        }
+      }
+      if (loaded) {
+        await _sfxPlayer.play();
+      }
     } catch (e) {
       if (kDebugMode) {
         print('P4AudioService: SFX notice: $e');

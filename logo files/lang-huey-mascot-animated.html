@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+
+  .stage {
+    width: 260px;
+    height: 260px;
+  }
+
+  .buddy {
+    animation: bob 2.4s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-10px) rotate(-1.5deg); }
+  }
+
+  .antenna-group {
+    animation: sway 2.4s ease-in-out infinite;
+    transform-origin: 110px 40px;
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-6deg); }
+    50%      { transform: rotate(6deg); }
+  }
+
+  .star {
+    animation: twinkle 1.2s ease-in-out infinite;
+    transform-origin: 110px 20px;
+  }
+  @keyframes twinkle {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.25); opacity: 0.7; }
+  }
+
+  .eye {
+    animation: blink 3.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes blink {
+    0%, 92%, 100% { transform: scaleY(1); }
+    95%           { transform: scaleY(0.1); }
+  }
+
+  .mouth {
+    animation: talk 1.6s ease-in-out infinite;
+    transform-origin: 110px 148px;
+  }
+  @keyframes talk {
+    0%, 100% { transform: scaleY(1); }
+    50%      { transform: scaleY(1.4); }
+  }
+
+  .cheek {
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 0.9; }
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+<svg class="buddy" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- antenna -->
+  <g class="antenna-group">
+    <line x1="110" y1="40" x2="110" y2="18" stroke="#0D7377" stroke-width="6" stroke-linecap="round"/>
+    <path class="star" d="M 110 6 l 4.5 9 l 10 1.4 l -7.2 6.8 l 1.7 9.8 l -9 -4.7 l -9 4.7 l 1.7 -9.8 l -7.2 -6.8 l 10 -1.4 z" fill="#F4A832"/>
+  </g>
+
+  <!-- body: rounded blobby smartboard buddy -->
+  <rect x="20" y="40" width="180" height="160" rx="55" fill="#0D7377"/>
+  <rect x="32" y="52" width="156" height="136" rx="45" fill="none" stroke="#14BDCC" stroke-width="4" opacity="0.85"/>
+
+  <!-- cheeks -->
+  <circle class="cheek" cx="62" cy="130" r="14" fill="#F4A832" opacity="0.6"/>
+  <circle class="cheek" cx="158" cy="130" r="14" fill="#F4A832" opacity="0.6"/>
+
+  <!-- eyes (whites) -->
+  <circle cx="80" cy="105" r="22" fill="#F5F0E8"/>
+  <circle cx="140" cy="105" r="22" fill="#F5F0E8"/>
+
+  <!-- eyes (pupils, blinking) -->
+  <circle class="eye" cx="83" cy="107" r="10" fill="#1C1C1C"/>
+  <circle class="eye" cx="143" cy="107" r="10" fill="#1C1C1C"/>
+
+  <!-- little eye sparkle -->
+  <circle cx="87" cy="102" r="3" fill="#F5F0E8"/>
+  <circle cx="147" cy="102" r="3" fill="#F5F0E8"/>
+
+  <!-- talking mouth -->
+  <path class="mouth" d="M 82 146 Q 110 168 138 146 Q 110 156 82 146 Z" fill="#F4A832"/>
+
+</svg>
+</div>
+</body>
+</html>

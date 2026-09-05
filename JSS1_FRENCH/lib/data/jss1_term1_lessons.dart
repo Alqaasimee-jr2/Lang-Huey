@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/jss1_lesson_model.dart';
 
 class JSS1Term1Lessons {
-  static const List<JSS1Lesson> weeks = [
+  static final List<JSS1Lesson> weeks = [
     // ==========================================
     // WEEK 1: LES MOTS UTILISÉS EN CLASSE
     // ==========================================
@@ -12,6 +12,7 @@ class JSS1Term1Lessons {
       topic: 'Les Mots Utilisés en Classe (Classroom Instructions)',
       subtitle: 'Essential French classroom expressions, teacher commands, and polite student requests.',
       patternType: JSS1PatternType.classroomCommands,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         'Understand and respond immediately to French classroom directives (Levez-vous, Asseyez-vous, Ouvrez vos livres).',
         'Use polite classroom phrases to ask permission from the teacher (Puis-je sortir ?, S\'il vous plaît).',
@@ -113,6 +114,32 @@ class JSS1Term1Lessons {
           correctOptionIndex: 2,
           explanation: '"Fermer" means to close, and "vos cahiers" refers to your notebooks.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Levez-vous !', english: 'Stand up! (Plural/Formal)'),
+            DrillPair(french: 'Asseyez-vous !', english: 'Sit down! (Plural/Formal)'),
+            DrillPair(french: 'Ouvrez vos livres !', english: 'Open your books!'),
+            DrillPair(french: 'Fermez vos cahiers !', english: 'Close your notebooks!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Stand up! (Plural/Formal)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Levez-vous !', 'Asseyez-vous !', 'Ouvrez vos livres !', 'Fermez vos cahiers !'],
+          correctWord: 'Levez-vous !',
+          explanation: 'Correct! "Levez-vous !" translates to "Stand up! (Plural/Formal)".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -165,6 +192,7 @@ class JSS1Term1Lessons {
       topic: 'Saluer et Prendre Congé (Greetings & Politeness)',
       subtitle: 'Formal and informal greeting registers, responses to greetings, and polite parting expressions.',
       patternType: JSS1PatternType.greetingStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Distinguish formal greetings (Bonjour Monsieur/Madame, Comment allez-vous ?) from informal ones (Salut, Ça va ?).',
         'Respond accurately to inquiries about health and wellbeing (Très bien, merci ! Et vous ?).',
@@ -266,6 +294,32 @@ class JSS1Term1Lessons {
           correctOptionIndex: 1,
           explanation: '"Enchanté" means "Pleased to meet you" or "Delighted to make your acquaintance".',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Bonjour Monsieur / Madame', english: 'Good morning / Good day Sir / Madam'),
+            DrillPair(french: 'Bonsoir !', english: 'Good evening!'),
+            DrillPair(french: 'Salut !', english: 'Hi! / Bye! (Informal)'),
+            DrillPair(french: 'Comment allez-vous ?', english: 'How are you? (Formal/Plural)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Good morning / Good day Sir / Madam):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Bonjour Monsieur / Madame', 'Bonsoir !', 'Salut !', 'Comment allez-vous ?'],
+          correctWord: 'Bonjour Monsieur / Madame',
+          explanation: 'Correct! "Bonjour Monsieur / Madame" translates to "Good morning / Good day Sir / Madam".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -312,6 +366,7 @@ class JSS1Term1Lessons {
       topic: 'Se Présenter (Introducing Oneself)',
       subtitle: 'Giving personal identity: name, age, nationality, city of origin, and school class.',
       patternType: JSS1PatternType.selfIntroStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'State your full name clearly using "Je m\'appelle..."',
         'State your age accurately using the verb AVOIR: "J\'ai 12 ans."',
@@ -405,6 +460,32 @@ class JSS1Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'For a female speaker, the feminine form is "nigériane".',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Je m\'appelle...', english: 'My name is...'),
+            DrillPair(french: 'J\'ai 12 ans.', english: 'I am 12 years old.'),
+            DrillPair(french: 'Je suis nigérian / nigériane.', english: 'I am Nigerian (Boy / Girl).'),
+            DrillPair(french: 'Je viens de Lagos / d\'Abuja.', english: 'I come from Lagos / Abuja.'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (My name is...):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Je m\'appelle...', 'J\'ai 12 ans.', 'Je suis nigérian / nigériane.', 'Je viens de Lagos / d\'Abuja.'],
+          correctWord: 'Je m\'appelle...',
+          explanation: 'Correct! "Je m\'appelle..." translates to "My name is...".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -447,6 +528,7 @@ class JSS1Term1Lessons {
       topic: 'Épeler un mot et l\'Orthographe (Spelling & Dictation)',
       subtitle: 'The French alphabet (A–Z), French accent marks, spelling names, and transcribing dictated words.',
       patternType: JSS1PatternType.spellingAndDictation,
+      teachingStyle: TeachingStyle.phoneticSoundboard,
       objectives: [
         'Pronounce all 26 letters of the French alphabet with flawless French phonetics.',
         'Identify and pronounce the 5 key French accent marks (aigu, grave, circonflexe, cédille, tréma).',
@@ -534,6 +616,38 @@ class JSS1Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'A cédille turns a hard "c" into a soft /s/ sound before letters like a, o, and u.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Comment ça s\'écrit ?', english: 'How is that written / spelled?'),
+            DrillPair(french: 'Ça s\'épèle...', english: 'It is spelled...'),
+            DrillPair(french: 'L\'accent aigu (é)', english: 'Acute accent (e.g. école, élève)'),
+            DrillPair(french: 'L\'accent grave (è, à, ù)', english: 'Grave accent (e.g. père, mère, où)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (How is that written / spelled?):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Comment ça s\'écrit ?', 'Ça s\'épèle...', 'L\'accent aigu (é)', 'L\'accent grave (è, à, ù)'],
+          correctWord: 'Comment ça s\'écrit ?',
+          explanation: 'Correct! "Comment ça s\'écrit ?" translates to "How is that written / spelled?".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
+        JSS1InteractiveExercise(
+          prompt: 'What is the correct English translation for "Ça s\'épèle..."?',
+          options: ['It is spelled...', 'How is that written / spelled?', 'Acute accent (e.g. école, élève)', 'Grave accent (e.g. père, mère, où)'],
+          correctOptionIndex: 0,
+          explanation: '"Ça s\'épèle..." translates to "It is spelled...".',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -578,6 +692,7 @@ class JSS1Term1Lessons {
       topic: 'Présenter Quelqu’un (Introducing Someone Else)',
       subtitle: 'Introducing friends, classmates, and family members using "Voici...", "Il/Elle s\'appelle...", and third-person pronouns.',
       patternType: JSS1PatternType.presentOthersStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Introduce a third party using "Voici mon ami(e)..." or "C\'est..."',
         'State someone else\'s name, age, and nationality using 3rd person pronouns (Il / Elle).',
@@ -657,6 +772,38 @@ class JSS1Term1Lessons {
           correctOptionIndex: 1,
           explanation: '"Il a 13 ans" correctly uses the third person masculine pronoun "Il" and the verb avoir "a".',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Voici mon ami / mon amie', english: 'Here is my friend (Boy / Girl)'),
+            DrillPair(french: 'Il / Elle s\'appelle...', english: 'His / Her name is...'),
+            DrillPair(french: 'Il a 13 ans / Elle a 12 ans.', english: 'He is 13 / She is 12 years old.'),
+            DrillPair(french: 'Il est nigérian / Elle est nigériane.', english: 'He is Nigerian / She is Nigerian.'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Here is my friend (Boy / Girl)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Voici mon ami / mon amie', 'Il / Elle s\'appelle...', 'Il a 13 ans / Elle a 12 ans.', 'Il est nigérian / Elle est nigériane.'],
+          correctWord: 'Voici mon ami / mon amie',
+          explanation: 'Correct! "Voici mon ami / mon amie" translates to "Here is my friend (Boy / Girl)".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
+        JSS1InteractiveExercise(
+          prompt: 'What is the correct English translation for "Il / Elle s\'appelle..."?',
+          options: ['His / Her name is...', 'Here is my friend (Boy / Girl)', 'He is 13 / She is 12 years old.', 'He is Nigerian / She is Nigerian.'],
+          correctOptionIndex: 0,
+          explanation: '"Il / Elle s\'appelle..." translates to "His / Her name is...".',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -698,6 +845,7 @@ class JSS1Term1Lessons {
       topic: 'Décrire Quelqu’un (Describing Someone)',
       subtitle: 'Physical appearance (height, size, complexion) and moral character traits with adjective agreements.',
       patternType: JSS1PatternType.characterPortraitStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Describe physical stature: Grand(e), Petit(e), Mince, Gros(se).',
         'Describe facial and physical complexion: Teint clair, Teint noir, Beau/Belle.',
@@ -793,6 +941,38 @@ class JSS1Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'Adjectives ending in -eur in masculine generally become -euse in feminine.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Grand / Grande', english: 'Tall / Big (Masc / Fem)'),
+            DrillPair(french: 'Petit / Petite', english: 'Short / Small (Masc / Fem)'),
+            DrillPair(french: 'Mince / Gros / Grosse', english: 'Slim / Big / Stout'),
+            DrillPair(french: 'Beau / Belle', english: 'Handsome / Beautiful'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Tall / Big (Masc / Fem)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Grand / Grande', 'Petit / Petite', 'Mince / Gros / Grosse', 'Beau / Belle'],
+          correctWord: 'Grand / Grande',
+          explanation: 'Correct! "Grand / Grande" translates to "Tall / Big (Masc / Fem)".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
+        JSS1InteractiveExercise(
+          prompt: 'What is the correct English translation for "Petit / Petite"?',
+          options: ['Short / Small (Masc / Fem)', 'Tall / Big (Masc / Fem)', 'Slim / Big / Stout', 'Handsome / Beautiful'],
+          correctOptionIndex: 0,
+          explanation: '"Petit / Petite" translates to "Short / Small (Masc / Fem)".',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -836,6 +1016,7 @@ class JSS1Term1Lessons {
       topic: 'Parler de ses Loisirs (Hobbies & Leisure Activities)',
       subtitle: 'Expressing sports, pastimes, weekend activities using "Jouer à..." and "Faire de...".',
       patternType: JSS1PatternType.hobbiesAndLeisure,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         'Name common sports and pastimes in French (Le football, La musique, La lecture, Le vélo).',
         'Use the structure "Jouer à + sport/game" (Jouer au football, jouer aux jeux vidéo).',
@@ -923,6 +1104,38 @@ class JSS1Term1Lessons {
           correctOptionIndex: 0,
           explanation: '"Faire du vélo" translates to riding a bicycle.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Jouer au football', english: 'To play football / soccer'),
+            DrillPair(french: 'Écouter de la musique', english: 'To listen to music (Afrobeats, Gospel, etc.)'),
+            DrillPair(french: 'Lire des livres / des romans', english: 'To read books / novels'),
+            DrillPair(french: 'Regarder la télévision', english: 'To watch television'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (To play football / soccer):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Jouer au football', 'Écouter de la musique', 'Lire des livres / des romans', 'Regarder la télévision'],
+          correctWord: 'Jouer au football',
+          explanation: 'Correct! "Jouer au football" translates to "To play football / soccer".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
+        JSS1InteractiveExercise(
+          prompt: 'What is the correct English translation for "Écouter de la musique"?',
+          options: ['To listen to music (Afrobeats, Gospel, etc.)', 'To play football / soccer', 'To read books / novels', 'To watch television'],
+          correctOptionIndex: 0,
+          explanation: '"Écouter de la musique" translates to "To listen to music (Afrobeats, Gospel, etc.)".',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -964,6 +1177,7 @@ class JSS1Term1Lessons {
       topic: 'Exprimer ses Goûts et Préférences (Likes & Preferences)',
       subtitle: 'Expressing positive and negative preferences: J\'adore, J\'aime, Je préfère, Je n\'aime pas, Je déteste.',
       patternType: JSS1PatternType.tastesAndPreferences,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Express strong liking using "J\'adore..."',
         'Express moderate liking using "J\'aime beaucoup..."',
@@ -1049,6 +1263,38 @@ class JSS1Term1Lessons {
           correctOptionIndex: 0,
           explanation: 'Negation wraps the verb: "ne + aime (n\'aime) + pas".',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'J\'adore !', english: 'I love / adore! (5/5 Stars)'),
+            DrillPair(french: 'J\'aime beaucoup...', english: 'I like very much... (4/5 Stars)'),
+            DrillPair(french: 'Je préfère...', english: 'I prefer... (Comparison)'),
+            DrillPair(french: 'Je n\'aime pas...', english: 'I do not like... (Negation)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (I love / adore! (5/5 Stars)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['J\'adore !', 'J\'aime beaucoup...', 'Je préfère...', 'Je n\'aime pas...'],
+          correctWord: 'J\'adore !',
+          explanation: 'Correct! "J\'adore !" translates to "I love / adore! (5/5 Stars)".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
+        JSS1InteractiveExercise(
+          prompt: 'What is the correct English translation for "J\'aime beaucoup..."?',
+          options: ['I like very much... (4/5 Stars)', 'I love / adore! (5/5 Stars)', 'I prefer... (Comparison)', 'I do not like... (Negation)'],
+          correctOptionIndex: 0,
+          explanation: '"J\'aime beaucoup..." translates to "I like very much... (4/5 Stars)".',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -1091,6 +1337,7 @@ class JSS1Term1Lessons {
       topic: 'Révision Générale du Premier Trimestre (Term 1 Grand Revision Rally)',
       subtitle: 'Comprehensive synthesis and interactive speed rally across all 8 instructional topics taught in the term.',
       patternType: JSS1PatternType.term1RevisionRally,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         'Consolidate mastery of all classroom directives and polite expressions.',
         'Review formal and informal greetings and parting formulas.',
@@ -1151,6 +1398,32 @@ class JSS1Term1Lessons {
           options: ['Accent aigu', 'Accent grave', 'Accent circonflexe', 'Tréma'],
           correctOptionIndex: 2,
           explanation: 'The circumflex (^) looks like a small hat on the vowel.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le grand rallye de révision', english: 'The grand revision rally'),
+            DrillPair(french: 'Êtes-vous prêts ? — Oui, nous sommes prêts !', english: 'Are you ready? — Yes, we are ready!'),
+            DrillPair(french: 'Félicitations pour vos efforts !', english: 'Congratulations on your efforts!'),
+            DrillPair(french: 'Champion de la classe !', english: 'Class champion!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The grand revision rally):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le grand rallye de révision', 'Êtes-vous prêts ? — Oui, nous sommes prêts !', 'Félicitations pour vos efforts !', 'Champion de la classe !'],
+          correctWord: 'Le grand rallye de révision',
+          explanation: 'Correct! "Le grand rallye de révision" translates to "The grand revision rally".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
         ),
       ],
       evaluationQuestions: [

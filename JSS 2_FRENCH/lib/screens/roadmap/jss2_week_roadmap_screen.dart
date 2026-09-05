@@ -7,46 +7,50 @@ import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
 import '../lesson/jss2_lesson_player_screen.dart';
 
-class JSS2WeekRoadmapScreen extends StatelessWidget {
+class JSS2WeekRoadmapScreen extends StatefulWidget {
   final int term;
 
-  const JSS2WeekRoadmapScreen({
-    super.key,
-    required this.term,
-  });
+  const JSS2WeekRoadmapScreen({super.key, required this.term});
 
+  @override
+  State<JSS2WeekRoadmapScreen> createState() => _JSS2WeekRoadmapScreenState();
+}
+
+class _JSS2WeekRoadmapScreenState extends State<JSS2WeekRoadmapScreen> {
   List<JSS2LessonModel> get _lessons {
-    if (term == 1) {
-      return JSS2Term1Lessons.weeks;
-    } else if (term == 2) {
-      return JSS2Term2Lessons.weeks;
-    } else if (term == 3) {
-      return JSS2Term3Lessons.weeks;
+    switch (widget.term) {
+      case 1:
+        return JSS2Term1Lessons.weeks;
+      case 2:
+        return JSS2Term2Lessons.weeks;
+      case 3:
+        return JSS2Term3Lessons.weeks;
+      default:
+        return [];
     }
-    return JSS2Term1Lessons.weeks;
   }
 
   String get _termTitle {
-    switch (term) {
+    switch (widget.term) {
       case 1:
-        return 'Premier Trimestre';
+        return 'Term 1 — First Term';
       case 2:
-        return 'Deuxième Trimestre';
+        return 'Term 2 — Second Term';
       case 3:
-        return 'Troisième Trimestre';
+        return 'Term 3 — Third Term';
       default:
-        return 'Trimestre $term';
+        return '';
     }
   }
 
   String get _termSubtitle {
-    switch (term) {
+    switch (widget.term) {
       case 1:
-        return 'Positions Spatiales, Lieux, Accueil Intérieur, Chemins, Transports, Trajets, Horaires & Pépins';
+        return 'Spatial Position, Wayfinding, Public Transit, Schedules & Troubleshooting';
       case 2:
-        return 'Listes & Inventaires, Commerçants, Achat & Marchandage, Utilité, Pharmacie, Vêtements & Qualités';
+        return 'Shopping, Bargaining, Needs & Utilities, Pharmacy, Clothing & Comparisons';
       case 3:
-        return 'Calcul Simple, Nourriture & Boissons, Recettes de Cuisine, Au Restaurant, Projet Oral, Révision & Grand Rally';
+        return 'Math Operations, African & French Food, Recipes, Restaurant Etiquette & BECE Prep';
       default:
         return '';
     }
@@ -115,7 +119,7 @@ class JSS2WeekRoadmapScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
-                      '${lessons.length} Semaines',
+                      '${lessons.length} Weeks',
                       style: const TextStyle(color: LangHueyColors.deepTeal, fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
@@ -131,12 +135,12 @@ class JSS2WeekRoadmapScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Feuille de Route Pédagogique (9 Semaines)',
+                      'Curriculum Roadmap (9 Learning Weeks)',
                       style: LangHueyTextStyles.h2.copyWith(fontSize: 20),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Appuyez sur une semaine pour démarrer le cours interactif sur smartboard.',
+                      'Tap any week to launch the lesson on your classroom smartboard.',
                       style: LangHueyTextStyles.bodySmall.copyWith(color: Colors.grey.shade700),
                     ),
                     const SizedBox(height: 20),
@@ -195,7 +199,7 @@ class JSS2WeekRoadmapScreen extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: Text(
-                                        'SEMAINE ${lesson.weekNumber}',
+                                        'WEEK ${lesson.weekNumber}',
                                         style: TextStyle(
                                           color: isRevision ? LangHueyColors.charcoal : Colors.white,
                                           fontWeight: FontWeight.bold,
@@ -236,8 +240,8 @@ class JSS2WeekRoadmapScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      '${lesson.vocabulary.length} vocabs • Lab Interactif',
-                                      style: TextStyle(color: LangHueyColors.deepTeal, fontSize: 10, fontWeight: FontWeight.bold),
+                                      '${lesson.exercises.length} Drills',
+                                      style: const TextStyle(color: LangHueyColors.deepTeal, fontSize: 11, fontWeight: FontWeight.bold),
                                     ),
                                     const Icon(Icons.arrow_forward_rounded, color: LangHueyColors.deepTeal, size: 14),
                                   ],

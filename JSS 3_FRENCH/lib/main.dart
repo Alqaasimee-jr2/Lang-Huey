@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/splash/animated_splash_screen.dart';
 import 'screens/term/jss3_term_select_screen.dart';
 import 'theme/colors.dart';
 
@@ -24,7 +25,7 @@ class JSS3FrenchApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const JSS3TermSelectScreen(),
+      home: const AnimatedSplashScreen(),
     );
   }
 }

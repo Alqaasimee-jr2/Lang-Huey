@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
 
@@ -67,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen>
                     borderRadius: BorderRadius.circular(4),
                     child: LinearProgressIndicator(
                       value: _progressController.value,
-                      backgroundColor: LHColors.teal.withOpacity(0.4),
+                      backgroundColor: LHColors.teal.withValues(alpha: 0.4),
                       valueColor: const AlwaysStoppedAnimation<Color>(
                         LHColors.gold,
                       ),
@@ -79,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
             const SizedBox(height: 24),
             Text(
               'OFFLINE LESSON DELIVERY SYSTEM',
-              style: LHText.label(LHColors.white.withOpacity(0.7)),
+              style: LHText.label(LHColors.white.withValues(alpha: 0.7)),
             ),
           ],
         ),

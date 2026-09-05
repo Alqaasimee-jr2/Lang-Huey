@@ -27,6 +27,7 @@ flutter:
     - assets/images/p5_term2/
     - assets/images/p5_term3/
     - assets/audio/
+    - assets/audio/onboarding/
     - assets/audio/p5_term1/
     - assets/audio/p5_term2/
     - assets/audio/p5_term3/

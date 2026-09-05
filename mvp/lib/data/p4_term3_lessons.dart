@@ -14,6 +14,7 @@ class P4Term3Lessons {
       topic: "Demander et Dire l'Heure",
       subtitle: "Theme: Daily Life & Time · Telling Time in French",
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Pupils learn to ask the time using \"Quelle heure est-il ?\", state the exact hour using \"Il est ... heure(s)\", and identify \"Il est midi\" (12:00 PM) and \"Il est minuit\" (12:00 AM)."
       ],
@@ -128,7 +129,40 @@ class P4Term3Lessons {
           explanation:
               "\"Midi\" comes from 'mi' (middle) and 'di' (day), so \"Il est midi\" means 'It is noon / midday'!",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Quelle heure est-il ?', english: 'What time is it?'),
+          DrillPair(french: 'Il est une heure', english: 'It is one o'),
+          DrillPair(french: 'Il est deux heures', english: 'It is two o'),
+          DrillPair(french: 'Il est trois heures', english: 'It is three o'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (What time is it?):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Quelle heure est-il ?', 'Il est une heure', 'Il est deux heures', 'Il est trois heures'],
+        correctGapWord: 'Quelle heure est-il ?',
+        explanation: 'Bravo ! "Quelle heure est-il ?" means "What time is it?".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Il est une heure" mean in English?',
+        options: ['It is one o', 'What time is it?', 'It is two o', 'It is three o'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Il est une heure" translates to "It is one o".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Ask your partner what time it is in French.",
@@ -164,6 +198,7 @@ class P4Term3Lessons {
       topic: "Ma Routine Quotidienne et l'Emploi du Temps",
       subtitle: "Theme: Daily Habits · Chronological Routine & Reflexive Actions",
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         "Pupils learn to describe their daily morning, afternoon, and bedtime actions in French, linking each activity to a specific time."
       ],
@@ -279,7 +314,40 @@ class P4Term3Lessons {
           explanation:
               "\"Je me couche\" means 'I go to bed / I lie down'.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Je me réveille', english: 'I wake up'),
+          DrillPair(french: 'Je me lave', english: 'I wash myself / I take a bath'),
+          DrillPair(french: 'Je prends le petit déjeuner', english: 'I eat breakfast'),
+          DrillPair(french: 'Je joue avec mes amis', english: 'I play with my friends'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (I wake up):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Je me réveille', 'Je me lave', 'Je prends le petit déjeuner', 'Je joue avec mes amis'],
+        correctGapWord: 'Je me réveille',
+        explanation: 'Bravo ! "Je me réveille" means "I wake up".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Je me lave" mean in English?',
+        options: ['I wash myself / I take a bath', 'I wake up', 'I eat breakfast', 'I play with my friends'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Je me lave" translates to "I wash myself / I take a bath".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Say in French: 'At seven o'clock, I go to school.'",
@@ -310,6 +378,7 @@ class P4Term3Lessons {
       topic: "Les Repas et les Aliments du Quotidien",
       subtitle: "Theme: Food & Nutrition · 3 Daily Meals & Common Foods",
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.dialogueConversation,
       objectives: [
         "Pupils learn the names of the 3 daily meals, identify common Nigerian and French staple foods and drinks, and use correct French gender articles (le, la, l', les)."
       ],
@@ -439,7 +508,40 @@ class P4Term3Lessons {
           explanation:
               "\"Le poulet\" is chicken. \"Le poisson\" is fish and \"Le pain\" is bread.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Le repas', english: 'The meal'),
+          DrillPair(french: 'Le petit déjeuner', english: 'Breakfast (Morning meal)'),
+          DrillPair(french: 'Le déjeuner', english: 'Lunch (Afternoon meal)'),
+          DrillPair(french: 'Le dîner', english: 'Dinner (Evening meal)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The meal):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Le repas', 'Le petit déjeuner', 'Le déjeuner', 'Le dîner'],
+        correctGapWord: 'Le repas',
+        explanation: 'Bravo ! "Le repas" means "The meal".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Le petit déjeuner" mean in English?',
+        options: ['Breakfast (Morning meal)', 'The meal', 'Lunch (Afternoon meal)', 'Dinner (Evening meal)'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Le petit déjeuner" translates to "Breakfast (Morning meal)".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Name the 3 meals of the day in French.",
@@ -470,6 +572,7 @@ class P4Term3Lessons {
       topic: "Exprimer la Faim, la Soif et ses Goûts",
       subtitle: "Theme: Needs & Preferences · J'ai faim / J'ai soif & Aimer/Vouloir",
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Pupils learn to express physical states of hunger and thirst using \"Avoir faim\" and \"Avoir soif\", express food preferences with \"J'aime / Je n'aime pas\", and order food politely with \"Je veux... s'il vous plaît\"."
       ],
@@ -585,7 +688,39 @@ class P4Term3Lessons {
           explanation:
               "\"Bon appétit !\" is the polite French expression wished to everyone before beginning a meal.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bon appétit !', english: 'Enjoy your meal!'),
+          DrillPair(french: 'Merci pour le repas', english: 'Thank you for the meal'),
+          DrillPair(french: 'Je veux manger du riz', english: 'I want to eat rice'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Enjoy your meal!):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Bon appétit !', 'Merci pour le repas', 'Je veux manger du riz', 'oui'],
+        correctGapWord: 'Bon appétit !',
+        explanation: 'Bravo ! "Bon appétit !" means "Enjoy your meal!".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Merci pour le repas" mean in English?',
+        options: ['Thank you for the meal', 'Enjoy your meal!', 'I want to eat rice', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Merci pour le repas" translates to "Thank you for the meal".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Say in French: 'I am hungry, I want to eat bread.'",
@@ -616,6 +751,7 @@ class P4Term3Lessons {
       topic: "Grande Révision Orale du Mi-Trimestre",
       subtitle: "Theme: Mid-Term Oral Speed Rally · Weeks 1–4 Recap",
       patternType: P4PatternType.midTermReview,
+    teachingStyle: TeachingStyle.phoneticSoundboard,
       objectives: [
         "Pupils participate in rapid interactive oral rallies across Time, Routine, Meals, and Food Preferences to solidify fluency and pronunciation."
       ],
@@ -696,7 +832,39 @@ class P4Term3Lessons {
           explanation:
               "\"Il est trois heures\" is the correct way to say 'It is three o'clock'.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'La révision orale', english: 'Oral revision rally'),
+          DrillPair(french: 'La nourriture et les repas', english: 'Food and meals'),
+          DrillPair(french: 'Bonne chance !', english: 'Good luck!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Oral revision rally):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['La révision orale', 'La nourriture et les repas', 'Bonne chance !', 'oui'],
+        correctGapWord: 'La révision orale',
+        explanation: 'Bravo ! "La révision orale" means "Oral revision rally".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "La nourriture et les repas" mean in English?',
+        options: ['Food and meals', 'Oral revision rally', 'Good luck!', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "La nourriture et les repas" translates to "Food and meals".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "What are the 4 core topics we mastered in Weeks 1 to 4?",
@@ -722,6 +890,7 @@ class P4Term3Lessons {
       topic: "Pause du Mi-Trimestre et Savoir-Vivre à Table",
       subtitle: "Theme: Cultural Intermission · Table Manners & French Gastronomy",
       patternType: P4PatternType.midTermBreak,
+    teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         "Pupils practice courteous dining role-plays, French table etiquette, and family meal conversations during the mid-term intermission."
       ],
@@ -800,7 +969,38 @@ class P4Term3Lessons {
           explanation:
               "\"Passe-moi l'eau, s'il te plaît\" means 'Pass me the water, please'.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'La pause', english: 'The break / Intermission'),
+          DrillPair(french: 'À table !', english: 'Food is ready! / Come to the table!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The break / Intermission):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['La pause', 'À table !', 'oui', 'oui'],
+        correctGapWord: 'La pause',
+        explanation: 'Bravo ! "La pause" means "The break / Intermission".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "À table !" mean in English?',
+        options: ['Food is ready! / Come to the table!', 'The break / Intermission', 'to speak kindly', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "À table !" translates to "Food is ready! / Come to the table!".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Role-play asking for bread at the table in French.",
@@ -826,6 +1026,7 @@ class P4Term3Lessons {
       topic: "Découvrir les Parties du Corps Humain",
       subtitle: "Theme: Human Body & Anatomy · 9 Key Body Parts & Plural Forms",
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Pupils identify and name 9 major body parts in French, apply the correct definite articles (le, la, l', les), and form descriptive body sentences."
       ],
@@ -942,7 +1143,40 @@ class P4Term3Lessons {
           explanation:
               "\"L'œil\" (one eye) becomes \"Les yeux\" (two eyes) in the plural!",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Le corps', english: 'The body'),
+          DrillPair(french: 'La tête', english: 'The head'),
+          DrillPair(french: 'Les yeux', english: 'The eyes (Singular: l'),
+          DrillPair(french: 'Le nez', english: 'The nose'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The body):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Le corps', 'La tête', 'Les yeux', 'Le nez'],
+        correctGapWord: 'Le corps',
+        explanation: 'Bravo ! "Le corps" means "The body".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "La tête" mean in English?',
+        options: ['The head', 'The body', 'The eyes (Singular: l', 'The nose'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "La tête" translates to "The head".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Touch your nose and say the French word out loud.",
@@ -973,6 +1207,7 @@ class P4Term3Lessons {
       topic: "Exprimer la Douleur et Pratiquer l'Hygiène",
       subtitle: "Theme: Health & Well-being · J'ai mal à... & Daily Hygiene",
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.dialogueConversation,
       objectives: [
         "Pupils learn to express physical aches using \"Avoir mal à...\", identify common hygiene actions (washing hands, brushing teeth), and participate in doctor-patient role-plays."
       ],
@@ -1088,7 +1323,40 @@ class P4Term3Lessons {
           explanation:
               "'À + les' contracts to 'aux', so we say \"J'ai mal aux dents\"!",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Le docteur / Le médecin', english: 'The doctor'),
+          DrillPair(french: 'Où as-tu mal ?', english: 'Where does it hurt? / What is wrong?'),
+          DrillPair(french: 'Se laver les mains', english: 'To wash one'),
+          DrillPair(french: 'Se brosser les dents', english: 'To brush one'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The doctor):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Le docteur / Le médecin', 'Où as-tu mal ?', 'Se laver les mains', 'Se brosser les dents'],
+        correctGapWord: 'Le docteur / Le médecin',
+        explanation: 'Bravo ! "Le docteur / Le médecin" means "The doctor".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Où as-tu mal ?" mean in English?',
+        options: ['Where does it hurt? / What is wrong?', 'The doctor', 'To wash one', 'To brush one'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Où as-tu mal ?" translates to "Where does it hurt? / What is wrong?".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Role-play: The doctor asks \"Où as-tu mal ?\". Tell the doctor your stomach hurts.",
@@ -1119,6 +1387,7 @@ class P4Term3Lessons {
       topic: "Les Vêtements et la Description des Habits",
       subtitle: "Theme: Fashion & Clothing · Articles of Clothing & Color Agreements",
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Pupils identify common articles of clothing in French, state what they are wearing using \"Je porte...\", and match color adjectives to the gender and number of clothing items."
       ],
@@ -1248,7 +1517,40 @@ class P4Term3Lessons {
           explanation:
               "\"La robe\" means 'The dress'. \"La jupe\" is the skirt and \"La chemise\" is the shirt.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Les vêtements', english: 'The clothes / Clothing'),
+          DrillPair(french: 'La chemise', english: 'The shirt'),
+          DrillPair(french: 'Le pantalon', english: 'The trousers / Pants'),
+          DrillPair(french: 'La robe', english: 'The dress'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The clothes / Clothing):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Les vêtements', 'La chemise', 'Le pantalon', 'La robe'],
+        correctGapWord: 'Les vêtements',
+        explanation: 'Bravo ! "Les vêtements" means "The clothes / Clothing".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "La chemise" mean in English?',
+        options: ['The shirt', 'The clothes / Clothing', 'The trousers / Pants', 'The dress'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "La chemise" translates to "The shirt".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Look at your school uniform and describe what you are wearing in French.",
@@ -1279,6 +1581,7 @@ class P4Term3Lessons {
       topic: "Décrire le Temps Qu'il Fait et les Saisons",
       subtitle: "Theme: Weather & Climate · Weather Conditions & Nigerian/French Seasons",
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         "Pupils learn to ask and describe the weather using \"Quel temps fait-il ? Il fait...\", distinguish between hot, cold, sunny, and rainy conditions, and compare Nigerian seasons with European seasons."
       ],
@@ -1401,7 +1704,40 @@ class P4Term3Lessons {
           explanation:
               "\"Il pleut\" comes from the verb 'pleuvoir' and means 'It is raining'.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Quel temps fait-il ?', english: 'What is the weather like?'),
+          DrillPair(french: 'Il fait beau', english: 'The weather is beautiful / fine'),
+          DrillPair(french: 'Il fait chaud', english: 'It is hot'),
+          DrillPair(french: 'Il fait froid', english: 'It is cold'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (What is the weather like?):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Quel temps fait-il ?', 'Il fait beau', 'Il fait chaud', 'Il fait froid'],
+        correctGapWord: 'Quel temps fait-il ?',
+        explanation: 'Bravo ! "Quel temps fait-il ?" means "What is the weather like?".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Il fait beau" mean in English?',
+        options: ['The weather is beautiful / fine', 'What is the weather like?', 'It is hot', 'It is cold'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Il fait beau" translates to "The weather is beautiful / fine".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Look outside the classroom window and describe today's weather in French.",
@@ -1432,6 +1768,7 @@ class P4Term3Lessons {
       topic: "Grande Révision Annuelle des Notions Clés",
       subtitle: "Theme: Master Speed Rally · Cumulative Recap (Terms 1, 2 & 3)",
       patternType: P4PatternType.termRevisionRally,
+    teachingStyle: TeachingStyle.phoneticSoundboard,
       objectives: [
         "Pupils review all fundamental skills of Primary 4 French (Greetings, Family, School, Time, Routine, Food, Body, Clothes, and Weather) through fast-paced oral team challenges."
       ],
@@ -1512,7 +1849,40 @@ class P4Term3Lessons {
           explanation:
               "\"J'ai mal au ventre\" is the correct phrase for 'I have a stomachache'.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'La grande révision', english: 'The grand annual revision'),
+          DrillPair(french: 'Salutations et présentations', english: 'Greetings and introductions (Term 1)'),
+          DrillPair(french: 'Le temps, le corps et les repas', english: 'Time, body, and meals (Term 3)'),
+          DrillPair(french: 'Bravo à tous !', english: 'Well done to everyone!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The grand annual revision):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['La grande révision', 'Salutations et présentations', 'Le temps, le corps et les repas', 'Bravo à tous !'],
+        correctGapWord: 'La grande révision',
+        explanation: 'Bravo ! "La grande révision" means "The grand annual revision".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Salutations et présentations" mean in English?',
+        options: ['Greetings and introductions (Term 1)', 'The grand annual revision', 'Time, body, and meals (Term 3)', 'Well done to everyone!'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Salutations et présentations" translates to "Greetings and introductions (Term 1)".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Deliver your complete 30-second French presentation (Name, Age, Family, Food, Time).",
@@ -1538,6 +1908,7 @@ class P4Term3Lessons {
       topic: "Bilan Annuel et Évaluation des Compétences",
       subtitle: "Theme: Evaluation & Portfolio Review · Oral Proficiency Checklist",
       patternType: P4PatternType.termRevisionRally,
+    teachingStyle: TeachingStyle.phoneticSoundboard,
       objectives: [
         "Teacher conducts oral speed checks, individual pronunciation evaluations, and portfolio reviews to celebrate every pupil's French speaking progress."
       ],
@@ -1617,7 +1988,40 @@ class P4Term3Lessons {
           explanation:
               "\"Merci beaucoup, Monsieur / Madame !\" is the respectful and polite French response.",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Le bilan annuel', english: 'The annual evaluation'),
+          DrillPair(french: 'Excellente prononciation', english: 'Excellent pronunciation'),
+          DrillPair(french: 'Félicitations !', english: 'Congratulations!'),
+          DrillPair(french: 'Très bien réussi !', english: 'Very well done!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The annual evaluation):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Le bilan annuel', 'Excellente prononciation', 'Félicitations !', 'Très bien réussi !'],
+        correctGapWord: 'Le bilan annuel',
+        explanation: 'Bravo ! "Le bilan annuel" means "The annual evaluation".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Excellente prononciation" mean in English?',
+        options: ['Excellent pronunciation', 'The annual evaluation', 'Congratulations!', 'Very well done!'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Excellente prononciation" translates to "Excellent pronunciation".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Respond to the teacher's greeting and answer: 'Comment t'appelles-tu et quel âge as-tu ?'",
@@ -1643,6 +2047,7 @@ class P4Term3Lessons {
       topic: "Célébration de Fin d'Année et Promotion en 5e Année",
       subtitle: "Theme: Graduation & Holiday Celebration · Primary 4 French Mastery",
       patternType: P4PatternType.vacationCelebration,
+    teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         "Pupils celebrate the successful completion of Primary 4 French, receive their honorary classroom graduation diploma, wish classmates happy holidays, and preview Primary 5 topics."
       ],
@@ -1736,7 +2141,40 @@ class P4Term3Lessons {
           explanation:
               "\"Bienvenue en 5e année !\" means 'Welcome to Primary 5 (Grade 5)'!",
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Félicitations pour la 4e année !', english: 'Congratulations on completing Primary 4!'),
+          DrillPair(french: 'Les grandes vacances', english: 'The long holidays / Summer vacation'),
+          DrillPair(french: 'Bonnes vacances à tous !', english: 'Happy holidays to everyone!'),
+          DrillPair(french: 'Bienvenue en 5e année !', english: 'Welcome to Primary 5 (Grade 5)!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Congratulations on completing Primary 4!):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Félicitations pour la 4e année !', 'Les grandes vacances', 'Bonnes vacances à tous !', 'Bienvenue en 5e année !'],
+        correctGapWord: 'Félicitations pour la 4e année !',
+        explanation: 'Bravo ! "Félicitations pour la 4e année !" means "Congratulations on completing Primary 4!".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Les grandes vacances" mean in English?',
+        options: ['The long holidays / Summer vacation', 'Congratulations on completing Primary 4!', 'Happy holidays to everyone!', 'Welcome to Primary 5 (Grade 5)!'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Les grandes vacances" translates to "The long holidays / Summer vacation".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           question: "Wish your entire class and teacher happy holidays in French.",

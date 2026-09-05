@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../services/jss3_audio_service.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
+import '../onboarding/onboarding_screen.dart';
 import '../roadmap/jss3_week_roadmap_screen.dart';
 
 class JSS3TermSelectScreen extends StatelessWidget {
@@ -14,21 +15,21 @@ class JSS3TermSelectScreen extends StatelessWidget {
     final terms = [
       {
         'term': 1,
-        'title': 'Premier Trimestre',
-        'subtitle': 'Descriptions, Paysages, Habitudes, Souvenirs & BECE Prep',
-        'weeks': '9 Semaines Pédagogiques',
+        'title': 'Term 1: First Term',
+        'subtitle': 'Descriptions, Landscapes, Habits, Past Memories & BECE Foundations',
+        'weeks': '9 Learning Weeks',
         'isAvailable': true,
         'color': LangHueyColors.deepTeal,
-        'badge': 'Complet & Actif',
+        'badge': 'Full Curriculum Active',
       },
       {
         'term': 2,
-        'title': 'Deuxième Trimestre (Trimestre Terminal)',
-        'subtitle': 'Passé Récent, Journal, Futur Simple, Préparation BECE & Support Bilingue Français-Anglais',
-        'weeks': '9 Semaines • Examen Final BECE',
+        'title': 'Term 2: Second Term (Terminal Term)',
+        'subtitle': 'Recent Past, Journaling, Future Aspirations & BECE Examination Prep',
+        'weeks': '9 Weeks • BECE Final Simulation',
         'isAvailable': true,
         'color': const Color(0xFF1B4F72),
-        'badge': 'Trimestre Terminal • BECE',
+        'badge': 'Terminal Exam Term • BECE',
       },
     ];
 
@@ -64,29 +65,62 @@ class JSS3TermSelectScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: LangHueyColors.amberGold.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: LangHueyColors.amberGold),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.stars_rounded, color: Colors.brown, size: 20),
-                        const SizedBox(width: 6),
-                        Text('Grade 9 / JSS 3 Exam Year', style: TextStyle(color: Colors.brown.shade900, fontWeight: FontWeight.bold, fontSize: 13)),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const OnboardingScreen(isReplayMode: true),
+                            ),
+                          );
+                        },
+                        borderRadius: BorderRadius.circular(16),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: LangHueyColors.deepTeal.withOpacity(0.08),
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+                          ),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.school_rounded, color: LangHueyColors.deepTeal, size: 20),
+                              const SizedBox(width: 8),
+                              Text(
+                                'Guide / Kickoff',
+                                style: TextStyle(color: LangHueyColors.deepTeal, fontWeight: FontWeight.bold, fontSize: 13),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: LangHueyColors.amberGold.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: LangHueyColors.amberGold),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.stars_rounded, color: Colors.brown, size: 20),
+                            const SizedBox(width: 6),
+                            Text('Grade 9 / JSS 3 Exam Year', style: TextStyle(color: Colors.brown.shade900, fontWeight: FontWeight.bold, fontSize: 13)),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
               const SizedBox(height: 32),
 
-              Text('Choisissez votre Trimestre d\'Apprentissage :', style: LangHueyTextStyles.h2),
+              Text('Select Your Learning Term:', style: LangHueyTextStyles.h2),
               const SizedBox(height: 8),
               Text(
-                'Programme officiel NERDC harmonisé pour Smartboards interactifs avec prononciation native.',
+                'Official NERDC curriculum harmonized for interactive smartboards with native audio pronunciation.',
                 style: LangHueyTextStyles.bodyMedium.copyWith(color: LangHueyColors.textMuted),
               ),
               const SizedBox(height: 24),

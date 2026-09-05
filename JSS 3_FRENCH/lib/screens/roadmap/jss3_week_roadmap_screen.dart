@@ -19,8 +19,8 @@ class JSS3WeekRoadmapScreen extends StatelessWidget {
         : (termNumber == 2 ? JSS3Term2Lessons.weeks : []);
 
     final termTitle = termNumber == 1
-        ? 'Premier Trimestre • JSS 3'
-        : 'Deuxième Trimestre (Trimestre Terminal • BECE)';
+        ? 'Term 1 • JSS 3'
+        : 'Term 2 (Terminal Term • BECE)';
 
     return Scaffold(
       backgroundColor: LangHueyColors.warmCream,
@@ -38,7 +38,7 @@ class JSS3WeekRoadmapScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(termTitle, style: LangHueyTextStyles.h3.copyWith(fontSize: 16)),
-            Text('Parcours Pédagogique (9 Semaines d\'Apprentissage)', style: LangHueyTextStyles.bodySmall),
+            Text('Learning Roadmap (9 Interactive Weeks)', style: LangHueyTextStyles.bodySmall),
           ],
         ),
       ),
@@ -132,7 +132,7 @@ class JSS3WeekRoadmapScreen extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(4),
                                     ),
                                     child: const Text(
-                                      'GRAND RALLYE',
+                                      'GRAND RALLY',
                                       style: TextStyle(
                                         fontSize: 9,
                                         fontWeight: FontWeight.w900,
@@ -163,10 +163,10 @@ class JSS3WeekRoadmapScreen extends StatelessWidget {
                                   style: TextStyle(fontSize: 11, color: Colors.grey.shade700, fontWeight: FontWeight.w600),
                                 ),
                                 const SizedBox(width: 14),
-                                Icon(Icons.quiz_rounded, size: 14, color: Colors.grey.shade600),
+                                Icon(Icons.sports_esports_rounded, size: 14, color: Colors.grey.shade600),
                                 const SizedBox(width: 4),
                                 Text(
-                                  '${lesson.exercises.length} Activités',
+                                  '${lesson.exercises.length} Drills',
                                   style: TextStyle(fontSize: 11, color: Colors.grey.shade700, fontWeight: FontWeight.w600),
                                 ),
                               ],

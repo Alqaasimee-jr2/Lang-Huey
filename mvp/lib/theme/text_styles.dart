@@ -40,4 +40,10 @@ class LHText {
     color: color,
     letterSpacing: 2.0,
   );
+
+  static TextStyle caption(Color color) => GoogleFonts.inter(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: color,
+  );
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'screens/splash/animated_splash_screen.dart';
 import 'screens/term/jss1_term_select_screen.dart';
 import 'theme/colors.dart';
 
@@ -32,7 +33,7 @@ class JSS1FrenchApp extends StatelessWidget {
         ),
         textTheme: GoogleFonts.nunitoTextTheme(),
       ),
-      home: const JSS1TermSelectScreen(),
+      home: const AnimatedSplashScreen(),
     );
   }
 }

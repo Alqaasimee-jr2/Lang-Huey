@@ -5,7 +5,7 @@ import '../models/jss3_lesson_model.dart';
 /// 9 High-Impact Instructional & Revision Weeks
 /// Nigerian NERDC Curriculum — BECE / Junior WAEC Preparation Aligned
 class JSS3Term1Lessons {
-  static const List<JSS3LessonModel> weeks = [
+  static final List<JSS3LessonModel> weeks = [
     // ─────────────────────────────────────────────────────
     // WEEK 1 — Unité 1: Décrire plus précisément une personne
     // ─────────────────────────────────────────────────────
@@ -26,6 +26,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'In Nigerian and Francophone African communities (Senegal, Côte d\'Ivoire, Cameroon), describing someone\'s character (la moralité) is deeply valued. Respectful formulas like "Il est poli et travailleur" (He is polite and hardworking) or "Elle a bon cœur" (She has a good heart) are central to social introductions and letters of recommendation in Francophone Africa.',
       patternType: JSS3PatternType.personDescriptionStudio,
+      teachingStyle: TeachingStyle.dialogueConversation,
       vocabulary: [
         JSS3VocabItem(
           french: 'le teint / la peau',
@@ -117,7 +118,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'Before a masculine singular noun starting with a vowel or silent h ("homme"), "beau" becomes "bel".',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'le teint / la peau', english: 'complexion / skin'),
+            DrillPair(french: 'la corpulence / la taille', english: 'build / height'),
+            DrillPair(french: 'les cheveux lisses / crépus / bouclés', english: 'straight / afro-textured / curly hair'),
+            DrillPair(french: 'travailleur / travailleuse', english: 'hardworking (m/f)'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (complexion / skin):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['le teint / la peau', 'la corpulence / la taille', 'les cheveux lisses / crépus / bouclés', 'travailleur / travailleuse'],
+          correctGapWord: 'le teint / la peau',
+          explanation: 'Bravo ! "le teint / la peau" means "complexion / skin".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Décris physiquement ton/ta meilleur(e) ami(e) en 3 détails précis.',
@@ -179,6 +199,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'Tourism is a vital economic and cultural bridge between Nigeria and its Francophone neighbors. West Africa boasts incredible UNESCO World Heritage sites: the Grand-Bassam historic town in Côte d\'Ivoire, Djenné in Mali, the Pendjari National Park in Bénin, and Nigeria\'s own Osun-Osogbo Sacred Grove and Sukur Cultural Landscape. Learning to describe these in French connects Nigerian pupils to regional heritage.',
       patternType: JSS3PatternType.landscapesLandmarksStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'le paysage naturel',
@@ -270,7 +291,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 1,
           explanation: '"Majestueux" means majestic, inspiring admiration and awe through grandeur.',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'le paysage naturel', english: 'natural landscape / scenery'),
+            DrillPair(french: 'la montagne / la colline', english: 'mountain / hill'),
+            DrillPair(french: 'la cascade / la chute d\'eau', english: 'waterfall'),
+            DrillPair(french: 'la forêt tropicale / la savane', english: 'rainforest / savannah'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (natural landscape / scenery):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['le paysage naturel', 'la montagne / la colline', 'la cascade / la chute d\'eau', 'la forêt tropicale / la savane'],
+          correctGapWord: 'le paysage naturel',
+          explanation: 'Bravo ! "le paysage naturel" means "natural landscape / scenery".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Nomme 2 sites touristiques au Nigeria et décris chacun avec un adjectif approprié.',
@@ -332,6 +372,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'In Nigerian boarding schools and day schools alike, daily routines start early (often 5:30 am with morning prayers, cleaning, assembly, and classes from 8:00 am to 2:00 pm). In Francophone West African secondary schools (collèges et lycées), the timetable often runs from 7:30 am to 12:00 pm, followed by a midday break ("la pause de midi"), and resumes from 3:00 pm to 5:30 pm.',
       patternType: JSS3PatternType.habitsAndRoutineStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'se réveiller / se lever',
@@ -423,7 +464,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'For "ils", the third-person plural ending is "-ent": "Ils se brossent".',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'se réveiller / se lever', english: 'to wake up / to get up'),
+            DrillPair(french: 'se laver / se doucher', english: 'to wash oneself / to shower'),
+            DrillPair(french: 's\'habiller / se brosser les dents', english: 'to get dressed / to brush teeth'),
+            DrillPair(french: 'se coucher / s\'endormir', english: 'to go to bed / to fall asleep'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (to wake up / to get up):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['se réveiller / se lever', 'se laver / se doucher', 's\'habiller / se brosser les dents', 'se coucher / s\'endormir'],
+          correctGapWord: 'se réveiller / se lever',
+          explanation: 'Bravo ! "se réveiller / se lever" means "to wake up / to get up".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Conjugue le verbe réflexif "se lever" au présent pour tous les pronoms sujets.',
@@ -485,6 +545,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'Oral storytelling (les contes et récits du passé) is an ancient and revered African art. Elders and griots across West Africa narrate family genealogies and village histories using structured past tenses. In French education and the BECE exam, mastering the past tense is the milestone separating junior secondary learners from intermediate speakers.',
       patternType: JSS3PatternType.pastMemoriesStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       vocabulary: [
         JSS3VocabItem(
           french: 'un souvenir d\'enfance',
@@ -581,7 +642,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'The Imparfait is used for ongoing states, background descriptions, and recurring past habits ("Quand j\'étais petit...").',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'un souvenir d\'enfance', english: 'a childhood memory'),
+            DrillPair(french: 'quand j\'étais petit(e)', english: 'when I was little / young'),
+            DrillPair(french: 'l\'année dernière / autrefois', english: 'last year / in the past'),
+            DrillPair(french: 'j\'ai voyagé / nous sommes allés', english: 'I travelled / we went'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (a childhood memory):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['un souvenir d\'enfance', 'quand j\'étais petit(e)', 'l\'année dernière / autrefois', 'j\'ai voyagé / nous sommes allés'],
+          correctGapWord: 'un souvenir d\'enfance',
+          explanation: 'Bravo ! "un souvenir d\'enfance" means "a childhood memory".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Explique comment on forme le Passé Composé en français.',
@@ -643,6 +723,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'African craftsmanship is world-renowned: carved wooden sculptures (*en bois d\'ébène*), brass and bronze castings from the Benin Kingdom (*en bronze / en cuivre*), Kano leather goods (*en cuir véritable*), and traditional woven textiles (*en coton tissé / aso-oke / kente*). Describing these in French highlights Nigeria\'s rich material culture.',
       patternType: JSS3PatternType.objectDescriptionStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'la forme (rond / carré / rectangulaire)',
@@ -734,7 +815,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 0,
           explanation: '"Des chaussures en cuir" uses the correct preposition "EN" for material.',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'la forme (rond / carré / rectangulaire)', english: 'shape (round / square / rectangular)'),
+            DrillPair(french: 'en bois / en métal / en fer', english: 'made of wood / metal / iron'),
+            DrillPair(french: 'en plastique / en verre', english: 'made of plastic / glass'),
+            DrillPair(french: 'en cuir / en tissu / en coton', english: 'made of leather / fabric / cotton'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (shape (round / square / rectangular)):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['la forme (rond / carré / rectangulaire)', 'en bois / en métal / en fer', 'en plastique / en verre', 'en cuir / en tissu / en coton'],
+          correctGapWord: 'la forme (rond / carré / rectangulaire)',
+          explanation: 'Bravo ! "la forme (rond / carré / rectangulaire)" means "shape (round / square / rectangular)".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Décris ton smartphone ou un stylo en précisant : la forme, la matière, la couleur et l\'usage.',
@@ -796,6 +896,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'Comparative thinking is essential for analytical problem solving in secondary school. Nigerian pupils often compare the economic dynamism of Lagos with the administrative order of Abuja, or compare football clubs in the African Cup of Nations (AFCON) and European leagues. Using French comparatives allows them to debate and express nuanced opinions eloquently.',
       patternType: JSS3PatternType.comparisonSuperlativesStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'plus... que (supériorité)',
@@ -897,7 +998,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'The superlative uses "la plus + adjectif": "la plus intelligente élève de la classe".',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'plus... que (supériorité)', english: 'more... than (superiority)'),
+            DrillPair(french: 'moins... que (infériorité)', english: 'less... than (inferiority)'),
+            DrillPair(french: 'aussi... que (égalité)', english: 'as... as (equality)'),
+            DrillPair(french: 'meilleur(e) / le meilleur', english: 'better / the best'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (more... than (superiority)):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['plus... que (supériorité)', 'moins... que (infériorité)', 'aussi... que (égalité)', 'meilleur(e) / le meilleur'],
+          correctGapWord: 'plus... que (supériorité)',
+          explanation: 'Bravo ! "plus... que (supériorité)" means "more... than (superiority)".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Compare deux villes nigérianes en utilisant : 1. Supériorité (+), 2. Égalité (=), 3. Superlatif (+++).',
@@ -959,6 +1079,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'Understanding dates and timelines is essential for Francophone history and diplomacy. In West Africa, 1960 is known as "l\'Année de l\'Afrique" (The Year of Africa) because 17 nations, including Nigeria (1er octobre 1960), Bénin (1er août 1960), Côte d\'Ivoire (7 août 1960), and Senegal (20 juin 1960), gained independence. BECE exams frequently test temporal prepositions and historic dates.',
       patternType: JSS3PatternType.datingTimeMeasurementStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'la date / le calendrier',
@@ -1055,7 +1176,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 3,
           explanation: '"DANS + durée" expresses a future point in time: "dans deux semaines" (in two weeks).',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'la date / le calendrier', english: 'date / calendar'),
+            DrillPair(french: 'le premier (1er) / le deux (2)', english: 'the 1st / the 2nd (of month)'),
+            DrillPair(french: 'depuis (durée continue)', english: 'since / for (action still ongoing)'),
+            DrillPair(french: 'pendant (durée complète)', english: 'during / for (completed duration)'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (date / calendar):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['la date / le calendrier', 'le premier (1er) / le deux (2)', 'depuis (durée continue)', 'pendant (durée complète)'],
+          correctGapWord: 'la date / le calendrier',
+          explanation: 'Bravo ! "la date / le calendrier" means "date / calendar".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Explique la différence d\'emploi entre DEPUIS, PENDANT, et IL Y A avec des exemples clairs.',
@@ -1117,6 +1257,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'Structured essay writing (l\'expression écrite guidée) is a compulsory component of the BECE / Junior WAEC French examination. Pupils are often given prompts like "Racontez votre première journée au collège" or "Racontez une journée mémorable". Examiners look for correct sequencing connectors, tense consistency, and rich vocabulary.',
       patternType: JSS3PatternType.dayChronologicalNarrativeStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       vocabulary: [
         JSS3VocabItem(
           french: 'd\'abord / tout d\'abord',
@@ -1208,7 +1349,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 2,
           explanation: '"Enfin" or "Finalement" marks the conclusion of a story or timeline.',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'd\'abord / tout d\'abord', english: 'first of all / firstly'),
+            DrillPair(french: 'ensuite / puis', english: 'then / next / afterwards'),
+            DrillPair(french: 'soudain / tout à coup', english: 'suddenly / all of a sudden'),
+            DrillPair(french: 'pendant ce temps / en même temps', english: 'meanwhile / at the same time'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (first of all / firstly):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['d\'abord / tout d\'abord', 'ensuite / puis', 'soudain / tout à coup', 'pendant ce temps / en même temps'],
+          correctGapWord: 'd\'abord / tout d\'abord',
+          explanation: 'Bravo ! "d\'abord / tout d\'abord" means "first of all / firstly".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Ordonne ces connecteurs pour raconter une histoire dans l\'ordre chronologique : enfin, soudain, ensuite, d\'abord.',
@@ -1270,6 +1430,7 @@ class JSS3Term1Lessons {
       culturalInsight:
           'Inter-house and inter-school academic competitions (Les Génies en Herbe / Les Concours Interscolaires de Français) are prestigious traditions in Francophone West Africa and Nigerian bilingual academies. They foster team spirit, celebrate multilingual achievement, and build the confidence necessary for national examination excellence.',
       patternType: JSS3PatternType.term1RevisionRally,
+      teachingStyle: TeachingStyle.phoneticSoundboard,
       vocabulary: [
         JSS3VocabItem(
           french: 'le grand rallye / le championnat',
@@ -1361,7 +1522,26 @@ class JSS3Term1Lessons {
           correctOptionIndex: 2,
           explanation: 'For an ongoing action starting in the past and continuing now, use "DEPUIS".',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'le grand rallye / le championnat', english: 'grand rally / championship'),
+            DrillPair(french: 'l\'équipe gagnante', english: 'the winning team'),
+            DrillPair(french: 'le buzzer / répondre rapidement', english: 'the buzzer / to answer rapidly'),
+            DrillPair(french: 'le score / le tableau d\'honneur', english: 'the score / honour board'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (grand rally / championship):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['le grand rallye / le championnat', 'l\'équipe gagnante', 'le buzzer / répondre rapidement', 'le score / le tableau d\'honneur'],
+          correctGapWord: 'le grand rallye / le championnat',
+          explanation: 'Bravo ! "le grand rallye / le championnat" means "grand rally / championship".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'GRAND BILAN T1 — Cite les 8 thèmes majeurs appris pendant ce premier trimestre de JSS 3.',

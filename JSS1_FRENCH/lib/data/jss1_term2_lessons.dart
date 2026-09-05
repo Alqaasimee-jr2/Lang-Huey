@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/jss1_lesson_model.dart';
 
 class JSS1Term2Lessons {
-  static const List<JSS1Lesson> weeks = [
+  static final List<JSS1Lesson> weeks = [
     // ==========================================
     // WEEK 1: EXPRIMER LES PROPRIÉTÉS DES OBJETS
     // ==========================================
@@ -12,6 +12,7 @@ class JSS1Term2Lessons {
       topic: 'Exprimer les Propriétés des Objets',
       subtitle: 'Describing objects by size, color, geometric shape, texture, and weight with adjective agreement.',
       patternType: JSS1PatternType.objectPropertiesStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         'Identify and describe common classroom and household objects using French adjectives.',
         'Qualify objects by dimension (grand/petit, long/court) and geometric shape (rond, carré, rectangulaire).',
@@ -113,6 +114,32 @@ class JSS1Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Table" is feminine, so the adjective adds an "e": "carrée".',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Grand / Grande', english: 'Big / Tall / Large'),
+            DrillPair(french: 'Petit / Petite', english: 'Small / Short / Little'),
+            DrillPair(french: 'Rond / Ronde', english: 'Round / Circular'),
+            DrillPair(french: 'Carré / Carrée', english: 'Square'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Big / Tall / Large):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Grand / Grande', 'Petit / Petite', 'Rond / Ronde', 'Carré / Carrée'],
+          correctWord: 'Grand / Grande',
+          explanation: 'Correct! "Grand / Grande" translates to "Big / Tall / Large".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -164,6 +191,7 @@ class JSS1Term2Lessons {
       topic: 'Demander Quelque Chose à Quelqu’un',
       subtitle: 'Making polite requests, borrowing items, and asking to see someone in formal and informal registers.',
       patternType: JSS1PatternType.politeRequestsStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Formulate polite requests using "Je voudrais..." and "S\'il vous plaît / S\'il te plaît".',
         'Borrow classroom stationery and materials from peers politely (Peux-tu me prêter... ?).',
@@ -270,6 +298,32 @@ class JSS1Term2Lessons {
           correctOptionIndex: 0,
           explanation: '"Voici pour toi !" translates to "Here you go / This is for you!".',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'S\'il vous plaît', english: 'Please (Formal / Plural)'),
+            DrillPair(french: 'S\'il te plaît', english: 'Please (Informal / Peer)'),
+            DrillPair(french: 'Je voudrais...', english: 'I would like... (Polite conditional)'),
+            DrillPair(french: 'Peux-tu me prêter ton stylo ?', english: 'Can you lend me your pen?'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Please (Formal / Plural)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['S\'il vous plaît', 'S\'il te plaît', 'Je voudrais...', 'Peux-tu me prêter ton stylo ?'],
+          correctWord: 'S\'il vous plaît',
+          explanation: 'Correct! "S\'il vous plaît" translates to "Please (Formal / Plural)".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -321,6 +375,7 @@ class JSS1Term2Lessons {
       topic: 'Décrire les Professions et Métiers',
       subtitle: 'Naming common jobs, stating professional duties, and applying masculine/feminine career titles.',
       patternType: JSS1PatternType.professionsStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Identify and name major professions in French (médecin, enseignant, ingénieur, avocat, infirmier, commerçant).',
         'Describe the daily duties and workplaces associated with various careers in simple French sentences.',
@@ -427,6 +482,32 @@ class JSS1Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"L\'ingénieur" designs and builds buildings, bridges, and infrastructure.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le médecin', english: 'The doctor (Physician)'),
+            DrillPair(french: 'L\'enseignant / L\'enseignante', english: 'The teacher'),
+            DrillPair(french: 'L\'ingénieur / L\'ingénieure', english: 'The engineer'),
+            DrillPair(french: 'L\'avocat / L\'avocate', english: 'The lawyer / Attorney'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The doctor (Physician)):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le médecin', 'L\'enseignant / L\'enseignante', 'L\'ingénieur / L\'ingénieure', 'L\'avocat / L\'avocate'],
+          correctWord: 'Le médecin',
+          explanation: 'Correct! "Le médecin" translates to "The doctor (Physician)".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -478,6 +559,7 @@ class JSS1Term2Lessons {
       topic: 'Demander et Donner l’Heure',
       subtitle: 'Asking for time, telling time on analog and digital clocks, and using fractional time expressions.',
       patternType: JSS1PatternType.clockTimeStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         'Ask for the time politely using "Quelle heure est-il, s\'il vous plaît ?".',
         'State exact hour time (Il est huit heures pile, il est midi, il est minuit).',
@@ -584,6 +666,32 @@ class JSS1Term2Lessons {
           correctOptionIndex: 2,
           explanation: '"Dix heures moins le quart" means 10 hours minus a quarter = 9:45.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Quelle heure est-il ?', english: 'What time is it?'),
+            DrillPair(french: 'Il est huit heures pile', english: 'It is eight o\'clock sharp / exactly'),
+            DrillPair(french: 'Il est huit heures et quart', english: 'It is a quarter past eight (8:15)'),
+            DrillPair(french: 'Il est huit heures et demie', english: 'It is half past eight (8:30)'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (What time is it?):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Quelle heure est-il ?', 'Il est huit heures pile', 'Il est huit heures et quart', 'Il est huit heures et demie'],
+          correctWord: 'Quelle heure est-il ?',
+          explanation: 'Correct! "Quelle heure est-il ?" translates to "What time is it?".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -636,6 +744,7 @@ class JSS1Term2Lessons {
       topic: 'Activités aux Différentes Heures de la Journée',
       subtitle: 'Describing daily routines, school schedules, and linking daily actions to exact times of day.',
       patternType: JSS1PatternType.dailyScheduleStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Narrate a complete daily routine in chronological order from morning to bedtime.',
         'Link reflexive routine verbs (se réveiller, se laver, s\'habiller, se coucher) with specific times.',
@@ -752,6 +861,32 @@ class JSS1Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Se coucher" is the French reflexive verb for going to bed/sleeping.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'À six heures, je me réveille', english: 'At 6:00, I wake up'),
+            DrillPair(french: 'Je me lave et je m\'habille', english: 'I wash myself and get dressed'),
+            DrillPair(french: 'À sept heures, je prends le petit-déjeuner', english: 'At 7:00, I eat breakfast'),
+            DrillPair(french: 'À sept heures et demie, je vais à l\'école', english: 'At 7:30, I go to school'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (At 6:00, I wake up):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['À six heures, je me réveille', 'Je me lave et je m\'habille', 'À sept heures, je prends le petit-déjeuner', 'À sept heures et demie, je vais à l\'école'],
+          correctWord: 'À six heures, je me réveille',
+          explanation: 'Correct! "À six heures, je me réveille" translates to "At 6:00, I wake up".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -803,6 +938,7 @@ class JSS1Term2Lessons {
       topic: 'Dire les Dates (Jours, Mois et Années)',
       subtitle: 'Mastering the 7 days of the week, 12 months of the year, and formulating exact calendar dates.',
       patternType: JSS1PatternType.calendarDatesStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         'Recite and write all 7 days of the week (Lundi to Dimanche) in correct chronological order.',
         'Recite and spell all 12 months of the year (Janvier to Décembre).',
@@ -909,6 +1045,32 @@ class JSS1Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'Dates in French are preceded by the masculine definite article "le": "le dix décembre".',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Les 7 jours de la semaine', english: 'The 7 days of the week'),
+            DrillPair(french: 'Les 12 mois de l\'année', english: 'The 12 months of the year'),
+            DrillPair(french: 'Quelle est la date d\'aujourd\'hui ?', english: 'What is today\'s date?'),
+            DrillPair(french: 'Aujourd\'hui c\'est le...', english: 'Today is the...'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The 7 days of the week):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Les 7 jours de la semaine', 'Les 12 mois de l\'année', 'Quelle est la date d\'aujourd\'hui ?', 'Aujourd\'hui c\'est le...'],
+          correctWord: 'Les 7 jours de la semaine',
+          explanation: 'Correct! "Les 7 jours de la semaine" translates to "The 7 days of the week".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -960,6 +1122,7 @@ class JSS1Term2Lessons {
       topic: 'Situer un Événement par Rapport à un Autre',
       subtitle: 'Chronological event sequencing using temporal prepositions (avant, après, pendant) and connectors.',
       patternType: JSS1PatternType.eventSequencerStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       objectives: [
         'Understand and correctly use temporal prepositions: avant (before), après (after), and pendant (during).',
         'Organize daily and classroom events into a logical sequence using connectors (d\'abord, ensuite, puis, enfin).',
@@ -1066,6 +1229,32 @@ class JSS1Term2Lessons {
           correctOptionIndex: 2,
           explanation: '"Enfin" or "Finalement" marks the conclusion of a sequence.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Avant', english: 'Before'),
+            DrillPair(french: 'Après', english: 'After'),
+            DrillPair(french: 'Pendant', english: 'During / While'),
+            DrillPair(french: 'D\'abord', english: 'First / First of all'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Before):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Avant', 'Après', 'Pendant', 'D\'abord'],
+          correctWord: 'Avant',
+          explanation: 'Correct! "Avant" translates to "Before".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -1117,6 +1306,7 @@ class JSS1Term2Lessons {
       topic: 'Activités de Tous les Jours de la Semaine',
       subtitle: 'Talking about weekly habits, recurring hobbies, sports clubs, and weekend activities.',
       patternType: JSS1PatternType.weeklyRoutineStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       objectives: [
         'Describe recurring weekly activities from Monday through Sunday in French.',
         'Use the definite article "Le" before days to express recurring weekly habits (Le lundi = Every Monday).',
@@ -1233,6 +1423,32 @@ class JSS1Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Que fais-tu le week-end ?" directly asks about weekend plans and routines.',
         ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le lundi, j\'ai cours de français', english: 'On Mondays (Every Monday), I have French class'),
+            DrillPair(french: 'Le mardi, je fais des mathématiques', english: 'On Tuesdays, I do mathematics'),
+            DrillPair(french: 'Le mercredi après-midi, je joue au football', english: 'On Wednesday afternoons, I play football (soccer)'),
+            DrillPair(french: 'Le jeudi, je vais à la bibliothèque', english: 'On Thursdays, I go to the library to read'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (On Mondays (Every Monday), I have French class):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le lundi, j\'ai cours de français', 'Le mardi, je fais des mathématiques', 'Le mercredi après-midi, je joue au football', 'Le jeudi, je vais à la bibliothèque'],
+          correctWord: 'Le lundi, j\'ai cours de français',
+          explanation: 'Correct! "Le lundi, j\'ai cours de français" translates to "On Mondays (Every Monday), I have French class".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
+        ),
       ],
       evaluationQuestions: [
         JSS1EvaluationQuestion(
@@ -1284,6 +1500,7 @@ class JSS1Term2Lessons {
       topic: 'Révision Générale du Deuxième Trimestre (Grand Rally)',
       subtitle: 'Comprehensive 4-Station Speed Revision Rally consolidating all 8 instructional topics taught in Term 2.',
       patternType: JSS1PatternType.term2RevisionRally,
+      teachingStyle: TeachingStyle.interactiveStudio,
       objectives: [
         'Consolidate vocabulary and mastery of object properties (size, color, shape, texture).',
         'Review polite requests, asking to see someone, and classroom etiquette formulas.',
@@ -1386,6 +1603,32 @@ class JSS1Term2Lessons {
           ],
           correctOptionIndex: 1,
           explanation: 'Midi = 12:00 PM, déjeuner = lunch, pendant la récréation = during the break.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Station 1 : Propriétés & Demandes Polies', english: 'Station 1: Object Properties & Polite Requests'),
+            DrillPair(french: 'Station 2 : Les Métiers & Professions', english: 'Station 2: Jobs & Professional Duties'),
+            DrillPair(french: 'Station 3 : L\'Heure, Horaires & Dates', english: 'Station 3: Clock Time, Daily Hours & Dates'),
+            DrillPair(french: 'Station 4 : Chronologie (Avant/Après) & Semaine', english: 'Station 4: Event Sequencing & Weekly Routines'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Station 1: Object Properties & Polite Requests):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Station 1 : Propriétés & Demandes Polies', 'Station 2 : Les Métiers & Professions', 'Station 3 : L\'Heure, Horaires & Dates', 'Station 4 : Chronologie (Avant/Après) & Semaine'],
+          correctWord: 'Station 1 : Propriétés & Demandes Polies',
+          explanation: 'Correct! "Station 1 : Propriétés & Demandes Polies" translates to "Station 1: Object Properties & Polite Requests".',
+        ),
+        JSS1InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to polite formulas and authentic pronunciation is essential in daily conversation.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Politeness and clear pronunciation are foundational to mastering French.',
         ),
       ],
       evaluationQuestions: [

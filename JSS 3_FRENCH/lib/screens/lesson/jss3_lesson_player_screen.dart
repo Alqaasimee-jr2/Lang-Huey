@@ -3,6 +3,9 @@ import '../../models/jss3_lesson_model.dart';
 import '../../services/jss3_audio_service.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
+import '../../widgets/drills/jss3_interactive_drill_engine_widget.dart';
+
+// Term 1 Pattern Studios
 import '../../widgets/patterns/term1/jss3_person_description_studio_widget.dart';
 import '../../widgets/patterns/term1/jss3_landscapes_landmarks_studio_widget.dart';
 import '../../widgets/patterns/term1/jss3_habits_and_routine_studio_widget.dart';
@@ -34,28 +37,131 @@ class JSS3LessonPlayerScreen extends StatefulWidget {
 
 class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
   final JSS3AudioService _audio = JSS3AudioService();
-  int _currentPhaseIndex = 0;
+  int _currentPhaseIndex = 0; // 0: Lab/Model, 1: Vocab, 2: Drills, 3: Summary
   bool _isSlowRate = false;
 
-  // Exercise & Evaluation state
-  final Map<int, int?> _selectedExerciseAnswers = {};
-  final Map<int, bool> _revealedEvaluationAnswers = {};
-
   final List<String> _phaseNames = [
-    'Objectifs & Contexte',
-    'Lab Interactif',
-    'Vocabulaire & Phonétique',
-    'Exercices & Évaluation',
-    'Résumé & Devoirs',
+    'Learning Lab',
+    'Vocabulary',
+    'Practice Drills',
+    'Summary',
   ];
 
   final List<IconData> _phaseIcons = [
-    Icons.flag_rounded,
-    Icons.touch_app_rounded,
+    Icons.lightbulb_rounded,
     Icons.record_voice_over_rounded,
-    Icons.quiz_rounded,
-    Icons.assignment_rounded,
+    Icons.sports_esports_rounded,
+    Icons.menu_book_rounded,
   ];
+
+  void _switchPhase(int newIndex) {
+    if (newIndex >= 0 && newIndex < 4) {
+      _audio.playClick();
+      setState(() => _currentPhaseIndex = newIndex);
+    }
+  }
+
+  void _showTeacherGuideModal() {
+    _audio.playClick();
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          margin: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(24),
+            boxShadow: const [
+              BoxShadow(color: Colors.black26, blurRadius: 24, offset: Offset(0, -4)),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: LangHueyColors.deepTeal,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(Icons.school_rounded, color: LangHueyColors.amberGold, size: 24),
+                      ),
+                      const SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Teacher Facilitator Guide',
+                            style: LangHueyTextStyles.h2.copyWith(fontSize: 18, color: LangHueyColors.deepTeal),
+                          ),
+                          Text(
+                            'For Teacher Reference Only • Not Displayed to Students',
+                            style: LangHueyTextStyles.bodySmall.copyWith(fontSize: 11),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.close_rounded, size: 28),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              ),
+              const Divider(height: 28),
+              Text('TEACHER FACILITATOR PROMPT', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: LangHueyColors.deepTeal, letterSpacing: 1)),
+              const SizedBox(height: 6),
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: LangHueyColors.softTeal.withOpacity(0.4),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.2)),
+                ),
+                child: Text(
+                  widget.lesson.teacherFacilitatorPrompt,
+                  style: const TextStyle(fontSize: 13, height: 1.4, color: LangHueyColors.charcoal),
+                ),
+              ),
+              const SizedBox(height: 18),
+              Text('CURRICULUM OBJECTIVES', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: LangHueyColors.deepTeal, letterSpacing: 1)),
+              const SizedBox(height: 8),
+              ...widget.lesson.objectives.map((obj) => Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.check_circle_outline_rounded, color: LangHueyColors.deepTeal, size: 18),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(obj, style: const TextStyle(fontSize: 13, color: LangHueyColors.charcoal)),
+                    ),
+                  ],
+                ),
+              )),
+              const SizedBox(height: 14),
+              Text('CULTURAL INSIGHT', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: LangHueyColors.amberGold, letterSpacing: 1)),
+              const SizedBox(height: 6),
+              Text(
+                widget.lesson.culturalInsight,
+                style: const TextStyle(fontSize: 13, fontStyle: FontStyle.italic, color: LangHueyColors.charcoal),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +181,7 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Semaine ${widget.lesson.weekNumber} • ${widget.lesson.frenchTitle}',
+              'Week ${widget.lesson.weekNumber} • ${widget.lesson.frenchTitle}',
               style: LangHueyTextStyles.h3.copyWith(fontSize: 15),
               overflow: TextOverflow.ellipsis,
             ),
@@ -88,72 +194,52 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
         ),
         actions: [
           // Audio Speed Toggle
+          ActionChip(
+            avatar: Icon(
+              _isSlowRate ? Icons.slow_motion_video_rounded : Icons.speed_rounded,
+              size: 16,
+              color: _isSlowRate ? Colors.white : LangHueyColors.deepTeal,
+            ),
+            label: Text(
+              _isSlowRate ? '0.8x Slow' : '1.0x Normal',
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.bold,
+                color: _isSlowRate ? Colors.white : LangHueyColors.deepTeal,
+              ),
+            ),
+            backgroundColor: _isSlowRate ? LangHueyColors.deepTeal : LangHueyColors.softTeal,
+            onPressed: () {
+              setState(() {
+                _isSlowRate = !_isSlowRate;
+                _audio.setSlowRate(_isSlowRate);
+              });
+              _audio.playClick();
+            },
+          ),
+          const SizedBox(width: 8),
+          // Teacher Guide Action Button
           Padding(
             padding: const EdgeInsets.only(right: 12),
             child: ActionChip(
-              avatar: Icon(
-                _isSlowRate ? Icons.slow_motion_video_rounded : Icons.speed_rounded,
-                size: 16,
-                color: _isSlowRate ? Colors.white : LangHueyColors.deepTeal,
+              avatar: const Icon(Icons.school_rounded, size: 16, color: Colors.white),
+              label: const Text(
+                'Teacher Guide',
+                style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.white),
               ),
-              label: Text(
-                _isSlowRate ? '0.8x Lent' : '1.0x Normal',
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.bold,
-                  color: _isSlowRate ? Colors.white : LangHueyColors.deepTeal,
-                ),
-              ),
-              backgroundColor: _isSlowRate ? LangHueyColors.deepTeal : LangHueyColors.softTeal,
-              onPressed: () {
-                setState(() {
-                  _isSlowRate = !_isSlowRate;
-                  _audio.setSlowRate(_isSlowRate);
-                });
-                _audio.playClick();
-              },
+              backgroundColor: LangHueyColors.deepTeal,
+              onPressed: _showTeacherGuideModal,
             ),
           ),
         ],
       ),
       body: Column(
         children: [
-          _buildTeacherCueBar(),
           _buildPhaseTabBar(),
           Expanded(
             child: _buildCurrentPhaseView(),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTeacherCueBar() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      decoration: BoxDecoration(
-        color: LangHueyColors.charcoal,
-        border: Border(bottom: BorderSide(color: LangHueyColors.amberGold.withOpacity(0.5))),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Icon(Icons.school_rounded, color: LangHueyColors.amberGold, size: 20),
-          const SizedBox(width: 10),
-          Expanded(
-            child: RichText(
-              text: TextSpan(
-                style: const TextStyle(fontSize: 12, color: Colors.white70, height: 1.3),
-                children: [
-                  const TextSpan(
-                    text: 'FACILITATEUR : ',
-                    style: TextStyle(fontWeight: FontWeight.bold, color: LangHueyColors.amberGold),
-                  ),
-                  TextSpan(text: widget.lesson.teacherFacilitatorPrompt),
-                ],
-              ),
-            ),
-          ),
+          _buildBottomNavigationBar(),
         ],
       ),
     );
@@ -162,48 +248,119 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
   Widget _buildPhaseTabBar() {
     return Container(
       color: Colors.white,
-      height: 52,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: _phaseNames.length,
-        itemBuilder: (context, index) {
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Row(
+        children: List.generate(4, (index) {
           final isSelected = _currentPhaseIndex == index;
-          return InkWell(
-            onTap: () {
-              setState(() => _currentPhaseIndex = index);
-              _audio.playClick();
-            },
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
+          return Expanded(
+            child: InkWell(
+              onTap: () => _switchPhase(index),
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                decoration: BoxDecoration(
+                  color: isSelected ? LangHueyColors.softTeal : Colors.transparent,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
                     color: isSelected ? LangHueyColors.deepTeal : Colors.transparent,
-                    width: 3,
+                    width: 1.5,
                   ),
                 ),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    _phaseIcons[index],
-                    size: 16,
-                    color: isSelected ? LangHueyColors.deepTeal : LangHueyColors.textMuted,
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    _phaseNames[index],
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      _phaseIcons[index],
+                      size: 20,
                       color: isSelected ? LangHueyColors.deepTeal : LangHueyColors.textMuted,
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 4),
+                    Text(
+                      _phaseNames[index],
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: isSelected ? FontWeight.w800 : FontWeight.w500,
+                        color: isSelected ? LangHueyColors.deepTeal : LangHueyColors.textMuted,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
             ),
           );
-        },
+        }),
+      ),
+    );
+  }
+
+  Widget _buildBottomNavigationBar() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        border: Border(top: BorderSide(color: Colors.black12)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          if (_currentPhaseIndex > 0)
+            OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(
+                foregroundColor: LangHueyColors.deepTeal,
+                side: const BorderSide(color: LangHueyColors.deepTeal),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              ),
+              icon: const Icon(Icons.arrow_back_rounded, size: 18),
+              label: const Text('Previous', style: TextStyle(fontWeight: FontWeight.bold)),
+              onPressed: () => _switchPhase(_currentPhaseIndex - 1),
+            )
+          else
+            const SizedBox(width: 100),
+          Row(
+            children: List.generate(4, (index) {
+              return Container(
+                width: 8,
+                height: 8,
+                margin: const EdgeInsets.symmetric(horizontal: 4),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _currentPhaseIndex == index
+                      ? LangHueyColors.deepTeal
+                      : LangHueyColors.softTeal,
+                ),
+              );
+            }),
+          ),
+          if (_currentPhaseIndex < 3)
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: LangHueyColors.deepTeal,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+              ),
+              label: const Text('Next', style: TextStyle(fontWeight: FontWeight.bold)),
+              icon: const Icon(Icons.arrow_forward_rounded, size: 18),
+              onPressed: () => _switchPhase(_currentPhaseIndex + 1),
+            )
+          else
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: LangHueyColors.amberGold,
+                foregroundColor: Colors.brown.shade900,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+              ),
+              icon: const Icon(Icons.check_circle_rounded, size: 18),
+              label: const Text('Finish Lesson', style: TextStyle(fontWeight: FontWeight.w900)),
+              onPressed: () {
+                _audio.playCelebration();
+                Navigator.pop(context, true);
+              },
+            ),
+        ],
       ),
     );
   }
@@ -211,101 +368,19 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
   Widget _buildCurrentPhaseView() {
     switch (_currentPhaseIndex) {
       case 0:
-        return _buildObjectivesView();
-      case 1:
         return _buildInteractiveLabView();
-      case 2:
+      case 1:
         return _buildVocabularyView();
+      case 2:
+        return _buildInteractiveDrillsView();
       case 3:
-        return _buildExercisesView();
-      case 4:
         return _buildSummaryAndHomeworkView();
       default:
         return const SizedBox();
     }
   }
 
-  // Phase 1: Objectifs & Contexte
-  Widget _buildObjectivesView() {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Objectives Card
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
-              boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 3)),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.track_changes_rounded, color: LangHueyColors.deepTeal, size: 24),
-                    const SizedBox(width: 10),
-                    Text('Objectifs Pédagogiques du Cours :', style: LangHueyTextStyles.h3),
-                  ],
-                ),
-                const SizedBox(height: 14),
-                ...widget.lesson.objectives.map((obj) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Icon(Icons.check_circle_rounded, color: Color(0xFF27AE60), size: 18),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Text(obj, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: LangHueyColors.charcoal)),
-                        ),
-                      ],
-                    ),
-                  );
-                }),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-
-          // Cultural Insight Card
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: LangHueyColors.softTeal,
-              borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: LangHueyColors.turquoise.withOpacity(0.4)),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Row(
-                  children: [
-                    Icon(Icons.public_rounded, color: LangHueyColors.deepTeal, size: 22),
-                    SizedBox(width: 10),
-                    Text('Contexte Culturel & Diplomatique (Nigeria & Francophonie) :', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: LangHueyColors.deepTeal)),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  widget.lesson.culturalInsight,
-                  style: TextStyle(fontSize: 13, height: 1.5, color: Colors.teal.shade900),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  // Phase 2: Lab Interactif
+  // Phase 1: Lab Interactif / Learning Model
   Widget _buildInteractiveLabView() {
     switch (widget.lesson.patternType) {
       // Term 1 Patterns
@@ -350,7 +425,7 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
     }
   }
 
-  // Phase 3: Vocabulaire & Phonétique
+  // Phase 2: Vocabulaire & Phonétique Soundboard
   Widget _buildVocabularyView() {
     return ListView.builder(
       padding: const EdgeInsets.all(20),
@@ -425,192 +500,46 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
     );
   }
 
-  // Phase 4: Exercices & Évaluation
-  Widget _buildExercisesView() {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Exercices d\'Application Immédiate (QCM) :', style: LangHueyTextStyles.h3),
-          const SizedBox(height: 14),
-
-          ...List.generate(widget.lesson.exercises.length, (exIdx) {
-            final ex = widget.lesson.exercises[exIdx];
-            final selectedOpt = _selectedExerciseAnswers[exIdx];
-
-            return Container(
-              margin: const EdgeInsets.only(bottom: 20),
-              padding: const EdgeInsets.all(18),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.black12),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Q${exIdx + 1}. ${ex.prompt}',
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: LangHueyColors.charcoal),
-                  ),
-                  const SizedBox(height: 12),
-                  ...List.generate(ex.options.length, (optIdx) {
-                    final optText = ex.options[optIdx];
-                    final isSelected = selectedOpt == optIdx;
-                    final isCorrect = optIdx == ex.correctOptionIndex;
-
-                    Color optBg = Colors.grey.shade50;
-                    Color optBorder = Colors.black12;
-                    Color optTextCol = LangHueyColors.charcoal;
-
-                    if (selectedOpt != null) {
-                      if (isCorrect) {
-                        optBg = const Color(0xFFE8F8F5);
-                        optBorder = const Color(0xFF2ECC71);
-                        optTextCol = const Color(0xFF27AE60);
-                      } else if (isSelected) {
-                        optBg = const Color(0xFFFDEDEC);
-                        optBorder = const Color(0xFFE74C3C);
-                        optTextCol = const Color(0xFFC0392B);
-                      }
-                    }
-
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: InkWell(
-                        onTap: selectedOpt == null
-                            ? () {
-                                setState(() {
-                                  _selectedExerciseAnswers[exIdx] = optIdx;
-                                });
-                                if (optIdx == ex.correctOptionIndex) {
-                                  _audio.playCorrect();
-                                } else {
-                                  _audio.playIncorrect();
-                                }
-                              }
-                            : null,
-                        borderRadius: BorderRadius.circular(10),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                          decoration: BoxDecoration(
-                            color: optBg,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: optBorder),
-                          ),
-                          child: Row(
-                            children: [
-                              Expanded(child: Text(optText, style: TextStyle(color: optTextCol, fontWeight: FontWeight.w600, fontSize: 13))),
-                              if (selectedOpt != null && isCorrect)
-                                const Icon(Icons.check_circle_rounded, color: Color(0xFF2ECC71), size: 18)
-                              else if (selectedOpt != null && isSelected)
-                                const Icon(Icons.cancel_rounded, color: Color(0xFFE74C3C), size: 18),
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  }),
-                  if (selectedOpt != null) ...[
-                    const SizedBox(height: 8),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Colors.blueGrey.shade50,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Text('Explication : ${ex.explanation}', style: TextStyle(color: Colors.blueGrey.shade800, fontSize: 12)),
-                    ),
-                  ],
-                ],
-              ),
-            );
-          }),
-
-          const SizedBox(height: 10),
-          Text('Questions d\'Évaluation Orale & Pratique :', style: LangHueyTextStyles.h3),
-          const SizedBox(height: 14),
-
-          ...List.generate(widget.lesson.evaluation.length, (evalIdx) {
-            final eval = widget.lesson.evaluation[evalIdx];
-            final isRevealed = _revealedEvaluationAnswers[evalIdx] ?? false;
-
-            return Container(
-              margin: const EdgeInsets.only(bottom: 16),
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.black12),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Évaluation #${evalIdx + 1} : ${eval.question}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                  const SizedBox(height: 6),
-                  Text('💡 Indice : ${eval.hint}', style: TextStyle(color: Colors.grey.shade600, fontSize: 12, fontStyle: FontStyle.italic)),
-                  const SizedBox(height: 10),
-                  if (isRevealed) ...[
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFE8F8F5),
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: const Color(0xFF2ECC71)),
-                      ),
-                      child: Text('Réponse Modèle : ${eval.answer}', style: const TextStyle(color: Color(0xFF1E8449), fontWeight: FontWeight.bold, fontSize: 13)),
-                    ),
-                  ] else ...[
-                    OutlinedButton.icon(
-                      onPressed: () {
-                        setState(() => _revealedEvaluationAnswers[evalIdx] = true);
-                        _audio.playClick();
-                      },
-                      icon: const Icon(Icons.visibility_rounded, size: 16),
-                      label: const Text('Révéler la réponse modèle'),
-                      style: OutlinedButton.styleFrom(
-                        foregroundColor: LangHueyColors.deepTeal,
-                        side: const BorderSide(color: LangHueyColors.deepTeal),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                      ),
-                    ),
-                  ],
-                ],
-              ),
-            );
-          }),
-        ],
-      ),
+  // Phase 3: Interactive Practice Drills Engine
+  Widget _buildInteractiveDrillsView() {
+    return JSS3InteractiveDrillEngineWidget(
+      drills: widget.lesson.exercises,
+      term: widget.lesson.termNumber,
+      onComplete: () {
+        _switchPhase(3); // Advance to Summary phase
+      },
     );
   }
 
-  // Phase 5: Résumé & Devoirs
+  // Phase 4: Résumé de Cours & Devoirs
   Widget _buildSummaryAndHomeworkView() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Grammar Note
+          // Grammar Note Card
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
               border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+              boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 3)),
+              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    const Icon(Icons.menu_book_rounded, color: LangHueyColors.deepTeal, size: 22),
+                    const Icon(Icons.bookmark_added_rounded, color: LangHueyColors.deepTeal, size: 24),
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        'Fiche de Grammaire : ${widget.lesson.grammarNote.title}',
-                        style: LangHueyTextStyles.h3.copyWith(fontSize: 15),
+                        'Point de Grammaire : ${widget.lesson.grammarNote.title}',
+                        style: LangHueyTextStyles.h3.copyWith(fontSize: 16),
                       ),
                     ),
                   ],
@@ -620,17 +549,19 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
                   widget.lesson.grammarNote.explanation,
                   style: const TextStyle(fontSize: 13, height: 1.5, color: LangHueyColors.charcoal),
                 ),
-                const SizedBox(height: 14),
-                const Text('Exemples Clés :', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                const SizedBox(height: 6),
+                const SizedBox(height: 16),
+                const Text('Exemples Pratiques :', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: LangHueyColors.deepTeal)),
+                const SizedBox(height: 8),
                 ...widget.lesson.grammarNote.examples.map((ex) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 6),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Icon(Icons.arrow_right_rounded, color: LangHueyColors.deepTeal, size: 20),
-                        Expanded(child: Text(ex, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600))),
+                        const Text('• ', style: TextStyle(fontWeight: FontWeight.bold, color: LangHueyColors.deepTeal)),
+                        Expanded(
+                          child: Text(ex, style: const TextStyle(fontSize: 13, fontStyle: FontStyle.italic, color: LangHueyColors.charcoal)),
+                        ),
                       ],
                     ),
                   );
@@ -640,51 +571,71 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
           ),
           const SizedBox(height: 20),
 
-          // Homework Tasks
-          Text('Devoirs & Tâches à Domicile :', style: LangHueyTextStyles.h3),
-          const SizedBox(height: 12),
-          ...widget.lesson.homework.map((hw) {
-            return Container(
-              margin: const EdgeInsets.only(bottom: 14),
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.black12),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                        decoration: BoxDecoration(
-                          color: LangHueyColors.amberGold.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: Text(hw.category, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: Colors.brown.shade900)),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
-                  Text(hw.instruction, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
-                  if (hw.exampleResponse != null) ...[
-                    const SizedBox(height: 10),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade50,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.black12),
-                      ),
-                      child: Text('Exemple attendu : ${hw.exampleResponse}', style: TextStyle(color: Colors.grey.shade800, fontSize: 12, fontStyle: FontStyle.italic)),
-                    ),
+          // Homework & Tasks Card
+          Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: Colors.black12),
+              boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 3)),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    const Icon(Icons.assignment_turned_in_rounded, color: LangHueyColors.amberGold, size: 24),
+                    const SizedBox(width: 10),
+                    Text('Devoirs & Travaux Pratiques (Homework) :', style: LangHueyTextStyles.h3.copyWith(fontSize: 16)),
                   ],
-                ],
-              ),
-            );
-          }),
+                ),
+                const SizedBox(height: 14),
+                ...widget.lesson.homework.map((hw) {
+                  return Container(
+                    margin: const EdgeInsets.only(bottom: 12),
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      color: LangHueyColors.softTeal.withOpacity(0.4),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.2)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: LangHueyColors.deepTeal,
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: Text(
+                                hw.category,
+                                style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 6),
+                        Text(hw.instruction, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: LangHueyColors.charcoal)),
+                        if (hw.exampleResponse != null) ...[
+                          const SizedBox(height: 6),
+                          Text(
+                            'Exemple : ${hw.exampleResponse}',
+                            style: TextStyle(fontSize: 12, color: Colors.grey.shade700, fontStyle: FontStyle.italic),
+                          ),
+                        ],
+                      ],
+                    ),
+                  );
+                }),
+              ],
+            ),
+          ),
         ],
       ),
     );

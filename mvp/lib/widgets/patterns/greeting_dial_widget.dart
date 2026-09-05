@@ -99,7 +99,7 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,7 +128,7 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
                 decoration: BoxDecoration(
                   color: LHColors.cream,
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: LHColors.teal.withOpacity(0.2)),
+                  border: Border.all(color: LHColors.teal.withValues(alpha: 0.2)),
                 ),
                 child: Row(
                   children: [
@@ -164,7 +164,7 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
                         child: Padding(
                           padding: const EdgeInsets.only(bottom: 12),
                           child: Material(
-                            color: isSelected ? LHColors.teal : LHColors.cream.withOpacity(0.5),
+                            color: isSelected ? LHColors.teal : LHColors.cream.withValues(alpha: 0.5),
                             borderRadius: BorderRadius.circular(18),
                             elevation: isSelected ? 4 : 0,
                             child: InkWell(
@@ -197,7 +197,7 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
                                           ),
                                           Text(
                                             item['timeLabel'] as String,
-                                            style: LHText.body(isSelected ? LHColors.white.withOpacity(0.85) : LHColors.grey).copyWith(
+                                            style: LHText.body(isSelected ? LHColors.white.withValues(alpha: 0.85) : LHColors.grey).copyWith(
                                               fontSize: 13,
                                             ),
                                           ),
@@ -229,7 +229,7 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
                     decoration: BoxDecoration(
                       color: LHColors.cream,
                       borderRadius: BorderRadius.circular(22),
-                      border: Border.all(color: LHColors.teal.withOpacity(0.3), width: 2),
+                      border: Border.all(color: LHColors.teal.withValues(alpha: 0.3), width: 2),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -296,7 +296,7 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
                           children: [
                             Expanded(
                               child: Material(
-                                color: LHColors.teal.withOpacity(0.08),
+                                color: LHColors.teal.withValues(alpha: 0.08),
                                 borderRadius: BorderRadius.circular(14),
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(14),
@@ -330,7 +330,7 @@ class _GreetingDialWidgetState extends State<GreetingDialWidget> {
                             const SizedBox(width: 12),
                             Expanded(
                               child: Material(
-                                color: LHColors.gold.withOpacity(0.18),
+                                color: LHColors.gold.withValues(alpha: 0.18),
                                 borderRadius: BorderRadius.circular(14),
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(14),

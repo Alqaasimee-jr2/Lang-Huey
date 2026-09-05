@@ -17,7 +17,7 @@ class JSS1WeekRoadmapScreen extends StatefulWidget {
 }
 
 class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
-  late List<JSS1Lesson> _lessons;
+  List<JSS1Lesson> _lessons = [];
 
   @override
   void initState() {
@@ -25,33 +25,29 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
     _loadLessons();
   }
 
-  @override
-  void didUpdateWidget(covariant JSS1WeekRoadmapScreen oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.term != widget.term) {
-      _loadLessons();
-    }
-  }
-
   void _loadLessons() {
-    if (widget.term == 1) {
-      _lessons = JSS1Term1Lessons.weeks;
-    } else if (widget.term == 2) {
-      _lessons = JSS1Term2Lessons.weeks;
-    } else if (widget.term == 3) {
-      _lessons = JSS1Term3Lessons.weeks;
-    } else {
-      _lessons = [];
+    switch (widget.term) {
+      case 1:
+        _lessons = JSS1Term1Lessons.weeks;
+        break;
+      case 2:
+        _lessons = JSS1Term2Lessons.weeks;
+        break;
+      case 3:
+        _lessons = JSS1Term3Lessons.weeks;
+        break;
+      default:
+        _lessons = [];
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final termName = widget.term == 1
-        ? 'PREMIER TRIMESTRE (Term 1)'
+        ? 'Term 1 — First Term'
         : widget.term == 2
-            ? 'DEUXIÈME TRIMESTRE (Term 2)'
-            : 'TROISIÈME TRIMESTRE (Term 3)';
+            ? 'Term 2 — Second Term'
+            : 'Term 3 — Third Term';
 
     return Scaffold(
       backgroundColor: JSS1Colors.cream,
@@ -63,7 +59,7 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('JSS1 FRENCH • $termName', style: JSS1Text.subheading(JSS1Colors.white).copyWith(fontSize: 18)),
-            Text('Programme Officiel NERDC • 9 Semaines de Cours & Révision', style: JSS1Text.caption(JSS1Colors.gold)),
+            Text('NERDC Official Curriculum • 9 Weeks of Lessons & Practice Drills', style: JSS1Text.caption(JSS1Colors.gold)),
           ],
         ),
       ),
@@ -80,9 +76,9 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
                   children: [
                     const Icon(Icons.lock_clock_rounded, color: JSS1Colors.gold, size: 64),
                     const SizedBox(height: 16),
-                    Text('Trimestre ${widget.term} en cours de finalisation', style: JSS1Text.heading(JSS1Colors.teal)),
+                    Text('Term ${widget.term} Curriculum', style: JSS1Text.heading(JSS1Colors.teal)),
                     const SizedBox(height: 8),
-                    Text('Les modules de ce trimestre seront débloqués pour le sprint suivant.', style: JSS1Text.body(JSS1Colors.grey)),
+                    Text('Lessons for this term are currently locked.', style: JSS1Text.body(JSS1Colors.grey)),
                   ],
                 ),
               ),
@@ -99,7 +95,9 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
                 ),
                 itemBuilder: (context, index) {
                   final lesson = _lessons[index];
-                  final isRevision = lesson.patternType == JSS1PatternType.term1RevisionRally;
+                  final isRevision = lesson.patternType == JSS1PatternType.term1RevisionRally ||
+                      lesson.patternType == JSS1PatternType.term2RevisionRally ||
+                      lesson.patternType == JSS1PatternType.term3AnnualGrandRally;
                   final Color headerBg = isRevision ? const Color(0xFFC77700) : JSS1Colors.teal;
 
                   return InkWell(
@@ -118,7 +116,7 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: JSS1Colors.charcoal.withValues(alpha: 0.05),
+                            color: JSS1Colors.charcoal.withOpacity(0.05),
                             blurRadius: 10,
                             offset: const Offset(0, 4),
                           ),
@@ -142,17 +140,17 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'SEMAINE ${lesson.week}',
+                                  'WEEK ${lesson.week}',
                                   style: JSS1Text.caption(JSS1Colors.white).copyWith(fontWeight: FontWeight.w900, letterSpacing: 1),
                                 ),
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                                   decoration: BoxDecoration(
-                                    color: JSS1Colors.white.withValues(alpha: 0.2),
+                                    color: JSS1Colors.white.withOpacity(0.2),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   child: Text(
-                                    '${lesson.vocabItems.length} mots',
+                                    '${lesson.vocabItems.length} words',
                                     style: const TextStyle(color: JSS1Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -191,10 +189,10 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
                                     children: [
                                       Row(
                                         children: [
-                                          const Icon(Icons.touch_app_rounded, size: 16, color: JSS1Colors.teal),
+                                          const Icon(Icons.quiz_rounded, size: 16, color: JSS1Colors.teal),
                                           const SizedBox(width: 4),
                                           Text(
-                                            'Lab Interactif',
+                                            '${lesson.classworkExercises.length} Drills',
                                             style: JSS1Text.caption(JSS1Colors.teal).copyWith(fontWeight: FontWeight.bold),
                                           ),
                                         ],

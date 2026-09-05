@@ -38,6 +38,29 @@ enum P5PatternType {
   term3Graduation,
 }
 
+enum TeachingStyle {
+  storyNarrative,       // Illustrated sequential story / narration
+  conversationalDialogue,// Multi-turn dialogue / roleplay
+  interactiveStudio,    // Tactile smartboard kinetic tool (clock, map, avatar, etc.)
+  phoneticSoundboard,   // Soundboard ladder for alphabet, accents, numbers
+}
+
+enum DrillType {
+  singleChoice,      // Tap translation / multiple choice
+  pairMatch,         // Interactive pair matcher
+  fillGap,           // Gap fill with word bank
+  sentenceBuilder,   // Scrambled word chips into sentence tray
+  trueFalse,         // VRAI (True) / FAUX (False)
+  storyComprehension,// Story/dialogue event check
+  listenAudio,       // Audio association
+}
+
+class DrillPair {
+  final String french;
+  final String english;
+  const DrillPair({required this.french, required this.english});
+}
+
 class P5VocabItem {
   final String french;
   final String phonetics;
@@ -61,12 +84,28 @@ class P5InteractiveExercise {
   final List<String> options;
   final int correctOptionIndex;
   final String explanation;
+  final DrillType type;
+  final String? frenchStimulus;
+  final String? audioKey;
+  final List<DrillPair>? pairs;
+  final String? sentenceTemplate;
+  final List<String>? wordBank;
+  final String? correctWord;
+  final List<String>? correctSentenceOrder;
 
   const P5InteractiveExercise({
     required this.prompt,
-    required this.options,
-    required this.correctOptionIndex,
+    this.options = const [],
+    this.correctOptionIndex = 0,
     required this.explanation,
+    this.type = DrillType.singleChoice,
+    this.frenchStimulus,
+    this.audioKey,
+    this.pairs,
+    this.sentenceTemplate,
+    this.wordBank,
+    this.correctWord,
+    this.correctSentenceOrder,
   });
 }
 
@@ -110,6 +149,7 @@ class P5Lesson {
   final String topic;
   final String subtitle;
   final P5PatternType patternType;
+  final TeachingStyle teachingStyle;
   final List<String> objectives;
   final String culturalInsight;
   final List<P5VocabItem> vocabItems;
@@ -124,11 +164,12 @@ class P5Lesson {
     required this.topic,
     required this.subtitle,
     required this.patternType,
+    this.teachingStyle = TeachingStyle.interactiveStudio,
     required this.objectives,
     required this.culturalInsight,
     required this.vocabItems,
     required this.classworkExercises,
-    required this.evaluationQuestions,
+    this.evaluationQuestions = const [],
     required this.assignmentTasks,
     this.grammarNote,
   });

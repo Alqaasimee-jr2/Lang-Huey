@@ -8,6 +8,7 @@ class P5Colors {
   static const Color cream = Color(0xFFF5F0E8);
   static const Color charcoal = Color(0xFF1C1C1C);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color coral = Color(0xFFFF6B6B);
 
   // Functional & Semantic
   static const Color green = Color(0xFF2E7D32);

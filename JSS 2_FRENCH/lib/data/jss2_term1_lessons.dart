@@ -4,7 +4,7 @@ import '../models/jss2_lesson_model.dart';
 class JSS2Term1Lessons {
   static final List<JSS2LessonModel> weeks = [
     // Week 1: Demander et expliquer la position
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 1,
       termNumber: 1,
       theme: 'Unité 1 : Demander et expliquer la position',
@@ -19,6 +19,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'In Nigeria and across Francophone West Africa (Benin, Togo, Senegal), describing positions accurately is essential in bustling outdoor markets, school compounds, and community gatherings.',
       patternType: JSS2PatternType.spatialPositionStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'sur la table',
@@ -120,6 +121,32 @@ class JSS2Term1Lessons {
           correctOptionIndex: 2,
           explanation: '"Où est... ?" permet d\'interroger la position d\'une personne.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'sur la table', english: 'on the table'),
+            DrillPair(french: 'sous la chaise', english: 'under the chair'),
+            DrillPair(french: 'devant le tableau', english: 'in front of the board'),
+            DrillPair(french: 'derrière la porte', english: 'behind the door'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (on the table):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['sur la table', 'sous la chaise', 'devant le tableau', 'derrière la porte'],
+          correctWord: 'sur la table',
+          explanation: 'Correct! "sur la table" translates to "on the table".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -163,7 +190,7 @@ class JSS2Term1Lessons {
     ),
 
     // Week 2: Situer les lieux
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 2,
       termNumber: 1,
       theme: 'Unité 2 : Situer les lieux',
@@ -178,6 +205,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'In Nigerian cities like Lagos, Abuja, and Ibadan, finding key landmarks like the central market or post office often relies on relative spatial landmarks.',
       patternType: JSS2PatternType.locatingPlacesStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'la poste et la banque',
@@ -273,6 +301,38 @@ class JSS2Term1Lessons {
           correctOptionIndex: 1,
           explanation: '"De + le" devient obligatoirement "du".',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'la poste et la banque', english: 'the post office and the bank'),
+            DrillPair(french: 'l\'hôpital central', english: 'the central hospital'),
+            DrillPair(french: 'l\'école et le collège', english: 'the primary school and secondary school'),
+            DrillPair(french: 'le marché principal', english: 'the main market'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (the post office and the bank):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['la poste et la banque', 'l\'hôpital central', 'l\'école et le collège', 'le marché principal'],
+          correctWord: 'la poste et la banque',
+          explanation: 'Correct! "la poste et la banque" translates to "the post office and the bank".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "l\'hôpital central"?',
+          options: ['the central hospital', 'the post office and the bank', 'the primary school and secondary school', 'the main market'],
+          correctOptionIndex: 0,
+          explanation: '"l\'hôpital central" translates to "the central hospital".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -305,7 +365,7 @@ class JSS2Term1Lessons {
     ),
 
     // Week 3: Accueillir et guider quelqu'un
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 3,
       termNumber: 1,
       theme: 'Unité 3 : Accueillir et guider quelqu’un',
@@ -320,6 +380,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'In Nigerian culture, hospitality (*E kaabo* in Yoruba, *Nno* in Igbo, *Sannu da zuwa* in Hausa) is of paramount importance. In French, polite reception sets the tone for all official school and corporate interactions.',
       patternType: JSS2PatternType.indoorWelcomingGuidingStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       vocabulary: [
         JSS2VocabItem(
           french: 'Bienvenue dans notre établissement !',
@@ -415,6 +476,38 @@ class JSS2Term1Lessons {
           correctOptionIndex: 2,
           explanation: 'Le rez-de-chaussée (RDC) correspond au niveau 0 d\'un bâtiment.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Bienvenue dans notre établissement !', english: 'Welcome to our institution / school!'),
+            DrillPair(french: 'Entrez, je vous en prie.', english: 'Come in, please.'),
+            DrillPair(french: 'Suivez-moi, s\'il vous plaît.', english: 'Follow me, please.'),
+            DrillPair(french: 'le bureau du principal', english: 'the principal\'s office'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Welcome to our institution / school!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Bienvenue dans notre établissement !', 'Entrez, je vous en prie.', 'Suivez-moi, s\'il vous plaît.', 'le bureau du principal'],
+          correctWord: 'Bienvenue dans notre établissement !',
+          explanation: 'Correct! "Bienvenue dans notre établissement !" translates to "Welcome to our institution / school!".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "Entrez, je vous en prie."?',
+          options: ['Come in, please.', 'Welcome to our institution / school!', 'Follow me, please.', 'the principal\'s office'],
+          correctOptionIndex: 0,
+          explanation: '"Entrez, je vous en prie." translates to "Come in, please.".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -442,7 +535,7 @@ class JSS2Term1Lessons {
     ),
 
     // Week 4: Demander et indiquer le chemin
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 4,
       termNumber: 1,
       theme: 'Unité 4 : Demander/indiquer le chemin',
@@ -457,6 +550,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'Navigating Francophone cities like Dakar, Cotonou, and Abidjan requires mastering road directives, landmarks, and polite conversational opening formulas (*Pardon monsieur, s\'il vous plaît*).',
       patternType: JSS2PatternType.directionsAndWayfindingStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       vocabulary: [
         JSS2VocabItem(
           french: 'Pardon, pour aller au marché ?',
@@ -544,6 +638,38 @@ class JSS2Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'On commence toujours par "Pardon madame/monsieur, s\'il vous plaît".',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Pardon, pour aller au marché ?', english: 'Excuse me, how do I get to the market?'),
+            DrillPair(french: 'Continuez tout droit.', english: 'Continue straight ahead.'),
+            DrillPair(french: 'Tournez à gauche au carrefour.', english: 'Turn left at the crossroads / intersection.'),
+            DrillPair(french: 'Tournez à droite au feu.', english: 'Turn right at the traffic lights.'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Excuse me, how do I get to the market?):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Pardon, pour aller au marché ?', 'Continuez tout droit.', 'Tournez à gauche au carrefour.', 'Tournez à droite au feu.'],
+          correctWord: 'Pardon, pour aller au marché ?',
+          explanation: 'Correct! "Pardon, pour aller au marché ?" translates to "Excuse me, how do I get to the market?".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "Continuez tout droit."?',
+          options: ['Continue straight ahead.', 'Excuse me, how do I get to the market?', 'Turn left at the crossroads / intersection.', 'Turn right at the traffic lights.'],
+          correctOptionIndex: 0,
+          explanation: '"Continuez tout droit." translates to "Continue straight ahead.".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -571,7 +697,7 @@ class JSS2Term1Lessons {
     ),
 
     // Week 5: Les moyens de transport
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 5,
       termNumber: 1,
       theme: 'Unité 5 : Les moyens de transport',
@@ -586,6 +712,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'In Nigeria, the famous *danfo* buses, *keke NAPEP* (tricycles), and *okada* (motorcycles) are primary modes of transit. In French, we say *en bus / en keke* (enclosed) and *à moto / à pied* (open/active).',
       patternType: JSS2PatternType.transportModesStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'le bus et le taxi',
@@ -681,6 +808,38 @@ class JSS2Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'Pour la marche à pied et les deux-roues ouverts, on utilise "À" (à pied, à vélo, à moto).',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'le bus et le taxi', english: 'the bus and the taxi'),
+            DrillPair(french: 'la voiture et le camion', english: 'the car and the truck'),
+            DrillPair(french: 'le train express', english: 'the express train'),
+            DrillPair(french: 'l\'avion et l\'hélicoptère', english: 'the airplane and the helicopter'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (the bus and the taxi):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['le bus et le taxi', 'la voiture et le camion', 'le train express', 'l\'avion et l\'hélicoptère'],
+          correctWord: 'le bus et le taxi',
+          explanation: 'Correct! "le bus et le taxi" translates to "the bus and the taxi".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "la voiture et le camion"?',
+          options: ['the car and the truck', 'the bus and the taxi', 'the express train', 'the airplane and the helicopter'],
+          correctOptionIndex: 0,
+          explanation: '"la voiture et le camion" translates to "the car and the truck".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -709,7 +868,7 @@ class JSS2Term1Lessons {
     ),
 
     // Week 6: Expliquer un trajet
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 6,
       termNumber: 1,
       theme: 'Unité 6 : Expliquer un trajet',
@@ -724,6 +883,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'Modern African metropolises (Abidjan Metro, Lagos Blue Line Rail, Abuja Light Rail, Dakar TER) use color-coded transit maps and turnstiles similar to Paris and Lyon.',
       patternType: JSS2PatternType.publicTransitRouteStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       vocabulary: [
         JSS2VocabItem(
           french: 'la station de métro',
@@ -819,6 +979,38 @@ class JSS2Term1Lessons {
           correctOptionIndex: 1,
           explanation: 'La validation du titre de transport est obligatoire pour franchir les portillons.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'la station de métro', english: 'the metro / subway station'),
+            DrillPair(french: 'la ligne de bus numéro trois', english: 'bus line number 3'),
+            DrillPair(french: 'prendre la ligne verte', english: 'take the green line'),
+            DrillPair(french: 'changer à la station centrale', english: 'transfer / change at the central station'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (the metro / subway station):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['la station de métro', 'la ligne de bus numéro trois', 'prendre la ligne verte', 'changer à la station centrale'],
+          correctWord: 'la station de métro',
+          explanation: 'Correct! "la station de métro" translates to "the metro / subway station".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "la ligne de bus numéro trois"?',
+          options: ['bus line number 3', 'the metro / subway station', 'take the green line', 'transfer / change at the central station'],
+          correctOptionIndex: 0,
+          explanation: '"la ligne de bus numéro trois" translates to "bus line number 3".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -846,7 +1038,7 @@ class JSS2Term1Lessons {
     ),
 
     // Week 7: Demander et indiquer des horaires
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 7,
       termNumber: 1,
       theme: 'Unité 7 : Demander/indiquer des horaires',
@@ -861,6 +1053,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'In international travel and long-distance Nigerian train corridors (e.g. Lagos-Ibadan, Abuja-Kaduna), timetables follow the standard 24-hour military notation used globally.',
       patternType: JSS2PatternType.schedulesAndTimetablesStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'le tableau des départs',
@@ -956,6 +1149,38 @@ class JSS2Term1Lessons {
           correctOptionIndex: 1,
           explanation: '"À quelle heure décolle l\'avion ?" interroge l\'horaire précis.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'le tableau des départs', english: 'the departures board'),
+            DrillPair(french: 'À quelle heure part le bus ?', english: 'What time does the bus leave / depart?'),
+            DrillPair(french: 'À quelle heure arrive le train ?', english: 'What time does the train arrive?'),
+            DrillPair(french: 'le quai numéro deux', english: 'platform number 2'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (the departures board):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['le tableau des départs', 'À quelle heure part le bus ?', 'À quelle heure arrive le train ?', 'le quai numéro deux'],
+          correctWord: 'le tableau des départs',
+          explanation: 'Correct! "le tableau des départs" translates to "the departures board".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "À quelle heure part le bus ?"?',
+          options: ['What time does the bus leave / depart?', 'the departures board', 'What time does the train arrive?', 'platform number 2'],
+          correctOptionIndex: 0,
+          explanation: '"À quelle heure part le bus ?" translates to "What time does the bus leave / depart?".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -983,7 +1208,7 @@ class JSS2Term1Lessons {
     ),
 
     // Week 8: Réagir à un problème de transport
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 8,
       termNumber: 1,
       theme: 'Unité 8 : Réagir à un problème de transport',
@@ -998,6 +1223,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'Facing delays or luggage mishaps is a universal travel experience. Knowing how to remain polite while firmly asserting passenger rights in French (*faire une réclamation*) is a critical real-world skill.',
       patternType: JSS2PatternType.transportTroubleshootingStudio,
+      teachingStyle: TeachingStyle.conversationalDialogue,
       vocabulary: [
         JSS2VocabItem(
           french: 'Le train a trente minutes de retard.',
@@ -1093,6 +1319,38 @@ class JSS2Term1Lessons {
           correctOptionIndex: 1,
           explanation: '"Puis-je..." est la forme la plus courtoise pour formuler une demande au guichet.',
         ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Le train a trente minutes de retard.', english: 'The train is delayed by thirty minutes.'),
+            DrillPair(french: 'Le train est à l\'heure.', english: 'The train is on time / on schedule.'),
+            DrillPair(french: 'Le vol est annulé.', english: 'The flight is cancelled.'),
+            DrillPair(french: 'J\'ai raté mon bus.', english: 'I missed my bus.'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (The train is delayed by thirty minutes.):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Le train a trente minutes de retard.', 'Le train est à l\'heure.', 'Le vol est annulé.', 'J\'ai raté mon bus.'],
+          correctWord: 'Le train a trente minutes de retard.',
+          explanation: 'Correct! "Le train a trente minutes de retard." translates to "The train is delayed by thirty minutes.".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "Le train est à l\'heure."?',
+          options: ['The train is on time / on schedule.', 'The train is delayed by thirty minutes.', 'The flight is cancelled.', 'I missed my bus.'],
+          correctOptionIndex: 0,
+          explanation: '"Le train est à l\'heure." translates to "The train is on time / on schedule.".',
+        ),
       ],
       evaluation: [
         JSS2EvaluationQuestion(
@@ -1120,7 +1378,7 @@ class JSS2Term1Lessons {
     ),
 
     // Week 9: Grand Rallye de Révision du Premier Trimestre
-    const JSS2LessonModel(
+    JSS2LessonModel(
       weekNumber: 9,
       termNumber: 1,
       theme: 'Grand Rallye : Bilan du Premier Trimestre JSS2',
@@ -1135,6 +1393,7 @@ class JSS2Term1Lessons {
       ],
       culturalInsight: 'Academic rallies and inter-house quiz competitions (*génie en herbe*) are cherished pedagogical traditions across Nigerian and West African schools, fostering teamwork and mastery.',
       patternType: JSS2PatternType.term1RevisionRally,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS2VocabItem(
           french: 'Bienvenue au Grand Rallye JSS2 !',
@@ -1189,6 +1448,38 @@ class JSS2Term1Lessons {
           options: ['Under the chair', 'At the end of the hallway on the right', 'In front of the market', 'Opposite the bank'],
           correctOptionIndex: 1,
           explanation: '"Au bout du couloir à droite" indique précisément le fond du couloir vers la droite.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French phrase with its correct English meaning:',
+          pairs: [
+            DrillPair(french: 'Bienvenue au Grand Rallye JSS2 !', english: 'Welcome to the JSS2 Grand Rally!'),
+            DrillPair(french: 'Équipe Bleue en tête !', english: 'Blue Team in the lead!'),
+            DrillPair(french: 'Bonne réponse, bravo !', english: 'Correct answer, congratulations!'),
+            DrillPair(french: 'Attention au chrono !', english: 'Watch the timer / countdown!'),
+          ],
+          explanation: 'Superbe ! You matched all the French and English pairs accurately.',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (Welcome to the JSS2 Grand Rally!):',
+          sentenceTemplate: 'Le mot correct est ___ pour cette expression.',
+          wordBank: ['Bienvenue au Grand Rallye JSS2 !', 'Équipe Bleue en tête !', 'Bonne réponse, bravo !', 'Attention au chrono !'],
+          correctWord: 'Bienvenue au Grand Rallye JSS2 !',
+          explanation: 'Correct! "Bienvenue au Grand Rallye JSS2 !" translates to "Welcome to the JSS2 Grand Rally!".',
+        ),
+        JSS2InteractiveExercise(
+          type: DrillType.trueFalse,
+          prompt: 'True or False: In French, paying close attention to correct prepositions, agreements, and polite formulas is essential.',
+          options: ['VRAI (True)', 'FAUX (False)'],
+          correctOptionIndex: 0,
+          explanation: 'Vrai ! Accuracy with prepositions and polite speech is fundamental in JSS2 French.',
+        ),
+        JSS2InteractiveExercise(
+          prompt: 'What is the correct English translation for "Équipe Bleue en tête !"?',
+          options: ['Blue Team in the lead!', 'Welcome to the JSS2 Grand Rally!', 'Correct answer, congratulations!', 'Watch the timer / countdown!'],
+          correctOptionIndex: 0,
+          explanation: '"Équipe Bleue en tête !" translates to "Blue Team in the lead!".',
         ),
       ],
       evaluation: [

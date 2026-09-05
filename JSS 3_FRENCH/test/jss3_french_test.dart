@@ -55,12 +55,21 @@ void main() {
 
     test('Every lesson has valid interactive exercises with correct indices', () {
       for (final lesson in lessons) {
-        expect(lesson.exercises.length, greaterThanOrEqualTo(3));
+        expect(lesson.exercises.length, greaterThanOrEqualTo(6));
         for (final ex in lesson.exercises) {
           expect(ex.prompt.trim().isNotEmpty, isTrue);
-          expect(ex.options.length, greaterThanOrEqualTo(2));
-          expect(ex.correctOptionIndex, greaterThanOrEqualTo(0));
-          expect(ex.correctOptionIndex, lessThan(ex.options.length));
+          if (ex.type == DrillType.singleChoice || ex.type == DrillType.trueFalse || ex.type == DrillType.tapTranslation) {
+            expect(ex.options.length, greaterThanOrEqualTo(2));
+            expect(ex.correctOptionIndex, greaterThanOrEqualTo(0));
+            expect(ex.correctOptionIndex, lessThan(ex.options.length));
+          } else if (ex.type == DrillType.pairMatch) {
+            expect(ex.pairs, isNotNull);
+            expect(ex.pairs!.length, greaterThanOrEqualTo(2));
+          } else if (ex.type == DrillType.fillGap) {
+            expect(ex.wordBank, isNotNull);
+            expect(ex.wordBank!.length, greaterThanOrEqualTo(2));
+            expect(ex.correctGapWord, isNotNull);
+          }
           expect(ex.explanation.trim().isNotEmpty, isTrue);
         }
       }

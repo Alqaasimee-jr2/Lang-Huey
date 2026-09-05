@@ -22,7 +22,8 @@ void main() {
         expect(lesson.objectives.isNotEmpty, isTrue);
         expect(lesson.culturalInsight.isNotEmpty, isTrue);
         expect(lesson.vocabItems.isNotEmpty, isTrue);
-        expect(lesson.classworkExercises.isNotEmpty, isTrue);
+        expect(lesson.teachingStyle, isNotNull);
+        expect(lesson.classworkExercises.length, greaterThanOrEqualTo(6));
         expect(lesson.evaluationQuestions.isNotEmpty, isTrue);
         expect(lesson.assignmentTasks.isNotEmpty, isTrue);
       }
@@ -66,7 +67,8 @@ void main() {
         expect(lesson.objectives.isNotEmpty, isTrue);
         expect(lesson.culturalInsight.isNotEmpty, isTrue);
         expect(lesson.vocabItems.isNotEmpty, isTrue);
-        expect(lesson.classworkExercises.isNotEmpty, isTrue);
+        expect(lesson.teachingStyle, isNotNull);
+        expect(lesson.classworkExercises.length, greaterThanOrEqualTo(6));
         expect(lesson.evaluationQuestions.isNotEmpty, isTrue);
         expect(lesson.assignmentTasks.isNotEmpty, isTrue);
       }
@@ -110,7 +112,8 @@ void main() {
         expect(lesson.objectives.isNotEmpty, isTrue);
         expect(lesson.culturalInsight.isNotEmpty, isTrue);
         expect(lesson.vocabItems.isNotEmpty, isTrue);
-        expect(lesson.classworkExercises.isNotEmpty, isTrue);
+        expect(lesson.teachingStyle, isNotNull);
+        expect(lesson.classworkExercises.length, greaterThanOrEqualTo(6));
         expect(lesson.evaluationQuestions.isNotEmpty, isTrue);
         expect(lesson.assignmentTasks.isNotEmpty, isTrue);
       }

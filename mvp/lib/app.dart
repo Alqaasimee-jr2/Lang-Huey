@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'models/p4_lesson_model.dart';
-import 'screens/splash/splash_screen.dart';
+import 'screens/splash/animated_splash_screen.dart';
+import 'screens/onboarding/onboarding_screen.dart';
 import 'screens/term/p4_term_select_screen.dart';
 import 'screens/roadmap/p4_week_roadmap_screen.dart';
 import 'screens/lesson/p4_lesson_player_screen.dart';
@@ -28,7 +29,9 @@ class LangHueyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/splash':
-            return MaterialPageRoute(builder: (_) => const SplashScreen());
+            return MaterialPageRoute(builder: (_) => const AnimatedSplashScreen());
+          case '/onboarding':
+            return MaterialPageRoute(builder: (_) => const OnboardingScreen());
           case '/p4_terms':
             return MaterialPageRoute(builder: (_) => const P4TermSelectScreen());
           case '/p4_roadmap':
@@ -37,7 +40,10 @@ class LangHueyApp extends StatelessWidget {
               builder: (_) => P4WeekRoadmapScreen(termNumber: termNumber),
             );
           case '/p4_player':
-            final lesson = settings.arguments as P4Lesson;
+            final lesson = settings.arguments;
+            if (lesson == null || lesson is! P4Lesson) {
+              return MaterialPageRoute(builder: (_) => const P4TermSelectScreen());
+            }
             return MaterialPageRoute(
               builder: (_) => P4LessonPlayerScreen(lesson: lesson),
             );

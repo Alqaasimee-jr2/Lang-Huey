@@ -3,6 +3,9 @@ import '../../models/p4_lesson_model.dart';
 import '../../services/p4_audio_service.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
+import '../../widgets/drills/p4_interactive_drill_engine_widget.dart';
+
+// Term 1 Patterns
 import '../../widgets/patterns/map_explorer_widget.dart';
 import '../../widgets/patterns/greeting_dial_widget.dart';
 import '../../widgets/patterns/magic_words_widget.dart';
@@ -13,6 +16,8 @@ import '../../widgets/patterns/dialogue_sequencer_widget.dart';
 import '../../widgets/patterns/id_card_workshop_widget.dart';
 import '../../widgets/patterns/revision_rally_widget.dart';
 import '../../widgets/patterns/vacation_celebration_widget.dart';
+
+// Term 2 Patterns
 import '../../widgets/patterns/term2/family_portrait_widget.dart';
 import '../../widgets/patterns/term2/family_tree_builder_widget.dart';
 import '../../widgets/patterns/term2/family_descriptor_widget.dart';
@@ -23,6 +28,8 @@ import '../../widgets/patterns/term2/preposition_playground_widget.dart';
 import '../../widgets/patterns/term2/color_studio_widget.dart';
 import '../../widgets/patterns/term2/term2_revision_rally_widget.dart';
 import '../../widgets/patterns/term2/term2_vacation_celebration_widget.dart';
+
+// Term 3 Patterns
 import '../../widgets/patterns/term3/clock_time_explorer_widget.dart';
 import '../../widgets/patterns/term3/daily_routine_sequencer_widget.dart';
 import '../../widgets/patterns/term3/food_and_meals_widget.dart';
@@ -35,7 +42,6 @@ import '../../widgets/patterns/term3/term3_revision_rally_widget.dart';
 import '../../widgets/patterns/term3/term3_graduation_celebration_widget.dart';
 
 enum LessonPhase {
-  objectives,
   interactivePattern,
   vocabLab,
   classwork,
@@ -53,36 +59,26 @@ class P4LessonPlayerScreen extends StatefulWidget {
 
 class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
   final P4AudioService _audioService = P4AudioService();
-  LessonPhase _phase = LessonPhase.objectives;
-  int _revealedQuestionIndex = -1;
+  LessonPhase _phase = LessonPhase.interactivePattern;
 
   void _goToNextPhase() => _nextPhase();
 
-  // Classwork Interactive Drill state
-  int _classworkSubTab = 0; // 0: Interactive Drills, 1: Scheme Evaluation Q&A
-  int _activeExerciseIndex = 0;
-  int? _selectedOptionIndex;
-  bool _hasCheckedAnswer = false;
-
   final List<Map<String, dynamic>> _phaseSteps = [
-    {'phase': LessonPhase.objectives, 'title': '1. Objectives', 'icon': Icons.flag_rounded},
-    {'phase': LessonPhase.interactivePattern, 'title': '2. Interactive Lab', 'icon': Icons.touch_app_rounded},
-    {'phase': LessonPhase.vocabLab, 'title': '3. Vocabulary & Phonetics', 'icon': Icons.record_voice_over_rounded},
-    {'phase': LessonPhase.classwork, 'title': '4. Classwork & Drills', 'icon': Icons.quiz_rounded},
-    {'phase': LessonPhase.summary, 'title': '5. Summary & Homework', 'icon': Icons.assignment_turned_in_rounded},
+    {'phase': LessonPhase.interactivePattern, 'title': '1. Learning Lab', 'icon': Icons.lightbulb_rounded},
+    {'phase': LessonPhase.vocabLab, 'title': '2. Vocabulary', 'icon': Icons.record_voice_over_rounded},
+    {'phase': LessonPhase.classwork, 'title': '3. Practice Drills', 'icon': Icons.sports_esports_rounded},
+    {'phase': LessonPhase.summary, 'title': '4. Summary', 'icon': Icons.menu_book_rounded},
   ];
 
   void _nextPhase() {
     final currentIndex = _phaseSteps.indexWhere((s) => s['phase'] == _phase);
     if (currentIndex < _phaseSteps.length - 1) {
+      _audioService.playSfx(P4SfxType.click);
       setState(() {
         _phase = _phaseSteps[currentIndex + 1]['phase'] as LessonPhase;
-        _revealedQuestionIndex = -1;
-        _activeExerciseIndex = 0;
-        _selectedOptionIndex = null;
-        _hasCheckedAnswer = false;
       });
     } else {
+      _audioService.playSfx(P4SfxType.celebrate);
       Navigator.pop(context, true);
     }
   }
@@ -90,16 +86,101 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
   void _prevPhase() {
     final currentIndex = _phaseSteps.indexWhere((s) => s['phase'] == _phase);
     if (currentIndex > 0) {
+      _audioService.playSfx(P4SfxType.click);
       setState(() {
         _phase = _phaseSteps[currentIndex - 1]['phase'] as LessonPhase;
-        _revealedQuestionIndex = -1;
-        _activeExerciseIndex = 0;
-        _selectedOptionIndex = null;
-        _hasCheckedAnswer = false;
       });
     } else {
+      _audioService.playSfx(P4SfxType.click);
       Navigator.pop(context);
     }
+  }
+
+  void _showTeacherGuideModal() {
+    _audioService.playSfx(P4SfxType.click);
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          margin: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(24),
+            boxShadow: const [
+              BoxShadow(color: Colors.black26, blurRadius: 24, offset: Offset(0, -4)),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: LHColors.teal,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(Icons.school_rounded, color: LHColors.gold, size: 24),
+                      ),
+                      const SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Teacher Facilitator Guide',
+                            style: LHText.heading(LHColors.teal).copyWith(fontSize: 18),
+                          ),
+                          Text(
+                            'For Teacher Reference Only • Not Displayed on Student Smartboard',
+                            style: LHText.caption(LHColors.grey).copyWith(fontSize: 11),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.close_rounded, size: 28),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              ),
+              const Divider(height: 28),
+              const Text('CURRICULUM LEARNING OBJECTIVES', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: LHColors.teal, letterSpacing: 1)),
+              const SizedBox(height: 8),
+              ...widget.lesson.objectives.map((obj) => Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.check_circle_outline_rounded, color: LHColors.teal, size: 18),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(obj, style: const TextStyle(fontSize: 13, color: LHColors.charcoal)),
+                    ),
+                  ],
+                ),
+              )),
+              const SizedBox(height: 16),
+              const Text('CULTURAL INSIGHT HOOK', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: LHColors.gold, letterSpacing: 1)),
+              const SizedBox(height: 6),
+              Text(
+                widget.lesson.culturalInsight,
+                style: const TextStyle(fontSize: 13, fontStyle: FontStyle.italic, color: LHColors.charcoal),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -140,13 +221,13 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Material(
-                  color: LHColors.white.withOpacity(0.15),
+                  color: LHColors.white.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(12),
                     onTap: () => Navigator.pop(context),
                     child: const Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: EdgeInsets.all(16),
                       child: Icon(Icons.arrow_back_rounded, color: LHColors.white, size: 28),
                     ),
                   ),
@@ -159,7 +240,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                         decoration: BoxDecoration(
-                          color: LHColors.turquoise.withOpacity(0.3),
+                          color: LHColors.turquoise.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(
@@ -187,7 +268,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
 
           // Speed Control Button (1.0x / 0.8x)
           Material(
-            color: _audioService.playbackSpeed < 1.0 ? LHColors.gold : LHColors.white.withOpacity(0.15),
+            color: _audioService.playbackSpeed < 1.0 ? LHColors.gold : LHColors.white.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(10),
             child: InkWell(
               borderRadius: BorderRadius.circular(10),
@@ -221,6 +302,34 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
             ),
           ),
 
+          const SizedBox(width: 10),
+
+          // Teacher Guide Button
+          Material(
+            color: LHColors.white.withValues(alpha: 0.15),
+            borderRadius: BorderRadius.circular(10),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(10),
+              onTap: _showTeacherGuideModal,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                child: Row(
+                  children: [
+                    const Icon(Icons.school_rounded, size: 18, color: LHColors.gold),
+                    const SizedBox(width: 6),
+                    Text(
+                      'Teacher Guide',
+                      style: LHText.body(LHColors.white).copyWith(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
           const SizedBox(width: 12),
 
           Row(
@@ -229,28 +338,35 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
               final isCurrent = step['phase'] == _phase;
               return Padding(
                 padding: const EdgeInsets.only(left: 8),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: isCurrent ? LHColors.turquoise : LHColors.white.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        step['icon'] as IconData,
-                        size: 18,
-                        color: isCurrent ? LHColors.charcoal : LHColors.white,
-                      ),
-                      const SizedBox(width: 6),
-                      Text(
-                        step['title'] as String,
-                        style: LHText.body(isCurrent ? LHColors.charcoal : LHColors.white).copyWith(
-                          fontSize: 13,
-                          fontWeight: isCurrent ? FontWeight.w800 : FontWeight.w500,
+                child: InkWell(
+                  onTap: () {
+                    _audioService.playSfx(P4SfxType.click);
+                    setState(() => _phase = step['phase'] as LessonPhase);
+                  },
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: isCurrent ? LHColors.turquoise : LHColors.white.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          step['icon'] as IconData,
+                          size: 18,
+                          color: isCurrent ? LHColors.charcoal : LHColors.white,
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 6),
+                        Text(
+                          step['title'] as String,
+                          style: LHText.body(isCurrent ? LHColors.charcoal : LHColors.white).copyWith(
+                            fontSize: 13,
+                            fontWeight: isCurrent ? FontWeight.w800 : FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );
@@ -263,8 +379,6 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
 
   Widget _buildPhaseContent() {
     switch (_phase) {
-      case LessonPhase.objectives:
-        return _buildObjectivesView();
       case LessonPhase.interactivePattern:
         return _buildPatternView();
       case LessonPhase.vocabLab:
@@ -276,163 +390,17 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
     }
   }
 
-  Widget _buildObjectivesView() {
-    return Container(
-      padding: const EdgeInsets.all(32),
-      decoration: BoxDecoration(
-        color: LHColors.white,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
-        boxShadow: [
-          BoxShadow(
-            color: LHColors.charcoal.withOpacity(0.06),
-            blurRadius: 16,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 6,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(Icons.track_changes_rounded, color: LHColors.teal, size: 32),
-                        const SizedBox(width: 12),
-                        Text(
-                          'Lesson Learning Objectives',
-                          style: LHText.heading(LHColors.teal).copyWith(fontSize: 26),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      'By the end of this lesson, pupils should be able to:',
-                      style: LHText.body(LHColors.grey).copyWith(fontSize: 16),
-                    ),
-                  ],
-                ),
-                const Divider(height: 20),
-                Expanded(
-                  child: ListView.separated(
-                    itemCount: widget.lesson.objectives.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 12),
-                    itemBuilder: (context, index) {
-                      return Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 32,
-                            height: 32,
-                            decoration: BoxDecoration(
-                              color: LHColors.teal.withOpacity(0.12),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Text(
-                                '${index + 1}',
-                                style: LHText.subheading(LHColors.teal).copyWith(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w800,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 16),
-                          Expanded(
-                            child: Text(
-                              widget.lesson.objectives[index],
-                              style: LHText.body(LHColors.charcoal).copyWith(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                height: 1.4,
-                              ),
-                            ),
-                          ),
-                        ],
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          const SizedBox(width: 32),
-
-          Expanded(
-            flex: 4,
-            child: Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: LHColors.cream,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: LHColors.gold.withOpacity(0.5)),
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(Icons.lightbulb_rounded, color: LHColors.gold, size: 30),
-                        const SizedBox(width: 10),
-                        Text(
-                          'Classroom Cultural Hook',
-                          style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 20),
-                        ),
-                      ],
-                    ),
-                    const Divider(),
-                    const SizedBox(height: 8),
-                    Text(
-                      widget.lesson.culturalInsight,
-                      style: LHText.body(LHColors.charcoal).copyWith(
-                        fontSize: 16,
-                        height: 1.5,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: LHColors.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(Icons.touch_app_rounded, color: LHColors.teal, size: 24),
-                          const SizedBox(width: 10),
-                          Expanded(
-                            child: Text(
-                              'Tap "Next: Interactive Lab" below to begin!',
-                              style: LHText.body(LHColors.teal).copyWith(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildPatternView() {
+    // Architectural Note on Routing Strategy (Audit Issue H-7):
+    // Term 1 routes via `widget.lesson.patternType` (explicit enum mapping).
+    // Terms 2 and 3 route via `widget.lesson.week` (curriculum week index 1..13),
+    // which directly maps pedagogical lab widgets to the syllabus progression.
+    // Both strategies are intentional and well-tested; an assert guards the valid week range.
+    assert(
+      widget.lesson.week >= 1 && widget.lesson.week <= 13,
+      'Lesson week must be between 1 and 13. Found: ${widget.lesson.week}',
+    );
+
     if (widget.lesson.term == 2) {
       switch (widget.lesson.week) {
         case 1:
@@ -528,7 +496,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -558,7 +526,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                       _audioService.playbackSpeed < 1.0 ? 'Speed: 0.8x (Slower)' : 'Speed: 1.0x (Normal)',
                       style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                     ),
-                    backgroundColor: _audioService.playbackSpeed < 1.0 ? LHColors.gold.withOpacity(0.35) : LHColors.cream,
+                    backgroundColor: _audioService.playbackSpeed < 1.0 ? LHColors.gold.withValues(alpha: 0.35) : LHColors.cream,
                     onPressed: () {
                       final newSpeed = _audioService.playbackSpeed == 1.0 ? 0.8 : 1.0;
                       setState(() {
@@ -600,20 +568,20 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
               itemBuilder: (context, index) {
                 final item = widget.lesson.vocabItems[index];
                 return Material(
-                  color: LHColors.cream.withOpacity(0.5),
+                  color: LHColors.cream.withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(18),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(18),
                     onTap: () {
                       if (item.audioKey != null) {
-                        P4AudioService().playPhrase(item.audioKey!);
+                        P4AudioService().playPhrase(item.audioKey!, term: widget.lesson.term);
                       }
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
-                        border: Border.all(color: LHColors.teal.withOpacity(0.2)),
+                        border: Border.all(color: LHColors.teal.withValues(alpha: 0.2)),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -648,14 +616,20 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
                           ),
                           Text(
                             item.french,
-                            style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 17),
+                            style: LHText.subheading(LHColors.charcoal).copyWith(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w800,
+                            ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
                           Text(
                             item.english,
-                            style: LHText.body(LHColors.grey).copyWith(fontSize: 13),
-                            maxLines: 2,
+                            style: LHText.body(LHColors.teal).copyWith(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ],
@@ -672,424 +646,10 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
   }
 
   Widget _buildClassworkView() {
-    return Column(
-      children: [
-        // Sub-tab Switcher: Interactive Drill vs Scheme Q&A Check
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _buildClassworkSubTab(
-              title: '🎯 1. Interactive Smartboard Drill (${widget.lesson.classworkExercises.length} Drills)',
-              isActive: _classworkSubTab == 0,
-              onTap: () => setState(() => _classworkSubTab = 0),
-            ),
-            const SizedBox(width: 16),
-            _buildClassworkSubTab(
-              title: '📋 2. Scheme Evaluation Q&A (${widget.lesson.evaluationQuestions.length} Questions)',
-              isActive: _classworkSubTab == 1,
-              onTap: () => setState(() => _classworkSubTab = 1),
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
-
-        Expanded(
-          child: _classworkSubTab == 0 ? _buildInteractiveDrillStage() : _buildSchemeEvaluationList(),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildClassworkSubTab({required String title, required bool isActive, required VoidCallback onTap}) {
-    return Material(
-      color: isActive ? LHColors.teal : LHColors.white,
-      borderRadius: BorderRadius.circular(14),
-      elevation: isActive ? 3 : 1,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Text(
-            title,
-            style: LHText.subheading(isActive ? LHColors.white : LHColors.charcoal).copyWith(
-              fontSize: 16,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildInteractiveDrillStage() {
-    if (widget.lesson.classworkExercises.isEmpty) {
-      return _buildSchemeEvaluationList();
-    }
-
-    final exercise = widget.lesson.classworkExercises[_activeExerciseIndex];
-
-    return Container(
-      padding: const EdgeInsets.all(28),
-      decoration: BoxDecoration(
-        color: LHColors.white,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Exercise ${_activeExerciseIndex + 1} of ${widget.lesson.classworkExercises.length}',
-                style: LHText.subheading(LHColors.teal).copyWith(fontSize: 18),
-              ),
-              Row(
-                children: List.generate(widget.lesson.classworkExercises.length, (idx) {
-                  final isCurrent = idx == _activeExerciseIndex;
-                  return Padding(
-                    padding: const EdgeInsets.only(left: 6),
-                    child: Container(
-                      width: 24,
-                      height: 8,
-                      decoration: BoxDecoration(
-                        color: isCurrent ? LHColors.gold : LHColors.cream,
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ),
-                  );
-                }),
-              ),
-            ],
-          ),
-          const Divider(),
-
-          Text(
-            exercise.prompt,
-            style: LHText.heading(LHColors.charcoal).copyWith(fontSize: 24),
-          ),
-
-          const SizedBox(height: 12),
-
-          // Options Grid
-          Expanded(
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
-                childAspectRatio: 2.6,
-              ),
-              itemCount: exercise.options.length,
-              itemBuilder: (context, optIdx) {
-                final isSelected = _selectedOptionIndex == optIdx;
-                final isCorrect = optIdx == exercise.correctOptionIndex;
-
-                Color tileColor = LHColors.cream.withOpacity(0.6);
-                Color textColor = LHColors.charcoal;
-                Color borderColor = LHColors.teal.withOpacity(0.2);
-
-                if (_hasCheckedAnswer) {
-                  if (isCorrect) {
-                    tileColor = const Color(0xFF4CAF82).withOpacity(0.15);
-                    borderColor = const Color(0xFF4CAF82);
-                    textColor = const Color(0xFF1E6B47);
-                  } else if (isSelected && !isCorrect) {
-                    tileColor = const Color(0xFFE24B4A).withOpacity(0.15);
-                    borderColor = const Color(0xFFE24B4A);
-                    textColor = const Color(0xFF9E2A2B);
-                  }
-                } else if (isSelected) {
-                  tileColor = LHColors.teal;
-                  textColor = LHColors.white;
-                  borderColor = LHColors.teal;
-                }
-
-                return Material(
-                  color: tileColor,
-                  borderRadius: BorderRadius.circular(16),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(16),
-                    onTap: _hasCheckedAnswer
-                        ? null
-                        : () {
-                            setState(() => _selectedOptionIndex = optIdx);
-                            P4AudioService().playSfx(P4SfxType.click);
-                          },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: borderColor, width: 2),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 32,
-                            height: 32,
-                            decoration: BoxDecoration(
-                              color: isSelected ? LHColors.gold : LHColors.white,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Text(
-                                String.fromCharCode(65 + optIdx),
-                                style: LHText.body(LHColors.charcoal).copyWith(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w800,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: Text(
-                              exercise.options[optIdx],
-                              style: LHText.subheading(textColor).copyWith(fontSize: 16),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-
-          // Feedback & Drill Next Action
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: _hasCheckedAnswer
-                    ? Text(
-                        'Explanation: ${exercise.explanation}',
-                        style: LHText.body(LHColors.teal).copyWith(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      )
-                    : Text(
-                        'Tap the correct option on the board',
-                        style: LHText.body(LHColors.grey).copyWith(fontSize: 15, fontStyle: FontStyle.italic),
-                      ),
-              ),
-              Row(
-                children: [
-                  if (!_hasCheckedAnswer && _selectedOptionIndex != null)
-                    Material(
-                      color: LHColors.teal,
-                      borderRadius: BorderRadius.circular(12),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(12),
-                        onTap: () {
-                          final isCorrect = _selectedOptionIndex == exercise.correctOptionIndex;
-                          setState(() => _hasCheckedAnswer = true);
-                          P4AudioService().playSfx(isCorrect ? P4SfxType.correct : P4SfxType.incorrect);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                          child: Text(
-                            'Check Answer',
-                            style: LHText.subheading(LHColors.white).copyWith(fontSize: 16),
-                          ),
-                        ),
-                      ),
-                    ),
-                  if (_hasCheckedAnswer && _activeExerciseIndex < widget.lesson.classworkExercises.length - 1)
-                    Material(
-                      color: LHColors.gold,
-                      borderRadius: BorderRadius.circular(12),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(12),
-                        onTap: () {
-                          setState(() {
-                            _activeExerciseIndex++;
-                            _selectedOptionIndex = null;
-                            _hasCheckedAnswer = false;
-                          });
-                          P4AudioService().playSfx(P4SfxType.click);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                          child: Row(
-                            children: [
-                              Text(
-                                'Next Exercise',
-                                style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 16, fontWeight: FontWeight.w800),
-                              ),
-                              const SizedBox(width: 8),
-                              const Icon(Icons.arrow_forward_rounded, color: LHColors.charcoal, size: 18),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  if (_hasCheckedAnswer && _activeExerciseIndex == widget.lesson.classworkExercises.length - 1)
-                    Material(
-                      color: LHColors.gold,
-                      borderRadius: BorderRadius.circular(12),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(12),
-                        onTap: () {
-                          P4AudioService().playSfx(P4SfxType.celebrate);
-                          _nextPhase();
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                          child: Row(
-                            children: [
-                              Text(
-                                'Drills Complete 🎉',
-                                style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 16, fontWeight: FontWeight.w800),
-                              ),
-                              const SizedBox(width: 8),
-                              const Icon(Icons.check_circle_rounded, color: LHColors.charcoal, size: 18),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSchemeEvaluationList() {
-    return Container(
-      padding: const EdgeInsets.all(28),
-      decoration: BoxDecoration(
-        color: LHColors.white,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  const Icon(Icons.checklist_rounded, color: LHColors.teal, size: 28),
-                  const SizedBox(width: 10),
-                  Text(
-                    'Curriculum Evaluation Checklist (${widget.lesson.evaluationQuestions.length} Questions)',
-                    style: LHText.heading(LHColors.teal).copyWith(fontSize: 22),
-                  ),
-                ],
-              ),
-              Text(
-                'Tap any question to reveal verified answers',
-                style: LHText.body(LHColors.grey).copyWith(fontSize: 14, fontStyle: FontStyle.italic),
-              ),
-            ],
-          ),
-          const Divider(height: 16),
-
-          Expanded(
-            child: ListView.separated(
-              itemCount: widget.lesson.evaluationQuestions.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 10),
-              itemBuilder: (context, index) {
-                final q = widget.lesson.evaluationQuestions[index];
-                final isRevealed = _revealedQuestionIndex == index;
-
-                return Material(
-                  color: isRevealed ? LHColors.teal.withOpacity(0.08) : LHColors.cream.withOpacity(0.4),
-                  borderRadius: BorderRadius.circular(16),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(16),
-                    onTap: () {
-                      setState(() {
-                        _revealedQuestionIndex = isRevealed ? -1 : index;
-                      });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                width: 28,
-                                height: 28,
-                                decoration: const BoxDecoration(
-                                  color: LHColors.teal,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    '${index + 1}',
-                                    style: LHText.body(LHColors.white).copyWith(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w800,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 14),
-                              Expanded(
-                                child: Text(
-                                  q.question,
-                                  style: LHText.subheading(LHColors.charcoal).copyWith(fontSize: 18),
-                                ),
-                              ),
-                              Icon(
-                                isRevealed ? Icons.visibility_off_rounded : Icons.visibility_rounded,
-                                color: LHColors.teal,
-                                size: 24,
-                              ),
-                            ],
-                          ),
-                          if (isRevealed) ...[
-                            const SizedBox(height: 10),
-                            Container(
-                              padding: const EdgeInsets.all(12),
-                              decoration: BoxDecoration(
-                                color: LHColors.white,
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(color: LHColors.teal.withOpacity(0.3)),
-                              ),
-                              child: Row(
-                                children: [
-                                  const Icon(Icons.check_circle_rounded, color: LHColors.teal, size: 20),
-                                  const SizedBox(width: 10),
-                                  Expanded(
-                                    child: Text(
-                                      'Answer: ${q.answer}',
-                                      style: LHText.body(LHColors.teal).copyWith(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
+    return P4InteractiveDrillEngineWidget(
+      drills: widget.lesson.classworkExercises,
+      term: widget.lesson.term,
+      onComplete: _goToNextPhase,
     );
   }
 
@@ -1099,7 +659,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Row(
         children: [
@@ -1154,7 +714,7 @@ class _P4LessonPlayerScreenState extends State<P4LessonPlayerScreen> {
               decoration: BoxDecoration(
                 color: LHColors.cream,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: LHColors.gold.withOpacity(0.5)),
+                border: Border.all(color: LHColors.gold.withValues(alpha: 0.5)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

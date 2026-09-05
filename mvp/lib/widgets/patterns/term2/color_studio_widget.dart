@@ -142,7 +142,7 @@ class _ColorStudioWidgetState extends State<ColorStudioWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Row(
         children: [
@@ -176,7 +176,7 @@ class _ColorStudioWidgetState extends State<ColorStudioWidget> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
-                          color: isSelected ? LHColors.gold : Colors.white.withOpacity(0.5),
+                          color: isSelected ? LHColors.gold : Colors.white.withValues(alpha: 0.5),
                           width: isSelected ? 4 : 1.5,
                         ),
                       ),
@@ -211,7 +211,7 @@ class _ColorStudioWidgetState extends State<ColorStudioWidget> {
               decoration: BoxDecoration(
                 color: LHColors.cream,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: LHColors.teal.withOpacity(0.4), width: 2),
+                border: Border.all(color: LHColors.teal.withValues(alpha: 0.4), width: 2),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -238,7 +238,7 @@ class _ColorStudioWidgetState extends State<ColorStudioWidget> {
                     decoration: BoxDecoration(
                       color: LHColors.white,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: LHColors.teal.withOpacity(0.3)),
+                      border: Border.all(color: LHColors.teal.withValues(alpha: 0.3)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -277,7 +277,7 @@ class _ColorStudioWidgetState extends State<ColorStudioWidget> {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: LHColors.teal.withOpacity(0.08),
+                      color: LHColors.teal.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
@@ -300,7 +300,7 @@ class _ColorStudioWidgetState extends State<ColorStudioWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -355,7 +355,7 @@ class _ColorStudioWidgetState extends State<ColorStudioWidget> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: LHColors.teal.withOpacity(0.08),
+              color: LHColors.teal.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(

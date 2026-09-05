@@ -7,12 +7,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 1: WHY LEARN FRENCH & GEOGRAPHY
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 1,
     topic: 'Pourquoi apprendre le français?',
     subtitle: 'Why learn French? Neighboring Francophone Countries & French Alphabet (A–E)',
     patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
     objectives: [
       'State two reasons why learning French is important for Nigerians.',
       'List three French-speaking countries in Africa (Francophone countries).',
@@ -118,6 +119,32 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 2,
         explanation: 'Senegal (Le Sénégal) is in West Africa, but does not share a direct land border with Nigeria.',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Le Bénin', english: 'Benin Republic (West neighbor)'),
+          DrillPair(french: 'Le Niger', english: 'Niger Republic (North neighbor)'),
+          DrillPair(french: 'Le Tchad', english: 'Chad Republic (North-East neighbor)'),
+          DrillPair(french: 'Le Cameroun', english: 'Cameroon (East neighbor)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Benin Republic (West neighbor)):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Le Bénin', 'Le Niger', 'Le Tchad', 'Le Cameroun'],
+        correctGapWord: 'Le Bénin',
+        explanation: 'Bravo ! "Le Bénin" means "Benin Republic (West neighbor)".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -180,12 +207,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 2: GREETINGS - PART 1
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 2,
     topic: 'Saluer (Greetings) - Part 1',
     subtitle: 'Formal vs Informal Greetings, Times of Day & Asking "How Are You?"',
     patternType: P4PatternType.greetingTimeDial,
+    teachingStyle: TeachingStyle.dialogueConversation,
     objectives: [
       'Differentiate between formal greetings (politesse) and informal greetings (amiable).',
       'Say "Good morning/day", "Good evening", and "Good night" in French accurately.',
@@ -298,6 +326,32 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 2,
         explanation: '"Comme ci, comme ça" means so-so or okay, accompanied by a flat waving hand motion.',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bonjour', english: 'Good day / Hello (Formal & Standard)'),
+          DrillPair(french: 'Bonsoir', english: 'Good evening'),
+          DrillPair(french: 'Bonne nuit', english: 'Good night (only when going to sleep)'),
+          DrillPair(french: 'Salut', english: 'Hi / Bye (Informal)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Good day / Hello (Formal & Standard)):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Bonjour', 'Bonsoir', 'Bonne nuit', 'Salut'],
+        correctGapWord: 'Bonjour',
+        explanation: 'Bravo ! "Bonjour" means "Good day / Hello (Formal & Standard)".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -386,12 +440,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 3: GREETINGS - PART 2 & MAGIC WORDS
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 3,
     topic: 'Saluer (Greetings) - Part 2',
     subtitle: 'Saying Goodbye, Magic Words (Les Mots Magiques) & French Cultural Customs',
     patternType: P4PatternType.magicWordsCourtesy,
+    teachingStyle: TeachingStyle.dialogueConversation,
     objectives: [
       'Mention three different ways to say goodbye in French based on timing.',
       'Identify and use the "Magic Words" (polite expressions) in daily class life.',
@@ -493,6 +548,32 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 0,
         explanation: '"À demain" means "See you tomorrow".',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Au revoir', english: 'Goodbye (Universal & Polite)'),
+          DrillPair(french: 'À bientôt', english: 'See you soon'),
+          DrillPair(french: 'À demain', english: 'See you tomorrow'),
+          DrillPair(french: 'S\'il vous plaît', english: 'Please (Formal / to Adults)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Goodbye (Universal & Polite)):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Au revoir', 'À bientôt', 'À demain', 'S\'il vous plaît'],
+        correctGapWord: 'Au revoir',
+        explanation: 'Bravo ! "Au revoir" means "Goodbye (Universal & Polite)".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -554,12 +635,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 4: INTRODUCING ONESELF - PART 1
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 4,
     topic: 'Se présenter (Introducing Oneself) - Part 1',
     subtitle: 'Stating Your Name, Nationality & Subject Pronouns (Je, Tu, Il, Elle)',
     patternType: P4PatternType.identitySentenceLab,
+    teachingStyle: TeachingStyle.interactiveStudio,
     objectives: [
       'Introduce oneself by stating one\'s name in French using "Je m\'appelle...".',
       'Ask someone their name in both informal and formal contexts.',
@@ -663,6 +745,32 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 1,
         explanation: 'The informal question is "Comment tu t\'appelles?".',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Je m\'appelle...', english: 'My name is... (Literally:'),
+          DrillPair(french: 'Comment tu t\'appelles?', english: 'What is your name? (Informal / to peers)'),
+          DrillPair(french: 'Comment vous appelez-vous?', english: 'What is your name? (Formal / to adults)'),
+          DrillPair(french: 'Je suis Nigérian', english: 'I am Nigerian (Boy speaking - Masculine)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (My name is... (Literally:):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Je m\'appelle...', 'Comment tu t\'appelles?', 'Comment vous appelez-vous?', 'Je suis Nigérian'],
+        correctGapWord: 'Je m\'appelle...',
+        explanation: 'Bravo ! "Je m\'appelle..." means "My name is... (Literally:".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -723,12 +831,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 5: MID-TERM REVIEW & ORAL CHECK
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 5,
     topic: 'Révision de Mi-Trimestre (Mid-Term Review)',
     subtitle: 'Comprehensive Oral & Visual Review of Weeks 1 to 4',
     patternType: P4PatternType.midTermReview,
+    teachingStyle: TeachingStyle.phoneticSoundboard,
     objectives: [
       'Review all greetings (formal and informal) for different times of day.',
       'Demonstrate fluency in self-introductions (name and nationality).',
@@ -776,6 +885,38 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 2,
         explanation: 'Niger Republic (Le Niger) is directly North of Nigeria.',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bonjour / Bonsoir / Bonne nuit', english: 'Greetings across the day'),
+          DrillPair(french: 'Comment ça va? -> Très bien, merci!', english: 'Inquiring & responding to well-being'),
+          DrillPair(french: 'Je m\'appelle... / Je suis Nigérian(e)', english: 'Personal identity statement'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Greetings across the day):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Bonjour / Bonsoir / Bonne nuit', 'Comment ça va? -> Très bien, merci!', 'Je m\'appelle... / Je suis Nigérian(e)', 'oui'],
+        correctGapWord: 'Bonjour / Bonsoir / Bonne nuit',
+        explanation: 'Bravo ! "Bonjour / Bonsoir / Bonne nuit" means "Greetings across the day".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Comment ça va? -> Très bien, merci!" mean in English?',
+        options: ['Inquiring & responding to well-being', 'Greetings across the day', 'Personal identity statement', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Comment ça va? -> Très bien, merci!" translates to "Inquiring & responding to well-being".',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -810,12 +951,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 6: MID-TERM BREAK
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 6,
     topic: 'Pause de Mi-Trimestre (Mid-Term Break)',
     subtitle: 'Holiday & Rest Period — Repos et Détente',
     patternType: P4PatternType.midTermBreak,
+    teachingStyle: TeachingStyle.storyNarrative,
     objectives: [
       'Rest, recharge, and enjoy the school break!',
       'Optionally listen to French songs like "Frère Jacques" or practice greetings at home.',
@@ -846,6 +988,46 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 1,
         explanation: '"Bonnes vacances!" is the joyful French wish for a great holiday or break.',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bonnes vacances!', english: 'Have a good break / holiday!'),
+          DrillPair(french: 'Le repos', english: 'Rest / Relaxation'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Have a good break / holiday!):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Bonnes vacances!', 'Le repos', 'oui', 'oui'],
+        correctGapWord: 'Bonnes vacances!',
+        explanation: 'Bravo ! "Bonnes vacances!" means "Have a good break / holiday!".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Le repos" mean in English?',
+        options: ['Rest / Relaxation', 'Have a good break / holiday!', 'to speak kindly', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Le repos" translates to "Rest / Relaxation".',
+      ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bonnes vacances!', english: 'Have a good break / holiday!'),
+          DrillPair(french: 'Le repos', english: 'Rest / Relaxation'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -865,12 +1047,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 7: INTRODUCING ONESELF - PART 2 (AGE, NUMBERS & GENDER)
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 7,
     topic: 'Se présenter (Introducing Oneself) - Part 2',
     subtitle: 'Counting 1 to 20 in French, Stating Age ("J\'ai ... ans") & Gender',
     patternType: P4PatternType.numberAndAgeStudio,
+    teachingStyle: TeachingStyle.interactiveStudio,
     objectives: [
       'Count fluently from 1 to 20 in French with clear pronunciation.',
       'State one\'s age in French using the verb avoir ("J\'ai ... ans").',
@@ -966,6 +1149,32 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 1,
         explanation: 'In French, age is stated as "J\'ai ... ans" (years).',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: '1-5: un, deux, trois, quatre, cinq', english: 'Numbers 1 to 5'),
+          DrillPair(french: '6-10: six, sept, huit, neuf, dix', english: 'Numbers 6 to 10'),
+          DrillPair(french: '11-15: onze, douze, treize, quatorze, quinze', english: 'Numbers 11 to 15'),
+          DrillPair(french: '16-20: seize, dix-sept, dix-huit, dix-neuf, vingt', english: 'Numbers 16 to 20'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Numbers 1 to 5):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['1-5: un, deux, trois, quatre, cinq', '6-10: six, sept, huit, neuf, dix', '11-15: onze, douze, treize, quatorze, quinze', '16-20: seize, dix-sept, dix-huit, dix-neuf, vingt'],
+        correctGapWord: '1-5: un, deux, trois, quatre, cinq',
+        explanation: 'Bravo ! "1-5: un, deux, trois, quatre, cinq" means "Numbers 1 to 5".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -1042,12 +1251,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 8: TAKING LEAVE - PART 1 (TIMING & WELL-WISHES)
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 8,
     topic: 'Prendre congé (Taking Leave) - Part 1',
     subtitle: 'Time-Specific Goodbyes & Wishing Someone Well (Les Souhaits)',
     patternType: P4PatternType.farewellTimeMatcher,
+    teachingStyle: TeachingStyle.dialogueConversation,
     objectives: [
       'List three different ways to say goodbye based on time.',
       'Use expressions to wish someone a good day, weekend, or holiday.',
@@ -1126,6 +1336,39 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 0,
         explanation: '"À tout à l\'heure!" means see you later on the same day.',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'À tout à l\'heure!', english: 'See you later! (Later the same day)'),
+          DrillPair(french: 'À ce soir!', english: 'See you tonight!'),
+          DrillPair(french: 'À la prochaine!', english: 'Until next time!'),
+          DrillPair(french: 'Bonne journée!', english: 'Have a good day!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (See you later! (Later the same day)):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['À tout à l\'heure!', 'À ce soir!', 'À la prochaine!', 'Bonne journée!'],
+        correctGapWord: 'À tout à l\'heure!',
+        explanation: 'Bravo ! "À tout à l\'heure!" means "See you later! (Later the same day)".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "À ce soir!" mean in English?',
+        options: ['See you tonight!', 'See you later! (Later the same day)', 'Until next time!', 'Have a good day!'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "À ce soir!" translates to "See you tonight!".',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -1181,12 +1424,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 9: TAKING LEAVE - PART 2 (GRATITUDE & DIALOGUES)
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 9,
     topic: 'Prendre congé (Taking Leave) - Part 2',
     subtitle: 'Expressing Gratitude on Departure & Constructing Full Conversations',
     patternType: P4PatternType.dialogueSequencer,
+    teachingStyle: TeachingStyle.dialogueConversation,
     objectives: [
       'Express gratitude when leaving a place ("Merci beaucoup", "Merci pour tout").',
       'Construct a simple dialogue combining greetings and farewells in correct order.',
@@ -1240,6 +1484,39 @@ final List<P4Lesson> p4Term1Lessons = [
         options: ['A -> B -> C', 'B -> C -> A', 'C -> B -> A', 'B -> A -> C'],
         correctOptionIndex: 1,
         explanation: 'Start with greeting (Bonjour) -> Ask well-being (Ça va?) -> End with farewell (Au revoir).',
+      ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Merci beaucoup', english: 'Thank you very much'),
+          DrillPair(french: 'Merci pour tout', english: 'Thank you for everything'),
+          DrillPair(french: 'Merci bien', english: 'Thanks a lot'),
+          DrillPair(french: 'Je dois partir', english: 'I must go / leave'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Thank you very much):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Merci beaucoup', 'Merci pour tout', 'Merci bien', 'Je dois partir'],
+        correctGapWord: 'Merci beaucoup',
+        explanation: 'Bravo ! "Merci beaucoup" means "Thank you very much".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Merci pour tout" mean in English?',
+        options: ['Thank you for everything', 'Thank you very much', 'Thanks a lot', 'I must go / leave'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Merci pour tout" translates to "Thank you for everything".',
       ),
     ],
     evaluationQuestions: [
@@ -1296,12 +1573,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 10: IDENTITY THEME REVIEW & ID CARD WORKSHOP
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 10,
     topic: 'Review and Integration: Identity Theme',
     subtitle: 'Comprehensive Review, "Carte d\'Identité" Creation & Class Presentations',
     patternType: P4PatternType.idCardWorkshop,
+    teachingStyle: TeachingStyle.interactiveStudio,
     objectives: [
       'Comprehensive review of all identity and identification topics.',
       'Introduce themselves completely (Name, Age, Nationality, Gender) in a structured paragraph.',
@@ -1379,6 +1657,39 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 0,
         explanation: '"Bonjour! Je m\'appelle Femi. J\'ai neuf ans. Je suis Nigérian" is the correct full introduction.',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Carte d\'Identité', english: 'Identity Card'),
+          DrillPair(french: 'Nom (Nom de famille)', english: 'Surname / Last Name'),
+          DrillPair(french: 'Prénom', english: 'First Name'),
+          DrillPair(french: 'Âge', english: 'Age'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Identity Card):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Carte d\'Identité', 'Nom (Nom de famille)', 'Prénom', 'Âge'],
+        correctGapWord: 'Carte d\'Identité',
+        explanation: 'Bravo ! "Carte d\'Identité" means "Identity Card".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Nom (Nom de famille)" mean in English?',
+        options: ['Surname / Last Name', 'Identity Card', 'First Name', 'Age'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Nom (Nom de famille)" translates to "Surname / Last Name".',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -1435,12 +1746,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 11: TERM 1 REVISION RALLY
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 11,
     topic: 'Révision Générale (Term 1 Revision)',
     subtitle: 'Comprehensive Review of Greetings, Numbers 1–20, Identity & Magic Words',
     patternType: P4PatternType.termRevisionRally,
+    teachingStyle: TeachingStyle.phoneticSoundboard,
     objectives: [
       'Review: Greetings (formal and informal) across all times of day.',
       'Review: Self-introductions (Name, Age, Nationality, Gender).',
@@ -1502,6 +1814,32 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 1,
         explanation: '"S\'il vous plaît" is the formal request used with adults.',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Les Salutations', english: 'All Greetings (Bonjour, Bonsoir, Bonne nuit, Salut)'),
+          DrillPair(french: 'Les Nombres (1–20)', english: 'Numbers 1 to 20'),
+          DrillPair(french: 'L\'Identité', english: 'Identity (Je m\'appelle, J\'ai ... ans, Nigérian/e)'),
+          DrillPair(french: 'Les Mots Magiques', english: 'Magic Words (S\'il vous plaît, Merci, De rien, Pardon)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (All Greetings (Bonjour, Bonsoir, Bonne nuit, Salut)):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Les Salutations', 'Les Nombres (1–20)', 'L\'Identité', 'Les Mots Magiques'],
+        correctGapWord: 'Les Salutations',
+        explanation: 'Bravo ! "Les Salutations" means "All Greetings (Bonjour, Bonsoir, Bonne nuit, Salut)".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -1536,12 +1874,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 12: ORAL EVALUATION & TERM 1 PORTFOLIO
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 12,
     topic: 'Bilan et Évaluation Orale (Term 1 Oral Assessment & Portfolio)',
     subtitle: 'Teacher-guided speaking and vocabulary evaluation for First Term',
     patternType: P4PatternType.midTermReview,
+    teachingStyle: TeachingStyle.storyNarrative,
     objectives: [
       'Assess pupil mastery in French greetings, numbers 1-20, and self-introduction.',
       'Conduct interactive oral speaking stations with the whole class.',
@@ -1582,6 +1921,48 @@ final List<P4Lesson> p4Term1Lessons = [
         correctOptionIndex: 0,
         explanation: 'A polite oral introduction always starts with "Bonjour, je m\'appelle...".',
       ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'L\'évaluation orale', english: 'Oral speaking evaluation'),
+          DrillPair(french: 'Très bien réussi !', english: 'Very well done / Great success!'),
+          DrillPair(french: 'Bravo à tous !', english: 'Bravo to all pupils!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Oral speaking evaluation):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['L\'évaluation orale', 'Très bien réussi !', 'Bravo à tous !', 'oui'],
+        correctGapWord: 'L\'évaluation orale',
+        explanation: 'Bravo ! "L\'évaluation orale" means "Oral speaking evaluation".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Très bien réussi !" mean in English?',
+        options: ['Very well done / Great success!', 'Oral speaking evaluation', 'Bravo to all pupils!', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Très bien réussi !" translates to "Very well done / Great success!".',
+      ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'L\'évaluation orale', english: 'Oral speaking evaluation'),
+          DrillPair(french: 'Très bien réussi !', english: 'Very well done / Great success!'),
+          DrillPair(french: 'Bravo à tous !', english: 'Bravo to all pupils!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
     ],
     evaluationQuestions: [
       P4EvaluationQuestion(
@@ -1606,12 +1987,13 @@ final List<P4Lesson> p4Term1Lessons = [
   // ==========================================
   // WEEK 13: TERM 1 WRAP-UP & VACATION CELEBRATION
   // ==========================================
-  const P4Lesson(
+  P4Lesson(
     term: 1,
     week: 13,
     topic: 'Fin du Premier Trimestre (Term 1 Wrap-up & Vacation Celebration)',
     subtitle: 'Congratulations! Term 1 Complete — Félicitations et Bonnes Vacances!',
     patternType: P4PatternType.vacationCelebration,
+    teachingStyle: TeachingStyle.storyNarrative,
     objectives: [
       'Celebrate completing Term 1 French Curriculum!',
       'Review your French vocabulary badge collection.',
@@ -1651,6 +2033,48 @@ final List<P4Lesson> p4Term1Lessons = [
         options: ['Good night', 'See you when school resumes / next term', 'Welcome back', 'Thank you'],
         correctOptionIndex: 1,
         explanation: '"À la rentrée" is the traditional French phrase for "See you when school reopens".',
+      ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Félicitations !', english: 'Congratulations!'),
+          DrillPair(french: 'Bonnes vacances !', english: 'Happy holidays / Have a great vacation!'),
+          DrillPair(french: 'À la rentrée !', english: 'See you next term / when school resumes!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Congratulations!):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Félicitations !', 'Bonnes vacances !', 'À la rentrée !', 'oui'],
+        correctGapWord: 'Félicitations !',
+        explanation: 'Bravo ! "Félicitations !" means "Congratulations!".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Bonnes vacances !" mean in English?',
+        options: ['Happy holidays / Have a great vacation!', 'Congratulations!', 'See you next term / when school resumes!', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Bonnes vacances !" translates to "Happy holidays / Have a great vacation!".',
+      ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Félicitations !', english: 'Congratulations!'),
+          DrillPair(french: 'Bonnes vacances !', english: 'Happy holidays / Have a great vacation!'),
+          DrillPair(french: 'À la rentrée !', english: 'See you next term / when school resumes!'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
       ),
     ],
     evaluationQuestions: [

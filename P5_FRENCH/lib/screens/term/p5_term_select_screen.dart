@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
+import '../onboarding/onboarding_screen.dart';
 import '../roadmap/p5_week_roadmap_screen.dart';
 
 class P5TermSelectScreen extends StatelessWidget {
@@ -54,7 +55,7 @@ class P5TermSelectScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Langue Française — Cinquième Année',
+                          'Primary 5 French Language Engine',
                           style: P5Text.heroHeading(P5Colors.white).copyWith(fontSize: 28),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -62,6 +63,35 @@ class P5TermSelectScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 16),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const OnboardingScreen(isReplayMode: true),
+                        ),
+                      );
+                    },
+                    borderRadius: BorderRadius.circular(16),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      decoration: BoxDecoration(
+                        color: P5Colors.turquoise.withOpacity(0.25),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: P5Colors.turquoise.withOpacity(0.6)),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.school_rounded, color: P5Colors.gold, size: 22),
+                          const SizedBox(width: 8),
+                          Text(
+                            'Guide / Kickoff',
+                            style: P5Text.body(P5Colors.white).copyWith(fontWeight: FontWeight.w800, fontSize: 14),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
                     decoration: BoxDecoration(
@@ -92,8 +122,8 @@ class P5TermSelectScreen extends StatelessWidget {
                     _buildTermCard(
                       context,
                       termNumber: 1,
-                      termTitle: 'Premier Trimestre',
-                      subtitle: 'Term 1: Numbers 21–60, Presenting Others & Body Anatomy',
+                      termTitle: 'Term 1 — First Term',
+                      subtitle: 'Numbers 21–60, Presenting Others & Body Anatomy',
                       weeksCount: 13,
                       color: P5Colors.turquoise,
                       isUnlocked: true,
@@ -112,8 +142,8 @@ class P5TermSelectScreen extends StatelessWidget {
                     _buildTermCard(
                       context,
                       termNumber: 2,
-                      termTitle: 'Deuxième Trimestre',
-                      subtitle: 'Term 2: Extended Family, Neighbors & Weekly Timetable',
+                      termTitle: 'Term 2 — Second Term',
+                      subtitle: 'Extended Family, Neighbors & Weekly Timetable',
                       weeksCount: 13,
                       color: P5Colors.gold,
                       isUnlocked: true,
@@ -132,18 +162,18 @@ class P5TermSelectScreen extends StatelessWidget {
                     _buildTermCard(
                       context,
                       termNumber: 3,
-                      termTitle: 'Troisième Trimestre',
-                      subtitle: 'Term 3: Daily Routine, Sports, Careers & Food',
+                      termTitle: 'Term 3 — Third Term',
+                      subtitle: 'Daily Routine, Sports, School Subjects & Careers',
                       weeksCount: 13,
-                      color: P5Colors.indigo,
+                      color: P5Colors.coral,
                       isUnlocked: true,
                       topics: [
-                        'Daily Routine & Reflexive Verbs',
-                        'Sports, Leisure & Hobbies Lounge',
-                        'School Activities & Classroom Borrowing',
-                        'Professions & Future Career Dreams',
-                        'Food, Meals & Grand Annual Revision',
-                        'Primary 5 French Certificate of Excellence',
+                        'Morning & Evening Routines (6h00–21h00)',
+                        'Sports Arena & Favorite Hobbies',
+                        'School Subjects & Classroom Borrowing',
+                        'Dream Careers & Nigerian Professions',
+                        'Food Buffet & Ordering Dishes',
+                        'Annual Grand Championship & Graduation',
                       ],
                     ),
                   ],

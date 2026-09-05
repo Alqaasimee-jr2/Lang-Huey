@@ -5,7 +5,7 @@ import '../models/jss3_lesson_model.dart';
 /// 9 High-Impact Instructional & Revision Weeks
 /// Nigerian NERDC Curriculum — BECE / Junior WAEC Preparation Aligned
 class JSS3Term2Lessons {
-  static const List<JSS3LessonModel> weeks = [
+  static final List<JSS3LessonModel> weeks = [
     // ─────────────────────────────────────────────────────
     // WEEK 1 — Unité 1: Relater un événement passé
     // ─────────────────────────────────────────────────────
@@ -26,6 +26,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'In West African French literature (e.g. Camara Laye\'s *L\'Enfant Noir* or Ferdinand Oyono\'s *Une Vie de Boy*), authors masterfully weave the Imparfait to evoke childhood nostalgia and the Passé Composé to recount life-altering events. Nigerian pupils preparing for the BECE exam will encounter narrative comprehension passages utilizing this exact dual-tense interplay.',
       patternType: JSS3PatternType.narratingPastEventsStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       vocabulary: [
         JSS3VocabItem(
           french: 'autrefois / jadis',
@@ -122,7 +123,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 0,
           explanation: 'Weather/state in the background takes Imparfait ("Il faisait nuit"), while the sudden punctual action takes Passé Composé ("l\'avion a atterri").',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'autrefois / jadis', english: 'formerly / in times past'),
+            DrillPair(french: 'alors / à ce moment-là', english: 'then / at that moment'),
+            DrillPair(french: 'pendant que / tandis que', english: 'while / whereas'),
+            DrillPair(french: 'soudainement / brusquement', english: 'suddenly / abruptly'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (formerly / in times past):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['autrefois / jadis', 'alors / à ce moment-là', 'pendant que / tandis que', 'soudainement / brusquement'],
+          correctGapWord: 'autrefois / jadis',
+          explanation: 'Bravo ! "autrefois / jadis" means "formerly / in times past".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Explique quand on emploie l\'Imparfait et quand on emploie le Passé Composé dans un même récit.',
@@ -184,6 +204,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'In Francophone media (RFI - Radio France Internationale, TV5 Monde Afrique, and national news stations like ORTB Bénin or RTI Côte d\'Ivoire), the formula "Nous venons d\'apprendre que..." (We have just learned that...) is the universal journalistic standard for breaking news. Nigerian students learning this formula gain immediate authentic communicative fluency.',
       patternType: JSS3PatternType.recentEventsVenirDeStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'venir de + infinitif',
@@ -285,7 +306,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 2,
           explanation: '"De" elides to "d\'" before a vowel or silent h : "Il vient d\'arriver".',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'venir de + infinitif', english: 'to have just (done something)'),
+            DrillPair(french: 'à l\'instant / tout juste', english: 'just now / this very instant'),
+            DrillPair(french: 'les dernières nouvelles / l\'actualité', english: 'the latest news / current affairs'),
+            DrillPair(french: 'un flash spécial / une alerte', english: 'special news bulletin / alert'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (to have just (done something)):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['venir de + infinitif', 'à l\'instant / tout juste', 'les dernières nouvelles / l\'actualité', 'un flash spécial / une alerte'],
+          correctGapWord: 'venir de + infinitif',
+          explanation: 'Bravo ! "venir de + infinitif" means "to have just (done something)".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Conjugue le verbe VENIR au présent pour tous les pronoms.',
@@ -347,6 +387,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'Diary keeping (*la tenue d\'un journal intime*) has a celebrated history in Francophone culture, from classic youth literature to historical memoirs. In secondary school, writing a diary develops reflective thinking, emotional intelligence, and narrative mastery for the BECE written composition test.',
       patternType: JSS3PatternType.diaryAndNarrativeStudio,
+      teachingStyle: TeachingStyle.storyNarrative,
       vocabulary: [
         JSS3VocabItem(
           french: 'cher journal / mon cher journal',
@@ -443,7 +484,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'The date is written at the top right of the page before the salutation.',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'cher journal / mon cher journal', english: 'dear diary / my dear diary'),
+            DrillPair(french: 'un secret / une confidence', english: 'a secret / a confidence'),
+            DrillPair(french: 'ressentir de la joie / de la fierté', english: 'to feel joy / pride'),
+            DrillPair(french: 'être inquiet / soulagé', english: 'to be worried / relieved'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (dear diary / my dear diary):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['cher journal / mon cher journal', 'un secret / une confidence', 'ressentir de la joie / de la fierté', 'être inquiet / soulagé'],
+          correctGapWord: 'cher journal / mon cher journal',
+          explanation: 'Bravo ! "cher journal / mon cher journal" means "dear diary / my dear diary".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Quels sont les 4 éléments obligatoires dans la mise en page d\'un journal intime ?',
@@ -505,6 +565,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'In everyday spoken French and Francophone diplomatic circles, the Futur Proche is the most frequently used tense for upcoming actions because it communicates certainty and dynamism ("Nous allons signer l\'accord ce soir"). Mastered early, it gives Nigerian students immediate conversational confidence.',
       patternType: JSS3PatternType.nearFutureIntentionsStudio,
+      teachingStyle: TeachingStyle.dialogueConversation,
       vocabulary: [
         JSS3VocabItem(
           french: 'qu\'est-ce que tu vas faire ?',
@@ -611,7 +672,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"We are going to celebrate" translates to Futur Proche : "Nous allons célébrer".',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'qu\'est-ce que tu vas faire ?', english: 'what are you going to do?'),
+            DrillPair(french: 'je vais étudier / réviser', english: 'I am going to study / revise'),
+            DrillPair(french: 'nous allons voyager / partir', english: 'we are going to travel / leave'),
+            DrillPair(french: 'bientôt / tout à l\'heure', english: 'soon / in a short while'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (what are you going to do?):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['qu\'est-ce que tu vas faire ?', 'je vais étudier / réviser', 'nous allons voyager / partir', 'bientôt / tout à l\'heure'],
+          correctGapWord: 'qu\'est-ce que tu vas faire ?',
+          explanation: 'Bravo ! "qu\'est-ce que tu vas faire ?" means "what are you going to do?".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Conjugue le verbe ALLER au présent de l\'indicatif.',
@@ -673,6 +753,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'Career aspirations (*les projets d\'avenir*) in Nigeria and Francophone Africa encompass technology, medicine, engineering, diplomacy, and aviation. In the BECE exam, questions frequently test students\' ability to project into the future using the Futur Simple ("Quand je serai grand, je serai médecin pour soigner les malades").',
       patternType: JSS3PatternType.futurePlansAndAspirationsStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'quand je serai grand(e)',
@@ -769,7 +850,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'Rule: "SI + présent ➔ FUTUR SIMPLE": "Si tu étudies bien, tu réussiras l\'examen."',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'quand je serai grand(e)', english: 'when I grow up / when I am older'),
+            DrillPair(french: 'je serai / j\'aurai', english: 'I will be / I will have'),
+            DrillPair(french: 'je ferai / j\'irai', english: 'I will do / I will go'),
+            DrillPair(french: 'à l\'avenir / dans le futur', english: 'in the future / in days to come'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (when I grow up / when I am older):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['quand je serai grand(e)', 'je serai / j\'aurai', 'je ferai / j\'irai', 'à l\'avenir / dans le futur'],
+          correctGapWord: 'quand je serai grand(e)',
+          explanation: 'Bravo ! "quand je serai grand(e)" means "when I grow up / when I am older".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Conjugue le verbe AVOIR et le verbe ÊTRE au futur simple pour tous les pronoms.',
@@ -831,6 +931,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'Interactive drama and simulated press conferences (*les simulations de conférences de presse et débats scolaires*) are proven pedagogical methods in Nigerian French language centers (like the French Village in Badagry). They transition learners from passive grammar knowledge to active, spontaneous oral production.',
       patternType: JSS3PatternType.term2ConsolidationStudio,
+      teachingStyle: TeachingStyle.dialogueConversation,
       vocabulary: [
         JSS3VocabItem(
           french: 'prendre la parole / s\'exprimer',
@@ -927,7 +1028,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 0,
           explanation: '"Je viens de manger (Passé Récent) et maintenant je vais étudier (Futur Proche)" is grammatically flawless.',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'prendre la parole / s\'exprimer', english: 'to speak up / to express oneself'),
+            DrillPair(french: 'un jeu de rôle / une saynète', english: 'a roleplay / a short sketch'),
+            DrillPair(french: 'à mon avis / selon moi', english: 'in my opinion / according to me'),
+            DrillPair(french: 'être d\'accord / pas d\'accord', english: 'to agree / to disagree'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (to speak up / to express oneself):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['prendre la parole / s\'exprimer', 'un jeu de rôle / une saynète', 'à mon avis / selon moi', 'être d\'accord / pas d\'accord'],
+          correctGapWord: 'prendre la parole / s\'exprimer',
+          explanation: 'Bravo ! "prendre la parole / s\'exprimer" means "to speak up / to express oneself".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Présente un mini-dialogue (4 répliques) entre deux élèves discutant de leur journée passée et de leurs projets du soir.',
@@ -988,6 +1108,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'The Basic Education Certificate Examination (BECE) is the national qualification benchmark determining senior secondary academic tracks in Nigeria. French is a prized distinguishing subject that boosts overall aggregate scores and opens international bilingual opportunities for students.',
       patternType: JSS3PatternType.beceGrammarPrepStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'l\'épreuve de grammaire / le QCM',
@@ -1079,7 +1200,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"À mon père" is singular indirect object. The indirect pronoun is "lui" : "Je lui parle".',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'l\'épreuve de grammaire / le QCM', english: 'grammar exam / multiple choice test'),
+            DrillPair(french: 'la concordance des temps', english: 'tense agreement / concordance'),
+            DrillPair(french: 'le pronom d\'objet direct (le, la, les)', english: 'direct object pronoun (COD)'),
+            DrillPair(french: 'le pronom indirect (lui, leur)', english: 'indirect object pronoun (COI)'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (grammar exam / multiple choice test):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['l\'épreuve de grammaire / le QCM', 'la concordance des temps', 'le pronom d\'objet direct (le, la, les)', 'le pronom indirect (lui, leur)'],
+          correctGapWord: 'l\'épreuve de grammaire / le QCM',
+          explanation: 'Bravo ! "l\'épreuve de grammaire / le QCM" means "grammar exam / multiple choice test".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Remplace les mots soulignés par les pronoms convenables (le, la, les, lui, leur) :\n1. J\'écris une lettre à ma tante.\n2. Nous avons mangé le gâteau.',
@@ -1141,6 +1281,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'In the Junior WAEC / BECE marking scheme for French, examiners allocate marks across four distinct pillars: Content Relevance (Le Fond / Idées), Grammar & Tense Accuracy (La Grammaire), Vocabulary Richness & Spelling (Le Vocabulaire & L\'Orthographe), and Logical Organization & Connectors (La Cohérence & Connecteurs). Mastering all four ensures maximum grades.',
       patternType: JSS3PatternType.beceVocabEssayPrepStudio,
+      teachingStyle: TeachingStyle.interactiveStudio,
       vocabulary: [
         JSS3VocabItem(
           french: 'la compréhension écrite / le texte',
@@ -1242,7 +1383,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'Proofreading catches careless errors in accents, gender/number agreements, and verb endings.',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'la compréhension écrite / le texte', english: 'reading comprehension / text'),
+            DrillPair(french: 'la consigne / l\'instruction', english: 'the prompt / instruction'),
+            DrillPair(french: 'rédiger un paragraphe / un essai', english: 'to write a paragraph / an essay'),
+            DrillPair(french: 'le plan : introduction, développement, conclusion', english: 'outline: introduction, body, conclusion'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (reading comprehension / text):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['la compréhension écrite / le texte', 'la consigne / l\'instruction', 'rédiger un paragraphe / un essai', 'le plan : introduction, développement, conclusion'],
+          correctGapWord: 'la compréhension écrite / le texte',
+          explanation: 'Bravo ! "la compréhension écrite / le texte" means "reading comprehension / text".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'Quels sont les 4 critères d\'évaluation d\'une rédaction au BECE ?',
@@ -1304,6 +1464,7 @@ class JSS3Term2Lessons {
       culturalInsight:
           'Inter-house French rallies (*Les Grands Rallyes Interclasses*) replicate the thrill of televised national bilingual quiz competitions in West Africa (such as *Génies en Herbe* in Côte d\'Ivoire and Nigeria\'s National French Drama and Quiz Olympiad). They instill intellectual pride and collective academic ambition.',
       patternType: JSS3PatternType.term2RevisionRally,
+      teachingStyle: TeachingStyle.phoneticSoundboard,
       vocabulary: [
         JSS3VocabItem(
           french: 'la simulation d\'examen BECE',
@@ -1395,7 +1556,26 @@ class JSS3Term2Lessons {
           correctOptionIndex: 0,
           explanation: '"SI + présent ➔ FUTUR SIMPLE": "vous réussirez".',
         ),
-      ],
+              JSS3InteractiveExercise(
+          type: DrillType.pairMatch,
+          prompt: 'Match each French expression or term with its English meaning:',
+          pairs: [
+            DrillPair(french: 'la simulation d\'examen BECE', english: 'BECE exam simulation / mock rally'),
+            DrillPair(french: 'l\'équipe victorieuse', english: 'the victorious team'),
+            DrillPair(french: 'le buzzer en direct', english: 'live buzzer'),
+            DrillPair(french: 'la rapidité et la précision', english: 'speed and precision'),
+          ],
+          explanation: 'Excellent travail ! All French-English pairs have been matched correctly.',
+        ),
+        JSS3InteractiveExercise(
+          type: DrillType.fillGap,
+          prompt: 'Complete the sentence with the correct missing word (BECE exam simulation / mock rally):',
+          sentenceWithGap: 'Dans ce contexte, le mot correct est ___ pour compléter la phrase.',
+          wordBank: ['la simulation d\'examen BECE', 'l\'équipe victorieuse', 'le buzzer en direct', 'la rapidité et la précision'],
+          correctGapWord: 'la simulation d\'examen BECE',
+          explanation: 'Bravo ! "la simulation d\'examen BECE" means "BECE exam simulation / mock rally".',
+        ),
+        ],
       evaluation: [
         JSS3EvaluationQuestion(
           question: 'GRAND BILAN T2 — Récapitule les 4 grands temps étudiés pendant ce deuxième trimestre avec un exemple pour chacun.',

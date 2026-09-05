@@ -24,6 +24,7 @@ flutter:
 
   assets:
     - assets/audio/
+    - assets/audio/onboarding/
     - assets/audio/jss3_term1/
     - assets/audio/jss3_term2/
     - assets/images/

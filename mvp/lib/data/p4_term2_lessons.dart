@@ -14,6 +14,7 @@ class P4Term2Lessons {
       topic: 'Présenter la Famille Proche (Part 1)',
       subtitle: 'Theme: Immediate Environment & Family · Close Family & Possessives',
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: ['Pupils learn to identify close family members (père, mère, frère, sœur), use the correct possessive adjectives ("mon" for masculine and "ma" for feminine), and introduce their family using "Voici" and "C\'est".'],
       culturalInsight:
           'In France, families love gathering around the dinner table every evening to talk about their day. Family is celebrated every year during national "Fête des Mères" (Mother\'s Day) and "Fête des Pères" (Father\'s Day)!',
@@ -146,7 +147,26 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"J\'ai une sœur" uses "une" because "sœur" is feminine.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'La famille', english: 'The family'),
+          DrillPair(french: 'Le père / Papa', english: 'The father / Dad'),
+          DrillPair(french: 'La mère / Maman', english: 'The mother / Mom'),
+          DrillPair(french: 'Le frère', english: 'The brother'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The family):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['La famille', 'Le père / Papa', 'La mère / Maman', 'Le frère'],
+        correctGapWord: 'La famille',
+        explanation: 'Bravo ! "La famille" means "The family".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -205,6 +225,7 @@ class P4Term2Lessons {
       topic: 'Présenter la Famille Élargie (Part 2)',
       subtitle: 'Theme: Extended Family & Family Trees · Extended Family & Names',
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: ['Pupils learn names for extended family members (grand-père, grand-mère, oncle, tante, cousin, cousine, grands-parents), state names using "Il s\'appelle" and "Elle s\'appelle", count relatives, and understand a family tree.'],
       culturalInsight:
           'In Francophone African countries like Senegal and Côte d\'Ivoire, extended family often live together in large compounds called "concessions", sharing meals and stories together!',
@@ -330,7 +351,26 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Deux" means 2, and "sœurs" means sisters.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Les grands-parents', english: 'The grandparents'),
+          DrillPair(french: 'Le grand-père / Papi', english: 'The grandfather / Grandpa'),
+          DrillPair(french: 'La grand-mère / Mami', english: 'The grandmother / Grandma'),
+          DrillPair(french: 'L\'oncle', english: 'The uncle'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The grandparents):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Les grands-parents', 'Le grand-père / Papi', 'La grand-mère / Mami', 'L\'oncle'],
+        correctGapWord: 'Les grands-parents',
+        explanation: 'Bravo ! "Les grands-parents" means "The grandparents".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -389,6 +429,7 @@ class P4Term2Lessons {
       topic: 'Décrire la Famille & Verbe Avoir (Part 3)',
       subtitle: 'Theme: Family Descriptions & Avoir · Adjectives & Verb Avoir',
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.dialogueConversation,
       objectives: ['Pupils learn to conjugate the verb "avoir" in singular forms (J\'ai, Tu as, Il a, Elle a), describe family members using basic adjectives (grand, petit, jeune, vieux), and explain family relationships.'],
       culturalInsight:
           'In French, adjectives change their spelling to agree with feminine nouns (grand -> grande, petit -> petite, vieux -> vieille). French children love learning these word transformations!',
@@ -521,7 +562,26 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'Mother\'s sister is aunt ("La sœur de ma mère est ma tante").',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Grand / Grande', english: 'Big / Tall (Masculine / Feminine)'),
+          DrillPair(french: 'Petit / Petite', english: 'Small / Short (Masculine / Feminine)'),
+          DrillPair(french: 'Jeune', english: 'Young'),
+          DrillPair(french: 'Vieux / Vieille', english: 'Old (Masculine / Feminine)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Big / Tall (Masculine / Feminine)):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Grand / Grande', 'Petit / Petite', 'Jeune', 'Vieux / Vieille'],
+        correctGapWord: 'Grand / Grande',
+        explanation: 'Bravo ! "Grand / Grande" means "Big / Tall (Masculine / Feminine)".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -580,6 +640,7 @@ class P4Term2Lessons {
       topic: 'Parler de l\'École & la Classe (Part 1)',
       subtitle: 'Theme: School Environment & Classroom Items · School & Classroom Items',
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: ['Pupils learn vocabulary for school objects (tableau, bureau, cahier, livre, stylo, crayon), people in school (professeur, élève), state where they study ("Je vais à l\'école", "J\'étudie à..."), and introduce their school using "Voici".'],
       culturalInsight:
           'In France, school children carry a "trousse" (pencil case) and a "cartable" (school bag) to school every day. The school week runs from Monday to Friday!',
@@ -705,7 +766,26 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Voici" means "Here is", so "Voici mon école" means "Here is my school".',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'L\'école', english: 'The school'),
+          DrillPair(french: 'La salle de classe', english: 'The classroom'),
+          DrillPair(french: 'Le tableau', english: 'The board (chalkboard/whiteboard)'),
+          DrillPair(french: 'Le bureau', english: 'The desk / office'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The school):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['L\'école', 'La salle de classe', 'Le tableau', 'Le bureau'],
+        correctGapWord: 'L\'école',
+        explanation: 'Bravo ! "L\'école" means "The school".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -764,6 +844,7 @@ class P4Term2Lessons {
       topic: 'Rallye de Révision de Mi-Trimestre',
       subtitle: 'Theme: Weeks 1–4 Oral Revision Rally · Mid-Term Oral Revision',
       patternType: P4PatternType.midTermReview,
+    teachingStyle: TeachingStyle.phoneticSoundboard,
       objectives: ['Comprehensive speed oral recap covering Weeks 1 to 4 topics: Close family, extended family, possessive adjectives (mon/ma), describing family with verb avoir, and school classroom objects.'],
       culturalInsight:
           'Oral speed drills help students build fluency and rapid recall without hesitation. In France, quick Q&A warm-ups start every language class!',
@@ -874,7 +955,33 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Deux frères" means two brothers.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'La révision', english: 'The revision'),
+          DrillPair(french: 'Mon père et ma mère', english: 'My father and my mother'),
+          DrillPair(french: 'Mon frère et ma sœur', english: 'My brother and my sister'),
+          DrillPair(french: 'Grand-père et Grand-mère', english: 'Grandfather and Grandmother'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The revision):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['La révision', 'Mon père et ma mère', 'Mon frère et ma sœur', 'Grand-père et Grand-mère'],
+        correctGapWord: 'La révision',
+        explanation: 'Bravo ! "La révision" means "The revision".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -911,6 +1018,7 @@ class P4Term2Lessons {
       topic: 'Pause de Mi-Trimestre (Vacances)',
       subtitle: 'Theme: Rest, Recharge & Vacation Review · Mid-Term Holiday Break',
       patternType: P4PatternType.midTermBreak,
+    teachingStyle: TeachingStyle.storyNarrative,
       objectives: ['Holiday break for pupils to rest and spend quality time with family while reviewing French family and school terms at home.'],
       culturalInsight:
           'In France, the school year has regular two-week breaks called "petites vacances" every seven weeks so pupils stay refreshed and energetic!',
@@ -955,7 +1063,49 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Bonnes vacances" means Have a good holiday / vacation.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bonnes vacances !', english: 'Have a good holiday !'),
+          DrillPair(french: 'Le repos', english: 'Rest / Relaxation'),
+          DrillPair(french: 'À bientôt !', english: 'See you soon !'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Have a good holiday !):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Bonnes vacances !', 'Le repos', 'À bientôt !', 'oui'],
+        correctGapWord: 'Bonnes vacances !',
+        explanation: 'Bravo ! "Bonnes vacances !" means "Have a good holiday !".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Le repos" mean in English?',
+        options: ['Rest / Relaxation', 'Have a good holiday !', 'See you soon !', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Le repos" translates to "Rest / Relaxation".',
+      ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bonnes vacances !', english: 'Have a good holiday !'),
+          DrillPair(french: 'Le repos', english: 'Rest / Relaxation'),
+          DrillPair(french: 'À bientôt !', english: 'See you soon !'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -982,6 +1132,7 @@ class P4Term2Lessons {
       topic: 'Les Lieux de l\'École & Matières (Part 2)',
       subtitle: 'Theme: School Places & Favorite Subjects · School Places & Subjects',
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: ['Pupils learn to identify more places in school (bibliothèque, cour de récréation, bureau du directeur, toilettes), school subjects (français, anglais, mathématiques, sciences), express preferences using "J\'aime", and conjugate the verb "aller" (to go).'],
       culturalInsight:
           'In French schools, the playground is called "la cour de récréation" or simply "la récré". It is the favorite place for games like "la marelle" (hopscotch) and "le loup" (tag)!',
@@ -1112,7 +1263,26 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: 'For "Tu", the correct form is "vas" (Tu vas).',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'La bibliothèque', english: 'The library'),
+          DrillPair(french: 'La cour de récréation', english: 'The playground'),
+          DrillPair(french: 'Le bureau du directeur', english: 'The headteacher\'s office'),
+          DrillPair(french: 'Les toilettes', english: 'The restrooms / toilets'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The library):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['La bibliothèque', 'La cour de récréation', 'Le bureau du directeur', 'Les toilettes'],
+        correctGapWord: 'La bibliothèque',
+        explanation: 'Bravo ! "La bibliothèque" means "The library".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -1171,6 +1341,7 @@ class P4Term2Lessons {
       topic: 'Activités Scolaires & Jours de la Semaine (Part 3)',
       subtitle: 'Theme: Daily Actions & 7 Days of the Week · Activities & Days of the Week',
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: ['Pupils learn verbs for school activities (étudier, lire, écrire, écouter, parler, jouer, chanter, dessiner), recite the 7 days of the week, and describe their weekly school schedule.'],
       culturalInsight:
           'In French, the days of the week are named after planets and Roman gods: Lundi (Moon), Mardi (Mars), Mercredi (Mercury), Jeudi (Jupiter), Vendredi (Venus)! Also, in French, days are written with small letters (no capital letter).',
@@ -1287,7 +1458,26 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Le lundi, j\'ai français" means On Monday, I have French.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Lundi', english: 'Monday'),
+          DrillPair(french: 'Mardi', english: 'Tuesday'),
+          DrillPair(french: 'Mercredi', english: 'Wednesday'),
+          DrillPair(french: 'Jeudi', english: 'Thursday'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Monday):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi'],
+        correctGapWord: 'Lundi',
+        explanation: 'Bravo ! "Lundi" means "Monday".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -1346,6 +1536,7 @@ class P4Term2Lessons {
       topic: 'Prépositions de Lieu & Couleurs (Part 4)',
       subtitle: 'Theme: Locations, Directions & Colors · Prepositions & 6 Core Colors',
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: ['Pupils learn 6 core colors (rouge, bleu, jaune, vert, noir, blanc), describe school items by color, use prepositions of place (sur, sous, dans, devant, derrière, à côté de), and ask "Où est...?".'],
       culturalInsight:
           'The national flag of France ("Le Drapeau Tricolore") has three vertical stripes: Bleu (Blue), Blanc (White), and Rouge (Red)! In French, color words usually come after the noun.',
@@ -1471,7 +1662,26 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"Vert" means green, so "Mon stylo est vert" = My pen is green.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Rouge', english: 'Red'),
+          DrillPair(french: 'Bleu / Bleue', english: 'Blue (Masc / Fem)'),
+          DrillPair(french: 'Jaune', english: 'Yellow'),
+          DrillPair(french: 'Vert / Verte', english: 'Green (Masc / Fem)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Red):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Rouge', 'Bleu / Bleue', 'Jaune', 'Vert / Verte'],
+        correctGapWord: 'Rouge',
+        explanation: 'Bravo ! "Rouge" means "Red".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -1530,6 +1740,7 @@ class P4Term2Lessons {
       topic: 'Intégration & Présentation de l\'École et Famille',
       subtitle: 'Theme: Family Presentation & School Tour · Integration & Role-Play',
       patternType: P4PatternType.borderMapAndAlphabet,
+    teachingStyle: TeachingStyle.interactiveStudio,
       objectives: ['Pupils integrate all Term 2 concepts: Family Bingo, School Tour, Parent-Teacher Meeting Role-Play ("Voici mon père. Enchanté, Madame"), and complete oral presentation "Mon École et Moi".'],
       culturalInsight:
           'In France, saying "Enchanté" (or "Enchantée" for girls) when being introduced to someone is considered a mark of supreme politeness and great manners!',
@@ -1626,7 +1837,33 @@ class P4Term2Lessons {
           correctOptionIndex: 2,
           explanation: 'Mardi (Tuesday) comes after Lundi (Monday).',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Enchanté / Enchantée', english: 'Pleased to meet you (Masc / Fem)'),
+          DrillPair(french: 'Mon école et moi', english: 'My school and me'),
+          DrillPair(french: 'Qu\'est-ce que c\'est ?', english: 'What is this?'),
+          DrillPair(french: 'C\'est le tableau !', english: 'It is the board !'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Pleased to meet you (Masc / Fem)):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Enchanté / Enchantée', 'Mon école et moi', 'Qu\'est-ce que c\'est ?', 'C\'est le tableau !'],
+        correctGapWord: 'Enchanté / Enchantée',
+        explanation: 'Bravo ! "Enchanté / Enchantée" means "Pleased to meet you (Masc / Fem)".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -1685,6 +1922,7 @@ class P4Term2Lessons {
       topic: 'Grande Révision du Deuxième Trimestre',
       subtitle: 'Theme: Comprehensive End-of-Term Speed Revision · Term 2 Speed Revision Rally',
       patternType: P4PatternType.termRevisionRally,
+    teachingStyle: TeachingStyle.phoneticSoundboard,
       objectives: ['Comprehensive speed revision covering all Term 2 topics: Family members & possessives, school objects & places, days of the week, colors, and verbs Avoir & Aller.'],
       culturalInsight:
           'Mastering both family and school vocabulary allows Grade 4 pupils to hold complete everyday conversations about their home and school life in French!',
@@ -1749,7 +1987,40 @@ class P4Term2Lessons {
           correctOptionIndex: 2,
           explanation: '"Sous" means under.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'La famille et l\'école', english: 'Family and School'),
+          DrillPair(french: 'Mon, Ma, Mes', english: 'My (Masc, Fem, Plural)'),
+          DrillPair(french: 'Sur, Sous, Dans, Devant, Derrière', english: 'On, Under, In, In front of, Behind'),
+          DrillPair(french: 'Rouge, Bleu, Jaune, Vert, Noir, Blanc', english: 'Red, Blue, Yellow, Green, Black, White'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Family and School):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['La famille et l\'école', 'Mon, Ma, Mes', 'Sur, Sous, Dans, Devant, Derrière', 'Rouge, Bleu, Jaune, Vert, Noir, Blanc'],
+        correctGapWord: 'La famille et l\'école',
+        explanation: 'Bravo ! "La famille et l\'école" means "Family and School".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Mon, Ma, Mes" mean in English?',
+        options: ['My (Masc, Fem, Plural)', 'Family and School', 'On, Under, In, In front of, Behind', 'Red, Blue, Yellow, Green, Black, White'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Mon, Ma, Mes" translates to "My (Masc, Fem, Plural)".',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -1776,6 +2047,7 @@ class P4Term2Lessons {
       topic: 'Récapitulatif de Fin de Trimestre',
       subtitle: 'Theme: Term 2 Examination Review & Summary · Exam Oral Review',
       patternType: P4PatternType.termRevisionRally,
+    teachingStyle: TeachingStyle.phoneticSoundboard,
       objectives: ['Oral exam review and checklist for pupils to demonstrate spoken proficiency in family descriptions, school environments, colors, days of the week, and prepositions.'],
       culturalInsight:
           'End-of-term oral evaluations in France encourage confidence in speaking out loud in front of peers with poise, proper diction, and joy!',
@@ -1813,7 +2085,47 @@ class P4Term2Lessons {
           correctOptionIndex: 2,
           explanation: '"Félicitations !" means Congratulations!.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'L\'examen oral', english: 'The oral examination'),
+          DrillPair(french: 'Félicitations !', english: 'Congratulations !'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (The oral examination):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['L\'examen oral', 'Félicitations !', 'oui', 'oui'],
+        correctGapWord: 'L\'examen oral',
+        explanation: 'Bravo ! "L\'examen oral" means "The oral examination".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "Félicitations !" mean in English?',
+        options: ['Congratulations !', 'The oral examination', 'to speak kindly', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "Félicitations !" translates to "Congratulations !".',
+      ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'L\'examen oral', english: 'The oral examination'),
+          DrillPair(french: 'Félicitations !', english: 'Congratulations !'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,
@@ -1840,6 +2152,7 @@ class P4Term2Lessons {
       topic: 'Clôture du Trimestre & Aperçu du Trimestre 3',
       subtitle: 'Theme: Holiday Celebration & Term 3 Roadmap · Vacation & Term 3 Preview',
       patternType: P4PatternType.vacationCelebration,
+    teachingStyle: TeachingStyle.storyNarrative,
       objectives: ['Celebration of Term 2 completion with French holiday wishes and a preview of Term 3 topics (Counting 0 to 20 math, Telling Time, and Foods & Meals).'],
       culturalInsight:
           'During French holidays, families love having picnics in parks and sharing baguettes, cheese, and fresh fruit together!',
@@ -1889,7 +2202,49 @@ class P4Term2Lessons {
           correctOptionIndex: 1,
           explanation: '"À la rentrée !" means See you when school resumes / at the start of the next term.',
         ),
-      ],
+            P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bonnes vacances !', english: 'Have a great vacation !'),
+          DrillPair(french: 'À la rentrée !', english: 'See you when school resumes !'),
+          DrillPair(french: 'Le temps et les repas', english: 'Time and Meals (Term 3 Theme)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.fillGap,
+        prompt: 'Complete the sentence with the correct missing word (Have a great vacation !):',
+        sentenceWithGap: 'En classe de français, on dit ___ pour cette expression.',
+        wordBank: ['Bonnes vacances !', 'À la rentrée !', 'Le temps et les repas', 'oui'],
+        correctGapWord: 'Bonnes vacances !',
+        explanation: 'Bravo ! "Bonnes vacances !" means "Have a great vacation !".',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.trueFalse,
+        prompt: 'True or False: In French, polite greetings and good pronunciation are important when speaking to friends and teachers.',
+        options: ['VRAI (True)', 'FAUX (False)'],
+        correctOptionIndex: 0,
+        explanation: 'Vrai ! Politeness and clear pronunciation are key in French classroom speaking.',
+      ),
+      P4InteractiveExercise(
+        type: DrillType.tapTranslation,
+        prompt: 'What does "À la rentrée !" mean in English?',
+        options: ['See you when school resumes !', 'Have a great vacation !', 'Time and Meals (Term 3 Theme)', 'to speak kindly'],
+        correctOptionIndex: 0,
+        explanation: 'Parfait ! "À la rentrée !" translates to "See you when school resumes !".',
+      ),
+          P4InteractiveExercise(
+        type: DrillType.pairMatch,
+        prompt: 'Match each French word with its correct English meaning:',
+        pairs: [
+          DrillPair(french: 'Bonnes vacances !', english: 'Have a great vacation !'),
+          DrillPair(french: 'À la rentrée !', english: 'See you when school resumes !'),
+          DrillPair(french: 'Le temps et les repas', english: 'Time and Meals (Term 3 Theme)'),
+        ],
+        explanation: 'Excellent travail ! All vocabulary pairs have been correctly matched.',
+      ),
+    ],
       evaluationQuestions: [
         P4EvaluationQuestion(
           questionNumber: 1,

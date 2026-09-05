@@ -125,7 +125,7 @@ class _FamilyDescriptorWidgetState extends State<FamilyDescriptorWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Row(
         children: [
@@ -203,7 +203,7 @@ class _FamilyDescriptorWidgetState extends State<FamilyDescriptorWidget> {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: LHColors.teal.withOpacity(0.08),
+                    color: LHColors.teal.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -307,7 +307,7 @@ class _FamilyDescriptorWidgetState extends State<FamilyDescriptorWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -349,7 +349,7 @@ class _FamilyDescriptorWidgetState extends State<FamilyDescriptorWidget> {
                 final isSelected = idx == _selectedAvoirSubjectIndex;
 
                 return Material(
-                  color: isSelected ? LHColors.teal : LHColors.cream.withOpacity(0.6),
+                  color: isSelected ? LHColors.teal : LHColors.cream.withValues(alpha: 0.6),
                   borderRadius: BorderRadius.circular(18),
                   elevation: isSelected ? 4 : 0,
                   child: InkWell(
@@ -363,7 +363,7 @@ class _FamilyDescriptorWidgetState extends State<FamilyDescriptorWidget> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
                         border: Border.all(
-                          color: isSelected ? LHColors.gold : LHColors.teal.withOpacity(0.3),
+                          color: isSelected ? LHColors.gold : LHColors.teal.withValues(alpha: 0.3),
                           width: 2,
                         ),
                       ),
@@ -401,7 +401,7 @@ class _FamilyDescriptorWidgetState extends State<FamilyDescriptorWidget> {
                                 ),
                                 Text(
                                   form['english']!,
-                                  style: LHText.body(isSelected ? LHColors.white.withOpacity(0.8) : LHColors.grey).copyWith(fontSize: 12),
+                                  style: LHText.body(isSelected ? LHColors.white.withValues(alpha: 0.8) : LHColors.grey).copyWith(fontSize: 12),
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ],

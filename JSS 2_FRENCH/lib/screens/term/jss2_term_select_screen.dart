@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
 import '../../theme/text_styles.dart';
 import '../roadmap/jss2_week_roadmap_screen.dart';
+import '../onboarding/onboarding_screen.dart';
 
 class JSS2TermSelectScreen extends StatelessWidget {
   const JSS2TermSelectScreen({super.key});
@@ -12,46 +13,58 @@ class JSS2TermSelectScreen extends StatelessWidget {
       backgroundColor: LangHueyColors.warmCream,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 32),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top Brand Header
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            color: LangHueyColors.deepTeal,
-                            borderRadius: BorderRadius.circular(16),
+              // Top Bar with Brand Badge & Guide
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.04),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: LangHueyColors.deepTeal,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: const Icon(Icons.school_rounded, color: LangHueyColors.amberGold, size: 24),
                           ),
-                          child: const Icon(Icons.school_rounded, color: LangHueyColors.amberGold, size: 32),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
+                          const SizedBox(width: 12),
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
                                 children: [
-                                  Text('LANG HUEY',
-                                      style: LangHueyTextStyles.h2.copyWith(
-                                        color: LangHueyColors.deepTeal,
-                                        letterSpacing: 1.5,
-                                      )),
-                                  const SizedBox(width: 10),
+                                  Text(
+                                    'JSS 2 French Language Engine',
+                                    style: LangHueyTextStyles.h1.copyWith(fontSize: 20, color: LangHueyColors.deepTeal),
+                                  ),
+                                  const SizedBox(width: 8),
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                     decoration: BoxDecoration(
                                       color: LangHueyColors.amberGold,
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Text(
-                                      'JSS 2 FRENCH',
+                                      'JSS 2',
                                       style: LangHueyTextStyles.badge.copyWith(
                                         color: LangHueyColors.charcoal,
                                         fontWeight: FontWeight.w900,
@@ -66,40 +79,76 @@ class JSS2TermSelectScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.black12),
-                    ),
-                    child: Row(
+                    Row(
                       children: [
-                        const Icon(Icons.cast_for_education_rounded, color: LangHueyColors.deepTeal, size: 20),
-                        const SizedBox(width: 8),
-                        Text(
-                          'Mode Smartboard 1080p / 4K',
-                          style: LangHueyTextStyles.badge.copyWith(color: LangHueyColors.charcoal),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (_) => const OnboardingScreen(isReplayMode: true),
+                              ),
+                            );
+                          },
+                          borderRadius: BorderRadius.circular(12),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: LangHueyColors.deepTeal.withOpacity(0.08),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.school_rounded, color: LangHueyColors.deepTeal, size: 20),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'Guide / Kickoff',
+                                  style: LangHueyTextStyles.badge.copyWith(
+                                    color: LangHueyColors.deepTeal,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.black12),
+                          ),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.cast_for_education_rounded, color: LangHueyColors.deepTeal, size: 20),
+                              const SizedBox(width: 8),
+                              Text(
+                                'Smartboard 1080p / 4K Mode',
+                                style: LangHueyTextStyles.badge.copyWith(color: LangHueyColors.charcoal),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
 
               const SizedBox(height: 36),
 
               Text(
-                'Sélectionnez le Trimestre Scolaire',
+                'Select School Term',
                 style: LangHueyTextStyles.h1.copyWith(fontSize: 28),
               ),
               const SizedBox(height: 4),
               Text(
-                'Explorez les modules de cours et de révision de français pour la classe de JSS 2 (8e Année).',
+                'Explore French curriculum modules and practice drills for Junior Secondary School 2.',
                 style: LangHueyTextStyles.bodyLarge.copyWith(color: LangHueyColors.textMuted),
               ),
 
@@ -113,9 +162,9 @@ class JSS2TermSelectScreen extends StatelessWidget {
                   _buildTermCard(
                     context: context,
                     termNumber: 1,
-                    title: 'PREMIER TRIMESTRE',
-                    subtitle: 'Positions Spatiales, Lieux, Accueil Intérieur, Chemins, Transports, Trajets, Horaires & Pépins',
-                    weeksCount: '9 Semaines Complètes',
+                    title: 'Term 1 — First Term',
+                    subtitle: 'Spatial Position, Wayfinding, Public Transport, Schedules, Itineraries & Troubleshooting',
+                    weeksCount: '9 Complete Weeks',
                     icon: Icons.explore_rounded,
                     isAvailable: true,
                   ),
@@ -125,9 +174,9 @@ class JSS2TermSelectScreen extends StatelessWidget {
                   _buildTermCard(
                     context: context,
                     termNumber: 2,
-                    title: 'DEUXIÈME TRIMESTRE',
-                    subtitle: 'Listes & Inventaires, Commerçants, Achat & Marchandage, Utilité, Pharmacie, Vêtements, Comparaisons & Qualités',
-                    weeksCount: '9 Semaines Complètes',
+                    title: 'Term 2 — Second Term',
+                    subtitle: 'Shopping & Markets, Bargaining, Needs & Utilities, Pharmacy, Clothing & Comparisons',
+                    weeksCount: '9 Complete Weeks',
                     icon: Icons.storefront_rounded,
                     isAvailable: true,
                   ),
@@ -137,9 +186,9 @@ class JSS2TermSelectScreen extends StatelessWidget {
                   _buildTermCard(
                     context: context,
                     termNumber: 3,
-                    title: 'TROISIÈME TRIMESTRE',
-                    subtitle: 'Calcul Simple, Nourriture & Boissons, Recettes de Cuisine, Au Restaurant, Projet Oral, Révision & Grand Rally',
-                    weeksCount: '9 Semaines Complètes',
+                    title: 'Term 3 — Third Term',
+                    subtitle: 'Math Operations, African & French Food, Cooking Recipes, Restaurant Etiquette & BECE Prep',
+                    weeksCount: '9 Complete Weeks',
                     icon: Icons.workspace_premium_rounded,
                     isAvailable: true,
                   ),
@@ -218,7 +267,7 @@ class JSS2TermSelectScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      isAvailable ? 'DISPONIBLE' : 'VERROUILLÉ',
+                      isAvailable ? 'AVAILABLE' : 'LOCKED',
                       style: TextStyle(
                         color: isAvailable ? Colors.white : Colors.grey.shade700,
                         fontSize: 10,
@@ -230,7 +279,7 @@ class JSS2TermSelectScreen extends StatelessWidget {
               ),
               const SizedBox(height: 18),
               Text(
-                'TRIMESTRE $termNumber',
+                'TERM $termNumber',
                 style: LangHueyTextStyles.badge.copyWith(
                   color: isAvailable ? LangHueyColors.deepTeal : Colors.grey,
                 ),

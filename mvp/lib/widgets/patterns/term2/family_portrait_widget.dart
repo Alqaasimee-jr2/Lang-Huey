@@ -84,7 +84,7 @@ class _FamilyPortraitWidgetState extends State<FamilyPortraitWidget> {
       decoration: BoxDecoration(
         color: LHColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -181,7 +181,7 @@ class _FamilyPortraitWidgetState extends State<FamilyPortraitWidget> {
                     decoration: BoxDecoration(
                       color: LHColors.cream,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: LHColors.teal.withOpacity(0.3), width: 2),
+                      border: Border.all(color: LHColors.teal.withValues(alpha: 0.3), width: 2),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -295,7 +295,7 @@ class _FamilyPortraitWidgetState extends State<FamilyPortraitWidget> {
                     decoration: BoxDecoration(
                       color: LHColors.white,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: LHColors.gold.withOpacity(0.6), width: 2),
+                      border: Border.all(color: LHColors.gold.withValues(alpha: 0.6), width: 2),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -350,9 +350,9 @@ class _FamilyPortraitWidgetState extends State<FamilyPortraitWidget> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: LHColors.cream.withOpacity(0.5),
+        color: LHColors.cream.withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: LHColors.turquoise.withOpacity(0.3)),
+        border: Border.all(color: LHColors.turquoise.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
