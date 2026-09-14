@@ -2,6 +2,43 @@
 
 All notable decisions, architectural thoughts, rationale, and project actions are recorded in this log.
 
+### Phase 3: Offline Smartboard Sideload Zero-Permission Hardening & Mascot Launcher Branding — 14 September 2026
+- **Context & Problem Statement**:
+  - During smartboard testing on landscape (16:9 4K / 1080p) interactive displays (running custom vendor Android ROMs with "EZ APK App Installer"), the sideload installer presented a "Review App Details and Permissions" dialog.
+  - Due to a fixed portrait modal layout in EZ APK Installer, declaring any permissions caused the permissions list box to push the "Continue" / "Install" buttons off the bottom edge of the screen with no scroll capability, blocking installation.
+  - The dialog displayed two automatically injected permissions:
+    1. `android.permission.ACCESS_NETWORK_STATE` (injected by the `just_audio` / `audio_session` Android plugin manifest).
+    2. `${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION` (injected by `androidx.core:core` for Android 13/14 broadcast receiver compatibility).
+  - Additionally, the installer dialog displayed the default blue Flutter logo rather than the official Lang Huey brand mascot.
+- **Architectural Solution & Key Actions**:
+  1. **Zero-Permission Offline Sideload Hardening (`AndroidManifest.xml`)**:
+     - Lang Huey is an autonomous, 100% offline classroom curriculum solution: it requires zero internet connectivity and zero device permissions during classroom usage.
+     - Added `xmlns:tools="http://schemas.android.com/tools"` and explicit `tools:node="remove"` directives across **all 5 classroom projects** (`mvp/`, `P5_FRENCH/`, `JSS1_FRENCH/`, `JSS 2_FRENCH/`, `JSS 3_FRENCH/`):
+       ```xml
+       <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
+       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove" />
+       <uses-permission android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" tools:node="remove" />
+       <permission android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" tools:node="remove" />
+       ```
+     - Verified release merged manifests via `gradlew :app:processReleaseMainManifest`: both `<uses-permission>` and `<permission>` tags are completely eliminated from the final APK manifest, leaving **0 permissions**. This prevents EZ APK Installer from triggering the clipped permissions review dialog, enabling clean, 1-click installation.
+  2. **Official Mascot Launcher Icon Deployment**:
+     - Built and deployed the official Lang Huey mascot launcher icon (`ic_launcher.png`) across all 5 Android mipmap density folders across all 5 projects (25 icons total):
+       - `mipmap-mdpi`: 48x48
+       - `mipmap-hdpi`: 72x72
+       - `mipmap-xhdpi`: 96x96
+       - `mipmap-xxhdpi`: 144x144
+       - `mipmap-xxxhdpi`: 192x192
+     - Features the official brand design: Deep Teal `#0D7377` squircle, Turquoise `#14BDCC` inner glowing neon border, big round turquoise eyes with white highlights, blushing cream cheeks, and single focal Amber Gold `#F4A832` smile arc.
+- **Verification & Test Results**:
+  - Manifest merge validated on both `mvp` and `P5_FRENCH` via Gradle (both clean builds).
+  - Automated test suites executed and verified across all 5 projects:
+    - `mvp/` (Primary 4 French): **6/6 passed**
+    - `P5_FRENCH/` (Primary 5 French): **16/16 passed**
+    - `JSS1_FRENCH/` (JSS 1 French): **17/17 passed**
+    - `JSS 2_FRENCH/` (JSS 2 French): **42/42 passed**
+    - `JSS 3_FRENCH/` (JSS 3 French): **36/36 passed**
+    - **Total: 117/117 automated tests passing with zero errors.**
+
 ### Phase 3: P4 Codebase Remediation & Audit Resolution — 05 September 2026
 - **Context & Objectives**:
   - Full execution of the implementation plan approved by the user following the P4 (`mvp/`) codebase audit.
