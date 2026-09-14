@@ -20,6 +20,11 @@ export const metadata = {
   authors: [{ name: 'NIT7ER' }],
   creator: 'NIT7ER',
   publisher: 'Lang Huey',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   formatDetection: {
     email: false,
     address: false,

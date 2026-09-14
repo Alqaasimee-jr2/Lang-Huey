@@ -10,7 +10,15 @@ export default function Footer() {
       <div className="container footer-grid" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem' }}>
         <div className="footer-brand">
           <Link href="/" className="brand-logo" style={{ color: 'white' }}>
-            lang <span>huey</span>
+            <img 
+              src="/assets/images/logo-mascot.png" 
+              alt="Lang Huey Mascot" 
+              width={38} 
+              height={38} 
+            />
+            <span className="brand-text">
+              <span>Lang</span> <span className="brand-gold">Huey</span>
+            </span>
           </Link>
           <p style={{ marginTop: '0.5rem', color: 'var(--color-secondary)', fontWeight: 600, fontSize: '0.875rem' }}>
             A PRODUCT OF NIT7ER &bull; 2026

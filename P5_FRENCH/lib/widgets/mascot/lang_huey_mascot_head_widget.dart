@@ -143,14 +143,20 @@ class _LangHueyMascotHeadWidgetState extends State<LangHueyMascotHeadWidget>
             child: SizedBox(
               width: widget.size,
               height: widget.size,
-              child: CustomPaint(
-                painter: _MascotHeadPainter(
-                  isLightHead: widget.isLightHead,
-                  swayAngle: swayAngle,
-                  twinkleScale: twinkleScale,
-                  blinkScaleY: blinkScaleY,
-                  cheekOpacity: cheekOpacity,
-                  talkOpen: talkOpen,
+              child: Image.asset(
+                'assets/images/logo_mascot.png',
+                width: widget.size,
+                height: widget.size,
+                fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) => CustomPaint(
+                  painter: _MascotHeadPainter(
+                    isLightHead: widget.isLightHead,
+                    swayAngle: swayAngle,
+                    twinkleScale: twinkleScale,
+                    blinkScaleY: blinkScaleY,
+                    cheekOpacity: cheekOpacity,
+                    talkOpen: talkOpen,
+                  ),
                 ),
               ),
             ),

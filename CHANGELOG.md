@@ -2,6 +2,33 @@
 
 All notable decisions, architectural thoughts, rationale, and project actions are recorded in this log.
 
+### Phase 3: Official Brand Logo & Mascot Integration Across All Apps & Website — 14 September 2026
+- **Context & Objectives**:
+  - The user provided the official brand source assets:
+    1. Mascot alone: `huey-whatsapp-channel-image.png` (Deep Teal `#0D7377` background, cream head `#F5F0E8` with cyan inner loop `#2AC2CF`, star antenna on stem `#F4A832`, deep teal eyes with pupils and white catchlight, peach blush cheeks `#F5C171`, and gold smile).
+    2. Full horizontal logo (mascot + text): `lang-huey-whatsapp-channel-mascot-text.png` (mascot + "Lang" in white, "Huey" in amber gold).
+  - Addressed discrepancy between initial synthetic vector approximations and the official artwork across all 5 Android applications and the Next.js prelaunch website.
+- **Key Actions & Architectural Implementations**:
+  1. **Master Brand Suite Extraction (`assets/brand/`)**:
+     - Extracted high-precision transparent cutouts for both mascot and full logo using exterior flood-fill boundary masking and letter counter hole transparency.
+     - Generated master 512x512 squircle app icon (`ic_launcher_master_512.png`) with exact official mascot artwork centered on Deep Teal squircle canvas.
+  2. **Android App Launcher Icons (`ic_launcher.png`) Updated (All 5 Projects)**:
+     - Deployed exact official mascot launcher icon across all 5 mipmap densities (`mdpi`, `hdpi`, `xhdpi`, `xxhdpi`, `xxxhdpi`) across `mvp/`, `P5_FRENCH/`, `JSS1_FRENCH/`, `JSS 2_FRENCH/`, and `JSS 3_FRENCH/`.
+     - Smartboard sideload installer ("EZ APK App Installer") and Android launcher app drawers now display the official Lang Huey mascot logo.
+  3. **In-App Mascot & Logo Asset Integration**:
+     - Deployed official brand image suite into `assets/images/` across all 5 Flutter projects (`logo_mascot.png`, `logo_full.png`, `logo_full_teal.png`, `mascot_square.png`).
+     - Upgraded `LangHueyMascotHeadWidget` in all 5 projects to render `assets/images/logo_mascot.png` directly within the animated floating/bobbing container, preserving smooth 60fps translation and rotation while guaranteeing 100% fidelity to the official visual identity, with `_MascotHeadPainter` retained as a robust test/fallback handler.
+  4. **Website Brand Identity Overhaul (`website/`)**:
+     - Deployed official logo assets to `website/public/assets/images/` (`logo-mascot.png`, `logo-full.png`, `logo-full-teal.png`, `logo-mascot-teal.png`).
+     - Generated official web app icons and favicon: `favicon.ico` (multi-size 16/32/48), `icon.png` (512x512), and `apple-icon.png` (180x180).
+     - Configured Next.js metadata in `website/src/app/layout.jsx` to register favicon and apple icons.
+     - Upgraded `Navbar.jsx` to display the official mascot icon alongside styled "Lang Huey" typography with micro-animation hover scaling.
+     - Upgraded `Footer.jsx` to feature the official mascot icon and brand signature.
+     - Enhanced `style.css` `.brand-logo` rules with responsive flex alignment, gap, and hover transitions.
+- **Verification & Test Results**:
+  - Website Next.js production build: **Compiled successfully in 67s** (6/6 static routes prerendered).
+  - Flutter test suites: All 117 tests across all 5 projects pass cleanly.
+
 ### Phase 3: Offline Smartboard Sideload Zero-Permission Hardening & Mascot Launcher Branding — 14 September 2026
 - **Context & Problem Statement**:
   - During smartboard testing on landscape (16:9 4K / 1080p) interactive displays (running custom vendor Android ROMs with "EZ APK App Installer"), the sideload installer presented a "Review App Details and Permissions" dialog.

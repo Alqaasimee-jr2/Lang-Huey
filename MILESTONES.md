@@ -7,7 +7,8 @@ This document details pre-decided future milestones for the development, validat
 ## Milestone 0: Lang Huey Prelaunch Platform (`lang-huey.vercel.app`) 🌐 *(Phase 0 Deliverable Completed)*
 - [x] Integrate Official Lang Huey Brand Guidelines v1.0 & Strategic Refinements.
 - [x] Build Next.js App Router Prelaunch Community & Waitlist Platform:
-  - [x] Navbar: Lang Huey wordmark + Mobile drawer + Gold pill CTA.
+  - [x] Navbar: Official Lang Huey mascot icon + wordmark + Mobile drawer + Gold pill CTA.
+  - [x] Official Brand Identity Kit: Favicon, apple-icon, and official mascot + logo cutouts integrated across web headers and footers.
   - [x] Hero: Deep Teal `#0D7377`, Inter Black headline *"french class. no teacher. no problem."*, Smartboard video showcase, Executive Brief link.
   - [x] LanguageTicker: Francophone flag badges & multi-language roadmap.
   - [x] Reality in Nigerian Schools: 3 interactive pain cards (Teacher shortage, Network dependency, Exam preparation gap).

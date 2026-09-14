@@ -11,7 +11,15 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link href="/" className="brand-logo">
-          lang <span>huey</span>
+          <img 
+            src="/assets/images/logo-mascot.png" 
+            alt="Lang Huey Mascot" 
+            width={40} 
+            height={40} 
+          />
+          <span className="brand-text">
+            <span>Lang</span> <span className="brand-gold">Huey</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
