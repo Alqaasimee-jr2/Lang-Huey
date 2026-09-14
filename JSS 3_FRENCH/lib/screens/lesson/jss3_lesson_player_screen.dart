@@ -123,9 +123,9 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: LangHueyColors.softTeal.withOpacity(0.4),
+                  color: LangHueyColors.softTeal.withValues(alpha: 0.4),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.2)),
+                  border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.2)),
                 ),
                 child: Text(
                   widget.lesson.teacherFacilitatorPrompt,
@@ -441,7 +441,7 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
             borderRadius: BorderRadius.circular(16),
             border: Border.all(color: Colors.black12),
             boxShadow: [
-              BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 8, offset: const Offset(0, 2)),
+              BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 8, offset: const Offset(0, 2)),
             ],
           ),
           child: Row(
@@ -524,9 +524,9 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+              border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 3)),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 10, offset: const Offset(0, 3)),
               ],
             ),
             child: Column(
@@ -579,7 +579,7 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
               borderRadius: BorderRadius.circular(18),
               border: Border.all(color: Colors.black12),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 3)),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 10, offset: const Offset(0, 3)),
               ],
             ),
             child: Column(
@@ -598,9 +598,9 @@ class _JSS3LessonPlayerScreenState extends State<JSS3LessonPlayerScreen> {
                     margin: const EdgeInsets.only(bottom: 12),
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
-                      color: LangHueyColors.softTeal.withOpacity(0.4),
+                      color: LangHueyColors.softTeal.withValues(alpha: 0.4),
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.2)),
+                      border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.2)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

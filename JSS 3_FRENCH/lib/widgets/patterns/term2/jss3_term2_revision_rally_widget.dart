@@ -197,7 +197,7 @@ class _JSS3Term2RevisionRallyWidgetState
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
-                        color: isSelected ? Colors.white : Colors.white.withOpacity(0.12),
+                        color: isSelected ? Colors.white : Colors.white.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: isSelected ? Colors.amber : Colors.white24, width: isSelected ? 2 : 1),
                       ),
@@ -232,7 +232,7 @@ class _JSS3Term2RevisionRallyWidgetState
                   children: [
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                      decoration: BoxDecoration(color: const Color(0xFF1B4F72).withOpacity(0.12), borderRadius: BorderRadius.circular(8)),
+                      decoration: BoxDecoration(color: const Color(0xFF1B4F72).withValues(alpha: 0.12), borderRadius: BorderRadius.circular(8)),
                       child: Text(q['unit'] as String, style: const TextStyle(color: Color(0xFF1B4F72), fontWeight: FontWeight.bold, fontSize: 12)),
                     ),
                     Text('Défi #${_currentQuestionIndex + 1} / ${_rallyQuestions.length}', style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.grey)),
@@ -247,7 +247,7 @@ class _JSS3Term2RevisionRallyWidgetState
                     borderRadius: BorderRadius.circular(18),
                     border: Border.all(color: Colors.black12),
                     boxShadow: [
-                      BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
+                      BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 10, offset: const Offset(0, 4)),
                     ],
                   ),
                   child: Text(
@@ -385,7 +385,7 @@ class _JSS3Term2RevisionRallyWidgetState
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: i == 0 ? Colors.amber : Colors.black12, width: i == 0 ? 2 : 1),
                 boxShadow: [
-                  BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
+                  BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 10, offset: const Offset(0, 4)),
                 ],
               ),
               child: Row(

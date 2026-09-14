@@ -211,7 +211,7 @@ class _JSS2SpatialPositionStudioWidgetState extends State<JSS2SpatialPositionStu
                         decoration: BoxDecoration(
                           color: LangHueyColors.warmCream,
                           borderRadius: BorderRadius.circular(14),
-                          border: Border.all(color: LangHueyColors.amberGold.withOpacity(0.4)),
+                          border: Border.all(color: LangHueyColors.amberGold.withValues(alpha: 0.4)),
                         ),
                         child: Center(
                           child: Column(
@@ -257,7 +257,7 @@ class _JSS2SpatialPositionStudioWidgetState extends State<JSS2SpatialPositionStu
                         decoration: BoxDecoration(
                           color: LangHueyColors.softTeal,
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+                          border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
                         ),
                         child: Text(
                           _buildSentence(),

@@ -155,7 +155,7 @@ class _JSS3RecentEventsVenirDeStudioWidgetState
                   child: ChoiceChip(
                     label: Text(subj),
                     selected: isSel,
-                    selectedColor: const Color(0xFFC0392B).withOpacity(0.2),
+                    selectedColor: const Color(0xFFC0392B).withValues(alpha: 0.2),
                     side: BorderSide(color: isSel ? const Color(0xFFC0392B) : Colors.black12),
                     onSelected: (val) {
                       if (val) {
@@ -203,7 +203,7 @@ class _JSS3RecentEventsVenirDeStudioWidgetState
               ),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.15), blurRadius: 16, offset: const Offset(0, 6)),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.15), blurRadius: 16, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(
@@ -227,7 +227,7 @@ class _JSS3RecentEventsVenirDeStudioWidgetState
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.15),
+                    color: Colors.white.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
@@ -265,9 +265,9 @@ class _JSS3RecentEventsVenirDeStudioWidgetState
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: const Color(0xFFC0392B).withOpacity(0.3)),
+              border: Border.all(color: const Color(0xFFC0392B).withValues(alpha: 0.3)),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 10, offset: const Offset(0, 4)),
               ],
             ),
             child: Column(

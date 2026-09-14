@@ -205,7 +205,7 @@ class _JSS2PharmacyAndHealthStudioWidgetState extends State<JSS2PharmacyAndHealt
                         decoration: BoxDecoration(
                           color: LangHueyColors.softTeal,
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+                          border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

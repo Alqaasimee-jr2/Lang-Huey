@@ -123,7 +123,7 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: LangHueyColors.deepTeal.withOpacity(0.12),
+                color: LangHueyColors.deepTeal.withValues(alpha: 0.12),
                 shape: BoxShape.circle,
               ),
               child: const Icon(Icons.emoji_events_rounded, color: LangHueyColors.deepTeal, size: 36),
@@ -232,7 +232,7 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
-                            color: LangHueyColors.amberGold.withOpacity(0.18),
+                            color: LangHueyColors.amberGold.withValues(alpha: 0.18),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Row(
@@ -272,10 +272,10 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.2)),
+              border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.2)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.04),
+                  color: Colors.black.withValues(alpha: 0.04),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -289,7 +289,7 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
-                        color: _getBadgeColor(drill.type).withOpacity(0.12),
+                        color: _getBadgeColor(drill.type).withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
@@ -322,7 +322,7 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: _isAnswerCorrect ? LangHueyColors.green.withOpacity(0.1) : LangHueyColors.red.withOpacity(0.1),
+                color: _isAnswerCorrect ? LangHueyColors.green.withValues(alpha: 0.1) : LangHueyColors.red.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
                   color: _isAnswerCorrect ? LangHueyColors.green : LangHueyColors.red,
@@ -412,13 +412,13 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
       case DrillType.singleChoice:
         return LangHueyColors.deepTeal;
       case DrillType.pairMatch:
-        return Colors.purple;
+        return LangHueyColors.turquoise;
       case DrillType.fillGap:
-        return Colors.indigo;
+        return LangHueyColors.deepTeal;
       case DrillType.trueFalse:
-        return Colors.orange.shade800;
+        return LangHueyColors.amberGold;
       case DrillType.tapTranslation:
-        return Colors.teal.shade700;
+        return LangHueyColors.charcoal;
     }
   }
 
@@ -464,11 +464,11 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
         if (_hasChecked) {
           if (isCorrect) {
             borderColor = LangHueyColors.green;
-            bgColor = LangHueyColors.green.withOpacity(0.08);
+            bgColor = LangHueyColors.green.withValues(alpha: 0.08);
             textColor = LangHueyColors.green;
           } else if (isSelected) {
             borderColor = LangHueyColors.red;
-            bgColor = LangHueyColors.red.withOpacity(0.08);
+            bgColor = LangHueyColors.red.withValues(alpha: 0.08);
             textColor = LangHueyColors.red;
           }
         } else if (isSelected) {
@@ -490,14 +490,15 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
                   },
             borderRadius: BorderRadius.circular(16),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+              constraints: const BoxConstraints(minHeight: 62),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
               decoration: BoxDecoration(
                 color: bgColor,
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: borderColor, width: isSelected || (_hasChecked && isCorrect) ? 2 : 1),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.02),
+                    color: Colors.black.withValues(alpha: 0.02),
                     blurRadius: 6,
                     offset: const Offset(0, 2),
                   ),
@@ -585,10 +586,11 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
                             },
                       borderRadius: BorderRadius.circular(14),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+                        constraints: const BoxConstraints(minHeight: 56),
+                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                         decoration: BoxDecoration(
                           color: isMatched
-                              ? LangHueyColors.green.withOpacity(0.1)
+                              ? LangHueyColors.green.withValues(alpha: 0.1)
                               : isSelected
                                   ? LangHueyColors.softTeal
                                   : Colors.white,
@@ -649,10 +651,11 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
                             },
                       borderRadius: BorderRadius.circular(14),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+                        constraints: const BoxConstraints(minHeight: 56),
+                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                         decoration: BoxDecoration(
                           color: isMatched
-                              ? LangHueyColors.green.withOpacity(0.1)
+                              ? LangHueyColors.green.withValues(alpha: 0.1)
                               : isSelected
                                   ? LangHueyColors.softTeal
                                   : Colors.white,
@@ -732,9 +735,9 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
         Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: LangHueyColors.softTeal.withOpacity(0.4),
+            color: LangHueyColors.softTeal.withValues(alpha: 0.4),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.2)),
+            border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.2)),
           ),
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -790,7 +793,9 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
                       },
                 borderRadius: BorderRadius.circular(14),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  constraints: const BoxConstraints(minHeight: 60),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                  alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: isSelected ? LangHueyColors.deepTeal : Colors.white,
                     borderRadius: BorderRadius.circular(14),
@@ -800,7 +805,7 @@ class _JSS3InteractiveDrillEngineWidgetState extends State<JSS3InteractiveDrillE
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.03),
+                        color: Colors.black.withValues(alpha: 0.03),
                         blurRadius: 4,
                         offset: const Offset(0, 2),
                       ),

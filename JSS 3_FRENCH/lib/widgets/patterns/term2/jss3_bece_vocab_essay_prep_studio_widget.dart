@@ -136,7 +136,7 @@ class _JSS3BECEVocabEssayPrepStudioWidgetState
             decoration: BoxDecoration(
               color: const Color(0xFFF9FBFB),
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: const Color(0xFF0E6655).withOpacity(0.3), width: 1.5),
+              border: Border.all(color: const Color(0xFF0E6655).withValues(alpha: 0.3), width: 1.5),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -219,7 +219,7 @@ class _JSS3BECEVocabEssayPrepStudioWidgetState
                   child: ChoiceChip(
                     label: Text(_essayPrompts[i]['title'] as String),
                     selected: isSel,
-                    selectedColor: const Color(0xFF0E6655).withOpacity(0.2),
+                    selectedColor: const Color(0xFF0E6655).withValues(alpha: 0.2),
                     side: BorderSide(color: isSel ? const Color(0xFF0E6655) : Colors.black12),
                     onSelected: (val) {
                       if (val) {
@@ -239,7 +239,7 @@ class _JSS3BECEVocabEssayPrepStudioWidgetState
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: const Color(0xFF0E6655).withOpacity(0.4), width: 1.5),
+              border: Border.all(color: const Color(0xFF0E6655).withValues(alpha: 0.4), width: 1.5),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -316,7 +316,7 @@ class _JSS3BECEVocabEssayPrepStudioWidgetState
             children: [
               Container(
                 padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(color: const Color(0xFF0E6655).withOpacity(0.15), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: const Color(0xFF0E6655).withValues(alpha: 0.15), shape: BoxShape.circle),
                 child: const Icon(Icons.check_rounded, color: Color(0xFF0E6655), size: 20),
               ),
               const SizedBox(width: 14),

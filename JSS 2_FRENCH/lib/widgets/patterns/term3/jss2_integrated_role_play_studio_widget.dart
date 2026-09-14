@@ -113,7 +113,7 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [color.withOpacity(0.8), color],
+              colors: [color.withValues(alpha: 0.8), color],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -147,7 +147,7 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
                           duration: const Duration(milliseconds: 200),
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           decoration: BoxDecoration(
-                            color: selected ? Colors.white : Colors.white.withOpacity(0.2),
+                            color: selected ? Colors.white : Colors.white.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Column(
@@ -204,9 +204,9 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.08),
+              color: color.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: color.withOpacity(0.3)),
+              border: Border.all(color: color.withValues(alpha: 0.3)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -240,7 +240,7 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
                 children: [
                   Container(
                     width: 40, height: 40,
-                    decoration: BoxDecoration(color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10)),
                     child: Icon(icons[e.key % 2], color: color),
                   ),
                   const SizedBox(width: 12),
@@ -252,7 +252,7 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
           const SizedBox(height: 20),
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(color: LangHueyColors.warmCream, borderRadius: BorderRadius.circular(14), border: Border.all(color: LangHueyColors.amberGold.withOpacity(0.4))),
+            decoration: BoxDecoration(color: LangHueyColors.warmCream, borderRadius: BorderRadius.circular(14), border: Border.all(color: LangHueyColors.amberGold.withValues(alpha: 0.4))),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -307,9 +307,9 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
                 margin: const EdgeInsets.only(bottom: 10),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: isEven ? color.withOpacity(0.08) : Colors.white,
+                  color: isEven ? color.withValues(alpha: 0.08) : Colors.white,
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: isEven ? color.withOpacity(0.3) : Colors.black12),
+                  border: Border.all(color: isEven ? color.withValues(alpha: 0.3) : Colors.black12),
                 ),
                 child: Row(
                   children: [
@@ -375,7 +375,7 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
                 children: [
                   Container(
                     width: 40, height: 40,
-                    decoration: BoxDecoration(color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10)),
                     child: Center(child: Text('${e.key + 1}', style: TextStyle(fontWeight: FontWeight.bold, color: color, fontSize: 18))),
                   ),
                   const SizedBox(width: 12),
@@ -395,7 +395,7 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
               children: [
                 Container(
                   width: 40, height: 40,
-                  decoration: BoxDecoration(color: const Color(0xFFF39C12).withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
+                  decoration: BoxDecoration(color: const Color(0xFFF39C12).withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10)),
                   child: const Center(child: Text('5', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFF39C12), fontSize: 18))),
                 ),
                 const SizedBox(width: 12),
@@ -409,9 +409,9 @@ class _JSS2IntegratedRolePlayStudioWidgetState extends State<JSS2IntegratedRoleP
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.08),
+              color: color.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: color.withOpacity(0.3)),
+              border: Border.all(color: color.withValues(alpha: 0.3)),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

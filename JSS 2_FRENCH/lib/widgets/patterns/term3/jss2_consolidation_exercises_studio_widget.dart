@@ -155,7 +155,7 @@ class _JSS2ConsolidationExercisesStudioWidgetState extends State<JSS2Consolidati
             child: Text('Score : $score', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
         ]),
         const SizedBox(height: 16),
-        Container(width: double.infinity, padding: const EdgeInsets.all(20), decoration: BoxDecoration(gradient: LinearGradient(colors: [color.withOpacity(0.8), color]), borderRadius: BorderRadius.circular(18)),
+        Container(width: double.infinity, padding: const EdgeInsets.all(20), decoration: BoxDecoration(gradient: LinearGradient(colors: [color.withValues(alpha: 0.8), color]), borderRadius: BorderRadius.circular(18)),
           child: Text(q['q'] as String, style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.bold), textAlign: TextAlign.center)),
         const SizedBox(height: 16),
         ...(q['opts'] as List<String>).asMap().entries.map((e) {
@@ -201,7 +201,7 @@ class _JSS2ConsolidationExercisesStudioWidgetState extends State<JSS2Consolidati
           decoration: BoxDecoration(
             gradient: LinearGradient(colors: _showAnswer ? [const Color(0xFF2ECC71), const Color(0xFF1ABC9C)] : [const Color(0xFFE67E22), const Color(0xFFF39C12)]),
             borderRadius: BorderRadius.circular(24),
-            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 16, offset: const Offset(0, 6))],
+            boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 16, offset: const Offset(0, 6))],
           ),
           child: Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Text(_showAnswer ? card['fr']! : card['en']!, style: const TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),

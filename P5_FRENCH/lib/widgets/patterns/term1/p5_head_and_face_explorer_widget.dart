@@ -34,7 +34,7 @@ class _P5HeadAndFaceExplorerWidgetState extends State<P5HeadAndFaceExplorerWidge
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         children: [
@@ -79,7 +79,7 @@ class _P5HeadAndFaceExplorerWidgetState extends State<P5HeadAndFaceExplorerWidge
                 final part = _headParts[index];
                 final isSelected = _selectedPart == part['name'];
                 return Material(
-                  color: isSelected ? P5Colors.turquoise.withOpacity(0.3) : P5Colors.cream,
+                  color: isSelected ? P5Colors.turquoise.withValues(alpha: 0.3) : P5Colors.cream,
                   borderRadius: BorderRadius.circular(18),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(18),

@@ -177,7 +177,7 @@ class _JSS2ExamPrepStudioWidgetState extends State<JSS2ExamPrepStudioWidget>
         Row(children: List.generate(_errorExercises.length, (i) => Container(margin: const EdgeInsets.only(left: 4), width: 8, height: 8, decoration: BoxDecoration(shape: BoxShape.circle, color: i == _errIndex ? const Color(0xFF922B21) : Colors.grey.shade300)))),
       ]),
       const SizedBox(height: 20),
-      Container(padding: const EdgeInsets.all(20), decoration: BoxDecoration(color: const Color(0xFFE74C3C).withOpacity(0.08), borderRadius: BorderRadius.circular(18), border: Border.all(color: const Color(0xFFE74C3C).withOpacity(0.3))),
+      Container(padding: const EdgeInsets.all(20), decoration: BoxDecoration(color: const Color(0xFFE74C3C).withValues(alpha: 0.08), borderRadius: BorderRadius.circular(18), border: Border.all(color: const Color(0xFFE74C3C).withValues(alpha: 0.3))),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const Row(children: [Icon(Icons.error_outline_rounded, color: Color(0xFFE74C3C)), SizedBox(width: 8), Text('Phrase incorrecte :', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFE74C3C)))]),
           const SizedBox(height: 8),
@@ -185,7 +185,7 @@ class _JSS2ExamPrepStudioWidgetState extends State<JSS2ExamPrepStudioWidget>
         ])),
       const SizedBox(height: 12),
       if (_errRevealed) ...[
-        Container(padding: const EdgeInsets.all(20), decoration: BoxDecoration(color: const Color(0xFF2ECC71).withOpacity(0.08), borderRadius: BorderRadius.circular(18), border: Border.all(color: const Color(0xFF2ECC71).withOpacity(0.4))),
+        Container(padding: const EdgeInsets.all(20), decoration: BoxDecoration(color: const Color(0xFF2ECC71).withValues(alpha: 0.08), borderRadius: BorderRadius.circular(18), border: Border.all(color: const Color(0xFF2ECC71).withValues(alpha: 0.4))),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Row(children: [Icon(Icons.check_circle_rounded, color: Color(0xFF2ECC71)), SizedBox(width: 8), Text('Correction :', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF2ECC71)))]),
             const SizedBox(height: 8),

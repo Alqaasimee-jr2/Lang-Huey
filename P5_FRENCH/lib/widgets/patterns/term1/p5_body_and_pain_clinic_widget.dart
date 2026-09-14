@@ -63,7 +63,7 @@ class _P5BodyAndPainClinicWidgetState extends State<P5BodyAndPainClinicWidget> {
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         children: [
@@ -186,7 +186,7 @@ class _P5BodyAndPainClinicWidgetState extends State<P5BodyAndPainClinicWidget> {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           decoration: BoxDecoration(
-            color: P5Colors.teal.withOpacity(0.1),
+            color: P5Colors.teal.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(14),
           ),
           child: Row(

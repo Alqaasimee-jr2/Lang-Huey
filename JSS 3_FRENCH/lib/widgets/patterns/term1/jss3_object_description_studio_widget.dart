@@ -195,7 +195,7 @@ class _JSS3ObjectDescriptionStudioWidgetState extends State<JSS3ObjectDescriptio
                     avatar: Text(o['emoji'] as String),
                     label: Text(o['name'] as String),
                     selected: isSelected,
-                    selectedColor: (o['color'] as Color).withOpacity(0.2),
+                    selectedColor: (o['color'] as Color).withValues(alpha: 0.2),
                     side: BorderSide(color: isSelected ? o['color'] as Color : Colors.black12),
                     onSelected: (val) {
                       if (val) {
@@ -215,9 +215,9 @@ class _JSS3ObjectDescriptionStudioWidgetState extends State<JSS3ObjectDescriptio
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: color.withOpacity(0.4), width: 1.5),
+              border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
               boxShadow: [
-                BoxShadow(color: color.withOpacity(0.08), blurRadius: 16, offset: const Offset(0, 6)),
+                BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 16, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(
@@ -252,7 +252,7 @@ class _JSS3ObjectDescriptionStudioWidgetState extends State<JSS3ObjectDescriptio
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: color.withOpacity(0.08),
+                    color: color.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(

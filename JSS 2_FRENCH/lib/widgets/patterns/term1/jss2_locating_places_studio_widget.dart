@@ -211,7 +211,7 @@ class _JSS2LocatingPlacesStudioWidgetState extends State<JSS2LocatingPlacesStudi
                         decoration: BoxDecoration(
                           color: LangHueyColors.softTeal,
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+                          border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
                         ),
                         child: Text(
                           '« ${_buildLocationSentence()} »',

@@ -37,7 +37,7 @@ class _P5PresentOthersWidgetState extends State<P5PresentOthersWidget> {
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         children: [

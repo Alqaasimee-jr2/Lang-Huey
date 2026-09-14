@@ -23,8 +23,9 @@ void main() {
 
   group('Primary 5 French UI Widget & Navigation Smoke Tests', () {
     testWidgets('P5TermSelectScreen renders all 3 terms', (WidgetTester tester) async {
-      await tester.binding.setSurfaceSize(const Size(1280, 800));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
 
       await tester.pumpWidget(
         const MaterialApp(
@@ -34,17 +35,18 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('GRADE 5 / PRIMARY 5'), findsOneWidget);
-      expect(find.text('Premier Trimestre'), findsOneWidget);
-      expect(find.text('Deuxième Trimestre'), findsOneWidget);
-      expect(find.text('Troisième Trimestre'), findsOneWidget);
+      expect(find.text('Term 1 — First Term'), findsOneWidget);
+      expect(find.text('Term 2 — Second Term'), findsOneWidget);
+      expect(find.text('Term 3 — Third Term'), findsOneWidget);
       expect(find.text('TERM 1'), findsOneWidget);
       expect(find.text('TERM 2'), findsOneWidget);
       expect(find.text('TERM 3'), findsOneWidget);
     });
 
     testWidgets('P5WeekRoadmapScreen renders 13 weeks for Term 1', (WidgetTester tester) async {
-      await tester.binding.setSurfaceSize(const Size(1280, 800));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
 
       await tester.pumpWidget(
         const MaterialApp(
@@ -53,13 +55,14 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.textContaining('TRIMESTRE 1 ROADMAP'), findsOneWidget);
+      expect(find.textContaining('TERM 1 ROADMAP'), findsOneWidget);
       expect(find.text('WEEK 1'), findsWidgets);
     });
 
     testWidgets('P5WeekRoadmapScreen renders 13 weeks for Term 2', (WidgetTester tester) async {
-      await tester.binding.setSurfaceSize(const Size(1280, 800));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
 
       await tester.pumpWidget(
         const MaterialApp(
@@ -68,13 +71,14 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.textContaining('TRIMESTRE 2 ROADMAP'), findsOneWidget);
+      expect(find.textContaining('TERM 2 ROADMAP'), findsOneWidget);
       expect(find.text('WEEK 1'), findsWidgets);
     });
 
     testWidgets('P5WeekRoadmapScreen renders 13 weeks for Term 3', (WidgetTester tester) async {
-      await tester.binding.setSurfaceSize(const Size(1280, 800));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
 
       await tester.pumpWidget(
         const MaterialApp(
@@ -83,13 +87,14 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.textContaining('TRIMESTRE 3 ROADMAP'), findsOneWidget);
+      expect(find.textContaining('TERM 3 ROADMAP'), findsOneWidget);
       expect(find.text('WEEK 1'), findsWidgets);
     });
 
     testWidgets('P5LessonPlayerScreen renders and cycles through phases cleanly', (WidgetTester tester) async {
-      await tester.binding.setSurfaceSize(const Size(1280, 800));
-      addTearDown(() => tester.binding.setSurfaceSize(null));
+      tester.view.physicalSize = const Size(1920, 1080);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
 
       final sampleLesson = P5Term3Lessons.weeks.first; // Term 3 Week 1
 
@@ -100,16 +105,23 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      // Phase 1: Objectives
-      expect(find.text('Objectifs de la Leçon (Lesson Objectives)'), findsOneWidget);
-      expect(find.text('Next Phase'), findsOneWidget);
+      // Phase 1: Interactive Learning Lab loads directly
+      expect(find.text('Teacher Guide'), findsOneWidget);
+      expect(find.textContaining('Chronologie de la Routine du Matin'), findsOneWidget);
 
-      // Tap to Phase 2: Interactive Pattern
+      // Tap to Phase 2: Vocabulary & Practice
+      expect(find.text('Next Phase'), findsOneWidget);
       await tester.tap(find.text('Next Phase'));
       await tester.pumpAndSettle();
 
-      // Verify Pattern Loaded
-      expect(find.textContaining('Chronologie de la Routine du Matin'), findsOneWidget);
+      // Tap to Phase 3: Practice Drills
+      await tester.tap(find.text('Next Phase'));
+      await tester.pumpAndSettle();
+
+      // Tap to Phase 4: Summary & Homework
+      await tester.tap(find.text('Next Phase'));
+      await tester.pumpAndSettle();
+      expect(find.text('Summary & Homework Assignment'), findsOneWidget);
     });
   });
 }

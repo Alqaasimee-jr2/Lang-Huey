@@ -75,9 +75,9 @@ class P5TermSelectScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                       decoration: BoxDecoration(
-                        color: P5Colors.turquoise.withOpacity(0.25),
+                        color: P5Colors.turquoise.withValues(alpha: 0.25),
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: P5Colors.turquoise.withOpacity(0.6)),
+                        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.6)),
                       ),
                       child: Row(
                         children: [
@@ -95,9 +95,9 @@ class P5TermSelectScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
                     decoration: BoxDecoration(
-                      color: P5Colors.white.withOpacity(0.15),
+                      color: P5Colors.white.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: P5Colors.white.withOpacity(0.3)),
+                      border: Border.all(color: P5Colors.white.withValues(alpha: 0.3)),
                     ),
                     child: Row(
                       children: [
@@ -222,7 +222,7 @@ class P5TermSelectScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                       decoration: BoxDecoration(
-                        color: color.withOpacity(0.2),
+                        color: color.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Text(
@@ -232,7 +232,7 @@ class P5TermSelectScreen extends StatelessWidget {
                     ),
                     CircleAvatar(
                       radius: 18,
-                      backgroundColor: P5Colors.green.withOpacity(0.15),
+                      backgroundColor: P5Colors.green.withValues(alpha: 0.15),
                       child: const Icon(Icons.arrow_forward_rounded, color: P5Colors.green, size: 20),
                     ),
                   ],

@@ -25,7 +25,7 @@ class JSS2TermSelectScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.04),
+                      color: Colors.black.withValues(alpha: 0.04),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -96,9 +96,9 @@ class JSS2TermSelectScreen extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                             decoration: BoxDecoration(
-                              color: LangHueyColors.deepTeal.withOpacity(0.08),
+                              color: LangHueyColors.deepTeal.withValues(alpha: 0.08),
                               borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+                              border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
                             ),
                             child: Row(
                               children: [
@@ -226,7 +226,7 @@ class JSS2TermSelectScreen extends StatelessWidget {
           duration: const Duration(milliseconds: 250),
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
-            color: isAvailable ? Colors.white : Colors.white.withOpacity(0.6),
+            color: isAvailable ? Colors.white : Colors.white.withValues(alpha: 0.6),
             borderRadius: BorderRadius.circular(24),
             border: Border.all(
               color: isAvailable ? LangHueyColors.deepTeal : Colors.black12,
@@ -235,7 +235,7 @@ class JSS2TermSelectScreen extends StatelessWidget {
             boxShadow: isAvailable
                 ? [
                     BoxShadow(
-                      color: LangHueyColors.deepTeal.withOpacity(0.08),
+                      color: LangHueyColors.deepTeal.withValues(alpha: 0.08),
                       blurRadius: 16,
                       offset: const Offset(0, 8),
                     ),

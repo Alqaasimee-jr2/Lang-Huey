@@ -103,7 +103,7 @@ class _JSS2Term1RevisionRallyWidgetState extends State<JSS2Term1RevisionRallyWid
                       const SizedBox(height: 2),
                       Text(
                         'Compétition interactive en 4 équipes couvrant les unités 1 à 8 (Positions, Lieux, Chemins, Transports & Horaires).',
-                        style: LangHueyTextStyles.bodySmall.copyWith(color: Colors.white.withOpacity(0.9)),
+                        style: LangHueyTextStyles.bodySmall.copyWith(color: Colors.white.withValues(alpha: 0.9)),
                       ),
                     ],
                   ),

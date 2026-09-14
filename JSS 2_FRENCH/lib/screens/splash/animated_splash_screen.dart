@@ -166,10 +166,10 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF14BDCC).withOpacity(0.18),
+                        color: const Color(0xFF14BDCC).withValues(alpha: 0.18),
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                          color: const Color(0xFF14BDCC).withOpacity(0.45),
+                          color: const Color(0xFF14BDCC).withValues(alpha: 0.45),
                           width: 1.5,
                         ),
                       ),
@@ -194,7 +194,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
                   'Tap anywhere to continue',
                   style: TextStyle(
                     fontSize: 12,
-                    color: const Color(0xFFF5F0E8).withOpacity(0.4),
+                    color: const Color(0xFFF5F0E8).withValues(alpha: 0.4),
                     letterSpacing: 0.5,
                   ),
                 ),
@@ -229,7 +229,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
               height: c['size'] as double,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: const Color(0xFF14BDCC).withOpacity(0.12),
+                color: const Color(0xFF14BDCC).withValues(alpha: 0.12),
               ),
             ),
           );
@@ -259,7 +259,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
                   height: 10,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: const Color(0xFF14BDCC).withOpacity(opacity.clamp(0.2, 1.0)),
+                    color: const Color(0xFF14BDCC).withValues(alpha: opacity.clamp(0.2, 1.0)),
                   ),
                 ),
               ),

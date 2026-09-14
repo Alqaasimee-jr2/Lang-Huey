@@ -165,7 +165,7 @@ class _JSS3PastMemoriesStudioWidgetState extends State<JSS3PastMemoriesStudioWid
                     avatar: Text(m['emoji'] as String),
                     label: Text(m['title'] as String),
                     selected: isSelected,
-                    selectedColor: (m['color'] as Color).withOpacity(0.2),
+                    selectedColor: (m['color'] as Color).withValues(alpha: 0.2),
                     side: BorderSide(color: isSelected ? m['color'] as Color : Colors.black12),
                     onSelected: (val) {
                       if (val) {
@@ -185,9 +185,9 @@ class _JSS3PastMemoriesStudioWidgetState extends State<JSS3PastMemoriesStudioWid
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: color.withOpacity(0.4), width: 1.5),
+              border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
               boxShadow: [
-                BoxShadow(color: color.withOpacity(0.08), blurRadius: 16, offset: const Offset(0, 6)),
+                BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 16, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(

@@ -52,10 +52,10 @@ void main() {
       await tester.pumpWidget(wrapTestable(const JSS2TermSelectScreen()));
       await tester.pumpAndSettle();
 
-      expect(find.text('LANG HUEY'), findsOneWidget);
-      expect(find.text('JSS 2 FRENCH'), findsOneWidget);
-      expect(find.text('PREMIER TRIMESTRE'), findsOneWidget);
-      expect(find.text('DEUXIÈME TRIMESTRE'), findsOneWidget);
+      expect(find.text('JSS 2 French Language Engine'), findsOneWidget);
+      expect(find.text('Select School Term'), findsOneWidget);
+      expect(find.text('Term 1 — First Term'), findsOneWidget);
+      expect(find.text('Term 2 — Second Term'), findsOneWidget);
     });
 
     testWidgets('2. JSS2WeekRoadmapScreen renders all 9 week cards for Term 1 and Term 2', (tester) async {
@@ -66,14 +66,14 @@ void main() {
       // Term 1
       await tester.pumpWidget(wrapTestable(const JSS2WeekRoadmapScreen(term: 1)));
       await tester.pumpAndSettle();
-      expect(find.text('SEMAINE 1'), findsOneWidget);
-      expect(find.text('SEMAINE 9'), findsOneWidget);
+      expect(find.text('WEEK 1'), findsOneWidget);
+      expect(find.text('WEEK 9'), findsOneWidget);
 
       // Term 2
       await tester.pumpWidget(wrapTestable(const JSS2WeekRoadmapScreen(term: 2)));
       await tester.pumpAndSettle();
-      expect(find.text('SEMAINE 1'), findsOneWidget);
-      expect(find.text('SEMAINE 9'), findsOneWidget);
+      expect(find.text('WEEK 1'), findsOneWidget);
+      expect(find.text('WEEK 9'), findsOneWidget);
     });
 
     // Term 1 Pattern Tests
@@ -233,11 +233,9 @@ void main() {
       await tester.pumpWidget(wrapTestable(JSS2LessonPlayerScreen(lesson: lesson)));
       await tester.pumpAndSettle();
 
-      expect(find.text('Objectifs Pédagogiques de la Semaine :'), findsOneWidget);
-      expect(find.text('2. Lab Interactif'), findsOneWidget);
-
-      await tester.tap(find.text('2. Lab Interactif'));
-      await tester.pumpAndSettle();
+      expect(find.text('1. Learning Lab'), findsOneWidget);
+      expect(find.text('3. Practice Drills'), findsOneWidget);
+      expect(find.text('Teacher Guide'), findsOneWidget);
 
       expect(find.text('Studio d\'Inventaire & Listes de Courses'), findsOneWidget);
     });
@@ -378,11 +376,9 @@ void main() {
       await tester.pumpWidget(wrapTestable(JSS2LessonPlayerScreen(lesson: lesson)));
       await tester.pumpAndSettle();
 
-      expect(find.text('Objectifs Pédagogiques de la Semaine :'), findsOneWidget);
-      expect(find.text('2. Lab Interactif'), findsOneWidget);
-
-      await tester.tap(find.text('2. Lab Interactif'));
-      await tester.pumpAndSettle();
+      expect(find.text('1. Learning Lab'), findsOneWidget);
+      expect(find.text('3. Practice Drills'), findsOneWidget);
+      expect(find.text('Teacher Guide'), findsOneWidget);
 
       expect(find.text('Studio de Calcul — Les 4 Opérations'), findsOneWidget);
     });

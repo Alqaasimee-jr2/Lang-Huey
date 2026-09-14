@@ -122,7 +122,7 @@ class _JSS2ShoppingAndBargainingStudioWidgetState extends State<JSS2ShoppingAndB
                       const SizedBox(height: 2),
                       Text(
                         'Demandez le prix, marchandez avec le vendeur et réglez vos achats en espèces ou par carte.',
-                        style: LangHueyTextStyles.bodySmall.copyWith(color: Colors.white.withOpacity(0.9)),
+                        style: LangHueyTextStyles.bodySmall.copyWith(color: Colors.white.withValues(alpha: 0.9)),
                       ),
                     ],
                   ),

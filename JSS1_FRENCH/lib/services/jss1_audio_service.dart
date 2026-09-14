@@ -90,9 +90,20 @@ class JSS1AudioService {
   Future<void> playSfx(JSS1SfxType sfx) async {
     try {
       final sfxName = sfx.name;
-      final path = 'assets/audio/sfx_$sfxName.mp3';
-      await _sfxPlayer.setAsset(path);
-      await _sfxPlayer.play();
+      await _sfxPlayer.stop();
+      final candidatePaths = [
+        'assets/audio/sfx_$sfxName.mp3',
+        'assets/audio/$sfxName.mp3',
+        'assets/audio/sfx/$sfxName.mp3',
+        'assets/audio/jss1_term1/sfx_$sfxName.mp3',
+      ];
+      for (final path in candidatePaths) {
+        try {
+          await _sfxPlayer.setAsset(path);
+          await _sfxPlayer.play();
+          break;
+        } catch (_) {}
+      }
     } catch (_) {
       // Fallback silent fail
     }

@@ -166,7 +166,7 @@ class _JSS1LessonPlayerScreenState extends State<JSS1LessonPlayerScreen> {
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: JSS1Colors.gold.withOpacity(0.15),
+                  color: JSS1Colors.gold.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(14),
                   border: Border.all(color: JSS1Colors.gold, width: 1.5),
                 ),
@@ -229,7 +229,7 @@ class _JSS1LessonPlayerScreenState extends State<JSS1LessonPlayerScreen> {
         color: JSS1Colors.teal,
         boxShadow: [
           BoxShadow(
-            color: JSS1Colors.charcoal.withOpacity(0.1),
+            color: JSS1Colors.charcoal.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -308,7 +308,7 @@ class _JSS1LessonPlayerScreenState extends State<JSS1LessonPlayerScreen> {
     final isSlow = _audioService.playbackSpeed < 0.95;
     return Container(
       decoration: BoxDecoration(
-        color: JSS1Colors.white.withOpacity(0.15),
+        color: JSS1Colors.white.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(12),
       ),
       padding: const EdgeInsets.all(4),
@@ -366,13 +366,13 @@ class _JSS1LessonPlayerScreenState extends State<JSS1LessonPlayerScreen> {
                 margin: const EdgeInsets.symmetric(horizontal: 4),
                 decoration: BoxDecoration(
                   color: isCurrent
-                      ? JSS1Colors.teal.withOpacity(0.1)
-                      : (isPast ? JSS1Colors.green.withOpacity(0.08) : Colors.transparent),
+                      ? JSS1Colors.teal.withValues(alpha: 0.1)
+                      : (isPast ? JSS1Colors.green.withValues(alpha: 0.08) : Colors.transparent),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: isCurrent
                         ? JSS1Colors.teal
-                        : (isPast ? JSS1Colors.green.withOpacity(0.3) : Colors.transparent),
+                        : (isPast ? JSS1Colors.green.withValues(alpha: 0.3) : Colors.transparent),
                     width: 1.5,
                   ),
                 ),
@@ -568,7 +568,7 @@ class _JSS1LessonPlayerScreenState extends State<JSS1LessonPlayerScreen> {
               decoration: BoxDecoration(
                 color: JSS1Colors.white,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: JSS1Colors.teal.withOpacity(0.3)),
+                border: Border.all(color: JSS1Colors.teal.withValues(alpha: 0.3)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

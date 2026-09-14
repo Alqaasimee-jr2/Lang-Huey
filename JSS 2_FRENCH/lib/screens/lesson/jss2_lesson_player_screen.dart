@@ -154,7 +154,7 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: LangHueyColors.amberGold.withOpacity(0.15),
+                  color: LangHueyColors.amberGold.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(14),
                   border: Border.all(color: LangHueyColors.amberGold, width: 1.5),
                 ),
@@ -518,7 +518,7 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
                   border: Border.all(color: Colors.black12),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.04),
+                      color: Colors.black.withValues(alpha: 0.04),
                       blurRadius: 6,
                       offset: const Offset(0, 3),
                     ),
@@ -641,9 +641,9 @@ class _JSS2LessonPlayerScreenState extends State<JSS2LessonPlayerScreen> {
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: LangHueyColors.softTeal.withOpacity(0.4),
+              color: LangHueyColors.softTeal.withValues(alpha: 0.4),
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+              border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

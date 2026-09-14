@@ -108,7 +108,7 @@ class _JSS2Term2RevisionRallyWidgetState extends State<JSS2Term2RevisionRallyWid
                       const SizedBox(height: 2),
                       Text(
                         'Compétition interactive en 4 équipes couvrant les unités 9 à 16 (Commerce, Santé, Mode & Mesures).',
-                        style: LangHueyTextStyles.bodySmall.copyWith(color: Colors.white.withOpacity(0.9)),
+                        style: LangHueyTextStyles.bodySmall.copyWith(color: Colors.white.withValues(alpha: 0.9)),
                       ),
                     ],
                   ),
@@ -148,7 +148,7 @@ class _JSS2Term2RevisionRallyWidgetState extends State<JSS2Term2RevisionRallyWid
                     border: Border.all(color: t['color'] as Color, width: 2),
                     boxShadow: [
                       BoxShadow(
-                        color: (t['color'] as Color).withOpacity(0.08),
+                        color: (t['color'] as Color).withValues(alpha: 0.08),
                         blurRadius: 8,
                         offset: const Offset(0, 4),
                       ),

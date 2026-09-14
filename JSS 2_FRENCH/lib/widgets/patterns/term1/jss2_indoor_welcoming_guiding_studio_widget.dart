@@ -212,7 +212,7 @@ class _JSS2IndoorWelcomingGuidingStudioWidgetState extends State<JSS2IndoorWelco
                         decoration: BoxDecoration(
                           color: LangHueyColors.softTeal,
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+                          border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
                         ),
                         child: Text(
                           '« ${room['guide']} »',

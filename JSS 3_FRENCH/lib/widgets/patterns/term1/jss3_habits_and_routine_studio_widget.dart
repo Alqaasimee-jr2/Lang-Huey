@@ -245,9 +245,9 @@ class _JSS3HabitsAndRoutineStudioWidgetState extends State<JSS3HabitsAndRoutineS
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: color.withOpacity(0.4), width: 1.5),
+              border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
               boxShadow: [
-                BoxShadow(color: color.withOpacity(0.08), blurRadius: 16, offset: const Offset(0, 6)),
+                BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 16, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(
@@ -272,7 +272,7 @@ class _JSS3HabitsAndRoutineStudioWidgetState extends State<JSS3HabitsAndRoutineS
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
-                        color: color.withOpacity(0.15),
+                        color: color.withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(slot['verb'] as String, style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 11)),
@@ -283,7 +283,7 @@ class _JSS3HabitsAndRoutineStudioWidgetState extends State<JSS3HabitsAndRoutineS
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: color.withOpacity(0.08),
+                    color: color.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Row(
@@ -476,7 +476,7 @@ class _JSS3HabitsAndRoutineStudioWidgetState extends State<JSS3HabitsAndRoutineS
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                         decoration: BoxDecoration(
-                          color: color.withOpacity(0.15),
+                          color: color.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(6),
                         ),
                         child: Text(item['percent'] as String, style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 12)),

@@ -144,7 +144,7 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
       decoration: BoxDecoration(
         color: LangHueyColors.cardSurface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: LangHueyColors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: LangHueyColors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,7 +186,7 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: LangHueyColors.amberGold.withOpacity(0.2),
+                color: LangHueyColors.amberGold.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: LangHueyColors.amberGold),
               ),
@@ -248,7 +248,7 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
             decoration: BoxDecoration(
               color: LangHueyColors.warmCream,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: LangHueyColors.turquoise.withOpacity(0.3)),
+              border: Border.all(color: LangHueyColors.turquoise.withValues(alpha: 0.3)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -305,14 +305,14 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
         Color borderColor = LangHueyColors.lightGrey;
         if (_hasChecked) {
           if (isCorrect) {
-            bg = LangHueyColors.green.withOpacity(0.2);
+            bg = LangHueyColors.green.withValues(alpha: 0.2);
             borderColor = LangHueyColors.green;
           } else if (isSelected) {
-            bg = LangHueyColors.red.withOpacity(0.2);
+            bg = LangHueyColors.red.withValues(alpha: 0.2);
             borderColor = LangHueyColors.red;
           }
         } else if (isSelected) {
-          bg = LangHueyColors.turquoise.withOpacity(0.25);
+          bg = LangHueyColors.turquoise.withValues(alpha: 0.25);
           borderColor = LangHueyColors.deepTeal;
         }
 
@@ -332,8 +332,9 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
                     setState(() => _selectedOptionIndex = index);
                     _audioService.playClick();
                   },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 62),
+              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
               child: Row(
                 children: [
                   CircleAvatar(
@@ -385,10 +386,10 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
               Color bg = LangHueyColors.warmCream;
               Color border = LangHueyColors.lightGrey;
               if (isMatched) {
-                bg = LangHueyColors.green.withOpacity(0.2);
+                bg = LangHueyColors.green.withValues(alpha: 0.2);
                 border = LangHueyColors.green;
               } else if (isSelected) {
-                bg = LangHueyColors.turquoise.withOpacity(0.3);
+                bg = LangHueyColors.turquoise.withValues(alpha: 0.3);
                 border = LangHueyColors.deepTeal;
               }
 
@@ -411,8 +412,9 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
                           });
                           _audioService.playClick();
                         },
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
+                  child: Container(
+                    constraints: const BoxConstraints(minHeight: 56),
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -442,10 +444,10 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
               Color bg = LangHueyColors.warmCream;
               Color border = LangHueyColors.lightGrey;
               if (isMatched) {
-                bg = LangHueyColors.green.withOpacity(0.2);
+                bg = LangHueyColors.green.withValues(alpha: 0.2);
                 border = LangHueyColors.green;
               } else if (isSelected) {
-                bg = LangHueyColors.amberGold.withOpacity(0.3);
+                bg = LangHueyColors.amberGold.withValues(alpha: 0.3);
                 border = LangHueyColors.amberGold;
               }
 
@@ -468,8 +470,9 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
                           });
                           _audioService.playClick();
                         },
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
+                  child: Container(
+                    constraints: const BoxConstraints(minHeight: 56),
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -518,7 +521,7 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
           decoration: BoxDecoration(
             color: LangHueyColors.warmCream,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+            border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -682,7 +685,7 @@ class _JSS2InteractiveDrillEngineWidgetState extends State<JSS2InteractiveDrillE
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
         color: _hasChecked
-            ? (_isAnswerCorrect ? LangHueyColors.green.withOpacity(0.12) : LangHueyColors.red.withOpacity(0.12))
+            ? (_isAnswerCorrect ? LangHueyColors.green.withValues(alpha: 0.12) : LangHueyColors.red.withValues(alpha: 0.12))
             : LangHueyColors.warmCream,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(

@@ -140,7 +140,7 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,7 +182,7 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: P5Colors.gold.withOpacity(0.2),
+                color: P5Colors.gold.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: P5Colors.gold),
               ),
@@ -244,7 +244,7 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
             decoration: BoxDecoration(
               color: P5Colors.cream,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: P5Colors.turquoise.withOpacity(0.3)),
+              border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -301,14 +301,14 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
         Color borderColor = P5Colors.lightGrey;
         if (_hasChecked) {
           if (isCorrect) {
-            bg = P5Colors.green.withOpacity(0.2);
+            bg = P5Colors.green.withValues(alpha: 0.2);
             borderColor = P5Colors.green;
           } else if (isSelected) {
-            bg = P5Colors.red.withOpacity(0.2);
+            bg = P5Colors.red.withValues(alpha: 0.2);
             borderColor = P5Colors.red;
           }
         } else if (isSelected) {
-          bg = P5Colors.turquoise.withOpacity(0.25);
+          bg = P5Colors.turquoise.withValues(alpha: 0.25);
           borderColor = P5Colors.teal;
         }
 
@@ -328,8 +328,9 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
                     setState(() => _selectedOptionIndex = index);
                     _audioService.playSfx(P5SfxType.click);
                   },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 62),
+              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
               child: Row(
                 children: [
                   CircleAvatar(
@@ -381,10 +382,10 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
               Color bg = P5Colors.cream;
               Color border = P5Colors.lightGrey;
               if (isMatched) {
-                bg = P5Colors.green.withOpacity(0.2);
+                bg = P5Colors.green.withValues(alpha: 0.2);
                 border = P5Colors.green;
               } else if (isSelected) {
-                bg = P5Colors.turquoise.withOpacity(0.3);
+                bg = P5Colors.turquoise.withValues(alpha: 0.3);
                 border = P5Colors.teal;
               }
 
@@ -407,8 +408,9 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
                           });
                           _audioService.playSfx(P5SfxType.click);
                         },
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
+                  child: Container(
+                    constraints: const BoxConstraints(minHeight: 56),
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -438,10 +440,10 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
               Color bg = P5Colors.cream;
               Color border = P5Colors.lightGrey;
               if (isMatched) {
-                bg = P5Colors.green.withOpacity(0.2);
+                bg = P5Colors.green.withValues(alpha: 0.2);
                 border = P5Colors.green;
               } else if (isSelected) {
-                bg = P5Colors.gold.withOpacity(0.3);
+                bg = P5Colors.gold.withValues(alpha: 0.3);
                 border = P5Colors.gold;
               }
 
@@ -464,8 +466,9 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
                           });
                           _audioService.playSfx(P5SfxType.click);
                         },
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
+                  child: Container(
+                    constraints: const BoxConstraints(minHeight: 56),
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -514,7 +517,7 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
           decoration: BoxDecoration(
             color: P5Colors.cream,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: P5Colors.teal.withOpacity(0.3)),
+            border: Border.all(color: P5Colors.teal.withValues(alpha: 0.3)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -678,7 +681,7 @@ class _P5InteractiveDrillEngineWidgetState extends State<P5InteractiveDrillEngin
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
         color: _hasChecked
-            ? (_isAnswerCorrect ? P5Colors.green.withOpacity(0.12) : P5Colors.red.withOpacity(0.12))
+            ? (_isAnswerCorrect ? P5Colors.green.withValues(alpha: 0.12) : P5Colors.red.withValues(alpha: 0.12))
             : P5Colors.cream,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(

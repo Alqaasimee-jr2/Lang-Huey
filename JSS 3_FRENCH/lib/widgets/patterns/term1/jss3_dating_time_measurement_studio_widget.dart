@@ -201,9 +201,9 @@ class _JSS3DatingTimeMeasurementStudioWidgetState
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: const Color(0xFF16A085).withOpacity(0.4), width: 1.5),
+              border: Border.all(color: const Color(0xFF16A085).withValues(alpha: 0.4), width: 1.5),
               boxShadow: [
-                BoxShadow(color: const Color(0xFF16A085).withOpacity(0.08), blurRadius: 16, offset: const Offset(0, 6)),
+                BoxShadow(color: const Color(0xFF16A085).withValues(alpha: 0.08), blurRadius: 16, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(
@@ -231,7 +231,7 @@ class _JSS3DatingTimeMeasurementStudioWidgetState
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF16A085).withOpacity(0.08),
+                    color: const Color(0xFF16A085).withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(
@@ -314,7 +314,7 @@ class _JSS3DatingTimeMeasurementStudioWidgetState
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: color.withOpacity(0.08),
+                      color: color.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text('Ex : ${p['ex']}', style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 12)),

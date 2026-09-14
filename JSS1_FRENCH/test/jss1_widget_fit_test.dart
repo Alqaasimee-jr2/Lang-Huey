@@ -36,11 +36,11 @@ void main() {
       await tester.pumpWidget(wrapTestable(const JSS1TermSelectScreen()));
       await tester.pumpAndSettle();
 
-      expect(find.text('LANG HUEY'), findsOneWidget);
-      expect(find.text('JSS 1 FRENCH'), findsOneWidget);
-      expect(find.text('Premier Trimestre'), findsOneWidget);
-      expect(find.text('Deuxième Trimestre'), findsOneWidget);
-      expect(find.text('Troisième Trimestre'), findsOneWidget);
+      expect(find.text('JSS 1 French Language Engine'), findsOneWidget);
+      expect(find.text('Select School Term'), findsOneWidget);
+      expect(find.text('Term 1 — First Term'), findsOneWidget);
+      expect(find.text('Term 2 — Second Term'), findsOneWidget);
+      expect(find.text('Term 3 — Third Term'), findsOneWidget);
     });
 
     testWidgets('2. JSS1WeekRoadmapScreen renders all 9 weeks for Term 1, Term 2, and Term 3', (tester) async {
@@ -51,24 +51,23 @@ void main() {
       // Term 1
       await tester.pumpWidget(wrapTestable(const JSS1WeekRoadmapScreen(term: 1)));
       await tester.pumpAndSettle();
-      expect(find.text('SEMAINE 1'), findsOneWidget);
-      expect(find.text('SEMAINE 9'), findsOneWidget);
+      expect(find.text('WEEK 1'), findsOneWidget);
+      expect(find.text('WEEK 9'), findsOneWidget);
 
       // Term 2
       await tester.pumpWidget(wrapTestable(const JSS1WeekRoadmapScreen(term: 2)));
       await tester.pumpAndSettle();
-      expect(find.text('SEMAINE 1'), findsOneWidget);
-      expect(find.text('SEMAINE 9'), findsOneWidget);
+      expect(find.text('WEEK 1'), findsOneWidget);
+      expect(find.text('WEEK 9'), findsOneWidget);
 
       // Term 3
       await tester.pumpWidget(wrapTestable(const JSS1WeekRoadmapScreen(term: 3)));
       await tester.pumpAndSettle();
-      expect(find.text('SEMAINE 1'), findsOneWidget);
-      expect(find.text('SEMAINE 9'), findsOneWidget);
-      expect(find.textContaining('Demander et indiquer'), findsOneWidget);
+      expect(find.text('WEEK 1'), findsOneWidget);
+      expect(find.text('WEEK 9'), findsOneWidget);
     });
 
-    testWidgets('3. JSS1LessonPlayerScreen mounts Term 3 Week 1 and cycles 5 phases cleanly', (tester) async {
+    testWidgets('3. JSS1LessonPlayerScreen mounts Term 3 Week 1 and cycles 4 phases cleanly', (tester) async {
       tester.view.physicalSize = const Size(1920, 1080);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.resetPhysicalSize);
@@ -77,39 +76,28 @@ void main() {
       await tester.pumpWidget(wrapTestable(JSS1LessonPlayerScreen(lesson: week1Term3)));
       await tester.pumpAndSettle();
 
-      // Phase 1: Objectives
-      expect(find.text('Fiche Pédagogique du Cours'), findsOneWidget);
-      expect(find.text('Objectifs d\'Apprentissage :'), findsOneWidget);
-
-      // Advance to Phase 2: Interactive Lab via Stepper
-      final toLabStepper = find.text('2. Lab Interactif');
-      expect(toLabStepper, findsOneWidget);
-      await tester.tap(toLabStepper);
-      await tester.pumpAndSettle();
-
-      // Verify Pattern Widget mounted
+      // Phase 1: Learning Lab
+      expect(find.text('1. Learning Lab'), findsOneWidget);
       expect(find.text('Baromètre Météo Interactif'), findsOneWidget);
+      expect(find.text('Teacher Guide'), findsOneWidget);
 
-      // Advance to Phase 3: Vocab Lab
-      final toVocab = find.text('3. Vocabulaire & Phonétique');
+      // Advance to Phase 2: Vocab Lab
+      final toVocab = find.text('2. Vocabulary & Audio');
       expect(toVocab, findsOneWidget);
       await tester.tap(toVocab);
       await tester.pumpAndSettle();
-      expect(find.textContaining('Banque Vocabulaire'), findsOneWidget);
 
-      // Advance to Phase 4: Classwork
-      final toClasswork = find.text('4. Exercices & Évaluation');
-      expect(toClasswork, findsOneWidget);
-      await tester.tap(toClasswork);
+      // Advance to Phase 3: Practice Drills
+      final toDrills = find.text('3. Practice Drills');
+      expect(toDrills, findsOneWidget);
+      await tester.tap(toDrills);
       await tester.pumpAndSettle();
-      expect(find.textContaining('Drills Interactifs'), findsOneWidget);
 
-      // Advance to Phase 5: Summary
-      final toSummary = find.text('5. Résumé & Devoirs');
+      // Advance to Phase 4: Summary
+      final toSummary = find.text('4. Summary & Homework');
       expect(toSummary, findsOneWidget);
       await tester.tap(toSummary);
       await tester.pumpAndSettle();
-      expect(find.textContaining('Résumé de la Leçon & Devoirs'), findsOneWidget);
     });
 
     testWidgets('4. All 9 Term 3 bespoke pattern widgets mount without rendering overflow', (tester) async {

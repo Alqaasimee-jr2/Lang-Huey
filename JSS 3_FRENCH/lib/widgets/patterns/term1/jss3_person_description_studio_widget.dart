@@ -179,10 +179,10 @@ class _JSS3PersonDescriptionStudioWidgetState extends State<JSS3PersonDescriptio
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+              border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
               boxShadow: [
                 BoxShadow(
-                  color: LangHueyColors.deepTeal.withOpacity(0.08),
+                  color: LangHueyColors.deepTeal.withValues(alpha: 0.08),
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
@@ -323,7 +323,7 @@ class _JSS3PersonDescriptionStudioWidgetState extends State<JSS3PersonDescriptio
                     ? 'travailleuse'
                     : (_gender == 'f' && trait == 'généreux' ? 'généreuse' : trait)),
                 selected: selected,
-                selectedColor: LangHueyColors.amberGold.withOpacity(0.3),
+                selectedColor: LangHueyColors.amberGold.withValues(alpha: 0.3),
                 checkmarkColor: LangHueyColors.charcoal,
                 onSelected: (val) {
                   setState(() {
@@ -380,7 +380,7 @@ class _JSS3PersonDescriptionStudioWidgetState extends State<JSS3PersonDescriptio
             decoration: BoxDecoration(
               color: LangHueyColors.softTeal,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+              border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [
@@ -405,7 +405,7 @@ class _JSS3PersonDescriptionStudioWidgetState extends State<JSS3PersonDescriptio
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: Colors.black12),
                 boxShadow: [
-                  BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 8, offset: const Offset(0, 3)),
+                  BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 8, offset: const Offset(0, 3)),
                 ],
               ),
               child: Row(
@@ -504,7 +504,7 @@ class _JSS3PersonDescriptionStudioWidgetState extends State<JSS3PersonDescriptio
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+              border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

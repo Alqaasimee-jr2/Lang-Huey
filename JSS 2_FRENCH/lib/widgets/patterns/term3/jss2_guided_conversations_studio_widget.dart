@@ -205,7 +205,7 @@ class _JSS2GuidedConversationsStudioWidgetState extends State<JSS2GuidedConversa
             Container(
               margin: const EdgeInsets.only(bottom: 8),
               padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(color: const Color(0xFF1A5276).withOpacity(0.06), borderRadius: BorderRadius.circular(10), border: Border.all(color: const Color(0xFF1A5276).withOpacity(0.2))),
+              decoration: BoxDecoration(color: const Color(0xFF1A5276).withValues(alpha: 0.06), borderRadius: BorderRadius.circular(10), border: Border.all(color: const Color(0xFF1A5276).withValues(alpha: 0.2))),
               child: Row(children: [
                 const Icon(Icons.check_circle_rounded, color: Color(0xFF2E86C1), size: 18),
                 const SizedBox(width: 8),
@@ -243,7 +243,7 @@ class _JSS2GuidedConversationsStudioWidgetState extends State<JSS2GuidedConversa
           const SizedBox(height: 12),
           Text(q['phrase'] as String, style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
           const SizedBox(height: 8),
-          Container(padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6), decoration: BoxDecoration(color: Colors.white.withOpacity(0.2), borderRadius: BorderRadius.circular(20)), child: Text(q['sound'] as String, style: const TextStyle(color: Colors.white, fontSize: 14, fontFamily: 'monospace'))),
+          Container(padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6), decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(20)), child: Text(q['sound'] as String, style: const TextStyle(color: Colors.white, fontSize: 14, fontFamily: 'monospace'))),
         ])),
       const SizedBox(height: 20),
       ...(q['opts'] as List<String>).asMap().entries.map((e) {
@@ -329,9 +329,9 @@ class _JSS2GuidedConversationsStudioWidgetState extends State<JSS2GuidedConversa
             margin: const EdgeInsets.only(bottom: 8),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: e.key == _markerIndex ? const Color(0xFF8E44AD).withOpacity(0.1) : Colors.white,
+              color: e.key == _markerIndex ? const Color(0xFF8E44AD).withValues(alpha: 0.1) : Colors.white,
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: e.key == _markerIndex ? const Color(0xFF8E44AD).withOpacity(0.4) : Colors.black12),
+              border: Border.all(color: e.key == _markerIndex ? const Color(0xFF8E44AD).withValues(alpha: 0.4) : Colors.black12),
             ),
             child: Row(children: [
               SizedBox(width: 100, child: Text(e.value['fr']!, style: TextStyle(fontWeight: FontWeight.bold, color: e.key == _markerIndex ? const Color(0xFF8E44AD) : Colors.black87))),

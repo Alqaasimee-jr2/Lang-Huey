@@ -206,7 +206,7 @@ class _JSS2MathCalculationsStudioWidgetState extends State<JSS2MathCalculationsS
                           color: selected ? _opColors[op]! : Colors.black12,
                           width: selected ? 2 : 1,
                         ),
-                        boxShadow: selected ? [BoxShadow(color: _opColors[op]!.withOpacity(0.3), blurRadius: 8, offset: const Offset(0, 3))] : [],
+                        boxShadow: selected ? [BoxShadow(color: _opColors[op]!.withValues(alpha: 0.3), blurRadius: 8, offset: const Offset(0, 3))] : [],
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -229,8 +229,8 @@ class _JSS2MathCalculationsStudioWidgetState extends State<JSS2MathCalculationsS
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: _opColors[_operation]!.withOpacity(0.3)),
-              boxShadow: [BoxShadow(color: _opColors[_operation]!.withOpacity(0.1), blurRadius: 12, offset: const Offset(0, 4))],
+              border: Border.all(color: _opColors[_operation]!.withValues(alpha: 0.3)),
+              boxShadow: [BoxShadow(color: _opColors[_operation]!.withValues(alpha: 0.1), blurRadius: 12, offset: const Offset(0, 4))],
             ),
             child: Column(
               children: [
@@ -270,7 +270,7 @@ class _JSS2MathCalculationsStudioWidgetState extends State<JSS2MathCalculationsS
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: _opColors[_operation]!.withOpacity(0.1),
+                      color: _opColors[_operation]!.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
@@ -321,9 +321,9 @@ class _JSS2MathCalculationsStudioWidgetState extends State<JSS2MathCalculationsS
       width: 72,
       height: 72,
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: color.withOpacity(0.4)),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
       ),
       child: Center(
         child: Text('$n', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: color)),
@@ -399,7 +399,7 @@ class _JSS2MathCalculationsStudioWidgetState extends State<JSS2MathCalculationsS
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: const Color(0xFF1ABC9C).withOpacity(0.3)),
+              border: Border.all(color: const Color(0xFF1ABC9C).withValues(alpha: 0.3)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -443,7 +443,7 @@ class _JSS2MathCalculationsStudioWidgetState extends State<JSS2MathCalculationsS
             Text(label, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              decoration: BoxDecoration(color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
+              decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)),
               child: Text('${value.round()}', style: TextStyle(fontWeight: FontWeight.bold, color: color, fontSize: 16)),
             ),
           ]),

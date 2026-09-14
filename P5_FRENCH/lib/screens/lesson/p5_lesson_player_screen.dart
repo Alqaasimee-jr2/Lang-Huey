@@ -169,7 +169,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
               Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: P5Colors.gold.withOpacity(0.15),
+                  color: P5Colors.gold.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(14),
                   border: Border.all(color: P5Colors.gold, width: 1.5),
                 ),
@@ -263,7 +263,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
 
           // Speed Control Toggle
           Material(
-            color: _audioService.playbackSpeed < 1.0 ? P5Colors.gold : P5Colors.white.withOpacity(0.15),
+            color: _audioService.playbackSpeed < 1.0 ? P5Colors.gold : P5Colors.white.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(10),
             child: InkWell(
               borderRadius: BorderRadius.circular(10),
@@ -299,7 +299,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
 
           // Teacher Guide Trigger Button
           Material(
-            color: P5Colors.white.withOpacity(0.15),
+            color: P5Colors.white.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(10),
             child: InkWell(
               borderRadius: BorderRadius.circular(10),
@@ -335,7 +335,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        color: isCurrent ? P5Colors.gold : P5Colors.white.withOpacity(0.15),
+                        color: isCurrent ? P5Colors.gold : P5Colors.white.withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Row(
@@ -456,7 +456,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -555,7 +555,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -576,7 +576,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: P5Colors.teal.withOpacity(0.08),
+                color: P5Colors.teal.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(
@@ -633,7 +633,7 @@ class _P5LessonPlayerScreenState extends State<P5LessonPlayerScreen> {
             icon: const Icon(Icons.arrow_back_rounded),
             label: const Text('Previous Phase'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: P5Colors.white.withOpacity(0.2),
+              backgroundColor: P5Colors.white.withValues(alpha: 0.2),
               foregroundColor: P5Colors.white,
             ),
           ),

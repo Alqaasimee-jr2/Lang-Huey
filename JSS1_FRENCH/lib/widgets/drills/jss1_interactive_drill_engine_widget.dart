@@ -140,7 +140,7 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
       decoration: BoxDecoration(
         color: JSS1Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: JSS1Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: JSS1Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,7 +182,7 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: JSS1Colors.gold.withOpacity(0.2),
+                color: JSS1Colors.gold.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: JSS1Colors.gold),
               ),
@@ -244,7 +244,7 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
             decoration: BoxDecoration(
               color: JSS1Colors.cream,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: JSS1Colors.turquoise.withOpacity(0.3)),
+              border: Border.all(color: JSS1Colors.turquoise.withValues(alpha: 0.3)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -301,14 +301,14 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
         Color borderColor = JSS1Colors.lightGrey;
         if (_hasChecked) {
           if (isCorrect) {
-            bg = JSS1Colors.green.withOpacity(0.2);
+            bg = JSS1Colors.green.withValues(alpha: 0.2);
             borderColor = JSS1Colors.green;
           } else if (isSelected) {
-            bg = JSS1Colors.red.withOpacity(0.2);
+            bg = JSS1Colors.red.withValues(alpha: 0.2);
             borderColor = JSS1Colors.red;
           }
         } else if (isSelected) {
-          bg = JSS1Colors.turquoise.withOpacity(0.25);
+          bg = JSS1Colors.turquoise.withValues(alpha: 0.25);
           borderColor = JSS1Colors.teal;
         }
 
@@ -328,8 +328,9 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
                     setState(() => _selectedOptionIndex = index);
                     _audioService.playClick();
                   },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+            child: Container(
+              constraints: const BoxConstraints(minHeight: 62),
+              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
               child: Row(
                 children: [
                   CircleAvatar(
@@ -381,10 +382,10 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
               Color bg = JSS1Colors.cream;
               Color border = JSS1Colors.lightGrey;
               if (isMatched) {
-                bg = JSS1Colors.green.withOpacity(0.2);
+                bg = JSS1Colors.green.withValues(alpha: 0.2);
                 border = JSS1Colors.green;
               } else if (isSelected) {
-                bg = JSS1Colors.turquoise.withOpacity(0.3);
+                bg = JSS1Colors.turquoise.withValues(alpha: 0.3);
                 border = JSS1Colors.teal;
               }
 
@@ -407,8 +408,9 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
                           });
                           _audioService.playClick();
                         },
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
+                  child: Container(
+                    constraints: const BoxConstraints(minHeight: 56),
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -438,10 +440,10 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
               Color bg = JSS1Colors.cream;
               Color border = JSS1Colors.lightGrey;
               if (isMatched) {
-                bg = JSS1Colors.green.withOpacity(0.2);
+                bg = JSS1Colors.green.withValues(alpha: 0.2);
                 border = JSS1Colors.green;
               } else if (isSelected) {
-                bg = JSS1Colors.gold.withOpacity(0.3);
+                bg = JSS1Colors.gold.withValues(alpha: 0.3);
                 border = JSS1Colors.gold;
               }
 
@@ -464,8 +466,9 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
                           });
                           _audioService.playClick();
                         },
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
+                  child: Container(
+                    constraints: const BoxConstraints(minHeight: 56),
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -514,7 +517,7 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
           decoration: BoxDecoration(
             color: JSS1Colors.cream,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: JSS1Colors.teal.withOpacity(0.3)),
+            border: Border.all(color: JSS1Colors.teal.withValues(alpha: 0.3)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -678,7 +681,7 @@ class _JSS1InteractiveDrillEngineWidgetState extends State<JSS1InteractiveDrillE
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
         color: _hasChecked
-            ? (_isAnswerCorrect ? JSS1Colors.green.withOpacity(0.12) : JSS1Colors.red.withOpacity(0.12))
+            ? (_isAnswerCorrect ? JSS1Colors.green.withValues(alpha: 0.12) : JSS1Colors.red.withValues(alpha: 0.12))
             : JSS1Colors.cream,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(

@@ -140,7 +140,7 @@ class _JSS2ListAndInventoryStudioWidgetState extends State<JSS2ListAndInventoryS
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.15),
+                    color: Colors.white.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(
@@ -267,11 +267,11 @@ class _JSS2ListAndInventoryStudioWidgetState extends State<JSS2ListAndInventoryS
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                               decoration: BoxDecoration(
                                 color: isChecked
-                                    ? LangHueyColors.softTeal.withOpacity(0.4)
-                                    : Colors.red.shade50.withOpacity(0.4),
+                                    ? LangHueyColors.softTeal.withValues(alpha: 0.4)
+                                    : Colors.red.shade50.withValues(alpha: 0.4),
                                 borderRadius: BorderRadius.circular(10),
                                 border: Border.all(
-                                  color: isChecked ? LangHueyColors.deepTeal.withOpacity(0.3) : Colors.red.shade200,
+                                  color: isChecked ? LangHueyColors.deepTeal.withValues(alpha: 0.3) : Colors.red.shade200,
                                 ),
                               ),
                               child: Row(

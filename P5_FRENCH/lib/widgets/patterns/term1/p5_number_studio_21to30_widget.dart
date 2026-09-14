@@ -40,7 +40,7 @@ class _P5NumberStudio21to30WidgetState extends State<P5NumberStudio21to30Widget>
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         children: [
@@ -142,7 +142,7 @@ class _P5NumberStudio21to30WidgetState extends State<P5NumberStudio21to30Widget>
               final n = _numbers21to30[index];
               final isSpecial = n['isSpecial'] as bool;
               return Material(
-                color: isSpecial ? P5Colors.gold.withOpacity(0.2) : P5Colors.cream,
+                color: isSpecial ? P5Colors.gold.withValues(alpha: 0.2) : P5Colors.cream,
                 borderRadius: BorderRadius.circular(16),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(16),
@@ -291,7 +291,7 @@ class _P5NumberStudio21to30WidgetState extends State<P5NumberStudio21to30Widget>
             (index) => Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: P5Colors.gold.withOpacity(0.2),
+                color: P5Colors.gold.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Icon(Icons.edit_rounded, color: P5Colors.charcoal, size: 24),

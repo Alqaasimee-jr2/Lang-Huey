@@ -41,14 +41,14 @@ class _P5Term1VacationWidgetState extends State<P5Term1VacationWidget> {
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.gold.withOpacity(0.5), width: 3),
+        border: Border.all(color: P5Colors.gold.withValues(alpha: 0.5), width: 3),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
             radius: 46,
-            backgroundColor: P5Colors.gold.withOpacity(0.2),
+            backgroundColor: P5Colors.gold.withValues(alpha: 0.2),
             child: Icon(
               isYearEnd ? Icons.school_rounded : Icons.beach_access_rounded,
               color: P5Colors.gold,
@@ -115,7 +115,7 @@ class _P5Term1VacationWidgetState extends State<P5Term1VacationWidget> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: P5Colors.turquoise.withOpacity(0.5)),
+            border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.5)),
           ),
           child: Column(
             children: [

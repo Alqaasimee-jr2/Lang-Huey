@@ -159,7 +159,7 @@ class _JSS3NearFutureIntentionsStudioWidgetState
                   child: ChoiceChip(
                     label: Text(p),
                     selected: isSel,
-                    selectedColor: const Color(0xFF2980B9).withOpacity(0.2),
+                    selectedColor: const Color(0xFF2980B9).withValues(alpha: 0.2),
                     side: BorderSide(color: isSel ? const Color(0xFF2980B9) : Colors.black12),
                     onSelected: (val) {
                       if (val) {
@@ -223,7 +223,7 @@ class _JSS3NearFutureIntentionsStudioWidgetState
               ),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.12), blurRadius: 16, offset: const Offset(0, 6)),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.12), blurRadius: 16, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(
@@ -266,16 +266,16 @@ class _JSS3NearFutureIntentionsStudioWidgetState
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: color.withOpacity(0.4), width: 1.5),
+            border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
             boxShadow: [
-              BoxShadow(color: color.withOpacity(0.06), blurRadius: 10, offset: const Offset(0, 4)),
+              BoxShadow(color: color.withValues(alpha: 0.06), blurRadius: 10, offset: const Offset(0, 4)),
             ],
           ),
           child: Row(
             children: [
               Container(
                 padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(color: color.withOpacity(0.15), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: color.withValues(alpha: 0.15), shape: BoxShape.circle),
                 child: Icon(item['icon'] as IconData, color: color, size: 24),
               ),
               const SizedBox(width: 16),

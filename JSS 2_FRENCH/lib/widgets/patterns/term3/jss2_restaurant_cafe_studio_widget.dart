@@ -144,7 +144,7 @@ class _JSS2RestaurantCafeStudioWidgetState extends State<JSS2RestaurantCafeStudi
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
               border: Border.all(color: Colors.black12),
-              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4))],
+              boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,7 +217,7 @@ class _JSS2RestaurantCafeStudioWidgetState extends State<JSS2RestaurantCafeStudi
                 // Reservation sentence
                 Container(
                   padding: const EdgeInsets.all(14),
-                  decoration: BoxDecoration(color: const Color(0xFF8E44AD).withOpacity(0.08), borderRadius: BorderRadius.circular(12)),
+                  decoration: BoxDecoration(color: const Color(0xFF8E44AD).withValues(alpha: 0.08), borderRadius: BorderRadius.circular(12)),
                   child: Text(
                     '📞 "Bonjour ! Je voudrais réserver une table pour $_tableFor personne${_tableFor > 1 ? 's' : ''} ce soir à ${ _timeSlot}, s\'il vous plaît."',
                     style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFF2C3E50), height: 1.4),
@@ -229,7 +229,7 @@ class _JSS2RestaurantCafeStudioWidgetState extends State<JSS2RestaurantCafeStudi
                     margin: const EdgeInsets.only(bottom: 12),
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF2ECC71).withOpacity(0.12),
+                      color: const Color(0xFF2ECC71).withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: const Color(0xFF2ECC71)),
                     ),
@@ -299,9 +299,9 @@ class _JSS2RestaurantCafeStudioWidgetState extends State<JSS2RestaurantCafeStudi
                     margin: const EdgeInsets.only(bottom: 8),
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
-                      color: qty > 0 ? const Color(0xFF8E44AD).withOpacity(0.08) : Colors.white,
+                      color: qty > 0 ? const Color(0xFF8E44AD).withValues(alpha: 0.08) : Colors.white,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: qty > 0 ? const Color(0xFF8E44AD).withOpacity(0.3) : Colors.black12),
+                      border: Border.all(color: qty > 0 ? const Color(0xFF8E44AD).withValues(alpha: 0.3) : Colors.black12),
                     ),
                     child: Row(
                       children: [

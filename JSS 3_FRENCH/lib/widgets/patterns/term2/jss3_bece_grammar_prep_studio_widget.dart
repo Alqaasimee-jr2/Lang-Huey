@@ -300,7 +300,7 @@ class _JSS3BECEGrammarPrepStudioWidgetState
                   child: ChoiceChip(
                     label: Text('Exemple ${i + 1}'),
                     selected: isSel,
-                    selectedColor: const Color(0xFF1B4F72).withOpacity(0.2),
+                    selectedColor: const Color(0xFF1B4F72).withValues(alpha: 0.2),
                     side: BorderSide(color: isSel ? const Color(0xFF1B4F72) : Colors.black12),
                     onSelected: (val) {
                       if (val) {
@@ -323,9 +323,9 @@ class _JSS3BECEGrammarPrepStudioWidgetState
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: const Color(0xFF1B4F72).withOpacity(0.4)),
+              border: Border.all(color: const Color(0xFF1B4F72).withValues(alpha: 0.4)),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 10, offset: const Offset(0, 4)),
               ],
             ),
             child: Column(

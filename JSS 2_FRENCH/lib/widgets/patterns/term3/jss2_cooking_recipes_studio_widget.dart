@@ -209,7 +209,7 @@ class _JSS2CookingRecipesStudioWidgetState extends State<JSS2CookingRecipesStudi
                   duration: const Duration(milliseconds: 250),
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: done ? color.withOpacity(0.1) : Colors.white,
+                    color: done ? color.withValues(alpha: 0.1) : Colors.white,
                     borderRadius: BorderRadius.circular(14),
                     border: Border.all(color: done ? color : Colors.black12, width: done ? 2 : 1),
                   ),
@@ -239,7 +239,7 @@ class _JSS2CookingRecipesStudioWidgetState extends State<JSS2CookingRecipesStudi
                               children: [
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                  decoration: BoxDecoration(color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(6)),
+                                  decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(6)),
                                   child: Text('🔤 ${step['verb']}', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: color)),
                                 ),
                                 const SizedBox(width: 8),
@@ -383,7 +383,7 @@ class _JSS2CookingRecipesStudioWidgetState extends State<JSS2CookingRecipesStudi
         children: [
           Container(
             padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(18), border: Border.all(color: color.withOpacity(0.3))),
+            decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(18), border: Border.all(color: color.withValues(alpha: 0.3))),
             child: Row(
               children: [
                 Text(recipe['emoji'] as String, style: const TextStyle(fontSize: 40)),
@@ -417,7 +417,7 @@ class _JSS2CookingRecipesStudioWidgetState extends State<JSS2CookingRecipesStudi
                   Container(
                     width: 28,
                     height: 28,
-                    decoration: BoxDecoration(color: color.withOpacity(0.15), borderRadius: BorderRadius.circular(8)),
+                    decoration: BoxDecoration(color: color.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(8)),
                     child: Center(child: Text('${e.key + 1}', style: TextStyle(fontWeight: FontWeight.bold, color: color, fontSize: 12))),
                   ),
                   const SizedBox(width: 12),
@@ -429,7 +429,7 @@ class _JSS2CookingRecipesStudioWidgetState extends State<JSS2CookingRecipesStudi
           const SizedBox(height: 20),
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(color: LangHueyColors.warmCream, borderRadius: BorderRadius.circular(14), border: Border.all(color: LangHueyColors.amberGold.withOpacity(0.4))),
+            decoration: BoxDecoration(color: LangHueyColors.warmCream, borderRadius: BorderRadius.circular(14), border: Border.all(color: LangHueyColors.amberGold.withValues(alpha: 0.4))),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

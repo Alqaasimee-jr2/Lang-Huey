@@ -248,14 +248,14 @@ class _MascotHeadPainter extends CustomPainter {
       const Radius.circular(45),
     );
     final innerBorderPaint = Paint()
-      ..color = innerBorderColor.withOpacity(0.85)
+      ..color = innerBorderColor.withValues(alpha: 0.85)
       ..strokeWidth = 4
       ..style = PaintingStyle.stroke;
     canvas.drawRRect(innerBorderRect, innerBorderPaint);
 
     // 3. Cheeks: cx=62, 158, cy=130, r=14
     final cheekPaint = Paint()
-      ..color = goldColor.withOpacity(cheekOpacity.clamp(0.0, 1.0))
+      ..color = goldColor.withValues(alpha: cheekOpacity.clamp(0.0, 1.0))
       ..style = PaintingStyle.fill;
     canvas.drawCircle(const Offset(62, 130), 14, cheekPaint);
     canvas.drawCircle(const Offset(158, 130), 14, cheekPaint);

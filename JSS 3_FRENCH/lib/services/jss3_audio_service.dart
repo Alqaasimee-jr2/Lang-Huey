@@ -28,52 +28,33 @@ class JSS3AudioService {
     }
   }
 
-  Future<void> playClick() async {
+  Future<void> _playSfxFile(String sfxBaseName) async {
     try {
-      await _sfxPlayer.setAsset('assets/audio/sfx_click.mp3');
-      await _sfxPlayer.play();
+      await _sfxPlayer.stop();
+      final candidatePaths = [
+        'assets/audio/sfx_$sfxBaseName.mp3',
+        'assets/audio/$sfxBaseName.mp3',
+        'assets/audio/sfx/$sfxBaseName.mp3',
+        'assets/audio/jss3_term1/sfx_$sfxBaseName.mp3',
+      ];
+      for (final path in candidatePaths) {
+        try {
+          await _sfxPlayer.setAsset(path);
+          await _sfxPlayer.play();
+          break;
+        } catch (_) {}
+      }
     } catch (e) {
-      debugPrint('Error playing click SFX: $e');
+      debugPrint('Error playing SFX $sfxBaseName: $e');
     }
   }
 
-  Future<void> playCorrect() async {
-    try {
-      await _sfxPlayer.setAsset('assets/audio/sfx_correct.mp3');
-      await _sfxPlayer.play();
-    } catch (e) {
-      debugPrint('Error playing correct SFX: $e');
-    }
-  }
-
-  Future<void> playIncorrect() async {
-    try {
-      await _sfxPlayer.setAsset('assets/audio/sfx_incorrect.mp3');
-      await _sfxPlayer.play();
-    } catch (e) {
-      debugPrint('Error playing incorrect SFX: $e');
-    }
-  }
-
-  Future<void> playCelebration() async {
-    try {
-      await _sfxPlayer.setAsset('assets/audio/sfx_celebrate.mp3');
-      await _sfxPlayer.play();
-    } catch (e) {
-      debugPrint('Error playing celebration SFX: $e');
-    }
-  }
-
+  Future<void> playClick() => _playSfxFile('click');
+  Future<void> playCorrect() => _playSfxFile('correct');
+  Future<void> playIncorrect() => _playSfxFile('incorrect');
+  Future<void> playCelebration() => _playSfxFile('celebrate');
   Future<void> playCelebrate() => playCelebration();
-
-  Future<void> playWhoosh() async {
-    try {
-      await _sfxPlayer.setAsset('assets/audio/sfx_whoosh.mp3');
-      await _sfxPlayer.play();
-    } catch (e) {
-      debugPrint('Error playing whoosh SFX: $e');
-    }
-  }
+  Future<void> playWhoosh() => _playSfxFile('whoosh');
 
   void dispose() {
     _phrasePlayer.dispose();

@@ -171,7 +171,7 @@ class _JSS3DiaryAndNarrativeStudioWidgetState
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: const Color(0xFFE8DFC8), width: 2),
               boxShadow: [
-                BoxShadow(color: Colors.brown.withOpacity(0.08), blurRadius: 18, offset: const Offset(0, 6)),
+                BoxShadow(color: Colors.brown.withValues(alpha: 0.08), blurRadius: 18, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(
@@ -183,7 +183,7 @@ class _JSS3DiaryAndNarrativeStudioWidgetState
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
-                        color: color.withOpacity(0.15),
+                        color: color.withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(entry['emotion'] as String, style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 12)),
@@ -225,7 +225,7 @@ class _JSS3DiaryAndNarrativeStudioWidgetState
           margin: const EdgeInsets.only(bottom: 12),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: isSel ? const Color(0xFF8E44AD).withOpacity(0.08) : Colors.white,
+            color: isSel ? const Color(0xFF8E44AD).withValues(alpha: 0.08) : Colors.white,
             borderRadius: BorderRadius.circular(14),
             border: Border.all(color: isSel ? const Color(0xFF8E44AD) : Colors.black12, width: isSel ? 1.8 : 1.0),
           ),
@@ -239,7 +239,7 @@ class _JSS3DiaryAndNarrativeStudioWidgetState
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF8E44AD).withOpacity(0.15),
+                    color: const Color(0xFF8E44AD).withValues(alpha: 0.15),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(Icons.favorite_rounded, color: Color(0xFF8E44AD), size: 20),

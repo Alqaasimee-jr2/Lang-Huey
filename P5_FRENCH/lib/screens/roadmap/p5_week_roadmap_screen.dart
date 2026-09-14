@@ -125,7 +125,7 @@ class P5WeekRoadmapScreen extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                             decoration: BoxDecoration(
-                              color: isExamOrBreak ? P5Colors.gold.withOpacity(0.25) : P5Colors.teal.withOpacity(0.15),
+                              color: isExamOrBreak ? P5Colors.gold.withValues(alpha: 0.25) : P5Colors.teal.withValues(alpha: 0.15),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
@@ -139,7 +139,7 @@ class P5WeekRoadmapScreen extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              Icon(Icons.record_voice_over_rounded, size: 16, color: P5Colors.teal.withOpacity(0.6)),
+                              Icon(Icons.record_voice_over_rounded, size: 16, color: P5Colors.teal.withValues(alpha: 0.6)),
                               const SizedBox(width: 4),
                               Text(
                                 '${lesson.vocabItems.length} words',

@@ -79,9 +79,9 @@ class JSS3TermSelectScreen extends StatelessWidget {
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                           decoration: BoxDecoration(
-                            color: LangHueyColors.deepTeal.withOpacity(0.08),
+                            color: LangHueyColors.deepTeal.withValues(alpha: 0.08),
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.3)),
+                            border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.3)),
                           ),
                           child: Row(
                             children: [
@@ -99,7 +99,7 @@ class JSS3TermSelectScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
-                          color: LangHueyColors.amberGold.withOpacity(0.2),
+                          color: LangHueyColors.amberGold.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: LangHueyColors.amberGold),
                         ),
@@ -152,12 +152,12 @@ class JSS3TermSelectScreen extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                          color: isAvail ? LangHueyColors.deepTeal.withOpacity(0.3) : Colors.black12,
+                          color: isAvail ? LangHueyColors.deepTeal.withValues(alpha: 0.3) : Colors.black12,
                           width: isAvail ? 2 : 1,
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: isAvail ? LangHueyColors.deepTeal.withOpacity(0.06) : Colors.transparent,
+                            color: isAvail ? LangHueyColors.deepTeal.withValues(alpha: 0.06) : Colors.transparent,
                             blurRadius: 16,
                             offset: const Offset(0, 4),
                           ),
@@ -169,7 +169,7 @@ class JSS3TermSelectScreen extends StatelessWidget {
                             width: 64,
                             height: 64,
                             decoration: BoxDecoration(
-                              color: color.withOpacity(0.12),
+                              color: color.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(16),
                             ),
                             child: Center(

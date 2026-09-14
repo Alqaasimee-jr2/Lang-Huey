@@ -165,7 +165,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               duration: const Duration(milliseconds: 300),
                               height: 8,
                               decoration: BoxDecoration(
-                                color: isFilled ? deepTeal : deepTeal.withOpacity(0.15),
+                                color: isFilled ? deepTeal : deepTeal.withValues(alpha: 0.15),
                                 borderRadius: BorderRadius.circular(4),
                                 border: isCurrent
                                     ? Border.all(color: amberGold, width: 2)
@@ -183,7 +183,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     style: TextButton.styleFrom(
                       foregroundColor: deepTeal,
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      backgroundColor: deepTeal.withOpacity(0.08),
+                      backgroundColor: deepTeal.withValues(alpha: 0.08),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -241,7 +241,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   shape: BoxShape.circle,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: charcoal.withOpacity(0.15),
+                                      color: charcoal.withValues(alpha: 0.15),
                                       blurRadius: 6,
                                       offset: const Offset(0, 3),
                                     ),
@@ -278,7 +278,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w700,
-                            color: charcoal.withOpacity(0.6),
+                            color: charcoal.withValues(alpha: 0.6),
                           ),
                         ),
 
@@ -290,10 +290,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: turquoise.withOpacity(0.3), width: 1.5),
+                            border: Border.all(color: turquoise.withValues(alpha: 0.3), width: 1.5),
                             boxShadow: [
                               BoxShadow(
-                                color: charcoal.withOpacity(0.04),
+                                color: charcoal.withValues(alpha: 0.04),
                                 blurRadius: 10,
                                 offset: const Offset(0, 4),
                               ),
@@ -318,7 +318,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
-                                  color: charcoal.withOpacity(0.7),
+                                  color: charcoal.withValues(alpha: 0.7),
                                   height: 1.35,
                                 ),
                               ),

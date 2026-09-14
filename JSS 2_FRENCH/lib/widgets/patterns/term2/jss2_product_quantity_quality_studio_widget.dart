@@ -228,7 +228,7 @@ class _JSS2ProductQuantityQualityStudioWidgetState extends State<JSS2ProductQuan
                         decoration: BoxDecoration(
                           color: LangHueyColors.softTeal,
                           borderRadius: BorderRadius.circular(14),
-                          border: Border.all(color: LangHueyColors.deepTeal.withOpacity(0.2)),
+                          border: Border.all(color: LangHueyColors.deepTeal.withValues(alpha: 0.2)),
                         ),
                         child: Column(
                           children: [

@@ -183,7 +183,7 @@ class _JSS3FuturePlansAndAspirationsStudioWidgetState
                   child: ChoiceChip(
                     label: Text(c['job'] as String),
                     selected: isSel,
-                    selectedColor: (c['color'] as Color).withOpacity(0.2),
+                    selectedColor: (c['color'] as Color).withValues(alpha: 0.2),
                     side: BorderSide(color: isSel ? c['color'] as Color : Colors.black12),
                     onSelected: (val) {
                       if (val) {
@@ -203,9 +203,9 @@ class _JSS3FuturePlansAndAspirationsStudioWidgetState
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: color.withOpacity(0.5), width: 2),
+              border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
               boxShadow: [
-                BoxShadow(color: color.withOpacity(0.1), blurRadius: 18, offset: const Offset(0, 6)),
+                BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 18, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(
@@ -215,7 +215,7 @@ class _JSS3FuturePlansAndAspirationsStudioWidgetState
                   children: [
                     Container(
                       padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(color: color.withOpacity(0.15), shape: BoxShape.circle),
+                      decoration: BoxDecoration(color: color.withValues(alpha: 0.15), shape: BoxShape.circle),
                       child: const Icon(Icons.workspace_premium_rounded, color: Colors.teal, size: 28),
                     ),
                     const SizedBox(width: 14),
@@ -276,7 +276,7 @@ class _JSS3FuturePlansAndAspirationsStudioWidgetState
               return ChoiceChip(
                 label: Text(verb),
                 selected: isSel,
-                selectedColor: const Color(0xFF16A085).withOpacity(0.2),
+                selectedColor: const Color(0xFF16A085).withValues(alpha: 0.2),
                 side: BorderSide(color: isSel ? const Color(0xFF16A085) : Colors.black12),
                 onSelected: (val) {
                   if (val) {
@@ -294,9 +294,9 @@ class _JSS3FuturePlansAndAspirationsStudioWidgetState
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: const Color(0xFF16A085).withOpacity(0.4)),
+              border: Border.all(color: const Color(0xFF16A085).withValues(alpha: 0.4)),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 10, offset: const Offset(0, 4)),
               ],
             ),
             child: Column(

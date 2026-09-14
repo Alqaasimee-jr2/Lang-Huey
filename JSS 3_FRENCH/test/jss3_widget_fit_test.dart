@@ -48,8 +48,8 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('LANG HUEY'), findsOneWidget);
-      expect(find.text('Premier Trimestre'), findsOneWidget);
-      expect(find.textContaining('Deuxième Trimestre'), findsOneWidget);
+      expect(find.text('Term 1: First Term'), findsOneWidget);
+      expect(find.textContaining('Term 2: Second Term'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -61,7 +61,7 @@ void main() {
       await tester.pumpWidget(createSmartboardWrapper(const JSS3WeekRoadmapScreen(termNumber: 1)));
       await tester.pumpAndSettle();
 
-      expect(find.text('Premier Trimestre • JSS 3'), findsOneWidget);
+      expect(find.text('Term 1 • JSS 3'), findsOneWidget);
       expect(find.text('W1'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
@@ -75,8 +75,9 @@ void main() {
       await tester.pumpWidget(createSmartboardWrapper(JSS3LessonPlayerScreen(lesson: lesson)));
       await tester.pumpAndSettle();
 
-      expect(find.text('Objectifs & Contexte'), findsOneWidget);
-      expect(find.text('Lab Interactif'), findsOneWidget);
+      expect(find.text('Learning Lab'), findsOneWidget);
+      expect(find.text('Practice Drills'), findsOneWidget);
+      expect(find.text('Teacher Guide'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -116,7 +117,7 @@ void main() {
       await tester.pumpWidget(createSmartboardWrapper(const JSS3WeekRoadmapScreen(termNumber: 2)));
       await tester.pumpAndSettle();
 
-      expect(find.text('Deuxième Trimestre (Trimestre Terminal • BECE)'), findsOneWidget);
+      expect(find.text('Term 2 (Terminal Term • BECE)'), findsOneWidget);
       expect(find.text('W1'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
@@ -130,9 +131,10 @@ void main() {
       await tester.pumpWidget(createSmartboardWrapper(JSS3LessonPlayerScreen(lesson: lesson)));
       await tester.pumpAndSettle();
 
-      expect(find.text('Objectifs & Contexte'), findsOneWidget);
-      expect(find.text('Lab Interactif'), findsOneWidget);
-      expect(find.text('Vocabulaire & Phonétique'), findsOneWidget);
+      expect(find.text('Learning Lab'), findsOneWidget);
+      expect(find.text('Vocabulary'), findsOneWidget);
+      expect(find.text('Practice Drills'), findsOneWidget);
+      expect(find.text('Teacher Guide'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 

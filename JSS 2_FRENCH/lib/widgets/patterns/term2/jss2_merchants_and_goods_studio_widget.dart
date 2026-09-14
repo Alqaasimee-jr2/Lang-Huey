@@ -156,7 +156,7 @@ class _JSS2MerchantsAndGoodsStudioWidgetState extends State<JSS2MerchantsAndGood
                       duration: const Duration(milliseconds: 200),
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                       decoration: BoxDecoration(
-                        color: isSelected ? (shop['color'] as Color).withOpacity(0.12) : Colors.white,
+                        color: isSelected ? (shop['color'] as Color).withValues(alpha: 0.12) : Colors.white,
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
                           color: isSelected ? shop['color'] as Color : Colors.black12,
@@ -253,7 +253,7 @@ class _JSS2MerchantsAndGoodsStudioWidgetState extends State<JSS2MerchantsAndGood
                           decoration: BoxDecoration(
                             color: LangHueyColors.warmCream,
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black.withOpacity(0.05)),
+                            border: Border.all(color: Colors.black.withValues(alpha: 0.05)),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

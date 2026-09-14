@@ -223,7 +223,7 @@ class _JSS2FoodAndDrinksStudioWidgetState extends State<JSS2FoodAndDrinksStudioW
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
                   decoration: BoxDecoration(
-                    color: selected ? const Color(0xFFE67E22).withOpacity(0.15) : Colors.white,
+                    color: selected ? const Color(0xFFE67E22).withValues(alpha: 0.15) : Colors.white,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(color: selected ? const Color(0xFFE67E22) : Colors.black12, width: selected ? 2 : 1),
                   ),
@@ -259,7 +259,7 @@ class _JSS2FoodAndDrinksStudioWidgetState extends State<JSS2FoodAndDrinksStudioW
                   duration: const Duration(milliseconds: 200),
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
-                    color: selected ? const Color(0xFF3498DB).withOpacity(0.15) : Colors.white,
+                    color: selected ? const Color(0xFF3498DB).withValues(alpha: 0.15) : Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: selected ? const Color(0xFF3498DB) : Colors.black12, width: selected ? 2 : 1),
                   ),
@@ -284,7 +284,7 @@ class _JSS2FoodAndDrinksStudioWidgetState extends State<JSS2FoodAndDrinksStudioW
               decoration: BoxDecoration(
                 color: const Color(0xFFFEF9E7),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: const Color(0xFFF39C12).withOpacity(0.4)),
+                border: Border.all(color: const Color(0xFFF39C12).withValues(alpha: 0.4)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -374,7 +374,7 @@ class _JSS2FoodAndDrinksStudioWidgetState extends State<JSS2FoodAndDrinksStudioW
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.black12),
-                      boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4, offset: const Offset(0, 2))],
+                      boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 4, offset: const Offset(0, 2))],
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -395,7 +395,7 @@ class _JSS2FoodAndDrinksStudioWidgetState extends State<JSS2FoodAndDrinksStudioW
             decoration: BoxDecoration(
               color: LangHueyColors.warmCream,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: LangHueyColors.amberGold.withOpacity(0.4)),
+              border: Border.all(color: LangHueyColors.amberGold.withValues(alpha: 0.4)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

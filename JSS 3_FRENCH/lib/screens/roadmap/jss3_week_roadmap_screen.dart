@@ -71,12 +71,12 @@ class JSS3WeekRoadmapScreen extends StatelessWidget {
                     border: Border.all(
                       color: isRevision
                           ? LangHueyColors.amberGold
-                          : LangHueyColors.deepTeal.withOpacity(0.2),
+                          : LangHueyColors.deepTeal.withValues(alpha: 0.2),
                       width: isRevision ? 2 : 1,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.04),
+                        color: Colors.black.withValues(alpha: 0.04),
                         blurRadius: 12,
                         offset: const Offset(0, 3),
                       ),
@@ -89,7 +89,7 @@ class JSS3WeekRoadmapScreen extends StatelessWidget {
                         height: 56,
                         decoration: BoxDecoration(
                           color: isRevision
-                              ? LangHueyColors.amberGold.withOpacity(0.2)
+                              ? LangHueyColors.amberGold.withValues(alpha: 0.2)
                               : LangHueyColors.softTeal,
                           borderRadius: BorderRadius.circular(14),
                         ),

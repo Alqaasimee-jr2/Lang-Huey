@@ -77,9 +77,9 @@ class JSS1TermSelectScreen extends StatelessWidget {
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                           decoration: BoxDecoration(
-                            color: JSS1Colors.teal.withOpacity(0.08),
+                            color: JSS1Colors.teal.withValues(alpha: 0.08),
                             borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: JSS1Colors.teal.withOpacity(0.3)),
+                            border: Border.all(color: JSS1Colors.teal.withValues(alpha: 0.3)),
                           ),
                           child: Row(
                             children: [
@@ -209,7 +209,7 @@ class JSS1TermSelectScreen extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: JSS1Colors.charcoal.withOpacity(0.06),
+                color: JSS1Colors.charcoal.withValues(alpha: 0.06),
                 blurRadius: 16,
                 offset: const Offset(0, 6),
               ),
@@ -222,7 +222,7 @@ class JSS1TermSelectScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: isAvailable ? accentColor : JSS1Colors.grey.withOpacity(0.2),
+                  color: isAvailable ? accentColor : JSS1Colors.grey.withValues(alpha: 0.2),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(22),
                     topRight: Radius.circular(22),
@@ -235,7 +235,7 @@ class JSS1TermSelectScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
-                        color: isAvailable ? JSS1Colors.white.withOpacity(0.2) : JSS1Colors.lightGrey,
+                        color: isAvailable ? JSS1Colors.white.withValues(alpha: 0.2) : JSS1Colors.lightGrey,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(

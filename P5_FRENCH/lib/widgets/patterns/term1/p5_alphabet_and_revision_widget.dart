@@ -88,7 +88,7 @@ class _P5AlphabetAndRevisionWidgetState extends State<P5AlphabetAndRevisionWidge
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         children: [
@@ -179,7 +179,7 @@ class _P5AlphabetAndRevisionWidgetState extends State<P5AlphabetAndRevisionWidge
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
                 decoration: BoxDecoration(
-                  color: P5Colors.gold.withOpacity(0.2),
+                  color: P5Colors.gold.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: P5Colors.gold, width: 2),
                 ),
@@ -252,7 +252,7 @@ class _P5AlphabetAndRevisionWidgetState extends State<P5AlphabetAndRevisionWidge
       itemBuilder: (context, index) {
         final g = _greetings[index];
         return Material(
-          color: (g['color'] as Color).withOpacity(0.08),
+          color: (g['color'] as Color).withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(20),
           child: InkWell(
             borderRadius: BorderRadius.circular(20),

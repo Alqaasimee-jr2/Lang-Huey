@@ -191,9 +191,9 @@ class _JSS2GrandRallyStudioWidgetState extends State<JSS2GrandRallyStudioWidget>
                     width: 86,
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: (_termColors[term]!).withOpacity(0.08),
+                      color: (_termColors[term]!).withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: _termColors[term]!.withOpacity(0.3)),
+                      border: Border.all(color: _termColors[term]!.withValues(alpha: 0.3)),
                     ),
                     child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Text(a['emoji'] as String, style: const TextStyle(fontSize: 22)),
@@ -236,9 +236,9 @@ class _JSS2GrandRallyStudioWidgetState extends State<JSS2GrandRallyStudioWidget>
         Container(padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4), decoration: BoxDecoration(color: termColor, borderRadius: BorderRadius.circular(20)), child: Text('$_rallyScore 🏆', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
       ]),
       const SizedBox(height: 16),
-      Container(width: double.infinity, padding: const EdgeInsets.all(20), decoration: BoxDecoration(gradient: LinearGradient(colors: [const Color(0xFF1A1A2E), termColor.withOpacity(0.8)]), borderRadius: BorderRadius.circular(18)),
+      Container(width: double.infinity, padding: const EdgeInsets.all(20), decoration: BoxDecoration(gradient: LinearGradient(colors: [const Color(0xFF1A1A2E), termColor.withValues(alpha: 0.8)]), borderRadius: BorderRadius.circular(18)),
         child: Column(children: [
-          Container(padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4), decoration: BoxDecoration(color: termColor.withOpacity(0.4), borderRadius: BorderRadius.circular(20)), child: Text('TRIMESTRE ${q['term']}', style: const TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold))),
+          Container(padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4), decoration: BoxDecoration(color: termColor.withValues(alpha: 0.4), borderRadius: BorderRadius.circular(20)), child: Text('TRIMESTRE ${q['term']}', style: const TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold))),
           const SizedBox(height: 12),
           Text(q['q'] as String, style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
         ])),
@@ -306,7 +306,7 @@ class _JSS2GrandRallyStudioWidgetState extends State<JSS2GrandRallyStudioWidget>
                 gradient: const LinearGradient(colors: [Color(0xFF1A1A2E), Color(0xFF0F3460)], begin: Alignment.topLeft, end: Alignment.bottomRight),
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(color: Colors.amber, width: 2),
-                boxShadow: [BoxShadow(color: Colors.amber.withOpacity(0.2), blurRadius: 20, offset: const Offset(0, 8))],
+                boxShadow: [BoxShadow(color: Colors.amber.withValues(alpha: 0.2), blurRadius: 20, offset: const Offset(0, 8))],
               ),
               child: Column(children: [
                 const Text('🏆', style: TextStyle(fontSize: 48)),
@@ -327,7 +327,7 @@ class _JSS2GrandRallyStudioWidgetState extends State<JSS2GrandRallyStudioWidget>
                   ...[1, 2, 3].map((t) => Container(
                     margin: const EdgeInsets.symmetric(horizontal: 4),
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(color: _termColors[t]!.withOpacity(0.3), borderRadius: BorderRadius.circular(20), border: Border.all(color: _termColors[t]!)),
+                    decoration: BoxDecoration(color: _termColors[t]!.withValues(alpha: 0.3), borderRadius: BorderRadius.circular(20), border: Border.all(color: _termColors[t]!)),
                     child: Text('T$t ✓', style: TextStyle(color: _termColors[t]!, fontWeight: FontWeight.bold, fontSize: 12)),
                   )),
                 ]),
@@ -381,7 +381,7 @@ class _JSS2GrandRallyStudioWidgetState extends State<JSS2GrandRallyStudioWidget>
             mainAxisSpacing: 10,
             childAspectRatio: 1.0,
             children: stats.map((s) => Container(
-              decoration: BoxDecoration(color: (s['color'] as Color).withOpacity(0.1), borderRadius: BorderRadius.circular(16), border: Border.all(color: (s['color'] as Color).withOpacity(0.3))),
+              decoration: BoxDecoration(color: (s['color'] as Color).withValues(alpha: 0.1), borderRadius: BorderRadius.circular(16), border: Border.all(color: (s['color'] as Color).withValues(alpha: 0.3))),
               child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Icon(s['icon'] as IconData, color: s['color'] as Color, size: 24),
                 const SizedBox(height: 6),
@@ -401,7 +401,7 @@ class _JSS2GrandRallyStudioWidgetState extends State<JSS2GrandRallyStudioWidget>
               Text(s['icon'] as String, style: const TextStyle(fontSize: 22)),
               const SizedBox(width: 12),
               Expanded(child: Text(s['skill'] as String, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13))),
-              Container(padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4), decoration: BoxDecoration(color: _termColors[s['term'] as int]!.withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
+              Container(padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4), decoration: BoxDecoration(color: _termColors[s['term'] as int]!.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)),
                 child: Text('T${s['term']}', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: _termColors[s['term'] as int]!))),
               const SizedBox(width: 8),
               const Icon(Icons.check_circle_rounded, color: Color(0xFF2ECC71), size: 18),

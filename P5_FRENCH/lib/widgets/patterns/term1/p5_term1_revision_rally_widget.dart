@@ -88,7 +88,7 @@ class _P5Term1RevisionRallyWidgetState extends State<P5Term1RevisionRallyWidget>
       decoration: BoxDecoration(
         color: P5Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: P5Colors.turquoise.withOpacity(0.3), width: 2),
+        border: Border.all(color: P5Colors.turquoise.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         children: [
@@ -174,7 +174,7 @@ class _P5Term1RevisionRallyWidgetState extends State<P5Term1RevisionRallyWidget>
             child: Container(
               padding: const EdgeInsets.all(22),
               decoration: BoxDecoration(
-                color: (currentStation['color'] as Color).withOpacity(0.08),
+                color: (currentStation['color'] as Color).withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: currentStation['color'] as Color, width: 2),
               ),

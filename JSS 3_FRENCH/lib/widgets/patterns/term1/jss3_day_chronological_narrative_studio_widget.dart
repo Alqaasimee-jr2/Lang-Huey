@@ -184,7 +184,7 @@ class _JSS3DayChronologicalNarrativeStudioWidgetState
                     avatar: Text(s['emoji'] as String),
                     label: Text(s['connector'] as String),
                     selected: isSelected,
-                    selectedColor: (s['color'] as Color).withOpacity(0.2),
+                    selectedColor: (s['color'] as Color).withValues(alpha: 0.2),
                     side: BorderSide(color: isSelected ? s['color'] as Color : Colors.black12),
                     onSelected: (val) {
                       if (val) {
@@ -204,9 +204,9 @@ class _JSS3DayChronologicalNarrativeStudioWidgetState
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: color.withOpacity(0.4), width: 1.5),
+              border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
               boxShadow: [
-                BoxShadow(color: color.withOpacity(0.08), blurRadius: 16, offset: const Offset(0, 6)),
+                BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 16, offset: const Offset(0, 6)),
               ],
             ),
             child: Column(
@@ -237,7 +237,7 @@ class _JSS3DayChronologicalNarrativeStudioWidgetState
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: color.withOpacity(0.08),
+                    color: color.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Row(
@@ -277,7 +277,7 @@ class _JSS3DayChronologicalNarrativeStudioWidgetState
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: Colors.blueGrey.shade200),
               boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12, offset: const Offset(0, 4)),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 12, offset: const Offset(0, 4)),
               ],
             ),
             child: Column(

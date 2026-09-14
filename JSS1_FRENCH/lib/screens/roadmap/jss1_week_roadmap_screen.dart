@@ -116,7 +116,7 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: JSS1Colors.charcoal.withOpacity(0.05),
+                            color: JSS1Colors.charcoal.withValues(alpha: 0.05),
                             blurRadius: 10,
                             offset: const Offset(0, 4),
                           ),
@@ -146,7 +146,7 @@ class _JSS1WeekRoadmapScreenState extends State<JSS1WeekRoadmapScreen> {
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                                   decoration: BoxDecoration(
-                                    color: JSS1Colors.white.withOpacity(0.2),
+                                    color: JSS1Colors.white.withValues(alpha: 0.2),
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   child: Text(

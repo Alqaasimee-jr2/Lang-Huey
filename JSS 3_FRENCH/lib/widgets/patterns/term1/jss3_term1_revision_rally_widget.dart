@@ -223,9 +223,9 @@ class _JSS3Term1RevisionRallyWidgetState extends State<JSS3Term1RevisionRallyWid
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: const Color(0xFFB7950B).withOpacity(0.4)),
+              border: Border.all(color: const Color(0xFFB7950B).withValues(alpha: 0.4)),
               boxShadow: [
-                BoxShadow(color: Colors.amber.withOpacity(0.06), blurRadius: 14, offset: const Offset(0, 4)),
+                BoxShadow(color: Colors.amber.withValues(alpha: 0.06), blurRadius: 14, offset: const Offset(0, 4)),
               ],
             ),
             child: Column(
@@ -380,7 +380,7 @@ class _JSS3Term1RevisionRallyWidgetState extends State<JSS3Term1RevisionRallyWid
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                         decoration: BoxDecoration(
-                          color: LangHueyColors.deepTeal.withOpacity(0.1),
+                          color: LangHueyColors.deepTeal.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
