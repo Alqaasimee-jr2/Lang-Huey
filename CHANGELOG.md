@@ -2,6 +2,44 @@
 
 All notable decisions, architectural thoughts, rationale, and project actions are recorded in this log.
 
+### Milestone 6 & Phase 3: Android Standalone Release APK Suite v1.1.0+2 Built & Packaged — 14 September 2026
+- **Context & Objectives**:
+  - The previous APK builds (03 September 2026, `v1.0.0+1`) predated major system upgrades.
+  - Required a fresh compilation across all 5 classroom applications to package:
+    1. Duolingo-style 3-slide classroom onboarding with authentic neural audio cues (`fr-FR-DeniseNeural`).
+    2. 60fps Animated Splash Screen with official brand mascot entrance and class badge.
+    3. English App Shell with Teacher Guide Drawer (Syllabus objectives & cultural notes off-screen).
+    4. Polymorphic multi-modal interactive practice drill engines across all 150 weeks of curriculum.
+    5. Zero-permission offline smartboard sideload hardening (`tools:node="remove"` leaving 0 permissions).
+    6. Official Lang Huey brand mascot launcher icons and embedded vector/raster brand assets.
+- **Key Actions & Engineering Deliverables**:
+  1. **Version & Build Number Bump**:
+     - Upgraded `pubspec.yaml` across all 5 projects from `1.0.0+1` to **`1.1.0+2`** (`versionCode = 2`).
+     - Guarantees clean in-place updates on Android smartboards and sideloaders without requiring manual uninstallation.
+  2. **Automated Quality Gate**:
+     - 100% test pass rate verified across all 117 automated tests before compilation:
+       - `mvp/` (Primary 4 French): **6/6 passed**
+       - `P5_FRENCH/` (Primary 5 French): **16/16 passed**
+       - `JSS1_FRENCH/` (JSS 1 French): **17/17 passed**
+       - `JSS 2_FRENCH/` (JSS 2 French): **42/42 passed**
+       - `JSS 3_FRENCH/` (JSS 3 French): **36/36 passed**
+  3. **Universal Fat APKs Compiled (`flutter build apk --release`)**:
+     - Built with Flutter 3.41.2, Gradle, Android SDK 36, supporting all CPU architectures (`arm64-v8a`, `armeabi-v7a`, `x86_64`) locked to `sensorLandscape`.
+     - Signed with debug keystore for friction-free USB sideloading on school interactive displays.
+  4. **Distribution Packaging & Verification (`APK FOLDER/`)**:
+     - All 5 APKs packaged into `APK FOLDER/` with computed SHA-256 checksums:
+
+     | APK File | App Label | Version | Size | SHA-256 |
+     |---|---|---|---|---|
+     | `Lang_Huey_Primary_4_French.apk` | Lang Huey - Primary 4 French | 1.1.0 (Build 2) | 75.4 MB | `F26F23932DCF6CBAFE2AD7C4A481C6692AD15BF821EB2768DA5C9A26EFB0230E` |
+     | `Lang_Huey_Primary_5_French.apk` | Lang Huey - Primary 5 French | 1.1.0 (Build 2) | 52.4 MB | `4604D7127F2B9C1CA728B3CE0D8D601C3E1B988C14BDA2DBE7B2982727BCA40A` |
+     | `Lang_Huey_JSS_1_French.apk` | Lang Huey - JSS 1 French | 1.1.0 (Build 2) | 70.6 MB | `A5E53AEBE6F7BF1771E2AD6C9B9A93001D845C5FE61D50B05736EE0C09EDE21E` |
+     | `Lang_Huey_JSS_2_French.apk` | Lang Huey - JSS 2 French | 1.1.0 (Build 2) | 58.2 MB | `E919FD5A1D59C06CBC981F508E82FE02AF72A2219CF08E2F6D09D23ADF35DAAD` |
+     | `Lang_Huey_JSS_3_French.apk` | Lang Huey - JSS 3 French | 1.1.0 (Build 2) | 56.7 MB | `06B7F1D806032591ACFAE095F67EA028B346CFB068E00C0798240497F2D101A2` |
+
+     - Total suite size: **313.3 MB**.
+     - Updated `APK FOLDER/README.txt` with new hashes, version codes, and sideload guidance.
+
 ### Phase 3: Official Brand Logo & Mascot Integration Across All Apps & Website — 14 September 2026
 - **Context & Objectives**:
   - The user provided the official brand source assets:
